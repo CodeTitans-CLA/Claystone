@@ -1,6 +1,9 @@
 
+import ArchitectureShowcase from '@/components/Home/ArchitectureShowcase';
+import DigitalExperience from '@/components/Home/DigitalExperience';
 import { HeroSection } from '@/components/Home/HeroSection';
 import Services from '@/components/Home/Services';
+
 
 
 export default function Home() {
@@ -8,6 +11,8 @@ export default function Home() {
     <main className="w-full">
       <HeroSection></HeroSection>
       <Services />
+      <ArchitectureShowcase/>
+      <DigitalExperience/>
       
       {/* Additional sections can be added here */}
       <section className="w-full min-h-screen bg-white border-t border-[#00ff87]/10 flex items-center justify-center">
