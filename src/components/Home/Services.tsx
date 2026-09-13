@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, Plus } from 'lucide-react';
 
 const services = [
@@ -9,15 +9,9 @@ const services = [
     number: '01',
     category: 'DISCIPLINE',
     tech: 'BIM / REVIT / CAD',
-    title: (
-      <>
-        Architecture &
-        <br />
-        Engineering
-      </>
-    ),
+    title: 'Architecture & Engineering',
     description:
-      'End-to-end spatial planning, schematic drafting, building information modeling (BIM), and hyper-detailed photorealistic visualizations that bring projects from planning permission to construction.',
+      'End-to-end spatial planning, architectural drafting, BIM coordination, engineering documentation, and photorealistic visualization for real-world projects.',
     tags: [
       '2D Floor Plans',
       'Architectural Drafting',
@@ -27,118 +21,265 @@ const services = [
       'Photoreal Viz',
     ],
     button: 'EXPLORE ARCHITECTURE',
-    revision: 'LAT. REV. 2024',
+    revision: 'BIM / BUILD / VISUALIZE',
   },
+
   {
     number: '02',
     category: 'DISCIPLINE',
     tech: 'REACT / NEXT.JS / CLOUD',
-    title: (
-      <>
-        Web Design &
-        <br />
-        Development
-      </>
-    ),
+    title: 'Web Design & Development',
     description:
-      'Engineered digital experiences with brutalist precision and frictionless performance. We architect lightning-fast Next.js applications, bespoke headless Shopify setups, and interactive web graphics.',
+      'Premium digital experiences focused on strong visual systems, responsive layouts, smooth interactions, and high-performance modern web development.',
     tags: [
       'UI/UX Systems',
       'Full-Stack Dev',
       'Next.js & React',
-      'Shopify Headless',
-      'Cloud Architecture',
-      'WebGL & 3D Web',
+      'Shopify',
+      'Responsive Design',
+      'Interactive Web',
     ],
     button: 'EXPLORE WEB DEVELOPMENT',
-    revision: 'CORE_WEB_VITALS: 99+',
+    revision: 'PERFORMANCE / UX / CODE',
+  },
+
+  {
+    number: '03',
+    category: 'DISCIPLINE',
+    tech: 'BLENDER / CAD / PBR',
+    title: 'Product Modeling',
+    description:
+      'Production-ready 3D product models with accurate proportions, clean topology, realistic PBR materials, studio lighting, and polished marketing visuals.',
+    tags: [
+      '3D Product Modeling',
+      'Hard Surface',
+      'CAD to 3D',
+      'PBR Materials',
+      'Studio Rendering',
+      'Product Animation',
+    ],
+    button: 'EXPLORE PRODUCT MODELING',
+    revision: 'MODEL / MATERIAL / RENDER',
+  },
+
+  {
+    number: '04',
+    category: 'DISCIPLINE',
+    tech: 'BRAND / SOCIAL / PRINT',
+    title: 'Graphics Design',
+    description:
+      'Clear, memorable visual communication for brands and campaigns—from identity systems and social assets to marketing graphics and print-ready layouts.',
+    tags: [
+      'Brand Identity',
+      'Logo Design',
+      'Social Media',
+      'Marketing Assets',
+      'Print Design',
+      'UI Graphics',
+    ],
+    button: 'EXPLORE GRAPHICS DESIGN',
+    revision: 'IDENTITY / CONTENT / PRINT',
   },
 ];
 
+const ease = [0.22, 1, 0.36, 1] as const;
+
 export default function Services() {
-  const [activeCard, setActiveCard] = useState<number | null>(null);
+  const reduceMotion = useReducedMotion();
+
+  const [hoveredCard, setHoveredCard] =
+    React.useState<string | null>(null);
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#070b09] px-4 py-16 text-[#f1f4e9] sm:px-6 sm:py-20 lg:px-10 lg:py-28">
+    <section
+      className="
+        relative
+        w-full
+        overflow-hidden
+        bg-[#050907]
 
+        px-4
+        py-16
+
+        text-[#f1f4e9]
+
+        sm:px-6
+        sm:py-20
+
+        lg:px-8
+        lg:py-24
+
+        xl:px-10
+
+        2xl:px-12
+      "
+    >
       {/* =====================================================
-          BACKGROUND ATMOSPHERE
-      ===================================================== */}
+          BACKGROUND
+      ====================================================== */}
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-
-        {/* Large glow */}
-        <div
+        <motion.div
+          animate={
+            reduceMotion
+              ? undefined
+              : {
+                  scale: [1, 1.04, 1],
+                  opacity: [0.35, 0.55, 0.35],
+                }
+          }
+          transition={{
+            duration: 9,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
           className="
             absolute
             left-1/2
-            top-[-350px]
-            h-[650px]
-            w-[650px]
+            top-[-420px]
+
+            h-[760px]
+            w-[900px]
+
             -translate-x-1/2
+
             rounded-full
-            bg-[#26ff9b]/[0.025]
-            blur-[140px]
+
+            bg-[#0fff6e]/[0.025]
+
+            blur-[150px]
           "
         />
 
-        {/* Fine grid */}
+        <motion.div
+          animate={
+            reduceMotion
+              ? undefined
+              : {
+                  y: [0, -20, 0],
+                  scale: [1, 1.03, 1],
+                  opacity: [0.2, 0.4, 0.2],
+                }
+          }
+          transition={{
+            duration: 11,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="
+            absolute
+            bottom-[-260px]
+            left-[8%]
+
+            h-[430px]
+            w-[430px]
+
+            rounded-full
+
+            bg-[#0fff6e]/[0.018]
+
+            blur-[130px]
+          "
+        />
+
         <div
           className="
             absolute
             inset-0
-            opacity-[0.035]
-            [background-image:linear-gradient(rgba(255,255,255,0.35)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.35)_1px,transparent_1px)]
-            [background-size:80px_80px]
+
+            opacity-[0.02]
+
+            [background-image:linear-gradient(rgba(255,255,255,0.22)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.22)_1px,transparent_1px)]
+
+            [background-size:74px_74px]
           "
         />
 
+        <div
+          className="
+            absolute
+            inset-x-0
+            top-0
+
+            h-px
+
+            bg-gradient-to-r
+
+            from-transparent
+            via-[#0fff6e]/20
+            to-transparent
+          "
+        />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-[1280px]">
+      {/* =====================================================
+          CONTAINER
+      ====================================================== */}
 
-        {/* =====================================================
+      <div
+        className="
+          relative
+          z-10
+
+          mx-auto
+
+          w-full
+          max-w-[1600px]
+        "
+      >
+        {/* =================================================
             HEADER
-        ===================================================== */}
+        ================================================== */}
 
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 45,
-          }}
+          initial={
+            reduceMotion
+              ? false
+              : {
+                  opacity: 0,
+                  y: 24,
+                }
+          }
           whileInView={{
             opacity: 1,
             y: 0,
           }}
           viewport={{
             once: true,
-            amount: 0.2,
+            amount: 0.25,
           }}
           transition={{
-            duration: 1,
-            ease: [0.22, 1, 0.36, 1],
+            duration: 0.75,
+            ease,
           }}
           className="
-            mb-10
+            mb-11
+
             grid
+
             items-end
+
             gap-8
-            sm:mb-12
-            lg:mb-14
-            lg:grid-cols-[1.25fr_0.75fr]
-            lg:gap-20
+
+            sm:mb-14
+
+            lg:mb-16
+            lg:grid-cols-[1.2fr_0.8fr]
+            lg:gap-16
+
+            xl:gap-20
           "
         >
-
-          {/* LEFT */}
           <div>
-
-            {/* Eyebrow */}
             <motion.div
-              initial={{
-                opacity: 0,
-                x: -20,
-              }}
+              initial={
+                reduceMotion
+                  ? false
+                  : {
+                      opacity: 0,
+                      x: -12,
+                    }
+              }
               whileInView={{
                 opacity: 1,
                 x: 0,
@@ -148,60 +289,82 @@ export default function Services() {
               }}
               transition={{
                 duration: 0.6,
-                delay: 0.15,
+                delay: 0.08,
+                ease,
               }}
               className="
-                mb-4
+                mb-5
+
                 flex
                 items-center
-                gap-2
+                gap-2.5
+
                 font-mono
-                text-[9px]
+
+                text-[10px]
+
                 font-bold
+
                 uppercase
-                tracking-[1.2px]
-                text-[#26ff9b]
-                sm:text-[10px]
+
+                tracking-[1.55px]
+
+                text-[#0fff6e]
+
+                sm:text-[11px]
+
+                lg:text-[11.5px]
               "
             >
-              <span className="h-px w-5 bg-[#26ff9b]" />
+              <span className="h-px w-6 bg-[#0fff6e]" />
 
-              PILLAR DISCIPLINE ARCHITECTURE
+              MULTI-DISCIPLINARY CREATIVE STUDIO
             </motion.div>
 
-            {/* Heading */}
             <h1
               className="
                 m-0
-                max-w-[850px]
-                text-[43px]
+
+                max-w-[980px]
+
+                text-[42px]
+
                 font-medium
-                leading-[0.96]
-                tracking-[-2.5px]
-                text-[#f2f4e8]
+
+                leading-[0.98]
+
+                tracking-[-2.15px]
+
+                text-[#f5f8f3]
+
                 sm:text-[56px]
                 sm:tracking-[-3px]
-                md:text-[68px]
-                lg:text-[clamp(58px,5vw,76px)]
-                lg:tracking-[-4px]
+
+                md:text-[64px]
+
+                lg:text-[clamp(58px,4.8vw,78px)]
+                lg:tracking-[-3.8px]
               "
             >
-              Two Core Disciplines.
+              Four Core Disciplines.
+
               <br />
 
-              <span className="text-[#dfe8de]">
+              <span className="text-[#dce5df]">
                 One Creative Partner.
               </span>
             </h1>
-
           </div>
 
-          {/* RIGHT DESCRIPTION */}
           <motion.div
-            initial={{
-              opacity: 0,
-              y: 25,
-            }}
+            initial={
+              reduceMotion
+                ? false
+                : {
+                    opacity: 0,
+                    y: 14,
+                  }
+            }
             whileInView={{
               opacity: 1,
               y: 0,
@@ -210,528 +373,1226 @@ export default function Services() {
               once: true,
             }}
             transition={{
-              duration: 0.8,
-              delay: 0.25,
+              duration: 0.7,
+              delay: 0.16,
+              ease,
             }}
-            className="lg:pb-2"
+            className="lg:pb-1"
           >
-            <div className="mb-4 h-px w-10 bg-[#26ff9b]/60" />
+            <div
+              className="
+                mb-4
+
+                h-px
+                w-12
+
+                bg-gradient-to-r
+
+                from-[#0fff6e]
+
+                to-[#0fff6e]/15
+
+                shadow-[0_0_16px_rgba(15,255,110,0.3)]
+              "
+            />
 
             <p
               className="
                 m-0
-                max-w-[430px]
-                text-[13px]
-                leading-[1.7]
-                text-[#a9c1b0]
-                sm:text-[14px]
-                sm:leading-[1.65]
-                lg:text-[15px]
+
+                max-w-[500px]
+
+                text-[14px]
+
+                leading-[1.75]
+
+                text-[#9fb2a7]
+
+                sm:text-[15px]
+
+                lg:text-[15.5px]
               "
             >
-              Our studio collapses the boundary between physical
-              environments and software architecture, bringing
-              architectural precision to code and digital dynamism
-              to built form.
+              From built environments and digital products to 3D product
+              experiences and visual communication, we combine technical
+              precision with premium creative execution.
             </p>
           </motion.div>
-
         </motion.div>
 
-        {/* =====================================================
-            SERVICE GRID
-        ===================================================== */}
+        {/* =================================================
+            CARDS
+        ================================================== */}
 
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+        <div
+          className="
+            grid
 
+            grid-cols-1
+
+            gap-5
+
+            md:grid-cols-2
+
+            lg:gap-6
+
+            xl:grid-cols-4
+            xl:gap-5
+
+            2xl:gap-6
+          "
+        >
           {services.map((service, index) => (
             <motion.article
               key={service.number}
-              initial={{
-                opacity: 0,
-                y: 70,
-                scale: 0.97,
-              }}
+              initial={
+                reduceMotion
+                  ? false
+                  : {
+                      opacity: 0,
+                      y: 30,
+                    }
+              }
               whileInView={{
                 opacity: 1,
                 y: 0,
-                scale: 1,
               }}
               viewport={{
                 once: true,
-                amount: 0.15,
+                amount: 0.12,
               }}
               transition={{
-                duration: 0.9,
-                delay: index * 0.16,
-                ease: [0.22, 1, 0.36, 1],
+                duration: 0.7,
+                delay: reduceMotion
+                  ? 0
+                  : index * 0.07,
+                ease,
               }}
-              onHoverStart={() => setActiveCard(index)}
-              onHoverEnd={() => setActiveCard(null)}
-              whileHover={{
-                y: -10,
-                scale: 1.012,
-              }}
+              onHoverStart={() =>
+                setHoveredCard(service.number)
+              }
+              onHoverEnd={() =>
+                setHoveredCard(null)
+              }
+              whileHover={
+                reduceMotion
+                  ? undefined
+                  : {
+                      y: -8,
+                      scale: 1.012,
+                    }
+              }
               className="
                 group
+
                 relative
-                min-h-[500px]
+
+                min-h-[455px]
+
                 overflow-hidden
-                rounded-[24px]
-                border
-                border-white/[0.055]
-                bg-[#121713]
-                p-6
-                shadow-[0_20px_70px_rgba(0,0,0,0.28)]
-                transition-all
-                duration-500
-                hover:border-[#26ff9b]/20
-                hover:shadow-[0_30px_90px_rgba(0,0,0,0.45),0_0_60px_rgba(38,255,155,0.035)]
-                sm:min-h-[520px]
-                sm:rounded-[28px]
-                sm:p-8
-                lg:min-h-[535px]
-                lg:p-9
+
+                rounded-[26px]
+
+                bg-[#0a110d]
+
+                p-[1px]
+
+                shadow-[0_22px_55px_rgba(0,0,0,0.55),0_10px_28px_rgba(0,0,0,0.38),0_0_26px_rgba(15,255,110,0.045),inset_0_1px_0_rgba(255,255,255,0.035),0_0_0_1px_rgba(255,255,255,0.035)]
+
+                transition-[box-shadow]
+
+                duration-700
+
+                ease-[cubic-bezier(0.22,1,0.36,1)]
+
+                hover:shadow-[0_38px_95px_rgba(0,0,0,0.68),0_18px_48px_rgba(0,0,0,0.46),0_0_38px_rgba(15,255,110,0.14),0_0_80px_rgba(15,255,110,0.07),inset_0_1px_0_rgba(255,255,255,0.055),0_0_0_1px_rgba(15,255,110,0.18)]
+
+                sm:min-h-[465px]
+
+                xl:min-h-[475px]
+
+                2xl:min-h-[485px]
               "
             >
-
-              {/* =================================================
-                  CARD BACKGROUND
-              ================================================= */}
+              {/* =====================================================
+                  STATIC BORDER
+              ====================================================== */}
 
               <div
                 className="
                   pointer-events-none
+
                   absolute
                   inset-0
-                  bg-[radial-gradient(circle_at_85%_10%,rgba(38,255,155,0.075),transparent_32%),linear-gradient(135deg,rgba(255,255,255,0.025),transparent_55%)]
+
+                  z-0
+
+                  rounded-[26px]
+
+                  border
+
+                  border-white/[0.085]
+
+                  transition-colors
+
+                  duration-500
+
+                  group-hover:border-[#0fff6e]/25
                 "
               />
 
-              {/* Animated glow */}
-              <motion.div
-                animate={{
-                  scale: activeCard === index ? 1.4 : 1,
-                  opacity: activeCard === index ? 1 : 0.5,
-                }}
-                transition={{
-                  duration: 0.8,
-                  ease: 'easeOut',
-                }}
-                className="
-                  pointer-events-none
-                  absolute
-                  -right-32
-                  -top-32
-                  h-[420px]
-                  w-[420px]
-                  rounded-full
-                  bg-[#26ff9b]/[0.035]
-                  blur-[100px]
-                "
-              />
+              {/* =====================================================
+                  SAME TO SAME ANIMATED BORDER
+              ====================================================== */}
 
-              {/* Card grid */}
-              <div
-                className="
-                  pointer-events-none
-                  absolute
-                  inset-0
-                  opacity-[0.12]
-                  [background-image:linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)]
-                  [background-size:55px_55px]
-                  [mask-image:linear-gradient(to_bottom_right,black,transparent_65%)]
-                "
-              />
-
-              {/* =================================================
-                  TOP
-              ================================================= */}
-
-              <div className="relative z-10 flex items-start justify-between gap-5">
-
-                <motion.div
-                  whileHover={{
-                    scale: 1.05,
-                  }}
+              {!reduceMotion && (
+                <svg
                   className="
-                    flex
-                    items-center
-                    gap-2
-                    rounded-full
-                    border
-                    border-white/[0.05]
-                    bg-[#252d28]
-                    px-3
-                    py-1.5
-                    font-mono
-                    text-[8px]
-                    font-bold
-                    tracking-[0.4px]
-                    text-[#d0dad3]
-                    sm:text-[9px]
-                  "
-                >
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#26ff9b] shadow-[0_0_10px_#26ff9b]" />
+                    pointer-events-none
 
                   {service.category} {service.number}
                 </motion.div>
+                    absolute
+                    inset-0
 
-                <span
-                  className="
-                    text-right
-                    font-mono
-                    text-[8px]
-                    leading-[1.5]
-                    tracking-[0.5px]
-                    text-[#71897a]
-                    sm:text-[9px]
+                    z-[1]
+
+                    h-full
+                    w-full
+
+                    overflow-visible
                   "
+                  aria-hidden="true"
                 >
-                  {service.tech}
-                </span>
-
-              </div>
-
-              {/* =================================================
-                  CARD CONTENT
-              ================================================= */}
-
-              <div className="relative z-10 mt-12 sm:mt-14">
-
-                {/* Small index */}
-                <motion.div
-                  animate={{
-                    opacity: activeCard === index ? 1 : 0.35,
-                    x: activeCard === index ? 5 : 0,
-                  }}
-                  className="
-                    mb-4
-                    font-mono
-                    text-[9px]
-                    tracking-[1px]
-                    text-[#26ff9b]
-                  "
-                >
-                  0{index + 1} /
-                </motion.div>
-
-                {/* Title */}
-                <h2
-                  className="
-                    m-0
-                    mb-6
-                    text-[38px]
-                    font-medium
-                    leading-[0.96]
-                    tracking-[-2px]
-                    text-[#f4f6ed]
-                    sm:text-[48px]
-                    sm:tracking-[-2.5px]
-                    lg:text-[52px]
-                  "
-                >
-                  {service.title}
-                </h2>
-
-                {/* Description */}
-                <p
-                  className="
-                    m-0
-                    max-w-[570px]
-                    text-[13px]
-                    leading-[1.7]
-                    text-[#b6c7bb]
-                    sm:text-[14px]
-                    sm:leading-[1.7]
-                    lg:text-[14px]
-                  "
-                >
-                  {service.description}
-                </p>
-
-                {/* =================================================
-                    TAGS
-                ================================================= */}
-
-                <div className="mt-7 flex max-w-[600px] flex-wrap gap-2">
-
-                  {service.tags.map((tag, tagIndex) => (
-                    <motion.span
-                      key={tag}
-                      initial={{
-                        opacity: 0,
-                        y: 12,
-                      }}
-                      whileInView={{
-                        opacity: 1,
-                        y: 0,
-                      }}
-                      viewport={{
-                        once: true,
-                      }}
-                      transition={{
-                        duration: 0.45,
-                        delay:
-                          0.35 +
-                          index * 0.12 +
-                          tagIndex * 0.055,
-                      }}
-                      whileHover={{
-                        y: -4,
-                        scale: 1.04,
-                      }}
-                      className="
-                        cursor-default
-                        rounded-full
-                        border
-                        border-white/[0.045]
-                        bg-[#242b27]
-                        px-3
-                        py-2
-                        text-[9px]
-                        font-medium
-                        text-[#c5d0c8]
-                        shadow-[0_5px_20px_rgba(0,0,0,0.12)]
-                        transition-all
-                        duration-300
-                        hover:border-[#26ff9b]/25
-                        hover:bg-[#26ff9b]/10
-                        hover:text-[#43ffac]
-                        hover:shadow-[0_5px_25px_rgba(38,255,155,0.08)]
-                        sm:px-3.5
-                        sm:py-2.5
-                        sm:text-[10px]
-                      "
+                  <defs>
+                    <filter
+                      id={`borderGlow-${service.number}`}
+                      x="-50%"
+                      y="-50%"
+                      width="200%"
+                      height="200%"
                     >
-                      {tag}
-                    </motion.span>
-                  ))}
+                      <feGaussianBlur
+                        stdDeviation="3.4"
+                        result="blur"
+                      />
 
+                      <feMerge>
+                        <feMergeNode in="blur" />
+
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                  </defs>
+
+                  {/* ================================================
+                      1. WIDE GLOW TRAIL
+                      EXACT WIDTH = 3.8
+                  ================================================= */}
+
+                  <motion.rect
+                    x="1"
+                    y="1"
+
+                    width="calc(100% - 2px)"
+                    height="calc(100% - 2px)"
+
+                    rx="25"
+                    ry="25"
+
+                    pathLength={100}
+
+                    fill="none"
+
+                    stroke="#0fff6e"
+
+                    strokeWidth="3.8"
+
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+
+                    strokeDasharray="18 82"
+
+                    initial={{
+                      strokeDashoffset: 0,
+                    }}
+
+                    animate={
+                      hoveredCard === service.number
+                        ? {
+                            strokeDashoffset: [
+                              0,
+                              -100,
+                            ],
+                          }
+                        : {
+                            strokeDashoffset: 0,
+                          }
+                    }
+
+                    transition={
+                      hoveredCard === service.number
+                        ? {
+                            duration: 4.8,
+                            repeat: Infinity,
+                            ease: 'linear',
+                          }
+                        : {
+                            duration: 0,
+                          }
+                    }
+
+                    filter={`url(#borderGlow-${service.number})`}
+
+                    className="
+                      opacity-0
+
+                      transition-opacity
+
+                      duration-500
+
+                      ease-out
+
+                      group-hover:opacity-40
+                    "
+                  />
+
+                  {/* ================================================
+                      2. MAIN GREEN ORBIT
+                      EXACT WIDTH = 1.7
+                  ================================================= */}
+
+                  <motion.rect
+                    x="1"
+                    y="1"
+
+                    width="calc(100% - 2px)"
+                    height="calc(100% - 2px)"
+
+                    rx="25"
+                    ry="25"
+
+                    pathLength={100}
+
+                    fill="none"
+
+                    stroke="#0fff6e"
+
+                    strokeWidth="1.7"
+
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+
+                    strokeDasharray="12 88"
+
+                    initial={{
+                      strokeDashoffset: 0,
+                    }}
+
+                    animate={
+                      hoveredCard === service.number
+                        ? {
+                            strokeDashoffset: [
+                              0,
+                              -100,
+                            ],
+                          }
+                        : {
+                            strokeDashoffset: 0,
+                          }
+                    }
+
+                    transition={
+                      hoveredCard === service.number
+                        ? {
+                            duration: 4.8,
+                            repeat: Infinity,
+                            ease: 'linear',
+                          }
+                        : {
+                            duration: 0,
+                          }
+                    }
+
+                    className="
+                      opacity-0
+
+                      transition-opacity
+
+                      duration-300
+
+                      ease-out
+
+                      group-hover:opacity-100
+                    "
+                  />
+
+                  {/* ================================================
+                      3. BRIGHT LEADING HEAD
+                      EXACT WIDTH = 1.25
+                  ================================================= */}
+
+                  <motion.rect
+                    x="1"
+                    y="1"
+
+                    width="calc(100% - 2px)"
+                    height="calc(100% - 2px)"
+
+                    rx="25"
+                    ry="25"
+
+                    pathLength={100}
+
+                    fill="none"
+
+                    stroke="#effff5"
+
+                    strokeWidth="1.25"
+
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+
+                    strokeDasharray="3 97"
+
+                    initial={{
+                      strokeDashoffset: 0,
+                    }}
+
+                    animate={
+                      hoveredCard === service.number
+                        ? {
+                            strokeDashoffset: [
+                              0,
+                              -100,
+                            ],
+                          }
+                        : {
+                            strokeDashoffset: 0,
+                          }
+                    }
+
+                    transition={
+                      hoveredCard === service.number
+                        ? {
+                            duration: 4.8,
+                            repeat: Infinity,
+                            ease: 'linear',
+                          }
+                        : {
+                            duration: 0,
+                          }
+                    }
+
+                    className="
+                      opacity-0
+
+                      transition-opacity
+
+                      duration-300
+
+                      ease-out
+
+                      group-hover:opacity-100
+                    "
+                  />
+                </svg>
+              )}
+
+              {/* =====================================================
+                  REDUCED MOTION
+              ====================================================== */}
+
+              {reduceMotion && (
+                <div
+                  className="
+                    pointer-events-none
+
+                    absolute
+                    inset-0
+
+                    z-[1]
+
+                    rounded-[26px]
+
+                    border
+
+                    border-[#0fff6e]/20
+
+                    opacity-80
+                  "
+                />
+              )}
+
+              {/* =====================================================
+                  INNER CARD
+              ====================================================== */}
+
+              <div
+                className="
+                  relative
+
+                  z-[2]
+
+                  flex
+
+                  h-full
+
+                  min-h-[453px]
+
+                  flex-col
+
+                  overflow-hidden
+
+                  rounded-[25px]
+
+                  bg-[linear-gradient(145deg,#0d1510_0%,#0a110d_52%,#08100b_100%)]
+
+                  p-5
+
+                  sm:min-h-[463px]
+                  sm:p-6
+
+                  xl:min-h-[473px]
+                  xl:p-[22px]
+
+                  2xl:min-h-[483px]
+                  2xl:p-6
+                "
+              >
+                {/* Atmosphere */}
+                <div
+                  className="
+                    pointer-events-none
+
+                    absolute
+                    inset-0
+
+                    rounded-[25px]
+
+                    bg-[radial-gradient(circle_at_88%_7%,rgba(15,255,110,0.10),transparent_25%),radial-gradient(circle_at_12%_100%,rgba(15,255,110,0.045),transparent_34%),linear-gradient(135deg,rgba(255,255,255,0.028),transparent_42%)]
+
+                    opacity-80
+
+                    transition-opacity
+
+                    duration-700
+
+                    group-hover:opacity-100
+                  "
+                />
+
+                {/* Right Glow */}
+                <div
+                  className="
+                    pointer-events-none
+
+                    absolute
+
+                    -right-28
+                    -top-28
+
+                    h-[300px]
+                    w-[300px]
+
+                    rounded-full
+
+                    bg-[#0fff6e]/[0.018]
+
+                    blur-[80px]
+
+                    transition-all
+
+                    duration-1000
+
+                    ease-out
+
+                    group-hover:scale-125
+
+                    group-hover:bg-[#0fff6e]/[0.07]
+                  "
+                />
+
+                {/* Bottom Glow */}
+                <div
+                  className="
+                    pointer-events-none
+
+                    absolute
+
+                    -bottom-32
+
+                    left-1/2
+
+                    h-[240px]
+                    w-[240px]
+
+                    -translate-x-1/2
+
+                    rounded-full
+
+                    bg-[#0fff6e]/[0.012]
+
+                    blur-[75px]
+
+                    transition-all
+
+                    duration-1000
+
+                    group-hover:bg-[#0fff6e]/[0.035]
+                  "
+                />
+
+                {/* Grid */}
+                <div
+                  className="
+                    pointer-events-none
+
+                    absolute
+                    inset-0
+
+                    rounded-[25px]
+
+                    opacity-[0.045]
+
+                    [background-image:linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)]
+
+                    [background-size:46px_46px]
+                  "
+                />
+
+                {/* Premium Highlight */}
+                <div
+                  className="
+                    pointer-events-none
+
+                    absolute
+
+                    inset-x-5
+
+                    top-0
+
+                    h-px
+
+                    bg-gradient-to-r
+
+                    from-transparent
+
+                    via-white/[0.13]
+
+                    to-transparent
+
+                    opacity-75
+
+                    transition-all
+
+                    duration-700
+
+                    group-hover:via-[#dffff0]/30
+                  "
+                />
+
+                {/* Accent Rail */}
+                <div
+                  className="
+                    pointer-events-none
+
+                    absolute
+
+                    left-0
+
+                    top-[18%]
+
+                    h-[64%]
+
+                    w-px
+
+                    bg-gradient-to-b
+
+                    from-transparent
+
+                    via-[#0fff6e]/0
+
+                    to-transparent
+
+                    opacity-0
+
+                    blur-[0.2px]
+
+                    transition-all
+
+                    duration-700
+
+                    group-hover:via-[#0fff6e]/35
+
+                    group-hover:opacity-100
+                  "
+                />
+
+                {/* Number */}
+                <div
+                  className="
+                    pointer-events-none
+
+                    absolute
+
+                    right-4
+
+                    top-[72px]
+
+                    select-none
+
+                    font-mono
+
+                    text-[62px]
+
+                    font-semibold
+
+                    leading-none
+
+                    tracking-[-5px]
+
+                    text-white/[0.018]
+
+                    transition-all
+
+                    duration-700
+
+                    group-hover:-translate-y-1
+
+                    group-hover:text-[#0fff6e]/[0.032]
+
+                    sm:right-5
+                    sm:text-[68px]
+
+                    xl:text-[62px]
+
+                    2xl:text-[70px]
+                  "
+                >
+                  {service.number}
                 </div>
 
-              </div>
+                {/* =================================================
+                    CONTENT
+                ================================================== */}
 
-              {/* =================================================
-                  BOTTOM
-              ================================================= */}
+                <div className="relative z-10 flex h-full flex-col">
+                  {/* Card Header */}
+                  <div className="flex items-start justify-between gap-3">
+                    <div
+                      className="
+                        flex
 
-              <div
-                className="
-                  absolute
-                  bottom-7
-                  left-6
-                  right-6
-                  z-10
-                  flex
-                  items-end
-                  justify-between
-                  gap-5
-                  sm:bottom-8
-                  sm:left-8
-                  sm:right-8
-                  lg:bottom-9
-                  lg:left-9
-                  lg:right-9
-                "
-              >
+                        items-center
 
-                {/* CTA */}
-                <motion.a
-                  href="#"
-                  whileHover={{
-                    x: 7,
+                        gap-2.5
+
+                        rounded-full
+
+                        border
+
+                        border-white/[0.085]
+
+                        bg-white/[0.03]
+
+                        px-3
+
+                        py-1.5
+
+                        font-mono
+
+                        text-[9px]
+
+                        font-semibold
+
+                        tracking-[0.42px]
+
+                        text-[#e0e8e3]
+
+                        shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]
+
+                        backdrop-blur-sm
+
+                        transition-all
+
+                        duration-500
+
+                        group-hover:border-[#0fff6e]/28
+
+                        group-hover:bg-[#0fff6e]/[0.055]
+
+                        sm:text-[9.5px]
+
+                        xl:text-[9px]
+
+                        2xl:text-[9.5px]
+                      "
+                    >
+                      <span
+                        className="
+                          h-1.5
+                          w-1.5
+
+                          shrink-0
+
+                          rounded-full
+
+                          bg-[#0fff6e]
+
+                          shadow-[0_0_8px_rgba(15,255,110,0.9)]
+                        "
+                      />
+
+                      {service.category} // {service.number}
+                    </div>
+
+                    <span
+                      className="
+                        max-w-[128px]
+
+                        pt-0.5
+
+                        text-right
+
+                        font-mono
+
+                        text-[8px]
+
+                        font-medium
+
+                        leading-[1.5]
+
+                        tracking-[0.48px]
+
+                        text-[#73847a]
+
+                        sm:text-[8.5px]
+
+                        xl:text-[8px]
+
+                        2xl:text-[8.5px]
+                      "
+                    >
+                      {service.tech}
+                    </span>
+                  </div>
+
+                  {/* Main Content */}
+                  <div className="mt-7 sm:mt-8 xl:mt-7 2xl:mt-8">
+                    <div
+                      className="
+                        mb-3.5
+
+                        flex
+
+                        items-center
+
+                        gap-2
+
+                        font-mono
+
+                        text-[9px]
+
+                        font-bold
+
+                        tracking-[1.2px]
+
+                        text-[#0fff6e]/70
+
+                        transition-colors
+
+                        duration-500
+
+                        group-hover:text-[#0fff6e]
+
+                        sm:text-[9.5px]
+                      "
+                    >
+                      <span
+                        className="
+                          h-px
+                          w-5
+
+                          bg-[#0fff6e]/55
+
+                          transition-all
+
+                          duration-500
+
+                          group-hover:w-8
+
+                          group-hover:bg-[#0fff6e]
+                        "
+                      />
+
+                      0{index + 1} /
+                    </div>
+
+                    <h2
+                      className="
+                        m-0
+
+                        mb-4
+
+                        max-w-[330px]
+
+                        text-[34px]
+
+                        font-medium
+
+                        leading-[1.02]
+
+                        tracking-[-1.8px]
+
+                        text-[#f5f7f4]
+
+                        transition-all
+
+                        duration-700
+
+                        ease-[cubic-bezier(0.22,1,0.36,1)]
+
+                        group-hover:translate-x-[3px]
+
+                        group-hover:text-white
+
+                        sm:text-[37px]
+
+                        md:text-[35px]
+
+                        xl:text-[32px]
+                        xl:tracking-[-1.6px]
+
+                        2xl:text-[35px]
+                      "
+                    >
+                      {service.title}
+                    </h2>
+
+                    <p
+                      className="
+                        m-0
+
+                        max-w-[350px]
+
+                        text-[13.5px]
+
+                        leading-[1.72]
+
+                        text-[#aab9b0]
+
+                        transition-colors
+
+                        duration-500
+
+                        group-hover:text-[#c0cbc4]
+
+                        sm:text-[14px]
+
+                        md:text-[13.5px]
+
+                        xl:text-[13px]
+                        xl:leading-[1.7]
+
+                        2xl:text-[13.75px]
+                      "
+                    >
+                      {service.description}
+                    </p>
+
+                    {/* Tags */}
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {service.tags.map((tag) => (
+                        <motion.span
+                          key={tag}
+                          whileHover={
+                            reduceMotion
+                              ? undefined
+                              : {
+                                  y: -2,
+                                }
+                          }
+                          transition={{
+                            duration: 0.2,
+                            ease: 'easeOut',
+                          }}
+                          className="
+                            cursor-default
+
+                            rounded-full
+
+                            border
+
+                            border-white/[0.075]
+
+                            bg-white/[0.03]
+
+                            px-3
+
+                            py-1.5
+
+                            text-[9px]
+
+                            font-medium
+
+                            leading-none
+
+                            text-[#c8d2cc]
+
+                            shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]
+
+                            backdrop-blur-sm
+
+                            transition-all
+
+                            duration-300
+
+                            hover:-translate-y-0.5
+
+                            hover:border-[#0fff6e]/35
+
+                            hover:bg-[#0fff6e]/[0.08]
+
+                            hover:text-[#e5ffee]
+
+                            hover:shadow-[0_8px_24px_rgba(15,255,110,0.08)]
+
+                            sm:px-3.5
+
+                            sm:py-[7px]
+
+                            sm:text-[9.5px]
+
+                            xl:px-3
+
+                            xl:text-[8.8px]
+
+                            2xl:text-[9.4px]
+                          "
+                        >
+                          {tag}
+                        </motion.span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* =================================================
+                      FOOTER
+                  ================================================== */}
+
+                  <div className="mt-auto pt-6">
+                    <div
+                      className="
+                        mb-4
+
+                        h-px
+
+                        w-full
+
+                        bg-gradient-to-r
+
+                        from-white/[0.11]
+
+                        via-white/[0.045]
+
+                        to-transparent
+
+                        transition-all
+
+                        duration-700
+
+                        group-hover:from-[#0fff6e]/28
+
+                        group-hover:via-[#0fff6e]/[0.08]
+                      "
+                    />
+
+                    <div className="flex items-end justify-between gap-3">
+                      <a
+                        href="#"
+                        className="
+                          group/button
+
+                          flex
+
+                          min-w-0
+
+                          items-center
+
+                          gap-2.5
+
+                          text-[10.5px]
+
+                          font-semibold
+
+                          leading-[1.2]
+
+                          tracking-[0.05px]
+
+                          text-[#f1f5f2]
+
+                          no-underline
+
+                          transition-colors
+
+                          duration-300
+
+                          hover:text-[#0fff6e]
+
+                          sm:text-[11px]
+
+                          xl:text-[10px]
+
+                          2xl:text-[10.5px]
+                        "
+                      >
+                        <span className="truncate">
+                          {service.button}
+                        </span>
+
+                        <span
+                          className="
+                            flex
+
+                            h-8
+                            w-8
+
+                            shrink-0
+
+                            items-center
+
+                            justify-center
+
+                            rounded-full
+
+                            border
+
+                            border-white/10
+
+                            bg-white/[0.03]
+
+                            shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]
+
+                            transition-all
+
+                            duration-500
+
+                            ease-out
+
+                            group-hover/button:translate-x-1
+
+                            group-hover/button:border-[#0fff6e]/40
+
+                            group-hover/button:bg-[#0fff6e]/[0.1]
+
+                            group-hover/button:shadow-[0_0_24px_rgba(15,255,110,0.13)]
+                          "
+                        >
+                          <ArrowRight
+                            size={14}
+                            strokeWidth={1.7}
+                            className="
+                              transition-transform
+
+                              duration-500
+
+                              ease-out
+
+                              group-hover/button:translate-x-0.5
+                            "
+                          />
+                        </span>
+                      </a>
+
+                      <span
+                        className="
+                          hidden
+
+                          max-w-[105px]
+
+                          text-right
+
+                          font-mono
+
+                          text-[7px]
+
+                          font-medium
+
+                          leading-[1.5]
+
+                          tracking-[0.68px]
+
+                          text-[#5d6b62]
+
+                          2xl:block
+                        "
+                      >
+                        {service.revision}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* =================================================
+                    CORNER DETAIL
+                ================================================== */}
+
+                <motion.div
+                  animate={
+                    reduceMotion
+                      ? undefined
+                      : {
+                          opacity: [
+                            0.2,
+                            0.4,
+                            0.2,
+                          ],
+                        }
+                  }
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
                   }}
                   className="
-                    group/button
-                    flex
-                    items-center
-                    gap-3
-                    text-[12px]
-                    font-semibold
-                    tracking-[-0.2px]
-                    text-[#f2f4e9]
-                    no-underline
+                    pointer-events-none
+
+                    absolute
+
+                    right-5
+
+                    top-[72px]
+
+                    z-20
+
+                    text-[#0fff6e]/25
+
                     transition-colors
-                    duration-300
-                    hover:text-[#26ff9b]
-                    sm:text-[13px]
+
+                    duration-500
+
+                    group-hover:text-[#0fff6e]/85
                   "
                 >
-                  <span>{service.button}</span>
-
-                  <span
+                  <Plus
+                    size={17}
+                    strokeWidth={1}
                     className="
-                      flex
-                      h-8
-                      w-8
-                      items-center
-                      justify-center
-                      rounded-full
-                      border
-                      border-white/10
-                      bg-white/[0.025]
-                      transition-all
-                      duration-300
-                      group-hover/button:border-[#26ff9b]/30
-                      group-hover/button:bg-[#26ff9b]/10
+                      transition-transform
+
+                      duration-700
+
+                      ease-out
+
+                      group-hover:rotate-45
                     "
-                  >
-                    <ArrowRight
-                      size={16}
-                      strokeWidth={1.7}
-                      className="transition-transform duration-300 group-hover/button:translate-x-0.5"
-                    />
-                  </span>
-                </motion.a>
-
-                {/* Revision */}
-                <span
-                  className="
-                    hidden
-                    font-mono
-                    text-[7px]
-                    tracking-[0.8px]
-                    text-[#69786e]
-                    sm:block
-                  "
-                >
-                  {service.revision}
-                </span>
-
+                  />
+                </motion.div>
               </div>
-
-              {/* =================================================
-                  CORNER DETAILS
-              ================================================= */}
-
-              <div
-                className="
-                  pointer-events-none
-                  absolute
-                  right-0
-                  top-0
-                  h-16
-                  w-16
-                  border-r
-                  border-t
-                  border-[#26ff9b]/40
-                  opacity-0
-                  transition-all
-                  duration-500
-                  group-hover:h-24
-                  group-hover:w-24
-                  group-hover:opacity-100
-                "
-              />
-
-              <div
-                className="
-                  pointer-events-none
-                  absolute
-                  bottom-0
-                  left-0
-                  h-16
-                  w-16
-                  border-b
-                  border-l
-                  border-[#26ff9b]/40
-                  opacity-0
-                  transition-all
-                  duration-500
-                  group-hover:h-24
-                  group-hover:w-24
-                  group-hover:opacity-100
-                "
-              />
-
-              {/* =================================================
-                  SIDE INDICATOR
-              ================================================= */}
-
-              <motion.div
-                initial={{
-                  height: 0,
-                }}
-                whileHover={{
-                  height: '65%',
-                }}
-                transition={{
-                  duration: 0.6,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className="
-                  absolute
-                  bottom-0
-                  left-0
-                  z-20
-                  w-[2px]
-                  bg-[#26ff9b]
-                  shadow-[0_0_18px_rgba(38,255,155,0.8)]
-                "
-              />
-
-              {/* =================================================
-                  BOTTOM GLOW LINE
-              ================================================= */}
-
-              <motion.div
-                initial={{
-                  width: '0%',
-                  opacity: 0,
-                }}
-                whileHover={{
-                  width: '100%',
-                  opacity: 1,
-                }}
-                transition={{
-                  duration: 0.7,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className="
-                  absolute
-                  bottom-0
-                  left-0
-                  z-20
-                  h-[1px]
-                  bg-[#26ff9b]
-                  shadow-[0_0_20px_rgba(38,255,155,0.9)]
-                "
-              />
-
-              {/* =================================================
-                  PLUS ICON
-              ================================================= */}
-
-              <motion.div
-                animate={{
-                  rotate: activeCard === index ? 90 : 0,
-                  opacity: activeCard === index ? 1 : 0.25,
-                }}
-                transition={{
-                  duration: 0.35,
-                }}
-                className="
-                  absolute
-                  right-8
-                  top-24
-                  z-10
-                  hidden
-                  sm:block
-                "
-              >
-                <Plus
-                  size={18}
-                  strokeWidth={1}
-                  className="text-[#26ff9b]"
-                />
-              </motion.div>
-
             </motion.article>
           ))}
-
         </div>
-
       </div>
     </section>
   );
