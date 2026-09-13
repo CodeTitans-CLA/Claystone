@@ -3,7 +3,6 @@
 import { motion, useReducedMotion, type Variants } from 'framer-motion';
 import { Building2, Terminal, Check, ArrowLeftRight } from 'lucide-react';
 
-
 interface ChecklistItem {
   label: string;
 }
@@ -22,6 +21,59 @@ const digitalItems: ChecklistItem[] = [
   { label: 'Cloud Launch & Scale' },
 ];
 
+/**
+ * A single bright "comet" of light that continuously travels around
+ * the border, always on — no hover needed. Built with the padding +
+ * overflow-hidden trick: the outer box's padding is the border
+ * thickness, an oversized rotating conic-gradient comet lives
+ * underneath, and the inner box covers everything but that thin ring.
+ */
+function BorderBeam({
+  children,
+  radiusClassName = 'rounded-2xl',
+  duration = 4,
+  color = '#00DD6F',
+  tailColor = '#eafff5',
+}: {
+  children: React.ReactNode;
+  radiusClassName?: string;
+  duration?: number;
+  color?: string;
+  tailColor?: string;
+}) {
+  const shouldReduceMotion = useReducedMotion();
+
+  const cometGradient = `conic-gradient(from 0deg, transparent 0%, transparent 82%, ${color}55 90%, ${tailColor} 96%, transparent 100%)`;
+
+  return (
+    <div className={`relative h-full ${radiusClassName} p-[1.5px]`}>
+      {/* faint always-on base ring so the shape reads even between comet passes */}
+      <div
+        className={`absolute inset-0 ${radiusClassName}`}
+        style={{ boxShadow: `inset 0 0 0 1px ${color}25` }}
+      />
+
+      {/* the moving comet, clipped to a thin ring by overflow-hidden */}
+      <div className={`absolute inset-0 ${radiusClassName} overflow-hidden`}>
+        <motion.div
+          aria-hidden="true"
+          className="absolute -inset-full"
+          style={{ background: cometGradient }}
+          animate={shouldReduceMotion ? {} : { rotate: 360 }}
+          transition={
+            shouldReduceMotion
+              ? undefined
+              : { duration, repeat: Infinity, ease: 'linear' }
+          }
+        />
+      </div>
+
+      {/* actual content sits on top, covering everything but the thin ring */}
+      <div className={`relative z-10 h-full w-full ${radiusClassName}`}>{children}</div>
+    </div>
+  );
+}
+
 function ChecklistCard({
   title,
   titleClassName,
@@ -31,6 +83,8 @@ function ChecklistCard({
   cardVariants,
   listContainerVariants,
   listItemVariants,
+  beamColor = '#00DD6F',
+  beamDuration = 4,
 }: {
   title: string;
   titleClassName: string;
@@ -40,11 +94,12 @@ function ChecklistCard({
   cardVariants: Variants;
   listContainerVariants: Variants;
   listItemVariants: Variants;
+  beamColor?: string;
+  beamDuration?: number;
 }) {
-  return (
-    <motion.div
-      variants={cardVariants}
-      className={`rounded-2xl border ${borderClassName} bg-[#10141b]/80 p-6 backdrop-blur-sm`}
+  const cardInner = (
+    <div
+      className={`h-full rounded-2xl border ${borderClassName} bg-[#10141b]/90 p-6 backdrop-blur-sm transition-[box-shadow,border-color,transform] duration-500 group-hover:-translate-y-1 group-hover:border-(--glow-color) group-hover:[box-shadow:0_0_0_1px_var(--glow-color),0_0_34px_8px_var(--glow-color)]`}
     >
       <div className="mb-5 flex items-center justify-between">
         <h3 className={`text-lg font-semibold ${titleClassName}`}>{title}</h3>
@@ -70,6 +125,18 @@ function ChecklistCard({
           </motion.li>
         ))}
       </motion.ul>
+    </div>
+  );
+
+  return (
+    <motion.div
+      variants={cardVariants}
+      className="group h-full"
+      style={{ '--glow-color': beamColor } as React.CSSProperties}
+    >
+      <BorderBeam color={beamColor} duration={beamDuration}>
+        {cardInner}
+      </BorderBeam>
     </motion.div>
   );
 }
@@ -120,12 +187,20 @@ export default function PhysicalSpaces() {
   };
 
   // ---------- ambient "data sync" animations ----------
+  const BRAND = '#00DD6F';
   const glowAnimate = shouldReduceMotion
     ? { opacity: 0.5 }
     : { scale: [1, 1.6], opacity: [0.55, 0] };
   const glowTransition = shouldReduceMotion
     ? undefined
     : { duration: 2.4, repeat: Infinity, ease: 'easeOut' as const };
+
+  const glowAnimateSlow = shouldReduceMotion
+    ? { opacity: 0.3 }
+    : { scale: [1, 1.9], opacity: [0.35, 0] };
+  const glowTransitionSlow = shouldReduceMotion
+    ? undefined
+    : { duration: 2.4, repeat: Infinity, ease: 'easeOut' as const, delay: 0.8 };
 
   const arrowsAnimate = shouldReduceMotion ? { x: 0 } : { x: [-2, 2, -2] };
   const arrowsTransition = shouldReduceMotion
@@ -214,23 +289,90 @@ export default function PhysicalSpaces() {
             cardVariants={cardVariants}
             listContainerVariants={listContainerVariants}
             listItemVariants={listItemVariants}
+            beamColor="#00DD6F"
+            beamDuration={4}
           />
 
-          {/* ---------- Data sync badge ---------- */}
+          {/* ---------- Data sync badge (premium animated core) ---------- */}
           <motion.div
             variants={cardVariants}
             className="relative z-10 flex flex-col items-center justify-self-center"
           >
-            <div className="relative flex h-24 w-24 items-center justify-center rounded-full border border-emerald-500/35 bg-[#0a0e13]">
+            <div className="relative flex h-28 w-28 items-center justify-center">
+              {/* outer double pulse rings, staggered, two-tone-of-brand */}
               <motion.span
-                className="absolute inset-0 rounded-full border border-emerald-400/50"
+                className="absolute inset-2 rounded-full border"
+                style={{ borderColor: `${BRAND}80` }}
                 animate={glowAnimate}
                 transition={glowTransition}
               />
-              <motion.div animate={arrowsAnimate} transition={arrowsTransition}>
-                <ArrowLeftRight className="h-6 w-6 text-emerald-400" />
+              <motion.span
+                className="absolute inset-2 rounded-full border"
+                style={{ borderColor: `${BRAND}55` }}
+                animate={glowAnimateSlow}
+                transition={glowTransitionSlow}
+              />
+
+              {/* slow-spinning conic gradient ring, forms a thin rotating rim */}
+              <div className="absolute inset-2 rounded-full p-0.5">
+                <div className="relative h-full w-full overflow-hidden rounded-full">
+                  <motion.div
+                    aria-hidden="true"
+                    className="absolute -inset-full"
+                    style={{
+                      background: `conic-gradient(from 0deg, ${BRAND}00, ${BRAND}, #eafff5, ${BRAND}00)`,
+                    }}
+                    animate={shouldReduceMotion ? {} : { rotate: 360 }}
+                    transition={
+                      shouldReduceMotion
+                        ? undefined
+                        : { duration: 4, repeat: Infinity, ease: 'linear' }
+                    }
+                  />
+                </div>
+              </div>
+
+              {/* two orbiting particles, opposite directions, different speeds */}
+              <motion.div
+                className="absolute inset-0"
+                animate={shouldReduceMotion ? {} : { rotate: 360 }}
+                transition={
+                  shouldReduceMotion
+                    ? undefined
+                    : { duration: 5, repeat: Infinity, ease: 'linear' }
+                }
+              >
+                <span
+                  className="absolute left-1/2 top-0 h-1.5 w-1.5 -translate-x-1/2 rounded-full"
+                  style={{ backgroundColor: BRAND, boxShadow: `0 0 10px 3px ${BRAND}BF` }}
+                />
               </motion.div>
+              <motion.div
+                className="absolute inset-0"
+                animate={shouldReduceMotion ? {} : { rotate: -360 }}
+                transition={
+                  shouldReduceMotion
+                    ? undefined
+                    : { duration: 7.5, repeat: Infinity, ease: 'linear' }
+                }
+              >
+                <span
+                  className="absolute bottom-0 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full"
+                  style={{ backgroundColor: '#eafff5', boxShadow: `0 0 8px 2px ${BRAND}B3` }}
+                />
+              </motion.div>
+
+              {/* solid core */}
+              <div
+                className="relative flex h-20 w-20 items-center justify-center rounded-full bg-[#0a0e13]"
+                style={{ border: `1px solid ${BRAND}59` }}
+              >
+                <motion.div animate={arrowsAnimate} transition={arrowsTransition}>
+                  <ArrowLeftRight className="h-6 w-6" style={{ color: BRAND }} />
+                </motion.div>
+              </div>
             </div>
+
             <span className="mt-3 font-mono text-[11px] font-bold tracking-wider text-zinc-100">
               DATA_SYNC
             </span>
@@ -250,6 +392,8 @@ export default function PhysicalSpaces() {
             cardVariants={cardVariants}
             listContainerVariants={listContainerVariants}
             listItemVariants={listItemVariants}
+            beamColor="#00DD6F"
+            beamDuration={4.6}
           />
         </motion.div>
       </div>
