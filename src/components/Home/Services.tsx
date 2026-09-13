@@ -374,7 +374,7 @@ export default function Services() {
                 >
                   <span className="h-1.5 w-1.5 rounded-full bg-[#26ff9b] shadow-[0_0_10px_#26ff9b]" />
 
-                  {service.category} // {service.number}
+                  {service.category} {service.number}
                 </motion.div>
 
                 <span

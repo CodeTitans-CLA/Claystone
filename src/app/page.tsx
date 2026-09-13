@@ -1,5 +1,6 @@
 
 import { HeroSection } from '@/components/Home/HeroSection';
+import PhysicalSpaces from '@/components/Home/PhysicalSpaces';
 import Services from '@/components/Home/Services';
 
 
@@ -8,6 +9,7 @@ export default function Home() {
     <main className="w-full">
       <HeroSection></HeroSection>
       <Services />
+      <PhysicalSpaces/>
       
       {/* Additional sections can be added here */}
       <section className="w-full min-h-screen bg-white border-t border-[#00ff87]/10 flex items-center justify-center">
