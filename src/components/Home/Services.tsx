@@ -550,6 +550,8 @@ export default function Services() {
                   className="
                     pointer-events-none
 
+                  {service.category} {service.number}
+                </motion.div>
                     absolute
                     inset-0
 

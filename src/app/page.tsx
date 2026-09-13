@@ -3,6 +3,7 @@ import ArchitectureShowcase from '@/components/Home/ArchitectureShowcase';
 import ClientTestimonials from '@/components/Home/ClientTestimonials';
 import DigitalExperience from '@/components/Home/DigitalExperience';
 import { HeroSection } from '@/components/Home/HeroSection';
+import PhysicalSpaces from '@/components/Home/PhysicalSpaces';
 import MoreCapabilities from '@/components/Home/MoreCapabilities';
 import Services from '@/components/Home/Services';
 import StatsCounter from '@/components/Home/StatsCounter';
@@ -18,6 +19,7 @@ export default function Home() {
     <main className="w-full">
       <HeroSection />
       <Services />
+      <PhysicalSpaces/>
       <ArchitectureShowcase/>
       <DigitalExperience/>
       <MoreCapabilities/>
