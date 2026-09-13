@@ -1,4 +1,4 @@
-
+import HeroSection from '@/components/Home/HeroSection';
 import ArchitectureShowcase from '@/components/Home/ArchitectureShowcase';
 import ClientTestimonials from '@/components/Home/ClientTestimonials';
 import DigitalExperience from '@/components/Home/DigitalExperience';
@@ -9,11 +9,14 @@ import StatsCounter from '@/components/Home/StatsCounter';
 import TechStackSlider from '@/components/Home/TechStackSlider';
 
 
+import Services from '@/components/Home/Services';
+import CaseStudies from '@/components/Home/CaseStudies';
+import WhyMultidisciplinary from '@/components/Home/Multidisciplinary';
 
 export default function Home() {
   return (
     <main className="w-full">
-      <HeroSection></HeroSection>
+      <HeroSection />
       <Services />
       <ArchitectureShowcase/>
       <DigitalExperience/>
@@ -31,6 +34,10 @@ export default function Home() {
           <p className="text-gray-400">Explore our work and services</p>
         </div>
       </section>
+      <ArchitectureShowcase />
+      <DigitalExperience />
+      <CaseStudies />
+      <WhyMultidisciplinary />
     </main>
   );
 }

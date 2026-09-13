@@ -1,43 +1,126 @@
+// import * as THREE from "three";
+
+// export function createLighting(
+//   scene: THREE.Scene
+// ): THREE.Group {
+
+//   const group =
+//     new THREE.Group();
+
+//   /*
+//    * Very dark ambient light.
+//    */
+
+//   const ambient =
+//     new THREE.AmbientLight(
+//       0xffffff,
+//       0.35
+//     );
+
+//   group.add(
+//     ambient
+//   );
+
+
+//   /*
+//    * Green architectural light.
+//    */
+
+//   const key =
+//     new THREE.DirectionalLight(
+//       0x00ff91,
+//       2.8
+//     );
+
+//   key.position.set(
+//     8,
+//     12,
+//     12
+//   );
+
+//   group.add(
+//     key
+//   );
+
+
+//   /*
+//    * Side light.
+//    */
+
+//   const side =
+//     new THREE.PointLight(
+//       0x00ff91,
+//       2.5,
+//       35
+//     );
+
+//   side.position.set(
+//     -8,
+//     3,
+//     8
+//   );
+
+//   group.add(
+//     side
+//   );
+
+
+//   /*
+//    * Very soft white rim.
+//    */
+
+//   const rim =
+//     new THREE.PointLight(
+//       0xffffff,
+//       0.7,
+//       30
+//     );
+
+//   rim.position.set(
+//     8,
+//     -5,
+//     -10
+//   );
+
+//   group.add(
+//     rim
+//   );
+
+//   scene.add(
+//     group
+//   );
+
+//   return group;
+// }
+
+
+
+
+// =============>Second Attempt by Gemini<===========================
 import * as THREE from 'three';
 
-export function setupLighting(scene: THREE.Scene): void {
-  // Ambient light - very soft
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+export interface SceneLights {
+  ambientLight: THREE.AmbientLight;
+  dirLight: THREE.DirectionalLight;
+  pointLight: THREE.PointLight;
+}
+
+export function setupLighting(scene: THREE.Scene): SceneLights {
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
   scene.add(ambientLight);
 
-  // Directional key light - cooler tone
-  const directionalLight = new THREE.DirectionalLight(0x8899ff, 0.7);
-  directionalLight.position.set(5, 8, 5);
-  directionalLight.castShadow = true;
-  directionalLight.shadow.mapSize.width = 2048;
-  directionalLight.shadow.mapSize.height = 2048;
-  directionalLight.shadow.camera.far = 50;
-  directionalLight.shadow.camera.left = -10;
-  directionalLight.shadow.camera.right = 10;
-  directionalLight.shadow.camera.top = 10;
-  directionalLight.shadow.camera.bottom = -10;
-  scene.add(directionalLight);
+  const dirLight = new THREE.DirectionalLight(0x00ff87, 2.5);
+  dirLight.position.set(15, 25, 20);
+  scene.add(dirLight);
 
-  // Green rim light - accent
-  const rimLight = new THREE.DirectionalLight(0x00ff87, 0.4);
-  rimLight.position.set(-5, 3, -8);
-  scene.add(rimLight);
+  const pointLight = new THREE.PointLight(0x00ff87, 2.5, 40);
+  pointLight.position.set(-10, -5, 15);
+  scene.add(pointLight);
 
-  // Cool fill light
-  const fillLight = new THREE.DirectionalLight(0x4488dd, 0.3);
-  fillLight.position.set(-8, 2, 5);
-  scene.add(fillLight);
-
-  // Point lights around the scene for depth
-  const pointLight1 = new THREE.PointLight(0x00ff87, 0.4, 15);
-  pointLight1.position.set(5, 2, 0);
-  scene.add(pointLight1);
-
-  const pointLight2 = new THREE.PointLight(0x00ff87, 0.3, 15);
-  pointLight2.position.set(-5, -2, 0);
-  scene.add(pointLight2);
-
-  const pointLight3 = new THREE.PointLight(0x4488dd, 0.2, 15);
-  pointLight3.position.set(0, 3, -5);
-  scene.add(pointLight3);
+  return { ambientLight, dirLight, pointLight };
 }
+
+
+
+
+
