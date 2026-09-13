@@ -1,159 +1,342 @@
+// import * as THREE from "three";
+
+// export interface CADLayer {
+//   group: THREE.Group;
+//   earth: THREE.Group;
+//   core: THREE.Mesh;
+//   rings: THREE.Group;
+//   outerCircle: THREE.Mesh;
+// }
+
+// export function createCADLayer(): CADLayer {
+//   const group = new THREE.Group();
+
+//   const earth = new THREE.Group();
+
+//   group.add(earth);
+
+//   /*
+//    * ============================================
+//    * DIGITAL EARTH
+//    * ============================================
+//    */
+
+//   const globeGeometry =
+//     new THREE.IcosahedronGeometry(
+//       2.15,
+//       3
+//     );
+
+//   const globeMaterial =
+//     new THREE.MeshBasicMaterial({
+//       color: 0x00ff91,
+//       wireframe: true,
+//       transparent: true,
+//       opacity: 0.9,
+//     });
+
+//   const globe =
+//     new THREE.Mesh(
+//       globeGeometry,
+//       globeMaterial
+//     );
+
+//   earth.add(globe);
+
+//   /*
+//    * Inner globe.
+//    */
+
+//   const innerGeometry =
+//     new THREE.IcosahedronGeometry(
+//       1.45,
+//       1
+//     );
+
+//   const innerMaterial =
+//     new THREE.MeshBasicMaterial({
+//       color: 0x00ff91,
+//       wireframe: true,
+//       transparent: true,
+//       opacity: 0.3,
+//     });
+
+//   const inner =
+//     new THREE.Mesh(
+//       innerGeometry,
+//       innerMaterial
+//     );
+
+//   earth.add(inner);
+
+//   /*
+//    * Solid core.
+//    */
+
+//   const coreGeometry =
+//     new THREE.IcosahedronGeometry(
+//       0.9,
+//       1
+//     );
+
+//   const coreMaterial =
+//     new THREE.MeshStandardMaterial({
+//       color: 0x031109,
+//       emissive: 0x00ff91,
+//       emissiveIntensity: 0.45,
+//       metalness: 0.8,
+//       roughness: 0.25,
+//       transparent: true,
+//       opacity: 0.8,
+//     });
+
+//   const core =
+//     new THREE.Mesh(
+//       coreGeometry,
+//       coreMaterial
+//     );
+
+//   earth.add(core);
+
+//   /*
+//    * ============================================
+//    * ORBITAL RING
+//    * ============================================
+//    */
+
+//   const rings =
+//     new THREE.Group();
+
+//   group.add(
+//     rings
+//   );
+
+//   const orbitGeometry =
+//     new THREE.TorusGeometry(
+//       3.1,
+//       0.025,
+//       12,
+//       180
+//     );
+
+//   const orbitMaterial =
+//     new THREE.MeshBasicMaterial({
+//       color: 0x00ff91,
+//       transparent: true,
+//       opacity: 0.75,
+//     });
+
+//   const orbit =
+//     new THREE.Mesh(
+//       orbitGeometry,
+//       orbitMaterial
+//     );
+
+//   orbit.rotation.x =
+//     Math.PI / 2.8;
+
+//   orbit.rotation.z =
+//     -0.2;
+
+//   rings.add(
+//     orbit
+//   );
+
+//   /*
+//    * Second orbit.
+//    */
+
+//   const secondOrbitGeometry =
+//     new THREE.TorusGeometry(
+//       3.7,
+//       0.012,
+//       12,
+//       180
+//     );
+
+//   const secondOrbitMaterial =
+//     new THREE.MeshBasicMaterial({
+//       color: 0xffffff,
+//       transparent: true,
+//       opacity: 0.18,
+//     });
+
+//   const secondOrbit =
+//     new THREE.Mesh(
+//       secondOrbitGeometry,
+//       secondOrbitMaterial
+//     );
+
+//   secondOrbit.rotation.y =
+//     Math.PI / 2.6;
+
+//   rings.add(
+//     secondOrbit
+//   );
+
+//   /*
+//    * ============================================
+//    * LARGE OUTER CIRCLE
+//    *
+//    * This creates the big circle visible
+//    * in your reference screenshot.
+//    * ============================================
+//    */
+
+//   const circleGeometry =
+//     new THREE.CircleGeometry(
+//       5.7,
+//       96
+//     );
+
+//   const circleEdges =
+//     new THREE.EdgesGeometry(
+//       circleGeometry
+//     );
+
+//   const circleMaterial =
+//     new THREE.LineBasicMaterial({
+//       color: 0xffffff,
+//       transparent: true,
+//       opacity: 0.16,
+//     });
+
+//   const outerCircle =
+//     new THREE.LineSegments(
+//       circleEdges,
+//       circleMaterial
+//     );
+
+//   outerCircle.rotation.x =
+//     -Math.PI / 2;
+
+//   outerCircle.rotation.z =
+//     0.15;
+
+//   group.add(
+//     outerCircle
+//   );
+
+//   /*
+//    * ============================================
+//    * SMALL DATA NODES
+//    * ============================================
+//    */
+
+//   const nodeGeometry =
+//     new THREE.SphereGeometry(
+//       0.045,
+//       8,
+//       8
+//     );
+
+//   const nodeMaterial =
+//     new THREE.MeshBasicMaterial({
+//       color: 0x00ff91,
+//     });
+
+//   for (
+//     let i = 0;
+//     i < 14;
+//     i++
+//   ) {
+//     const angle =
+//       (i / 14) *
+//       Math.PI *
+//       2;
+
+//     const node =
+//       new THREE.Mesh(
+//         nodeGeometry,
+//         nodeMaterial
+//       );
+
+//     node.position.set(
+//       Math.cos(angle) * 3.15,
+//       Math.sin(angle) * 3.15,
+//       0
+//     );
+
+//     rings.add(
+//       node
+//     );
+//   }
+
+//   group.scale.setScalar(
+//     1
+//   );
+
+//   return {
+//     group,
+//     earth,
+//     core,
+//     rings,
+//     outerCircle,
+//   };
+// }
+
+
+
+// =============>Second Attempt by Gemini<===========================
+
 import * as THREE from 'three';
 
-export function createCADLayer(targetModel: THREE.Group): THREE.Group {
+export interface CADLayerResult {
+  cadGroup: THREE.Group;
+  webGroup: THREE.Group;
+  sphereMesh: THREE.Mesh;
+  coreMesh: THREE.Mesh;
+  ring: THREE.Mesh;
+  ring2: THREE.Mesh;
+}
+
+export function createCADLayer(): CADLayerResult {
   const cadGroup = new THREE.Group();
 
-  // Wireframe overlay material
-  const wireframeMaterial = new THREE.LineBasicMaterial({
+  // Digital Core & Nodes (Right Anchor Earth Wireframe)
+  const webGroup = new THREE.Group();
+  cadGroup.add(webGroup);
+  webGroup.position.set(5.5, 0, 0);
+
+  // Outer wireframe sphere (Earth)
+  const sphereGeo = new THREE.IcosahedronGeometry(3.6, 2);
+  const sphereMat = new THREE.MeshBasicMaterial({
     color: 0x00ff87,
-    linewidth: 1,
+    wireframe: true,
     transparent: true,
-    opacity: 0.4,
+    opacity: 0.75,
   });
+  const sphereMesh = new THREE.Mesh(sphereGeo, sphereMat);
+  webGroup.add(sphereMesh);
 
-  // Grid floor plane
-  const gridSize = 15;
-  const gridDivisions = 30;
-  const gridHelper = new THREE.GridHelper(gridSize, gridDivisions, 0x00ff87, 0x1a1a1a);
-  gridHelper.position.y = -3.5;
-  gridHelper.material.opacity = 0.2;
-  gridHelper.material.transparent = true;
-  cadGroup.add(gridHelper);
-
-  // Structural axis lines
-  const axisLength = 8;
-  const axisGeometry = new THREE.BufferGeometry();
-  const axisPositions = new Float32Array([
-    0, -axisLength, 0, 0, axisLength, 0, // Y axis (vertical)
-    -axisLength, 0, 0, axisLength, 0, 0, // X axis
-    0, 0, -axisLength, 0, 0, axisLength, // Z axis
-  ]);
-  axisGeometry.setAttribute('position', new THREE.BufferAttribute(axisPositions, 3));
-
-  const axisMaterial = new THREE.LineBasicMaterial({
-    color: 0x00ff87,
-    transparent: true,
-    opacity: 0.3,
+  // Inner solid glowing core
+  const coreGeo = new THREE.IcosahedronGeometry(2.1, 0);
+  const coreMat = new THREE.MeshPhongMaterial({
+    color: 0x061109,
+    emissive: 0x00ff87,
+    emissiveIntensity: 0.35,
+    shininess: 100,
   });
+  const coreMesh = new THREE.Mesh(coreGeo, coreMat);
+  webGroup.add(coreMesh);
 
-  const axisLines = new THREE.LineSegments(axisGeometry, axisMaterial);
-  cadGroup.add(axisLines);
+  // Center Orbiting CAD Ring 1
+  const ringGeo = new THREE.TorusGeometry(8.5, 0.05, 16, 120);
+  const ringMat = new THREE.MeshBasicMaterial({ color: 0x00ff87, transparent: true, opacity: 0.6 });
+  const ring = new THREE.Mesh(ringGeo, ringMat);
+  ring.rotation.x = Math.PI / 2.6;
+  cadGroup.add(ring);
 
-  // Dimension lines and markers
-  const markerGeometry = new THREE.BufferGeometry();
-  const markerPositions: number[] = [];
+  // Orbiting Data Ring 2
+  const ring2Geo = new THREE.TorusGeometry(10.5, 0.03, 16, 120);
+  const ring2Mat = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.35 });
+  const ring2 = new THREE.Mesh(ring2Geo, ring2Mat);
+  ring2.rotation.y = Math.PI / 3;
+  cadGroup.add(ring2);
 
-  // Create dimension markers around the model
-  const markerCount = 12;
-  const markerRadius = 4.5;
-
-  for (let i = 0; i < markerCount; i++) {
-    const angle = (i / markerCount) * Math.PI * 2;
-    const x = Math.cos(angle) * markerRadius;
-    const z = Math.sin(angle) * markerRadius;
-    markerPositions.push(x, 0, z);
-  }
-
-  markerGeometry.setAttribute(
-    'position',
-    new THREE.BufferAttribute(new Float32Array(markerPositions), 3)
-  );
-
-  const markerMaterial = new THREE.PointsMaterial({
-    color: 0x00ff87,
-    size: 0.15,
-    sizeAttenuation: true,
-  });
-
-  const markers = new THREE.Points(markerGeometry, markerMaterial);
-  cadGroup.add(markers);
-
-  // Dimension line connecting markers
-  for (let i = 0; i < markerCount; i++) {
-    const angle1 = (i / markerCount) * Math.PI * 2;
-    const angle2 = ((i + 1) / markerCount) * Math.PI * 2;
-
-    const x1 = Math.cos(angle1) * markerRadius;
-    const z1 = Math.sin(angle1) * markerRadius;
-
-    const x2 = Math.cos(angle2) * markerRadius;
-    const z2 = Math.sin(angle2) * markerRadius;
-
-    const dimGeometry = new THREE.BufferGeometry();
-    dimGeometry.setAttribute(
-      'position',
-      new THREE.BufferAttribute(
-        new Float32Array([x1, 0, z1, x2, 0, z2]),
-        3
-      )
-    );
-
-    const dimLine = new THREE.Line(dimGeometry, wireframeMaterial);
-    cadGroup.add(dimLine);
-  }
-
-  // Wireframe representation of the architectural model
-  targetModel.traverse((child) => {
-    if (child instanceof THREE.Mesh) {
-      const wireframe = new THREE.Mesh(
-        child.geometry,
-        new THREE.MeshBasicMaterial({
-          color: 0x00ff87,
-          wireframe: true,
-          transparent: true,
-          opacity: 0.15,
-        })
-      );
-      wireframe.position.copy(child.position);
-      wireframe.rotation.copy(child.rotation);
-      wireframe.scale.copy(child.scale);
-      cadGroup.add(wireframe);
-    }
-  });
-
-  // Vertical scanning guides
-  for (let i = -3; i <= 3; i += 1.5) {
-    const guideGeometry = new THREE.BufferGeometry();
-    guideGeometry.setAttribute(
-      'position',
-      new THREE.BufferAttribute(
-        new Float32Array([i, -4, -4, i, -4, 4]),
-        3
-      )
-    );
-
-    const guideLine = new THREE.Line(guideGeometry, wireframeMaterial);
-    cadGroup.add(guideLine);
-  }
-
-  // Add technical labels as small text (via canvas texture)
-  const createLabel = (text: string, position: THREE.Vector3) => {
-    const canvas = document.createElement('canvas');
-    canvas.width = 128;
-    canvas.height = 64;
-    const ctx = canvas.getContext('2d')!;
-
-    ctx.fillStyle = 'rgba(0, 255, 135, 0.8)';
-    ctx.font = 'bold 12px monospace';
-    ctx.fillText(text, 10, 30);
-
-    const texture = new THREE.CanvasTexture(canvas);
-    const material = new THREE.MeshBasicMaterial({
-      map: texture,
-      transparent: true,
-    });
-
-    const geometry = new THREE.PlaneGeometry(2, 1);
-    const mesh = new THREE.Mesh(geometry, material);
-    mesh.position.copy(position);
-    mesh.lookAt(0, 0, 0);
-    return mesh;
-  };
-
-  // Add some technical labels
-  cadGroup.add(createLabel('SPAN: 42.400m', new THREE.Vector3(5, 2, 0)));
-  cadGroup.add(createLabel('STRUCT: REINFORCED', new THREE.Vector3(-5, -2, 0)));
-  cadGroup.add(createLabel('TOLERANCE: ±0.5mm', new THREE.Vector3(0, 3, 5)));
-
-  return cadGroup;
+  return { cadGroup, webGroup, sphereMesh, coreMesh, ring, ring2 };
 }
+
+
+
+
