@@ -762,7 +762,7 @@ export default function ArchitectureShowcase() {
 
               rounded-full
 
-              bg-[#00FF66]/[0.025]
+              bg-[#00FF66]/2.5
 
               blur-[45px]
             "
@@ -1085,11 +1085,11 @@ export default function ArchitectureShowcase() {
 
               bg-gradient-to-br
 
-              from-white/[0.04]
+              from-white/4
 
               via-transparent
 
-              to-[#00FF66]/[0.025]
+              to-[#00FF66]/2.5
             "
           />
 
@@ -1310,7 +1310,7 @@ export default function ArchitectureShowcase() {
                     absolute
                     inset-0
 
-                    bg-[#00FF66]/[0.018]
+                    bg-[#00FF66]/1.8
                   "
                 />
 

@@ -959,7 +959,7 @@ export default function ClientTestimonials() {
 
                 hover:border-[#00FF66]/35
 
-                hover:bg-[#00FF66]/[0.06]
+                hover:bg-[#00FF66]/6
 
                 hover:text-[#00FF66]
 
@@ -1273,7 +1273,7 @@ export default function ClientTestimonials() {
 
                       border
 
-                      border-white/[0.075]
+                      border-white/7.5
 
                       bg-[linear-gradient(145deg,#0f1812_0%,#0a120d_55%,#07100b_100%)]
 
@@ -1462,7 +1462,7 @@ export default function ClientTestimonials() {
 
                           border-[#00FF66]/15
 
-                          bg-[#00FF66]/[0.045]
+                          bg-[#00FF66]/4.5
 
                           px-3
 
@@ -1568,7 +1568,7 @@ export default function ClientTestimonials() {
 
                           border-[#00FF66]/15
 
-                          bg-[#00FF66]/[0.05]
+                          bg-[#00FF66]/5
 
                           text-[#00FF66]
 
@@ -1580,7 +1580,7 @@ export default function ClientTestimonials() {
 
                           group-hover:border-[#00FF66]/30
 
-                          group-hover:bg-[#00FF66]/[0.08]
+                          group-hover:bg-[#00FF66]/8
 
                           group-hover:shadow-[0_0_28px_rgba(0,255,102,0.14)]
                         "
@@ -1650,7 +1650,7 @@ export default function ClientTestimonials() {
 
                             from-[#00FF66]/20
 
-                            via-white/[0.06]
+                            via-white/6
 
                             to-transparent
                           "
@@ -1831,7 +1831,7 @@ export default function ClientTestimonials() {
 
                         from-transparent
 
-                        via-white/[0.035]
+                        via-white/3.5
 
                         to-transparent
 

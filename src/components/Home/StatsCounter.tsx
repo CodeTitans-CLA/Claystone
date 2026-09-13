@@ -196,7 +196,7 @@ export default function StatsCounter() {
         overflow-hidden
 
         border-y
-        border-white/[0.035]
+        border-white/3.5
 
         bg-[#050907]
 
@@ -228,7 +228,7 @@ export default function StatsCounter() {
 
             rounded-full
 
-            bg-[#00FF66]/[0.04]
+            bg-[#00FF66]/4
 
             blur-[140px]
           "
@@ -828,7 +828,7 @@ export default function StatsCounter() {
 
                         from-transparent
 
-                        via-white/[0.035]
+                        via-white/3.5
 
                         to-transparent
                       "
@@ -878,7 +878,7 @@ export default function StatsCounter() {
 
                       border-[#00FF66]/25
 
-                      bg-[#00FF66]/[0.065]
+                      bg-[#00FF66]/6.5
 
                       text-[#00FF66]
 
@@ -1022,7 +1022,7 @@ export default function StatsCounter() {
 
                           from-[#00FF66]/25
 
-                          via-white/[0.07]
+                          via-white/7
 
                           to-transparent
                         "

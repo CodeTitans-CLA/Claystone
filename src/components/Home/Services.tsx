@@ -145,7 +145,7 @@ export default function Services() {
 
             rounded-full
 
-            bg-[#0fff6e]/[0.025]
+            bg-[#0fff6e]/2.5
 
             blur-[150px]
           "
@@ -176,7 +176,7 @@ export default function Services() {
 
             rounded-full
 
-            bg-[#0fff6e]/[0.018]
+            bg-[#0fff6e]/1.8
 
             blur-[130px]
           "
@@ -531,7 +531,7 @@ export default function Services() {
 
                   border
 
-                  border-white/[0.085]
+                  border-white/8.5
 
                   transition-colors
 
@@ -897,7 +897,7 @@ export default function Services() {
 
                     rounded-full
 
-                    bg-[#0fff6e]/[0.018]
+                    bg-[#0fff6e]/1.8
 
                     blur-[80px]
 
@@ -909,7 +909,7 @@ export default function Services() {
 
                     group-hover:scale-125
 
-                    group-hover:bg-[#0fff6e]/[0.07]
+                    group-hover:bg-[#0fff6e]/7
                   "
                 />
 
@@ -931,7 +931,7 @@ export default function Services() {
 
                     rounded-full
 
-                    bg-[#0fff6e]/[0.012]
+                    bg-[#0fff6e]/1.2
 
                     blur-[75px]
 
@@ -939,7 +939,7 @@ export default function Services() {
 
                     duration-1000
 
-                    group-hover:bg-[#0fff6e]/[0.035]
+                    group-hover:bg-[#0fff6e]/3.5
                   "
                 />
 
@@ -978,7 +978,7 @@ export default function Services() {
 
                     from-transparent
 
-                    via-white/[0.13]
+                    via-white/13
 
                     to-transparent
 
@@ -1052,7 +1052,7 @@ export default function Services() {
 
                     tracking-[-5px]
 
-                    text-white/[0.018]
+                    text-white/1.8
 
                     transition-all
 
@@ -1060,7 +1060,7 @@ export default function Services() {
 
                     group-hover:-translate-y-1
 
-                    group-hover:text-[#0fff6e]/[0.032]
+                    group-hover:text-[#0fff6e]/3.2
 
                     sm:right-5
                     sm:text-[68px]
@@ -1092,9 +1092,9 @@ export default function Services() {
 
                         border
 
-                        border-white/[0.085]
+                        border-white/8.5
 
-                        bg-white/[0.03]
+                        bg-white/3
 
                         px-3
 
@@ -1120,7 +1120,7 @@ export default function Services() {
 
                         group-hover:border-[#0fff6e]/28
 
-                        group-hover:bg-[#0fff6e]/[0.055]
+                        group-hover:bg-[#0fff6e]/5.5
 
                         sm:text-[9.5px]
 
@@ -1324,9 +1324,9 @@ export default function Services() {
 
                             border
 
-                            border-white/[0.075]
+                            border-white/7.5
 
-                            bg-white/[0.03]
+                            bg-white/3
 
                             px-3
 
@@ -1352,7 +1352,7 @@ export default function Services() {
 
                             hover:border-[#0fff6e]/35
 
-                            hover:bg-[#0fff6e]/[0.08]
+                            hover:bg-[#0fff6e]/8
 
                             hover:text-[#e5ffee]
 
@@ -1392,9 +1392,9 @@ export default function Services() {
 
                         bg-gradient-to-r
 
-                        from-white/[0.11]
+                        from-white/11
 
-                        via-white/[0.045]
+                        via-white/4.5
 
                         to-transparent
 
@@ -1404,7 +1404,7 @@ export default function Services() {
 
                         group-hover:from-[#0fff6e]/28
 
-                        group-hover:via-[#0fff6e]/[0.08]
+                        group-hover:via-[#0fff6e]/8
                       "
                     />
 
@@ -1470,7 +1470,7 @@ export default function Services() {
 
                             border-white/10
 
-                            bg-white/[0.03]
+                            bg-white/3
 
                             shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]
 
@@ -1484,7 +1484,7 @@ export default function Services() {
 
                             group-hover/button:border-[#0fff6e]/40
 
-                            group-hover/button:bg-[#0fff6e]/[0.1]
+                            group-hover/button:bg-[#0fff6e]/10
 
                             group-hover/button:shadow-[0_0_24px_rgba(15,255,110,0.13)]
                           "

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import logoWhite from '../../../public/assets/logo-white.png';
 
-export default function Footer(): JSX.Element {
+export default function Footer(): React.ReactElement {
   const [email, setEmail] = useState<string>('');
   const [subscribed, setSubscribed] = useState<boolean>(false);
 
@@ -71,7 +71,7 @@ export default function Footer(): JSX.Element {
           {/* Brand Col */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <Image src={logoWhite} width={200} />
+              <Image src={logoWhite} alt="Claystone logo" width={200} />
             </div>
             <p className="text-[#9ca3af] text-sm leading-relaxed max-w-sm mb-6">
               A multidisciplinary practice fusing high-performance web engineering, BIM

@@ -6,7 +6,7 @@ import logoWhite from '../../../public/assets/logo-white.png';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Header(): JSX.Element {
+export default function Header(): React.ReactElement {
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
 
@@ -61,7 +61,7 @@ export default function Header(): JSX.Element {
 
         {/* Logo Section with Glow Reflection */}
         <Link href="/" className="relative z-10 flex items-center gap-3 group">
-          <Image src={logoWhite} width={220} />
+          <Image src={logoWhite} alt="Claystone logo" width={220} />
         </Link>
 
         {/* Desktop Navigation Links with Modern Hover Micro-interactions */}

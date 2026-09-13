@@ -211,7 +211,7 @@ function SliderGroup({
                     ? `
                       border-[#00FF66]/15
 
-                      bg-[#00FF66]/[0.045]
+                      bg-[#00FF66]/4.5
 
                       text-[#29ff7e]
 
@@ -219,14 +219,14 @@ function SliderGroup({
 
                       group-hover:border-[#00FF66]/45
 
-                      group-hover:bg-[#00FF66]/[0.085]
+                      group-hover:bg-[#00FF66]/8.5
 
                       group-hover:text-[#70ffab]
 
                       group-hover:shadow-[0_14px_35px_rgba(0,0,0,0.38),0_0_28px_rgba(0,255,102,0.14),inset_0_1px_0_rgba(255,255,255,0.05)]
                     `
                     : `
-                      border-white/[0.06]
+                      border-white/6
 
                       bg-[#111813]
 
@@ -338,7 +338,7 @@ export default function TechStackSlider() {
         overflow-hidden
 
         border-y
-        border-white/[0.035]
+        border-white/3.5
 
         bg-[#07100b]
 
@@ -381,7 +381,7 @@ export default function TechStackSlider() {
 
             rounded-full
 
-            bg-[#00FF66]/[0.035]
+            bg-[#00FF66]/3.5
 
             blur-[120px]
           "
@@ -677,8 +677,24 @@ export default function TechStackSlider() {
               inside overflow-hidden wrapper.
           ================================================== */}
 
-          <div
-            className={`
+          <motion.div
+            animate={
+              reduceMotion
+                ? undefined
+                : {
+                    x: ['0%', '-50%'],
+                  }
+            }
+            transition={
+              reduceMotion
+                ? undefined
+                : {
+                    duration: 32,
+                    repeat: Infinity,
+                    ease: 'linear',
+                  }
+            }
+            className="
               flex
 
               w-max
@@ -688,13 +704,7 @@ export default function TechStackSlider() {
               py-4
 
               will-change-transform
-
-              ${
-                reduceMotion
-                  ? ''
-                  : 'animate-tech-marquee'
-              }
-            `}
+            "
           >
             {/* First copy */}
             <SliderGroup
@@ -709,7 +719,7 @@ export default function TechStackSlider() {
                 Boolean(reduceMotion)
               }
             />
-          </div>
+          </motion.div>
         </div>
       </div>
 
@@ -784,85 +794,6 @@ export default function TechStackSlider() {
         </div>
       </div>
 
-      {/* =====================================================
-          ANIMATION CSS
-      ====================================================== */}
-
-      <style jsx global>{`
-        @keyframes tech-marquee {
-          0% {
-            transform: translate3d(
-              0,
-              0,
-              0
-            );
-          }
-
-          100% {
-            transform: translate3d(
-              -50%,
-              0,
-              0
-            );
-          }
-        }
-
-        .animate-tech-marquee {
-          animation:
-            tech-marquee
-            32s
-            linear
-            infinite;
-
-          transform: translateZ(0);
-
-          backface-visibility: hidden;
-
-          perspective: 1000px;
-        }
-
-        /* Mobile */
-        @media (
-          max-width: 639px
-        ) {
-          .animate-tech-marquee {
-            animation-duration:
-              25s;
-          }
-        }
-
-        /* Tablet */
-        @media (
-          min-width: 640px
-        ) and (
-          max-width: 1023px
-        ) {
-          .animate-tech-marquee {
-            animation-duration:
-              28s;
-          }
-        }
-
-        /* Large Screen */
-        @media (
-          min-width: 1536px
-        ) {
-          .animate-tech-marquee {
-            animation-duration:
-              36s;
-          }
-        }
-
-        /* Accessibility */
-        @media (
-          prefers-reduced-motion:
-            reduce
-        ) {
-          .animate-tech-marquee {
-            animation: none;
-          }
-        }
-      `}</style>
     </section>
   );
 }

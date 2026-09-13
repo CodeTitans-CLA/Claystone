@@ -655,7 +655,7 @@ export default function MoreCapabilities() {
 
                       border
 
-                      border-white/[0.085]
+                      border-white/8.5
 
                       transition-colors
 
@@ -1105,7 +1105,7 @@ export default function MoreCapabilities() {
 
                         from-transparent
 
-                        via-white/[0.14]
+                        via-white/14
 
                         to-transparent
 
@@ -1140,7 +1140,7 @@ export default function MoreCapabilities() {
 
                         tracking-[-0.08em]
 
-                        text-white/[0.018]
+                        text-white/1.8
 
                         transition-all
 
@@ -1148,7 +1148,7 @@ export default function MoreCapabilities() {
 
                         group-hover:-translate-y-1
 
-                        group-hover:text-[#00FF66]/[0.045]
+                        group-hover:text-[#00FF66]/4.5
 
                         lg:text-[66px]
                       "
@@ -1207,9 +1207,9 @@ export default function MoreCapabilities() {
 
                           border
 
-                          border-white/[0.07]
+                          border-white/7
 
-                          bg-white/[0.035]
+                          bg-white/3.5
 
                           text-[#00FF66]
 
@@ -1221,7 +1221,7 @@ export default function MoreCapabilities() {
 
                           group-hover:border-[#00FF66]/30
 
-                          group-hover:bg-[#00FF66]/[0.075]
+                          group-hover:bg-[#00FF66]/7.5
 
                           group-hover:shadow-[0_0_30px_rgba(0,255,102,0.14)]
                         "
@@ -1514,7 +1514,7 @@ export default function MoreCapabilities() {
 
             from-transparent
 
-            via-white/[0.07]
+            via-white/7
 
             to-transparent
           "

@@ -22,7 +22,7 @@ interface FilterTab {
   label: string;
 }
 
-export default function CaseStudies(): JSX.Element {
+export default function CaseStudies(): React.ReactElement {
   const [activeFilter, setActiveFilter] = useState<ProjectCategory>('all');
 
   const projects: Project[] = [

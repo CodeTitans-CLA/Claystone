@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 interface Pillar {
   id: number;
-  icon: JSX.Element;
+  icon: React.ReactNode;
   title: string;
   description: string;
 }
@@ -15,7 +15,7 @@ interface ProtocolStage {
   highlight?: boolean;
 }
 
-export default function WhyMultidisciplinary(): JSX.Element {
+export default function WhyMultidisciplinary(): React.ReactElement {
   const [activeStage, setActiveStage] = useState<number>(5); // Index 5 is Deliver (06)
 
   const pillars: Pillar[] = [

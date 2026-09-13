@@ -679,7 +679,7 @@ export default function DigitalExperience() {
 
                 border
 
-                border-white/[0.07]
+                border-white/7
 
                 bg-[#0a110d]
 
@@ -843,9 +843,9 @@ export default function DigitalExperience() {
 
                         border
 
-                        border-white/[0.04]
+                        border-white/4
 
-                        bg-white/[0.02]
+                        bg-white/2
 
                         px-3
 
@@ -863,7 +863,7 @@ export default function DigitalExperience() {
 
                         hover:border-[#00FF66]/25
 
-                        hover:bg-[#00FF66]/[0.04]
+                        hover:bg-[#00FF66]/4
 
                         hover:shadow-[0_14px_35px_rgba(0,0,0,0.34),0_0_28px_rgba(0,255,102,0.10)]
                       "
@@ -1044,7 +1044,7 @@ export default function DigitalExperience() {
 
                       border-white/10
 
-                      bg-white/[0.03]
+                      bg-white/3
 
                       px-3
 
@@ -1066,7 +1066,7 @@ export default function DigitalExperience() {
 
                       hover:border-[#00FF66]/30
 
-                      hover:bg-[#00FF66]/[0.06]
+                      hover:bg-[#00FF66]/6
 
                       hover:text-[#8effb8]
 
@@ -1251,7 +1251,7 @@ export default function DigitalExperience() {
 
                 border
 
-                border-white/[0.06]
+                border-white/6
 
                 bg-[#0b120e]
 
@@ -1337,11 +1337,11 @@ export default function DigitalExperience() {
                               shadow-[0_0_25px_rgba(0,255,102,0.4)]
                             `
                             : `
-                              bg-white/[0.025]
+                              bg-white/2.5
 
                               text-white/40
 
-                              hover:bg-white/[0.05]
+                              hover:bg-white/5
 
                               hover:text-[#7effae]
 
@@ -1418,7 +1418,7 @@ export default function DigitalExperience() {
 
                 border
 
-                border-white/[0.08]
+                border-white/8
 
                 bg-[#07100b]
 
@@ -1454,7 +1454,7 @@ export default function DigitalExperience() {
 
                   rounded-full
 
-                  bg-[#00FF66]/[0.07]
+                  bg-[#00FF66]/7
 
                   blur-[130px]
 
@@ -1521,7 +1521,7 @@ export default function DigitalExperience() {
 
                   border
 
-                  border-white/[0.04]
+                  border-white/4
 
                   bg-[#08100c]
 
@@ -1554,9 +1554,9 @@ export default function DigitalExperience() {
 
                     border
 
-                    border-white/[0.05]
+                    border-white/5
 
-                    bg-white/[0.025]
+                    bg-white/2.5
 
                     px-3
 
@@ -1613,7 +1613,7 @@ export default function DigitalExperience() {
 
                   border
 
-                  border-white/[0.06]
+                  border-white/6
 
                   bg-[#040806]
 
@@ -1686,7 +1686,7 @@ export default function DigitalExperience() {
 
                     border
 
-                    border-white/[0.09]
+                    border-white/9
 
                     bg-[#07100b]
 
@@ -1799,7 +1799,7 @@ export default function DigitalExperience() {
 
                           bg-gradient-to-b
 
-                          from-black/[0.02]
+                          from-black/2
 
                           via-transparent
 
@@ -1853,7 +1853,7 @@ export default function DigitalExperience() {
 
                             from-transparent
 
-                            via-[#00FF66]/[0.06]
+                            via-[#00FF66]/6
 
                             to-transparent
                           "
@@ -1942,7 +1942,7 @@ export default function DigitalExperience() {
 
                           border
 
-                          border-white/[0.06]
+                          border-white/6
 
                           bg-[#050907]/80
 
@@ -2020,7 +2020,7 @@ export default function DigitalExperience() {
 
                     from-transparent
 
-                    via-white/[0.035]
+                    via-white/3.5
 
                     to-transparent
 
