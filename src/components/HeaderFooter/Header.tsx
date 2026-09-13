@@ -50,7 +50,7 @@ export default function Header() {
       />
 
       <div
-        className={`w-full max-w-7xl mx-auto flex items-center justify-between px-7 py-4 rounded-2xl transition-all duration-500 relative backdrop-blur-2xl ${
+        className={`w-full max-w-[1440px] mx-auto flex items-center justify-between px-7 py-4 rounded-2xl transition-all duration-500 relative backdrop-blur-2xl ${
           scrolled
             ? 'bg-[#070908]/90 border border-[#162b1e] shadow-[0_20px_50px_rgba(0,0,0,0.9)] shadow-[0_0_30px_rgba(0,255,102,0.06)]'
             : 'bg-[#070908]/60 border border-[#121f17]'
@@ -66,7 +66,7 @@ export default function Header() {
             <Image
               src={logoWhite}
               alt="Claystone Logo"
-              fill
+              width={300}
               priority
               className="object-contain object-left transition-all duration-300 group-hover:scale-[1.03] drop-shadow-[0_0_12px_rgba(255,255,255,0.25)]"
             />

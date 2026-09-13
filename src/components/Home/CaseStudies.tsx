@@ -101,7 +101,7 @@ export default function CaseStudies(): JSX.Element {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#00e676]/5 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-10 left-10 w-[400px] h-[400px] bg-[#00e676]/3 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-[1440px] mx-auto relative z-10">
         {/* Header and Filters Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
