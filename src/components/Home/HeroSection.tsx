@@ -145,7 +145,7 @@ export default function HeroSection() {
       <Hero3DScene />
 
       {/* Hero Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full py-20 lg:py-0">
+      <div className="relative z-10 max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 w-full py-20 lg:py-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column: Heading, Subtext & Call to Actions */}
