@@ -4,6 +4,7 @@ import DigitalExperience from '@/components/Home/DigitalExperience';
 import { HeroSection } from '@/components/Home/HeroSection';
 import MoreCapabilities from '@/components/Home/MoreCapabilities';
 import Services from '@/components/Home/Services';
+import StatsCounter from '@/components/Home/StatsCounter';
 import TechStackSlider from '@/components/Home/TechStackSlider';
 
 
@@ -17,6 +18,7 @@ export default function Home() {
       <DigitalExperience/>
       <MoreCapabilities/>
       <TechStackSlider/>
+      <StatsCounter/>
       
       {/* Additional sections can be added here */}
       <section className="w-full min-h-screen bg-white border-t border-[#00ff87]/10 flex items-center justify-center">
