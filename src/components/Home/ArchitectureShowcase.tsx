@@ -15,8 +15,6 @@ import {
 
 /* =========================================================
    REAL IMAGE PLACEHOLDERS
-   Using normal <img>, so next.config remotePatterns
-   are NOT required.
 ========================================================= */
 
 const FALLBACK_IMAGE =
@@ -57,7 +55,6 @@ const images = {
     'https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1800&q=85',
 };
 
-
 /* =========================================================
    DATA
 ========================================================= */
@@ -65,23 +62,23 @@ const images = {
 const showcaseData = [
   {
     id: 'drawings',
-
     tab: '2D DRAWINGS & BLUEPRINTS',
-
     code: '01 // STRUCTURAL CRAFT',
 
-    title: 'Architecture Designed With Precision.',
+    title:
+      'Architecture Designed With Precision.',
 
     description:
       'From early planning and zoning studies to construction-ready architectural documentation and coordinated engineering systems, every detail is developed with technical accuracy.',
 
     leftImage: images.drawing,
-
     rightImage: images.architecture,
 
-    leftStage: 'STAGE 01: ARCHITECTURAL STUDY',
+    leftStage:
+      'STAGE 01: ARCHITECTURAL STUDY',
 
-    rightStage: 'STAGE 04: FINAL ARCHITECTURE',
+    rightStage:
+      'STAGE 04: FINAL ARCHITECTURE',
 
     stats: [
       {
@@ -101,23 +98,23 @@ const showcaseData = [
 
   {
     id: 'architecture',
-
     tab: '3D ARCHITECTURE',
-
     code: '02 // DIGITAL BUILD',
 
-    title: 'Ideas Built Into Digital Space.',
+    title:
+      'Ideas Built Into Digital Space.',
 
     description:
       'Technical drawings are transformed into accurate three-dimensional environments with carefully resolved proportions, materials, details and spatial relationships.',
 
     leftImage: images.architectureModel,
-
     rightImage: images.modernHouse,
 
-    leftStage: 'STAGE 01: DESIGN DEVELOPMENT',
+    leftStage:
+      'STAGE 01: DESIGN DEVELOPMENT',
 
-    rightStage: 'STAGE 04: FINAL ARCHITECTURE',
+    rightStage:
+      'STAGE 04: FINAL ARCHITECTURE',
 
     stats: [
       {
@@ -137,23 +134,23 @@ const showcaseData = [
 
   {
     id: 'interior',
-
     tab: 'INTERIOR CONCEPTS',
-
     code: '03 // SPATIAL EXPERIENCE',
 
-    title: 'Interiors Crafted Around Experience.',
+    title:
+      'Interiors Crafted Around Experience.',
 
     description:
       'Thoughtful layouts, premium materials, lighting and visual hierarchy are combined to create refined, functional and memorable interior environments.',
 
     leftImage: images.interiorPlanning,
-
     rightImage: images.premiumInterior,
 
-    leftStage: 'STAGE 01: INTERIOR PLANNING',
+    leftStage:
+      'STAGE 01: INTERIOR PLANNING',
 
-    rightStage: 'STAGE 04: FINAL INTERIOR',
+    rightStage:
+      'STAGE 04: FINAL INTERIOR',
 
     stats: [
       {
@@ -173,23 +170,23 @@ const showcaseData = [
 
   {
     id: 'exterior',
-
     tab: 'EXTERIOR FACADES',
-
     code: '04 // ENVELOPE DESIGN',
 
-    title: 'Facades With Strong Architectural Identity.',
+    title:
+      'Facades With Strong Architectural Identity.',
 
     description:
       'Material selection, massing, landscape and architectural lighting are developed together to create distinctive and sophisticated exterior compositions.',
 
     leftImage: images.exterior,
-
     rightImage: images.modernHouse,
 
-    leftStage: 'STAGE 01: FACADE DEVELOPMENT',
+    leftStage:
+      'STAGE 01: FACADE DEVELOPMENT',
 
-    rightStage: 'STAGE 04: FINAL EXTERIOR',
+    rightStage:
+      'STAGE 04: FINAL EXTERIOR',
 
     stats: [
       {
@@ -209,23 +206,23 @@ const showcaseData = [
 
   {
     id: 'engineering',
-
     tab: 'STRUCTURAL & MEP',
-
     code: '05 // TECHNICAL SYSTEMS',
 
-    title: 'Engineering Integrated Into Design.',
+    title:
+      'Engineering Integrated Into Design.',
 
     description:
       'Structural, HVAC, electrical and plumbing systems are coordinated within a unified BIM workflow for accurate documentation and efficient construction delivery.',
 
     leftImage: images.technical,
-
     rightImage: images.interiorTwo,
 
-    leftStage: 'STAGE 01: TECHNICAL COORDINATION',
+    leftStage:
+      'STAGE 01: TECHNICAL COORDINATION',
 
-    rightStage: 'STAGE 04: INTEGRATED SYSTEM',
+    rightStage:
+      'STAGE 04: INTEGRATED SYSTEM',
 
     stats: [
       {
@@ -245,23 +242,23 @@ const showcaseData = [
 
   {
     id: 'visualization',
-
     tab: 'PHOTOREAL VISUALIZATION',
-
     code: '06 // VISUAL REALISM',
 
-    title: 'Visualization That Feels Real.',
+    title:
+      'Visualization That Feels Real.',
 
     description:
       'Advanced materials, lighting, atmosphere and cinematic composition transform architectural concepts into premium photorealistic presentations.',
 
     leftImage: images.luxuryInterior,
-
     rightImage: images.visualization,
 
-    leftStage: 'STAGE 01: VISUAL DEVELOPMENT',
+    leftStage:
+      'STAGE 01: VISUAL DEVELOPMENT',
 
-    rightStage: 'STAGE 04: FINAL VISUAL',
+    rightStage:
+      'STAGE 04: FINAL VISUAL',
 
     stats: [
       {
@@ -280,7 +277,6 @@ const showcaseData = [
   },
 ];
 
-
 /* =========================================================
    SAFE IMAGE
 ========================================================= */
@@ -296,30 +292,29 @@ function ShowcaseImage({
     <motion.img
       src={src}
       alt={alt}
-
+      draggable={false}
       initial={{
         scale: 1.045,
       }}
-
       animate={{
         scale: 1,
       }}
-
       transition={{
         duration: 1.15,
         ease: [0.22, 1, 0.36, 1],
       }}
-
       onError={(event) => {
-        const image = event.currentTarget;
+        const image =
+          event.currentTarget;
 
-        if (image.src !== FALLBACK_IMAGE) {
-          image.src = FALLBACK_IMAGE;
+        if (
+          image.src !==
+          FALLBACK_IMAGE
+        ) {
+          image.src =
+            FALLBACK_IMAGE;
         }
       }}
-
-      draggable={false}
-
       className="
         absolute
         inset-0
@@ -332,7 +327,9 @@ function ShowcaseImage({
         object-cover
 
         transition-transform
+
         duration-[1200ms]
+
         ease-out
 
         group-hover/viewer:scale-[1.035]
@@ -341,29 +338,39 @@ function ShowcaseImage({
   );
 }
 
-
 /* =========================================================
    COMPONENT
 ========================================================= */
 
 export default function ArchitectureShowcase() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [
+    activeIndex,
+    setActiveIndex,
+  ] = useState(0);
 
-  const [sliderPosition, setSliderPosition] = useState(52);
+  const [
+    sliderPosition,
+    setSliderPosition,
+  ] = useState(52);
 
-  const reduceMotion = useReducedMotion();
+  const reduceMotion =
+    useReducedMotion();
 
-  const current = showcaseData[activeIndex];
+  const current =
+    showcaseData[activeIndex];
 
-
-  const changeTab = (index: number) => {
-    if (index === activeIndex) return;
+  const changeTab = (
+    index: number
+  ) => {
+    if (
+      index === activeIndex
+    )
+      return;
 
     setActiveIndex(index);
 
     setSliderPosition(52);
   };
-
 
   return (
     <section
@@ -380,12 +387,11 @@ export default function ArchitectureShowcase() {
 
         text-white
 
-        sm:py-18
+        sm:py-20
 
         lg:py-24
       "
     >
-
       {/* =====================================================
           BACKGROUND
       ====================================================== */}
@@ -400,9 +406,6 @@ export default function ArchitectureShowcase() {
           overflow-hidden
         "
       >
-
-        {/* Top ambient light */}
-
         <div
           className="
             absolute
@@ -425,23 +428,22 @@ export default function ArchitectureShowcase() {
           "
         />
 
-
-        {/* Animated left light */}
-
         {!reduceMotion && (
           <motion.div
             animate={{
               x: [0, 45, 0],
               y: [0, 25, 0],
-              scale: [1, 1.08, 1],
+              scale: [
+                1,
+                1.08,
+                1,
+              ],
             }}
-
             transition={{
               duration: 13,
               repeat: Infinity,
               ease: 'easeInOut',
             }}
-
             className="
               absolute
 
@@ -460,22 +462,25 @@ export default function ArchitectureShowcase() {
           />
         )}
 
-
-        {/* Animated right light */}
-
         {!reduceMotion && (
           <motion.div
             animate={{
-              x: [0, -40, 0],
-              y: [0, -25, 0],
+              x: [
+                0,
+                -40,
+                0,
+              ],
+              y: [
+                0,
+                -25,
+                0,
+              ],
             }}
-
             transition={{
               duration: 15,
               repeat: Infinity,
               ease: 'easeInOut',
             }}
-
             className="
               absolute
 
@@ -494,9 +499,6 @@ export default function ArchitectureShowcase() {
           />
         )}
 
-
-        {/* Grid */}
-
         <div
           className="
             absolute
@@ -509,9 +511,6 @@ export default function ArchitectureShowcase() {
             [background-size:72px_72px]
           "
         />
-
-
-        {/* Top divider */}
 
         <div
           className="
@@ -536,9 +535,7 @@ export default function ArchitectureShowcase() {
             to-transparent
           "
         />
-
       </div>
-
 
       {/* =====================================================
           CONTAINER
@@ -552,7 +549,6 @@ export default function ArchitectureShowcase() {
           mx-auto
 
           w-full
-
           max-w-[1600px]
 
           px-4
@@ -566,16 +562,13 @@ export default function ArchitectureShowcase() {
           2xl:px-12
         "
       >
-
         {/* =================================================
             HEADER
         ================================================== */}
 
         <AnimatePresence mode="wait">
-
           <motion.div
             key={`header-${current.id}`}
-
             initial={
               reduceMotion
                 ? false
@@ -584,12 +577,10 @@ export default function ArchitectureShowcase() {
                     y: 22,
                   }
             }
-
             animate={{
               opacity: 1,
               y: 0,
             }}
-
             exit={
               reduceMotion
                 ? undefined
@@ -598,12 +589,15 @@ export default function ArchitectureShowcase() {
                     y: -12,
                   }
             }
-
             transition={{
               duration: 0.5,
-              ease: [0.22, 1, 0.36, 1],
+              ease: [
+                0.22,
+                1,
+                0.36,
+                1,
+              ],
             }}
-
             className="
               mb-8
 
@@ -614,9 +608,6 @@ export default function ArchitectureShowcase() {
               lg:mb-12
             "
           >
-
-            {/* Label */}
-
             <div
               className="
                 mb-4
@@ -644,23 +635,28 @@ export default function ArchitectureShowcase() {
                 lg:text-[11px]
               "
             >
-
               <motion.span
                 animate={
                   reduceMotion
                     ? undefined
                     : {
-                        opacity: [0.45, 1, 0.45],
-                        scale: [0.9, 1.15, 0.9],
+                        opacity: [
+                          0.45,
+                          1,
+                          0.45,
+                        ],
+                        scale: [
+                          0.9,
+                          1.15,
+                          0.9,
+                        ],
                       }
                 }
-
                 transition={{
                   duration: 2.2,
                   repeat: Infinity,
                   ease: 'easeInOut',
                 }}
-
                 className="
                   h-2
                   w-2
@@ -674,11 +670,7 @@ export default function ArchitectureShowcase() {
               />
 
               {current.code}
-
             </div>
-
-
-            {/* Heading */}
 
             <h2
               className="
@@ -706,9 +698,6 @@ export default function ArchitectureShowcase() {
               {current.title}
             </h2>
 
-
-            {/* Description */}
-
             <p
               className="
                 mt-5
@@ -728,191 +717,268 @@ export default function ArchitectureShowcase() {
                 lg:text-[16px]
               "
             >
-              {current.description}
+              {
+                current.description
+              }
             </p>
-
           </motion.div>
-
         </AnimatePresence>
 
-
         {/* =================================================
-            TABS
+            TABS — CLIPPING FIXED
         ================================================== */}
 
         <div
           className="
-            mb-6
+            relative
 
-            flex
+            mb-5
 
-            w-full
+            -mt-3
 
-            gap-2.5
+            py-3
 
-            overflow-x-auto
+            sm:mb-6
 
-            pb-3
-
-            [scrollbar-width:none]
-
-            [&::-webkit-scrollbar]:hidden
-
-            lg:flex-wrap
+            lg:-mt-4
+            lg:py-4
           "
         >
+          {/* Optional subtle glow behind tabs */}
+          <div
+            className="
+              pointer-events-none
 
-          {showcaseData.map((item, index) => {
+              absolute
 
-            const isActive =
-              activeIndex === index;
+              left-1/2
+              top-1/2
 
+              h-[80px]
+              w-[70%]
 
-            return (
+              -translate-x-1/2
+              -translate-y-1/2
 
-              <motion.button
-                key={item.id}
+              rounded-full
 
-                type="button"
+              bg-[#00FF66]/[0.025]
 
-                onClick={() =>
-                  changeTab(index)
-                }
+              blur-[45px]
+            "
+          />
 
-                whileHover={
-                  reduceMotion
-                    ? undefined
-                    : {
-                        y: -4,
-                        scale: 1.025,
-                      }
-                }
+          <div
+            className="
+              relative
 
-                whileTap={{
-                  scale: 0.97,
-                }}
+              flex
 
-                className={`
-                  relative
+              w-full
 
-                  shrink-0
+              items-center
 
-                  overflow-hidden
+              gap-2.5
 
-                  rounded-full
+              overflow-x-auto
+              overflow-y-hidden
 
-                  bg-gradient-to-r
+              px-1
 
-                  from-[#00FF66]
+              py-4
 
-                  via-[#2bff88]
+              scroll-smooth
 
-                  to-[#00cc52]
+              [scrollbar-width:none]
 
-                  px-4
+              [-ms-overflow-style:none]
 
-                  py-2.5
+              [&::-webkit-scrollbar]:hidden
 
-                  font-mono
+              touch-pan-x
 
-                  text-[8px]
+              lg:flex-wrap
 
-                  font-bold
+              lg:overflow-visible
 
-                  uppercase
+              lg:px-0
 
-                  tracking-[0.07em]
+              lg:py-3
+            "
+          >
+            {showcaseData.map(
+              (
+                item,
+                index
+              ) => {
+                const isActive =
+                  activeIndex ===
+                  index;
 
-                  text-[#031007]
-
-                  shadow-[0_0_25px_rgba(0,255,102,0.4)]
-
-                  transition-all
-
-                  duration-500
-
-                  hover:shadow-[0_0_40px_rgba(0,255,102,0.7)]
-
-                  sm:px-5
-
-                  sm:text-[9px]
-
-                  ${
-                    isActive
-                      ? `
-                        opacity-100
-
-                        ring-1
-
-                        ring-white/40
-                      `
-                      : `
-                        opacity-65
-
-                        hover:opacity-100
-                      `
-                  }
-                `}
-              >
-
-                {/* shine */}
-
-                {isActive && !reduceMotion && (
-
-                  <motion.span
-                    initial={{
-                      x: '-180%',
+                return (
+                  <motion.button
+                    key={
+                      item.id
+                    }
+                    type="button"
+                    onClick={() =>
+                      changeTab(
+                        index
+                      )
+                    }
+                    whileHover={
+                      reduceMotion
+                        ? undefined
+                        : {
+                            y: -4,
+                            scale:
+                              1.025,
+                          }
+                    }
+                    whileTap={{
+                      scale:
+                        0.97,
                     }}
-
-                    animate={{
-                      x: '260%',
-                    }}
-
                     transition={{
-                      duration: 1.25,
-                      repeat: Infinity,
-                      repeatDelay: 2.8,
-                      ease: 'easeInOut',
+                      duration:
+                        0.28,
+                      ease: [
+                        0.22,
+                        1,
+                        0.36,
+                        1,
+                      ],
                     }}
+                    className={`
+                      relative
 
-                    className="
-                      pointer-events-none
+                      shrink-0
 
-                      absolute
+                      whitespace-nowrap
 
-                      inset-y-0
+                      overflow-hidden
 
-                      left-0
-
-                      w-[40%]
-
-                      skew-x-[-24deg]
+                      rounded-full
 
                       bg-gradient-to-r
 
-                      from-transparent
+                      from-[#00FF66]
 
-                      via-white/50
+                      via-[#2bff88]
 
-                      to-transparent
-                    "
-                  />
+                      to-[#00cc52]
 
-                )}
+                      px-4
 
+                      py-2.5
 
-                <span className="relative z-10">
-                  {item.tab}
-                </span>
+                      font-mono
 
-              </motion.button>
+                      text-[8px]
 
-            );
+                      font-bold
 
-          })}
+                      uppercase
 
+                      tracking-[0.07em]
+
+                      text-[#031007]
+
+                      shadow-[0_0_25px_rgba(0,255,102,0.4)]
+
+                      will-change-transform
+
+                      transition-[box-shadow,opacity,filter]
+
+                      duration-500
+
+                      hover:shadow-[0_0_40px_rgba(0,255,102,0.7)]
+
+                      sm:px-5
+
+                      sm:text-[9px]
+
+                      md:px-6
+
+                      lg:px-5
+
+                      xl:px-6
+
+                      ${
+                        isActive
+                          ? `
+                            opacity-100
+
+                            ring-1
+
+                            ring-white/40
+
+                            shadow-[0_0_32px_rgba(0,255,102,0.52)]
+                          `
+                          : `
+                            opacity-65
+
+                            hover:opacity-100
+                          `
+                      }
+                    `}
+                  >
+                    {/* Active Shine */}
+
+                    {isActive &&
+                      !reduceMotion && (
+                        <motion.span
+                          initial={{
+                            x: '-180%',
+                          }}
+                          animate={{
+                            x: '260%',
+                          }}
+                          transition={{
+                            duration:
+                              1.25,
+                            repeat:
+                              Infinity,
+                            repeatDelay:
+                              2.8,
+                            ease:
+                              'easeInOut',
+                          }}
+                          className="
+                            pointer-events-none
+
+                            absolute
+
+                            inset-y-0
+
+                            left-0
+
+                            w-[40%]
+
+                            skew-x-[-24deg]
+
+                            bg-gradient-to-r
+
+                            from-transparent
+
+                            via-white/50
+
+                            to-transparent
+                          "
+                        />
+                      )}
+
+                    <span className="relative z-10">
+                      {
+                        item.tab
+                      }
+                    </span>
+                  </motion.button>
+                );
+              }
+            )}
+          </div>
         </div>
-
 
         {/* =================================================
             MAIN CARD
@@ -926,12 +992,15 @@ export default function ArchitectureShowcase() {
                   y: -4,
                 }
           }
-
           transition={{
             duration: 0.45,
-            ease: [0.22, 1, 0.36, 1],
+            ease: [
+              0.22,
+              1,
+              0.36,
+              1,
+            ],
           }}
-
           className="
             group
 
@@ -966,8 +1035,7 @@ export default function ArchitectureShowcase() {
             lg:p-5
           "
         >
-
-          {/* panel hover glow */}
+          {/* Panel Glow */}
 
           <div
             className="
@@ -1003,8 +1071,7 @@ export default function ArchitectureShowcase() {
             "
           />
 
-
-          {/* glass highlight */}
+          {/* Glass Highlight */}
 
           <div
             className="
@@ -1026,8 +1093,7 @@ export default function ArchitectureShowcase() {
             "
           />
 
-
-          {/* animated top border */}
+          {/* Animated Top Border */}
 
           <div
             className="
@@ -1065,8 +1131,7 @@ export default function ArchitectureShowcase() {
             "
           />
 
-
-          {/* Viewer top information */}
+          {/* Viewer Header */}
 
           <div
             className="
@@ -1092,7 +1157,6 @@ export default function ArchitectureShowcase() {
               sm:px-2
             "
           >
-
             <div
               className="
                 flex
@@ -1114,11 +1178,9 @@ export default function ArchitectureShowcase() {
                 sm:text-[9px]
               "
             >
-
               <span
                 className="
                   h-2
-
                   w-2
 
                   rounded-full
@@ -1130,9 +1192,7 @@ export default function ArchitectureShowcase() {
               />
 
               TRANSFORMATION STAGE VIEWER
-
             </div>
-
 
             <div
               className="
@@ -1153,9 +1213,7 @@ export default function ArchitectureShowcase() {
             >
               SCALE 1:100 · BIM READY · PRECISION WORKFLOW
             </div>
-
           </div>
-
 
           {/* =================================================
               IMAGE VIEWER
@@ -1166,7 +1224,6 @@ export default function ArchitectureShowcase() {
               group/viewer
 
               relative
-
               z-10
 
               aspect-[4/3]
@@ -1192,114 +1249,108 @@ export default function ArchitectureShowcase() {
               lg:aspect-[16/7]
             "
           >
-
             <AnimatePresence mode="wait">
-
               <motion.div
                 key={`viewer-${current.id}`}
-
                 initial={
                   reduceMotion
                     ? false
                     : {
                         opacity: 0,
-                        scale: 1.025,
-                        filter: 'blur(8px)',
+                        scale:
+                          1.025,
+                        filter:
+                          'blur(8px)',
                       }
                 }
-
                 animate={{
                   opacity: 1,
                   scale: 1,
-                  filter: 'blur(0px)',
+                  filter:
+                    'blur(0px)',
                 }}
-
                 exit={
                   reduceMotion
                     ? undefined
                     : {
                         opacity: 0,
-                        scale: 0.985,
+                        scale:
+                          0.985,
                       }
                 }
-
                 transition={{
                   duration: 0.6,
-                  ease: [0.22, 1, 0.36, 1],
+                  ease: [
+                    0.22,
+                    1,
+                    0.36,
+                    1,
+                  ],
                 }}
-
                 className="
                   absolute
-
                   inset-0
                 "
               >
-
-                {/* LEFT IMAGE */}
+                {/* LEFT */}
 
                 <ShowcaseImage
-                  src={current.leftImage}
-
-                  alt={current.leftStage}
+                  src={
+                    current.leftImage
+                  }
+                  alt={
+                    current.leftStage
+                  }
                 />
-
-
-                {/* Left image subtle green treatment */}
 
                 <div
                   className="
                     pointer-events-none
 
                     absolute
-
                     inset-0
 
                     bg-[#00FF66]/[0.018]
                   "
                 />
 
-
-                {/* RIGHT IMAGE */}
+                {/* RIGHT */}
 
                 <div
                   className="
                     absolute
-
                     inset-0
 
                     overflow-hidden
                   "
-
                   style={{
                     clipPath: `inset(0 0 0 ${sliderPosition}%)`,
                   }}
                 >
-
                   <ShowcaseImage
-                    src={current.rightImage}
-
-                    alt={current.rightStage}
+                    src={
+                      current.rightImage
+                    }
+                    alt={
+                      current.rightStage
+                    }
                   />
-
                 </div>
 
-
-                {/* Premium dark vignette */}
+                {/* Vignette */}
 
                 <div
                   className="
                     pointer-events-none
 
                     absolute
-
                     inset-0
 
                     bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.45)_100%)]
                   "
                 />
 
-
-                {/* top gradient */}
+                {/* Top Gradient */}
 
                 <div
                   className="
@@ -1308,7 +1359,6 @@ export default function ArchitectureShowcase() {
                     absolute
 
                     inset-x-0
-
                     top-0
 
                     h-[25%]
@@ -1321,33 +1371,30 @@ export default function ArchitectureShowcase() {
                   "
                 />
 
-
-                {/* Scan animation */}
+                {/* Scan */}
 
                 {!reduceMotion && (
-
                   <motion.div
                     animate={{
-                      y: ['-100%', '800%'],
+                      y: [
+                        '-100%',
+                        '800%',
+                      ],
                     }}
-
                     transition={{
                       duration: 7,
                       repeat: Infinity,
                       ease: 'linear',
                     }}
-
                     className="
                       pointer-events-none
 
                       absolute
 
                       left-0
-
                       top-0
 
                       h-[12%]
-
                       w-full
 
                       bg-gradient-to-b
@@ -1359,18 +1406,15 @@ export default function ArchitectureShowcase() {
                       to-transparent
                     "
                   />
-
                 )}
 
-
-                {/* Left Label */}
+                {/* Labels */}
 
                 <div
                   className="
                     absolute
 
                     bottom-3
-
                     left-3
 
                     z-20
@@ -1386,7 +1430,6 @@ export default function ArchitectureShowcase() {
                     bg-black/60
 
                     px-3
-
                     py-1.5
 
                     font-mono
@@ -1404,7 +1447,6 @@ export default function ArchitectureShowcase() {
                     backdrop-blur-lg
 
                     sm:bottom-4
-
                     sm:left-4
 
                     sm:text-[7px]
@@ -1412,18 +1454,16 @@ export default function ArchitectureShowcase() {
                     lg:text-[8px]
                   "
                 >
-                  {current.leftStage}
+                  {
+                    current.leftStage
+                  }
                 </div>
-
-
-                {/* Right Label */}
 
                 <div
                   className="
                     absolute
 
                     bottom-3
-
                     right-3
 
                     z-20
@@ -1439,7 +1479,6 @@ export default function ArchitectureShowcase() {
                     bg-black/65
 
                     px-3
-
                     py-1.5
 
                     text-right
@@ -1459,7 +1498,6 @@ export default function ArchitectureShowcase() {
                     backdrop-blur-lg
 
                     sm:bottom-4
-
                     sm:right-4
 
                     sm:text-[7px]
@@ -1467,13 +1505,12 @@ export default function ArchitectureShowcase() {
                     lg:text-[8px]
                   "
                 >
-                  {current.rightStage}
+                  {
+                    current.rightStage
+                  }
                 </div>
-
               </motion.div>
-
             </AnimatePresence>
-
 
             {/* =================================================
                 SLIDER LINE
@@ -1486,7 +1523,6 @@ export default function ArchitectureShowcase() {
                 absolute
 
                 bottom-0
-
                 top-0
 
                 z-30
@@ -1497,48 +1533,40 @@ export default function ArchitectureShowcase() {
 
                 shadow-[0_0_20px_rgba(0,255,102,0.95)]
               "
-
               style={{
                 left: `${sliderPosition}%`,
               }}
             >
-
-              {/* Handle */}
-
               <motion.div
                 animate={
                   reduceMotion
                     ? undefined
                     : {
-                        boxShadow: [
-                          '0 0 18px rgba(0,255,102,.25)',
-                          '0 0 38px rgba(0,255,102,.58)',
-                          '0 0 18px rgba(0,255,102,.25)',
-                        ],
+                        boxShadow:
+                          [
+                            '0 0 18px rgba(0,255,102,.25)',
+                            '0 0 38px rgba(0,255,102,.58)',
+                            '0 0 18px rgba(0,255,102,.25)',
+                          ],
                       }
                 }
-
                 transition={{
                   duration: 2.2,
                   repeat: Infinity,
                   ease: 'easeInOut',
                 }}
-
                 className="
                   absolute
 
                   left-1/2
-
                   top-1/2
 
                   flex
 
                   h-10
-
                   w-10
 
                   -translate-x-1/2
-
                   -translate-y-1/2
 
                   items-center
@@ -1562,48 +1590,39 @@ export default function ArchitectureShowcase() {
                   sm:w-12
                 "
               >
-
                 <MoveHorizontal
                   size={17}
-
                   strokeWidth={1.8}
                 />
-
               </motion.div>
-
             </div>
-
-
-            {/* Actual draggable range */}
 
             <input
               type="range"
-
               min="12"
-
               max="88"
-
               step="1"
-
-              value={sliderPosition}
-
-              onChange={(event) =>
+              value={
+                sliderPosition
+              }
+              onChange={(
+                event
+              ) =>
                 setSliderPosition(
-                  Number(event.target.value)
+                  Number(
+                    event.target
+                      .value
+                  )
                 )
               }
-
               aria-label="Compare design stages"
-
               className="
                 absolute
-
                 inset-0
 
                 z-40
 
                 h-full
-
                 w-full
 
                 cursor-ew-resize
@@ -1611,9 +1630,7 @@ export default function ArchitectureShowcase() {
                 opacity-0
               "
             />
-
           </div>
-
 
           {/* =================================================
               STATISTICS
@@ -1622,7 +1639,6 @@ export default function ArchitectureShowcase() {
           <div
             className="
               relative
-
               z-10
 
               grid
@@ -1630,13 +1646,11 @@ export default function ArchitectureShowcase() {
               grid-cols-2
 
               gap-x-4
-
               gap-y-5
 
               px-2
 
               pb-2
-
               pt-6
 
               sm:grid-cols-4
@@ -1644,17 +1658,16 @@ export default function ArchitectureShowcase() {
               sm:items-end
 
               lg:px-3
-
               lg:pt-7
             "
           >
-
             {current.stats.map(
-              (stat, index) => (
-
+              (
+                stat,
+                index
+              ) => (
                 <motion.div
                   key={`${current.id}-${stat.label}`}
-
                   initial={
                     reduceMotion
                       ? false
@@ -1663,26 +1676,23 @@ export default function ArchitectureShowcase() {
                           y: 15,
                         }
                   }
-
                   animate={{
                     opacity: 1,
                     y: 0,
                   }}
-
                   transition={{
-                    duration: 0.45,
+                    duration:
+                      0.45,
                     delay:
                       0.08 +
-                      index * 0.08,
+                      index *
+                        0.08,
                   }}
-
                   className="
                     group/stat
-
                     relative
                   "
                 >
-
                   <div
                     className="
                       mb-1
@@ -1706,9 +1716,10 @@ export default function ArchitectureShowcase() {
                       sm:text-[8px]
                     "
                   >
-                    {stat.label}
+                    {
+                      stat.label
+                    }
                   </div>
-
 
                   <div
                     className="
@@ -1733,16 +1744,16 @@ export default function ArchitectureShowcase() {
                       lg:text-[18px]
                     "
                   >
-                    {stat.value}
+                    {
+                      stat.value
+                    }
                   </div>
-
 
                   <div
                     className="
                       mt-2
 
                       h-px
-
                       w-0
 
                       bg-gradient-to-r
@@ -1758,16 +1769,11 @@ export default function ArchitectureShowcase() {
                       group-hover/stat:w-[65%]
                     "
                   />
-
                 </motion.div>
-
               )
             )}
 
-
-            {/* =================================================
-                CTA
-            ================================================== */}
+            {/* CTA */}
 
             <div
               className="
@@ -1784,23 +1790,20 @@ export default function ArchitectureShowcase() {
                 sm:justify-end
               "
             >
-
               <motion.button
                 type="button"
-
                 whileHover={
                   reduceMotion
                     ? undefined
                     : {
                         y: -4,
-                        scale: 1.025,
+                        scale:
+                          1.025,
                       }
                 }
-
                 whileTap={{
                   scale: 0.97,
                 }}
-
                 className="
                   relative
 
@@ -1823,7 +1826,6 @@ export default function ArchitectureShowcase() {
                   to-[#00cc52]
 
                   px-5
-
                   py-3
 
                   text-[9px]
@@ -1847,76 +1849,21 @@ export default function ArchitectureShowcase() {
                   lg:text-[11px]
                 "
               >
-
                 <span className="relative z-10">
                   ALL ARCH PROJECTS
                 </span>
 
-
                 <ArrowRight
                   size={14}
-
-                  className="
-                    relative
-
-                    z-10
-                  "
+                  className="relative z-10"
                 />
-
-
-                {/* Button shine */}
-
-                {!reduceMotion && (
-
-                  <motion.span
-                    initial={{
-                      x: '-200%',
-                    }}
-
-                    whileHover={{
-                      x: '300%',
-                    }}
-
-                    transition={{
-                      duration: 0.8,
-                    }}
-
-                    className="
-                      pointer-events-none
-
-                      absolute
-
-                      inset-y-0
-
-                      left-0
-
-                      w-[38%]
-
-                      skew-x-[-25deg]
-
-                      bg-gradient-to-r
-
-                      from-transparent
-
-                      via-white/50
-
-                      to-transparent
-                    "
-                  />
-
-                )}
-
               </motion.button>
-
             </div>
-
           </div>
-
         </motion.div>
 
-
         {/* =================================================
-            BOTTOM MICRO DETAIL
+            BOTTOM DETAIL
         ================================================== */}
 
         <motion.div
@@ -1928,21 +1875,17 @@ export default function ArchitectureShowcase() {
                   y: 8,
                 }
           }
-
           whileInView={{
             opacity: 1,
             y: 0,
           }}
-
           viewport={{
             once: true,
           }}
-
           transition={{
             delay: 0.3,
             duration: 0.6,
           }}
-
           className="
             mt-5
 
@@ -1969,21 +1912,14 @@ export default function ArchitectureShowcase() {
             sm:text-[8px]
           "
         >
-
           <Sparkles
             size={12}
-
-            className="
-              text-[#00FF66]/50
-            "
+            className="text-[#00FF66]/50"
           />
 
           Precision · Creativity · Technology
-
         </motion.div>
-
       </div>
-
     </section>
   );
 }
