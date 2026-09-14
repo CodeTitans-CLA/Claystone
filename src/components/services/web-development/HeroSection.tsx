@@ -277,7 +277,7 @@ export async function WebShowcaseViewport() {
                 ) : (
                   <div className="w-full h-full bg-black relative overflow-y-auto overflow-x-hidden">
                     {/* Scaled desktop wrapper to allow full desktop layout rendering & scrolling */}
-                    <div className="w-[1600px] h-[800px]  origin-top-left transform md:scale-[0.315] scale-[0.200] absolute top-0 left-0">
+                    <div className="w-[1600px] h-[720px]  origin-top-left transform md:scale-[0.315] scale-[0.200] absolute top-0 left-0">
                       <iframe
                         src="https://claystoneagency.vercel.app"
                         title="Claystone Agency Preview"
