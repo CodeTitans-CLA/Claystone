@@ -62,7 +62,7 @@ export default function Header(): React.ReactElement {
       <div
         className={`w-full max-w-[1600px] mx-auto flex items-center justify-between px-4 sm:px-7 py-3.5 sm:py-4 rounded-2xl transition-all duration-500 relative backdrop-blur-2xl ${
           scrolled
-            ? 'bg-[#000000]/90 border border-[#162b1e] shadow-[0_20px_50px_rgba(0,0,0,0.9)] shadow-[0_0_30px_rgba(0,255,102,0.06)]'
+            ? 'bg-[#00000000] border border-[#162b1e] shadow-[0_20px_50px_rgba(0,0,0,0.9)] shadow-[0_0_30px_rgba(0,255,102,0.06)]'
             : 'bg-[#0c0f0e]/80 border border-[#121f17]'
         }`}
       >
