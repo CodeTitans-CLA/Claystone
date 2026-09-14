@@ -74,12 +74,15 @@ export const MultiStepForm: React.FC = () => {
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                   {[
+                    'Full Architecture + CAD + 3D',
+                    'Architecture & Spatial Design',
+                    'Interior Design',
+                    'Exterior Design',
                     'WordPress / WooCommerce',
                     'Shopify Store',
                     'Wix / Squarespace',
-                    'Custom Code (Next.js / 3D)',
-                    'Architecture & Spatial Design',
-                    'Full Architecture + Web',
+                    'Custom Code (Next.js)', 
+                    'Others'                   
                   ].map((service) => (
                     <button
                       type="button"
@@ -87,7 +90,7 @@ export const MultiStepForm: React.FC = () => {
                       onClick={() =>
                         setFormData({ ...formData, serviceType: service })
                       }
-                      className={`p-4 text-left rounded-xl border text-sm font-medium transition-all duration-300 ${
+                      className={`cursor-pointer p-4 text-left rounded-xl border text-sm font-medium transition-all duration-300 ${
                         formData.serviceType === service
                           ? 'border-[#00ff87] bg-[#00ff87]/15 text-white shadow-[0_0_15px_rgba(0,255,135,0.15)]'
                           : 'border-gray-800 bg-black/20 text-gray-400 hover:border-gray-600'
@@ -319,7 +322,7 @@ export const MultiStepForm: React.FC = () => {
                   type="button"
                   onClick={prevStep}
                   disabled={state.submitting}
-                  className="px-5 py-2.5 rounded-lg border border-gray-700 hover:border-gray-500 text-sm transition-all disabled:opacity-50"
+                  className="px-5 py-2.5 rounded-lg border border-gray-700 hover:border-gray-500 text-sm transition-all disabled:opacity-50 cursor-pointer"
                 >
                   Back
                 </button>
@@ -331,7 +334,7 @@ export const MultiStepForm: React.FC = () => {
                 <button
                   type="button"
                   onClick={nextStep}
-                  className="px-6 py-2.5 rounded-lg bg-[#00ff87] text-black font-semibold text-sm hover:bg-[#00e077] transition-all shadow-lg shadow-[#00ff87]/20"
+                  className="px-6 py-2.5 rounded-lg bg-[#00ff87] text-black font-semibold text-sm hover:bg-[#00e077] transition-all shadow-lg shadow-[#00ff87]/20 cursor-pointer"
                 >
                   Continue
                 </button>
@@ -339,7 +342,7 @@ export const MultiStepForm: React.FC = () => {
                 <button
                   type="submit"
                   disabled={state.submitting}
-                  className="px-8 py-2.5 rounded-lg bg-[#00ff87] text-black font-semibold text-sm hover:bg-[#00e077] transition-all shadow-lg shadow-[#00ff87]/30 disabled:opacity-50 flex items-center gap-2"
+                  className="px-8 py-2.5 rounded-lg bg-[#00ff87] text-black font-semibold text-sm hover:bg-[#00e077] transition-all shadow-lg shadow-[#00ff87]/30 disabled:opacity-50 flex items-center gap-2 cursor-pointer"
                 >
                   {state.submitting ? 'Transmitting...' : 'Submit Inquiry'}
                 </button>
