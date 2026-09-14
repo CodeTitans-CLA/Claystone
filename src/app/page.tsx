@@ -9,7 +9,6 @@ import MoreCapabilities from '@/components/Home/MoreCapabilities';
 import StatsCounter from '@/components/Home/StatsCounter';
 import TechStackSlider from '@/components/Home/TechStackSlider';
 
-
 import Services from '@/components/Home/Services';
 import CaseStudies from '@/components/Home/CaseStudies';
 import WhyMultidisciplinary from '@/components/Home/Multidisciplinary';
@@ -19,15 +18,15 @@ export default function Home() {
     <main className="w-full">
       <HeroSection />
       <Services />
-      <PhysicalSpaces/>
-      <ArchitectureShowcase/>
-      <DigitalExperience/>
-      <MoreCapabilities/>
-      <TechStackSlider/>
-      <StatsCounter/>
-      <ClientTestimonials/>
-      <CaseStudies />
-      <WhyMultidisciplinary />
+      <PhysicalSpaces />
+      <ArchitectureShowcase />
+      <DigitalExperience />
+      {/* <MoreCapabilities /> */}
+      {/* <StatsCounter /> */}
+      <ClientTestimonials />
+      <TechStackSlider />
+      {/* <CaseStudies /> */}
+      {/* <WhyMultidisciplinary /> */}
     </main>
   );
 }
