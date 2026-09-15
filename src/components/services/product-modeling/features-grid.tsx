@@ -32,7 +32,7 @@ const features = [
 export default function FeaturesGrid() {
   return (
     <section className="relative bg-[#050706] py-28 lg:py-36">
-      <div className="mx-auto w-[calc(100%-32px)] max-w-[1240px] lg:w-[calc(100%-64px)]">
+      <div className="mx-auto w-[calc(100%-32px)] max-w-[1600px] lg:w-[calc(100%-64px)]">
         <div className="mb-14 grid gap-8 lg:mb-20 lg:grid-cols-[1fr_0.6fr] lg:gap-20">
           <div>
             <span className="text-[10px] font-bold tracking-[0.22em] text-[#00ff87]">

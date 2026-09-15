@@ -37,7 +37,7 @@ export default function ProcessTimeline() {
       id="process"
       className="relative bg-[#070a08] py-28 lg:py-36"
     >
-      <div className="mx-auto w-[calc(100%-32px)] max-w-[1000px] lg:w-[calc(100%-64px)]">
+      <div className="mx-auto w-[calc(100%-32px)] max-w-[1600px] lg:w-[calc(100%-64px)]">
         <div className="mb-20">
           <span className="text-[10px] font-bold tracking-[0.22em] text-[#00ff87]">
             OUR PROCESS

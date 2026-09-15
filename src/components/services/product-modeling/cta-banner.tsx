@@ -16,7 +16,7 @@ export default function CtaBanner() {
       {/* Glow */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#00ff87]/8 blur-[110px]" />
 
-      <div className="relative mx-auto w-[calc(100%-32px)] max-w-[1240px] lg:w-[calc(100%-64px)]">
+      <div className="relative mx-auto w-[calc(100%-32px)] max-w-[1600px] lg:w-[calc(100%-64px)]">
         <div className="max-w-4xl">
           <div className="mb-7 flex items-center gap-3">
             <span className="h-1.5 w-1.5 rounded-full bg-[#00ff87] shadow-[0_0_15px_#00ff87]" />
