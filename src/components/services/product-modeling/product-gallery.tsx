@@ -5,56 +5,56 @@ import { useState } from "react";
 
 const products = [
   {
-    src: "/images/product-modeling/product-01.webp",
+    src: "/images/product-modeling/product-01.jpg",
     title: "Product Visualization",
     category: "PRODUCT MODELING",
     number: "01",
     size: "large",
   },
   {
-    src: "/images/product-modeling/product-02.webp",
+    src: "/images/product-modeling/product-02.jpg",
     title: "Technical Product",
     category: "3D MODELING",
     number: "02",
     size: "small",
   },
   {
-    src: "/images/product-modeling/product-03.webp",
+    src: "/images/product-modeling/product-03.jpg",
     title: "Digital Asset",
     category: "VISUALIZATION",
     number: "03",
     size: "small",
   },
   {
-    src: "/images/product-modeling/product-04.webp",
+    src: "/images/product-modeling/product-04.jpg",
     title: "Product Render",
     category: "RENDERING",
     number: "04",
     size: "medium",
   },
   {
-    src: "/images/product-modeling/product-05.webp",
+    src: "/images/product-modeling/product-05.jpg",
     title: "Detailed Modeling",
     category: "HIGH POLY",
     number: "05",
     size: "medium",
   },
   {
-    src: "/images/product-modeling/product-06.webp",
+    src: "/images/product-modeling/product-06.png",
     title: "Interactive Product",
     category: "WEB 3D",
     number: "06",
     size: "large",
   },
   {
-    src: "/images/product-modeling/product-07.webp",
+    src: "/images/product-modeling/product-07.jpg",
     title: "Product Development",
     category: "DIGITAL ASSET",
     number: "07",
     size: "small",
   },
   {
-    src: "/images/product-modeling/product-08.webp",
+    src: "/images/product-modeling/product-08.jpg",
     title: "Final Visualization",
     category: "3D RENDER",
     number: "08",
@@ -70,7 +70,7 @@ export default function ProductGallery() {
       id="selected-work"
       className="relative border-y border-white/[0.05] bg-[#070a08] py-28 lg:py-36"
     >
-      <div className="mx-auto w-[calc(100%-32px)] max-w-[1240px] lg:w-[calc(100%-64px)]">
+      <div className="mx-auto w-[calc(100%-32px)] max-w-[1600px] lg:w-[calc(100%-64px)]">
         {/* Header */}
         <div className="mb-14 grid gap-8 lg:mb-20 lg:grid-cols-[1fr_0.55fr] lg:gap-20">
           <div>
