@@ -68,7 +68,8 @@ export default function ProductGallery() {
   return (
     <section
       id="selected-work"
-      className="relative border-y border-white/[0.05] bg-[#070a08] py-28 lg:py-36"
+      className="relative bg-[#070a08] py-14 lg:py-18
+      "
     >
       <div className="mx-auto w-[calc(100%-32px)] max-w-[1600px] lg:w-[calc(100%-64px)]">
         {/* Header */}
@@ -78,7 +79,7 @@ export default function ProductGallery() {
               SELECTED WORK
             </span>
 
-            <h2 className="mt-5 text-[clamp(48px,6vw,82px)] font-medium leading-[0.94] tracking-[-0.06em]">
+            <h2 className="mt-5 text-[clamp(48px,6vw,82px)] font-semibold leading-[1.05] tracking-wide">
               Built with
               <br />
               <span className="text-[#00ff87]">precision.</span>

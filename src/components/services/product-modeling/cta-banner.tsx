@@ -1,6 +1,6 @@
 export default function CtaBanner() {
   return (
-    <section className="relative overflow-hidden border-t border-white/[0.06] bg-[#08110b] py-28 lg:py-40">
+    <section className="relative overflow-hidden border-t border-white/[0.06] bg-[#08110b] py-14 lg:py-18">
       {/* Grid */}
       <div
         className="pointer-events-none absolute inset-0 opacity-30"
@@ -19,14 +19,14 @@ export default function CtaBanner() {
       <div className="relative mx-auto w-[calc(100%-32px)] max-w-[1600px] lg:w-[calc(100%-64px)]">
         <div className="max-w-4xl">
           <div className="mb-7 flex items-center gap-3">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#00ff87] shadow-[0_0_15px_#00ff87]" />
+            <span className="animation-pulse h-1.5 w-1.5 rounded-full bg-[#00ff87] shadow-[0_0_15px_#00ff87]" />
 
             <span className="text-[9px] font-bold tracking-[0.2em] text-[#7b8980]">
               HAVE A PRODUCT IN MIND?
             </span>
           </div>
 
-          <h2 className="text-[clamp(52px,7vw,100px)] font-medium leading-[0.93] tracking-[-0.06em]">
+          <h2 className="text-[clamp(48px,7vw,100px)] font-semibold leading-[1.05] tracking-wide">
             Let's turn it
             <br />
             <span className="text-[#00ff87]">into something digital.</span>

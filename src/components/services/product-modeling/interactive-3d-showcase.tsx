@@ -84,7 +84,7 @@ export default function Interactive3DShowcase() {
   return (
     <section
       id="interactive-3d"
-      className="relative overflow-hidden border-y border-white/[0.06] bg-[#050706] py-28 lg:py-36"
+      className="relative overflow-hidden border-y border-white/6 bg-[#050706] py-14 lg:py-18"
     >
       <div className="mx-auto w-[calc(100%-32px)] max-w-[1600px] lg:w-[calc(100%-64px)]">
         {/* Header */}
@@ -94,11 +94,9 @@ export default function Interactive3DShowcase() {
               INTERACTIVE 3D
             </span>
 
-            <h2 className="mt-5 text-[clamp(45px,5.5vw,76px)] font-medium leading-[0.94] tracking-[-0.055em]">
-              Don't just
-              <br />
-              <span className="text-[#00ff87]">
-                look at it.
+            <h2 className="mt-5 text-[clamp(48px,5.5vw,76px)] font-semibold leading-[1.05] tracking-wide">
+              Don't just <span className="text-[#00ff87]">
+              look at it.
               </span>
               <br />
               Explore it.

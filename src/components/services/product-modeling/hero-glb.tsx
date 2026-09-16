@@ -13,7 +13,7 @@ const GLBViewer = dynamic(() => import("./glb-viewer"), {
 
 export default function HeroGLB() {
   return (
-    <div className="relative h-[520px] w-full lg:h-[650px]">
+    <div className="relative h-[520px] w-full lg:h-[620px]">
       <GLBViewer
         modelPath="/models/product-modeling/model-04.glb"
         autoRotate

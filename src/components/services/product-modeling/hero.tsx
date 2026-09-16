@@ -19,10 +19,10 @@ export default function ProductModelingHero() {
       />
 
       {/* Green ambient glow */}
-      <div className="pointer-events-none absolute right-[5%] top-[15%] h-[550px] w-[550px] rounded-full bg-[#00ff87]/[0.07] blur-[140px]" />
+      <div className="pointer-events-none absolute right-[5%] top-[15%] h-137.5 w-137.5 rounded-full bg-[#00ff87]/[0.07] blur-[140px]" />
 
-      <div className="relative mx-auto max-w-[1600px] px-6 py-24 sm:px-10 lg:px-16 lg:py-28">
-        <div className="grid min-h-[720px] items-center gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-4">
+      <div className="relative mx-auto max-w-[1600px] px-6 pt-34 pb-14 sm:px-10 lg:px-16 lg:pt-28 lg:pb-18">
+        <div className="grid min-h-180 items-center gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-38">
           
           {/* LEFT CONTENT */}
           <div className="relative z-10 max-w-2xl">
@@ -36,7 +36,7 @@ export default function ProductModelingHero() {
             </div>
 
             {/* Heading */}
-            <h1 className="text-5xl font-medium leading-[0.95] tracking-[-0.05em] text-white sm:text-6xl lg:text-7xl xl:text-[88px]">
+            <h1 className="text-5xl font-semibold leading-[1.05] tracking-wide text-white sm:text-6xl lg:text-7xl xl:text-[88px]">
               Products,
               <br />
 
@@ -139,7 +139,7 @@ export default function ProductModelingHero() {
       </div>
 
       {/* Bottom scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 md:flex">
+      <div className="absolute bottom-4 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 md:flex">
         <span className="font-mono text-[8px] uppercase tracking-[0.25em] text-white/25">
           Scroll to explore
         </span>
