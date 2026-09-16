@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   useCallback,
@@ -6,20 +6,20 @@ import {
   useMemo,
   useRef,
   useState,
-} from 'react';
+} from "react";
 
 import {
   motion,
   useAnimationControls,
   useReducedMotion,
-} from 'framer-motion';
+} from "framer-motion";
 
 import {
   ArrowLeft,
   ArrowRight,
   Quote,
   Sparkles,
-} from 'lucide-react';
+} from "lucide-react";
 
 /* =========================================================
    CONFIG
@@ -27,73 +27,139 @@ import {
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const GAP = 24;
+const GAP = 20;
 
 const testimonials = [
   {
     id: 1,
-    initials: 'MH',
-    name: 'Marcus Holmberg',
-    role: 'Principal',
-    company: 'Nordic Horizon Developments',
-    category: 'ARCHITECTURE',
+    initials: "MH",
+    name: "Marcus Holmberg",
+    role: "Principal",
+    company: "Nordic Horizon Developments",
+    category: "ARCHITECTURE",
     quote:
-      'Claystone is the only partner we trust to take our property developments from preliminary architectural drawings into polished, presentation-ready visual experiences. Their precision saves us time at every stage.',
+      "Claystone is the partner we trust to move from early architectural ideas into precise, presentation-ready project documentation. The process feels organized, technical, and consistently polished.",
   },
 
   {
     id: 2,
-    initials: 'ER',
-    name: 'Elena Rostova',
-    role: 'CTO',
-    company: 'Chronos Platform',
-    category: 'WEB DEVELOPMENT',
+    initials: "ER",
+    name: "Elena Rostova",
+    role: "CTO",
+    company: "Chronos Platform",
+    category: "WEB DEVELOPMENT",
     quote:
-      'The speed and architectural discipline behind Claystone’s web development is exceptional. They translated a complex platform into a fast, responsive, and polished digital experience.',
+      "Their web development process combines strong visual thinking with technical discipline. The finished platform feels fast, refined, responsive, and thoughtfully engineered.",
   },
 
   {
     id: 3,
-    initials: 'JM',
-    name: 'James Miller',
-    role: 'Project Director',
-    company: 'Axis Build Group',
-    category: 'BIM & ENGINEERING',
+    initials: "JM",
+    name: "James Miller",
+    role: "Project Director",
+    company: "Axis Build Group",
+    category: "BIM & ENGINEERING",
     quote:
-      'From BIM coordination to detailed architectural documentation, the workflow was clear, accurate, and extremely professional. Every deliverable felt carefully considered and construction-ready.',
+      "The BIM coordination and architectural documentation were extremely well organized. Every drawing and model update felt deliberate, accurate, and ready for project coordination.",
   },
 
   {
     id: 4,
-    initials: 'SL',
-    name: 'Sophia Laurent',
-    role: 'Creative Director',
-    company: 'Maison Form Studio',
-    category: 'INTERIOR VISUALIZATION',
+    initials: "SL",
+    name: "Sophia Laurent",
+    role: "Creative Director",
+    company: "Maison Form Studio",
+    category: "INTERIOR VISUALIZATION",
     quote:
-      'The interior visualization quality exceeded our expectations. Materials, lighting, proportions, and atmosphere were handled with a level of detail that made every presentation feel premium.',
+      "Materials, lighting, proportions, and atmosphere were handled beautifully. The final interior visuals gave our presentations the premium quality we were looking for.",
   },
 
   {
     id: 5,
-    initials: 'DK',
-    name: 'Daniel Kim',
-    role: 'Product Lead',
-    company: 'Vertex Industrial',
-    category: 'PRODUCT MODELING',
+    initials: "DK",
+    name: "Daniel Kim",
+    role: "Product Lead",
+    company: "Vertex Industrial",
+    category: "PRODUCT MODELING",
     quote:
-      'Our product models required both technical accuracy and strong marketing visuals. Claystone delivered both—the geometry was precise and the final renders looked ready for a global launch.',
+      "We needed product models that were technically accurate but still strong enough for marketing. Claystone delivered clean geometry and polished visuals in one workflow.",
   },
 
   {
     id: 6,
-    initials: 'AM',
-    name: 'Amelia Morgan',
-    role: 'Brand Strategist',
-    company: 'Northline Collective',
-    category: 'BRAND & GRAPHICS',
+    initials: "AM",
+    name: "Amelia Morgan",
+    role: "Brand Strategist",
+    company: "Northline Collective",
+    category: "BRAND & GRAPHICS",
     quote:
-      'What impressed us most was the ability to move across branding, graphics, 3D, and digital without losing consistency. The result felt like one unified premium creative system.',
+      "The team moved confidently across branding, graphics, digital, and 3D while keeping the entire visual system consistent. The final result felt cohesive and premium.",
+  },
+
+  {
+    id: 7,
+    initials: "TH",
+    name: "Thomas Hayes",
+    role: "Development Manager",
+    company: "Everline Properties",
+    category: "PERMIT DRAWINGS",
+    quote:
+      "The permit drawing package was structured clearly and professionally. Coordination between plans, elevations, schedules, and technical notes was handled very carefully.",
+  },
+
+  {
+    id: 8,
+    initials: "NC",
+    name: "Natalie Chen",
+    role: "E-commerce Director",
+    company: "Atelier Commerce",
+    category: "E-COMMERCE",
+    quote:
+      "Our storefront became cleaner, easier to navigate, and much stronger visually. The mobile experience in particular feels significantly more considered and premium.",
+  },
+
+  {
+    id: 9,
+    initials: "RB",
+    name: "Richard Bennett",
+    role: "Design Partner",
+    company: "Bennett Architectural Studio",
+    category: "EXTERIOR VISUALIZATION",
+    quote:
+      "The exterior renders communicated the architecture exactly as intended. Materials, landscaping, daylight, and overall composition were resolved with impressive care.",
+  },
+
+  {
+    id: 10,
+    initials: "FA",
+    name: "Farah Al-Mansour",
+    role: "MEP Coordinator",
+    company: "Nova Engineering",
+    category: "REVIT MEP",
+    quote:
+      "The Revit coordination work was clean and dependable. System organization, model accuracy, and coordination between disciplines made the technical workflow much easier.",
+  },
+
+  {
+    id: 11,
+    initials: "LP",
+    name: "Lucas Pereira",
+    role: "Marketing Director",
+    company: "Forma Objects",
+    category: "3D ANIMATION",
+    quote:
+      "The animation presented our product with exactly the right balance of technical clarity and cinematic polish. It immediately elevated the launch presentation.",
+  },
+
+  {
+    id: 12,
+    initials: "IK",
+    name: "Isabella König",
+    role: "Product Manager",
+    company: "Nexa Digital",
+    category: "DIGITAL PRODUCTS",
+    quote:
+      "Claystone translated a complicated product concept into a digital experience that feels simple, elegant, and fast. The attention to interaction details was excellent.",
   },
 ];
 
@@ -119,10 +185,18 @@ export default function ClientTestimonials() {
 
   const controls = useAnimationControls();
 
+  const [sliderPaused, setSliderPaused] =
+    useState(false);
+
+  const [isDragging, setIsDragging] =
+    useState(false);
+
   /*
-   * 3 copies make the slider infinitely loop:
+   * Three copies:
    *
    * COPY A | COPY B | COPY C
+   *
+   * Middle copy is the main working area.
    */
   const extendedTestimonials = useMemo(
     () => [
@@ -134,7 +208,7 @@ export default function ClientTestimonials() {
   );
 
   const [cardsPerView, setCardsPerView] =
-    useState(2);
+    useState(4);
 
   const [cardWidth, setCardWidth] =
     useState(0);
@@ -142,75 +216,61 @@ export default function ClientTestimonials() {
   const [stepWidth, setStepWidth] =
     useState(0);
 
-  /*
-   * Start at middle copy.
-   */
   const [virtualIndex, setVirtualIndex] =
     useState(TOTAL);
 
-  const virtualIndexRef =
-    useRef(TOTAL);
+  const virtualIndexRef = useRef(TOTAL);
 
-  const animatingRef =
-    useRef(false);
-
-  /* =========================================================
-     ACTIVE INDEX
-  ========================================================= */
+  const animatingRef = useRef(false);
 
   const activeIndex =
     normalizeIndex(virtualIndex);
 
   /* =========================================================
-     RESPONSIVE MEASUREMENT
+     RESPONSIVE CARD SIZE
   ========================================================= */
 
   useEffect(() => {
-    const viewport =
-      viewportRef.current;
+    const viewport = viewportRef.current;
 
     if (!viewport) return;
 
     const updateSize = () => {
-      const width =
-        viewport.clientWidth;
+      const width = viewport.clientWidth;
 
-      /*
-       * Mobile: 1 card
-       * Tablet/Desktop: 2 cards
-       */
-      const nextCards =
-        width < 768 ? 1 : 2;
+      let nextCards = 4;
+
+      if (width < 700) {
+        nextCards = 1;
+      } else if (width < 1180) {
+        nextCards = 2;
+      }
+
+      const totalGaps =
+        GAP * (nextCards - 1);
 
       const nextCardWidth =
-        nextCards === 1
-          ? width
-          : (width - GAP) / 2;
+        (width - totalGaps) / nextCards;
 
       setCardsPerView(nextCards);
 
       setCardWidth(nextCardWidth);
 
-      setStepWidth(
-        nextCardWidth + GAP
-      );
+      setStepWidth(nextCardWidth + GAP);
     };
 
     updateSize();
 
     const observer =
-      new ResizeObserver(
-        updateSize
-      );
+      new ResizeObserver(updateSize);
 
     observer.observe(viewport);
 
-    return () =>
-      observer.disconnect();
+    return () => observer.disconnect();
   }, []);
 
   /* =========================================================
-     KEEP POSITION AFTER RESIZE
+     KEEP CURRENT POSITION AFTER RESIZE
   ========================================================= */
 
   useEffect(() => {
@@ -228,152 +288,155 @@ export default function ClientTestimonials() {
   ]);
 
   /* =========================================================
-     INFINITE POSITION NORMALIZATION
+     INFINITE LOOP NORMALIZATION
   ========================================================= */
 
-  const normalizePosition =
-    useCallback(
-      (
-        currentIndex: number
-      ) => {
-        let normalized =
-          currentIndex;
+  const normalizePosition = useCallback(
+    (currentIndex: number) => {
+      /*
+       * Always reset invisibly to the
+       * corresponding slide inside
+       * the middle copy.
+       *
+       * Works even when user drags
+       * many cards at once.
+       */
+      const originalIndex =
+        normalizeIndex(currentIndex);
 
-        /*
-         * Third copy → reset invisibly
-         * into middle copy.
-         */
-        if (
-          normalized >=
-          TOTAL * 2
-        ) {
-          normalized -= TOTAL;
-        }
+      const normalized =
+        TOTAL + originalIndex;
 
-        /*
-         * First copy → reset invisibly
-         * into middle copy.
-         */
-        if (
-          normalized < TOTAL
-        ) {
-          normalized += TOTAL;
-        }
+      if (normalized !== currentIndex) {
+        virtualIndexRef.current =
+          normalized;
 
-        if (
-          normalized !==
-          currentIndex
-        ) {
-          virtualIndexRef.current =
-            normalized;
+        setVirtualIndex(normalized);
 
-          setVirtualIndex(
-            normalized
-          );
-
-          controls.set({
-            x:
-              -normalized *
-              stepWidth,
-          });
-        }
-      },
-      [
-        controls,
-        stepWidth,
-      ]
-    );
+        controls.set({
+          x:
+            -normalized *
+            stepWidth,
+        });
+      }
+    },
+    [controls, stepWidth]
+  );
 
   /* =========================================================
-     MOVE TO SLIDE
+     MOVE TO INDEX
   ========================================================= */
 
-  const moveTo =
-    useCallback(
-      async (
-        nextIndex: number
-      ) => {
-        if (
-          !stepWidth ||
-          animatingRef.current
-        ) {
-          return;
-        }
+  const moveTo = useCallback(
+    async (nextIndex: number) => {
+      if (
+        !stepWidth ||
+        animatingRef.current
+      ) {
+        return;
+      }
 
-        animatingRef.current =
-          true;
+      animatingRef.current = true;
 
-        virtualIndexRef.current =
-          nextIndex;
+      virtualIndexRef.current =
+        nextIndex;
 
-        setVirtualIndex(
-          nextIndex
-        );
+      setVirtualIndex(nextIndex);
 
-        if (reduceMotion) {
-          controls.set({
-            x:
-              -nextIndex *
-              stepWidth,
-          });
-
-          normalizePosition(
-            nextIndex
-          );
-
-          animatingRef.current =
-            false;
-
-          return;
-        }
-
-        await controls.start({
+      if (reduceMotion) {
+        controls.set({
           x:
             -nextIndex *
             stepWidth,
-
-          transition: {
-            type: 'spring',
-            stiffness: 155,
-            damping: 25,
-            mass: 0.9,
-          },
         });
 
-        normalizePosition(
-          nextIndex
-        );
+        normalizePosition(nextIndex);
 
-        animatingRef.current =
-          false;
-      },
-      [
-        controls,
-        normalizePosition,
-        reduceMotion,
-        stepWidth,
-      ]
-    );
+        animatingRef.current = false;
+
+        return;
+      }
+
+      await controls.start({
+        x:
+          -nextIndex *
+          stepWidth,
+
+        transition: {
+          duration: 0.68,
+          ease: [
+            0.22,
+            1,
+            0.36,
+            1,
+          ],
+        },
+      });
+
+      normalizePosition(nextIndex);
+
+      animatingRef.current = false;
+    },
+    [
+      controls,
+      normalizePosition,
+      reduceMotion,
+      stepWidth,
+    ]
+  );
 
   /* =========================================================
-     NEXT / PREVIOUS
+     ARROW CONTROLS
+
+     IMPORTANT:
+     Arrow always moves EXACTLY ONE card.
   ========================================================= */
 
-  const goNext =
-    useCallback(() => {
-      moveTo(
-        virtualIndexRef.current +
-          1
-      );
-    }, [moveTo]);
+  const goNext = useCallback(() => {
+    moveTo(
+      virtualIndexRef.current + 1
+    );
+  }, [moveTo]);
 
   const goPrevious =
     useCallback(() => {
       moveTo(
-        virtualIndexRef.current -
-          1
+        virtualIndexRef.current - 1
       );
     }, [moveTo]);
+
+  /* =========================================================
+     AUTOPLAY
+
+     Auto play also moves one card.
+  ========================================================= */
+
+  useEffect(() => {
+    if (
+      reduceMotion ||
+      !stepWidth ||
+      sliderPaused ||
+      isDragging
+    ) {
+      return;
+    }
+
+    const timer =
+      window.setInterval(() => {
+        if (!animatingRef.current) {
+          goNext();
+        }
+      }, 5800);
+
+    return () =>
+      window.clearInterval(timer);
+  }, [
+    goNext,
+    reduceMotion,
+    sliderPaused,
+    isDragging,
+    stepWidth,
+  ]);
 
   /* =========================================================
      DOT NAVIGATION
@@ -381,82 +444,154 @@ export default function ClientTestimonials() {
 
   const goToOriginalSlide =
     useCallback(
-      (
-        targetIndex: number
-      ) => {
+      (targetIndex: number) => {
         moveTo(
-          TOTAL +
-            targetIndex
+          TOTAL + targetIndex
         );
       },
       [moveTo]
     );
 
   /* =========================================================
-     DRAG END
+     DRAG START
   ========================================================= */
 
-  const handleDragEnd =
-    useCallback(
-      (
-        _: unknown,
-        info: {
-          offset: {
-            x: number;
-          };
-          velocity: {
-            x: number;
-          };
-        }
-      ) => {
-        const power =
-          info.offset.x +
-          info.velocity.x *
-            0.12;
+  const handleDragStart =
+    useCallback(() => {
+      setIsDragging(true);
+    }, []);
 
-        if (
-          power < -55
-        ) {
-          goNext();
-          return;
-        }
+  /* =========================================================
+     DRAG END
 
-        if (
-          power > 55
-        ) {
-          goPrevious();
-          return;
-        }
+     Drag distance determines how many
+     testimonial cards will slide.
 
-        /*
-         * Small drag → snap back.
-         */
+     Example:
+     0.3 card drag  -> 1 card
+     1.4 card drag  -> 1 card
+     2.4 card drag  -> 2 cards
+     3.7 card drag  -> 4 cards
+
+     Fast swipe velocity is also included.
+  ========================================================= */
+
+  const handleDragEnd = useCallback(
+    (
+      _: unknown,
+      info: {
+        offset: {
+          x: number;
+          y: number;
+        };
+
+        velocity: {
+          x: number;
+          y: number;
+        };
+      }
+    ) => {
+      setIsDragging(false);
+
+      if (!stepWidth) return;
+
+      /*
+       * Velocity projection makes a
+       * fast swipe travel farther.
+       */
+      const projectedDistance =
+        info.offset.x +
+        info.velocity.x * 0.14;
+
+      const absoluteDistance =
+        Math.abs(projectedDistance);
+
+      /*
+       * Very small movement:
+       * snap back to current slide.
+       */
+      const minimumDrag =
+        Math.min(
+          70,
+          stepWidth * 0.2
+        );
+
+      if (
+        absoluteDistance <
+        minimumDrag
+      ) {
         moveTo(
           virtualIndexRef.current
         );
-      },
-      [
-        goNext,
-        goPrevious,
-        moveTo,
-      ]
-    );
+
+        return;
+      }
+
+      /*
+       * Calculate how many full card
+       * widths were dragged.
+
+       * Minimum = 1
+       * Maximum = all 12 testimonials
+       */
+      const cardsToMove =
+        Math.min(
+          TOTAL,
+          Math.max(
+            1,
+            Math.round(
+              absoluteDistance /
+                stepWidth
+            )
+          )
+        );
+
+      /*
+       * Drag LEFT:
+       * move forward.
+
+       * Drag RIGHT:
+       * move backward.
+       */
+      if (projectedDistance < 0) {
+        moveTo(
+          virtualIndexRef.current +
+            cardsToMove
+        );
+
+        return;
+      }
+
+      moveTo(
+        virtualIndexRef.current -
+          cardsToMove
+      );
+    },
+    [
+      moveTo,
+      stepWidth,
+    ]
+  );
 
   return (
     <section
       className="
         relative
+
         w-full
         overflow-hidden
 
         bg-[#050907]
 
-        py-16
+        py-12
 
         text-white
 
-        sm:py-20
-        lg:py-24
+        sm:py-14
+
+        lg:py-16
+
+        xl:py-[72px]
       "
     >
       {/* =====================================================
@@ -466,22 +601,24 @@ export default function ClientTestimonials() {
       <div
         className="
           pointer-events-none
+
           absolute
           inset-0
+
           overflow-hidden
         "
       >
-        {/* Main Glow */}
+        {/* TOP GLOW */}
 
         <div
           className="
             absolute
 
             left-1/2
-            top-[-380px]
+            top-[-420px]
 
-            h-[760px]
-            w-[1200px]
+            h-[820px]
+            w-[1250px]
 
             max-w-full
 
@@ -489,100 +626,84 @@ export default function ClientTestimonials() {
 
             rounded-full
 
-            bg-[#00FF66]/5
+            bg-[#00FF66]/[0.05]
 
-            blur-[180px]
+            blur-[190px]
           "
         />
 
-        {/* Left Ambient Glow */}
+        {/* LEFT GLOW */}
 
         {!reduceMotion && (
           <motion.div
             animate={{
-              x: [
-                0,
-                45,
-                0,
-              ],
-
-              y: [
-                0,
-                25,
-                0,
-              ],
+              x: [0, 45, 0],
+              y: [0, 24, 0],
             }}
             transition={{
               duration: 15,
               repeat: Infinity,
-              ease: 'easeInOut',
+              ease:
+                "easeInOut",
             }}
             className="
               absolute
 
-              -left-[240px]
-              top-[42%]
+              -left-[260px]
+              top-[35%]
 
-              h-[480px]
-              w-[480px]
+              h-[520px]
+              w-[520px]
 
               rounded-full
 
-              bg-[#00FF66]/5
+              bg-[#00FF66]/[0.045]
 
-              blur-[160px]
+              blur-[170px]
             "
           />
         )}
 
-        {/* Right Ambient Glow */}
+        {/* RIGHT GLOW */}
 
         {!reduceMotion && (
           <motion.div
             animate={{
-              x: [
-                0,
-                -35,
-                0,
-              ],
-
-              y: [
-                0,
-                -20,
-                0,
-              ],
+              x: [0, -40, 0],
+              y: [0, -20, 0],
             }}
             transition={{
               duration: 17,
               repeat: Infinity,
-              ease: 'easeInOut',
+              ease:
+                "easeInOut",
             }}
             className="
               absolute
 
-              -right-[240px]
-              bottom-[5%]
+              -right-[260px]
+              bottom-[4%]
 
-              h-[480px]
-              w-[480px]
+              h-[520px]
+              w-[520px]
 
               rounded-full
 
-              bg-[#00FF66]/5
+              bg-[#00FF66]/[0.04]
 
-              blur-[160px]
+              blur-[170px]
             "
           />
         )}
 
-        {/* Grid */}
+        {/* GRID */}
 
         <div
           className="
             absolute
             inset-0
 
-            opacity-[0.018]
+            opacity-[0.02]
 
             [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)]
 
@@ -590,7 +711,7 @@ export default function ClientTestimonials() {
           "
         />
 
-        {/* Top Divider */}
+        {/* TOP LINE */}
 
         <div
           className="
@@ -610,7 +731,26 @@ export default function ClientTestimonials() {
 
             from-transparent
 
-            via-[#00FF66]/20
+            via-[#00FF66]/25
+
+            to-transparent
+          "
+        />
+
+        {/* BOTTOM SHADE */}
+
+        <div
+          className="
+            absolute
+
+            inset-x-0
+            bottom-0
+
+            h-[260px]
+
+            bg-gradient-to-t
+
+            from-black/30
 
             to-transparent
           "
@@ -632,9 +772,13 @@ export default function ClientTestimonials() {
           max-w-[1600px]
 
           px-4
+
           sm:px-6
+
           lg:px-8
+
           xl:px-10
+
           2xl:px-12
         "
       >
@@ -644,17 +788,20 @@ export default function ClientTestimonials() {
 
         <div
           className="
-            mb-10
+            mb-8
 
             grid
             items-end
-            gap-8
 
-            lg:mb-14
+            gap-6
+
+            sm:mb-10
 
             lg:grid-cols-[1fr_auto]
 
-            lg:gap-16
+            lg:gap-12
+
+            xl:mb-12
           "
         >
           {/* LEFT */}
@@ -665,7 +812,7 @@ export default function ClientTestimonials() {
                 ? false
                 : {
                     opacity: 0,
-                    y: 25,
+                    y: 24,
                   }
             }
             whileInView={{
@@ -681,31 +828,32 @@ export default function ClientTestimonials() {
               ease,
             }}
           >
-            {/* Eyebrow */}
+            {/* EYEBROW */}
 
             <div
               className="
-                mb-5
+                mb-4
 
                 flex
                 items-center
+
                 gap-3
 
                 font-mono
 
-                text-[9px]
+                text-[10px]
 
-                font-bold
+                font-black
 
                 uppercase
 
-                tracking-[0.18em]
+                tracking-[0.17em]
 
                 text-[#00FF66]
 
-                sm:text-[10px]
+                sm:text-[11px]
 
-                lg:text-[11px]
+                lg:text-[12px]
               "
             >
               <motion.span
@@ -728,8 +876,10 @@ export default function ClientTestimonials() {
                 }
                 transition={{
                   duration: 2.3,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
+                  repeat:
+                    Infinity,
+                  ease:
+                    "easeInOut",
                 }}
                 className="
                   h-2
@@ -746,11 +896,11 @@ export default function ClientTestimonials() {
               CLIENT TELEMETRY
             </div>
 
-            {/* Heading */}
+            {/* HEADING */}
 
             <h2
               className="
-                max-w-[920px]
+                max-w-[940px]
 
                 text-[42px]
 
@@ -758,7 +908,7 @@ export default function ClientTestimonials() {
 
                 leading-[0.98]
 
-                tracking-[-0.045em]
+                tracking-[-0.05em]
 
                 text-[#f5f8f3]
 
@@ -766,9 +916,9 @@ export default function ClientTestimonials() {
 
                 md:text-[62px]
 
-                lg:text-[70px]
+                lg:text-[68px]
 
-                xl:text-[76px]
+                xl:text-[74px]
               "
             >
               Trusted by people
@@ -780,9 +930,9 @@ export default function ClientTestimonials() {
 
                   from-white
 
-                  via-[#e9f5ed]
+                  via-[#e8f8ed]
 
-                  to-[#70ffa7]
+                  to-[#63ffa0]
 
                   bg-clip-text
 
@@ -793,23 +943,23 @@ export default function ClientTestimonials() {
               </span>
             </h2>
 
-            {/* Description */}
+            {/* DESCRIPTION */}
 
             <p
               className="
-                mt-5
+                mt-4
 
-                max-w-[680px]
+                max-w-[760px]
 
-                text-[14px]
+                text-[16px]
 
                 leading-[1.8]
 
-                text-[#9fb2a7]
+                text-[#a7b8ae]
 
-                sm:text-[15px]
+                sm:text-[17px]
 
-                lg:text-[16px]
+                lg:text-[18px]
               "
             >
               Real experiences across architecture,
@@ -853,7 +1003,7 @@ export default function ClientTestimonials() {
               lg:pb-2
             "
           >
-            {/* Current Slide */}
+            {/* CURRENT */}
 
             <div
               className="
@@ -863,11 +1013,13 @@ export default function ClientTestimonials() {
 
                 font-mono
 
-                text-[9px]
+                text-[11px]
 
-                tracking-[0.15em]
+                font-semibold
 
-                text-white/25
+                tracking-[0.16em]
+
+                text-white/40
 
                 sm:block
               "
@@ -876,14 +1028,14 @@ export default function ClientTestimonials() {
                 activeIndex + 1
               ).padStart(
                 2,
-                '0'
+                "0"
               )}
 
               <span
                 className="
                   mx-2
 
-                  text-[#00FF66]/45
+                  text-[#00FF66]/55
                 "
               >
                 /
@@ -893,34 +1045,29 @@ export default function ClientTestimonials() {
                 TOTAL
               ).padStart(
                 2,
-                '0'
+                "0"
               )}
             </div>
 
             {/* =================================================
-                PREVIOUS BUTTON
+                PREVIOUS
+                EXACTLY ONE CARD
             ================================================== */}
 
             <motion.button
               type="button"
-
               aria-label="Previous testimonial"
-
               onClick={goPrevious}
-
               whileHover={
                 reduceMotion
                   ? undefined
                   : {
-                      y: -3,
-                      scale: 1.04,
+                      scale: 1.045,
                     }
               }
-
               whileTap={{
                 scale: 0.95,
               }}
-
               className="
                 group
 
@@ -933,82 +1080,64 @@ export default function ClientTestimonials() {
 
                 cursor-pointer
 
-                touch-manipulation
-
                 items-center
-
                 justify-center
 
                 rounded-full
 
                 border
+                border-white/[0.11]
 
-                border-white/10
+                bg-[linear-gradient(145deg,#101913,#09110d)]
 
-                bg-[#0c1510]
-
-                text-white/70
+                text-white/75
 
                 shadow-[0_12px_32px_rgba(0,0,0,0.38)]
-
-                outline-none
 
                 transition-all
 
                 duration-500
 
-                hover:border-[#00FF66]/35
+                hover:border-[#00FF66]/40
 
-                hover:bg-[#00FF66]/6
+                hover:bg-[#00FF66]/[0.07]
 
                 hover:text-[#00FF66]
 
-                hover:shadow-[0_15px_40px_rgba(0,0,0,0.50),0_0_30px_rgba(0,255,102,0.10)]
-
-                focus-visible:ring-2
-
-                focus-visible:ring-[#00FF66]/50
-
-                active:scale-95
+                hover:shadow-[0_15px_40px_rgba(0,0,0,0.50),0_0_28px_rgba(0,255,102,0.10)]
               "
             >
               <ArrowLeft
-                size={17}
-
+                size={18}
                 className="
                   transition-transform
 
                   duration-500
 
-                  group-hover:-translate-x-1
+                  group-hover:-translate-x-0.5
                 "
               />
             </motion.button>
 
             {/* =================================================
-                NEXT BUTTON
+                NEXT
+                EXACTLY ONE CARD
             ================================================== */}
 
             <motion.button
               type="button"
-
               aria-label="Next testimonial"
-
               onClick={goNext}
-
               whileHover={
                 reduceMotion
                   ? undefined
                   : {
-                      y: -3,
-                      scale: 1.04,
+                      scale: 1.045,
                     }
               }
-
               whileTap={{
                 scale: 0.95,
               }}
-
               className="
                 group
 
@@ -1023,10 +1152,7 @@ export default function ClientTestimonials() {
 
                 cursor-pointer
 
-                touch-manipulation
-
                 items-center
-
                 justify-center
 
                 overflow-hidden
@@ -1045,23 +1171,13 @@ export default function ClientTestimonials() {
 
                 shadow-[0_0_25px_rgba(0,255,102,0.4)]
 
-                outline-none
-
                 transition-all
 
                 duration-500
 
-                hover:shadow-[0_0_40px_rgba(0,255,102,0.7)]
-
-                focus-visible:ring-2
-
-                focus-visible:ring-[#00FF66]/60
-
-                active:scale-95
+                hover:shadow-[0_0_42px_rgba(0,255,102,0.7)]
               "
             >
-              {/* Shine */}
-
               <span
                 className="
                   pointer-events-none
@@ -1093,8 +1209,7 @@ export default function ClientTestimonials() {
               />
 
               <ArrowRight
-                size={17}
-
+                size={18}
                 className="
                   relative
                   z-10
@@ -1103,7 +1218,7 @@ export default function ClientTestimonials() {
 
                   duration-500
 
-                  group-hover:translate-x-1
+                  group-hover:translate-x-0.5
                 "
               />
             </motion.button>
@@ -1111,19 +1226,28 @@ export default function ClientTestimonials() {
         </div>
 
         {/* =================================================
-            SLIDER SAFE SPACE
+            SLIDER
         ================================================== */}
 
         <div
+          onMouseEnter={() =>
+            setSliderPaused(
+              true
+            )
+          }
+          onMouseLeave={() =>
+            setSliderPaused(
+              false
+            )
+          }
           className="
-            py-4
+            py-3
 
-            sm:py-6
+            sm:py-4
           "
         >
           <div
             ref={viewportRef}
-
             className="
               relative
 
@@ -1132,7 +1256,7 @@ export default function ClientTestimonials() {
               overflow-hidden
             "
           >
-            {/* Left Fade */}
+            {/* LEFT FADE */}
 
             <div
               className="
@@ -1141,12 +1265,11 @@ export default function ClientTestimonials() {
                 absolute
 
                 inset-y-0
-
                 left-0
 
                 z-30
 
-                w-4
+                w-3
 
                 bg-gradient-to-r
 
@@ -1154,11 +1277,11 @@ export default function ClientTestimonials() {
 
                 to-transparent
 
-                sm:w-8
+                sm:w-5
               "
             />
 
-            {/* Right Fade */}
+            {/* RIGHT FADE */}
 
             <div
               className="
@@ -1167,12 +1290,11 @@ export default function ClientTestimonials() {
                 absolute
 
                 inset-y-0
-
                 right-0
 
                 z-30
 
-                w-4
+                w-3
 
                 bg-gradient-to-l
 
@@ -1180,23 +1302,21 @@ export default function ClientTestimonials() {
 
                 to-transparent
 
-                sm:w-8
+                sm:w-5
               "
             />
 
             {/* =================================================
-                INFINITE TRACK
+                DRAGGABLE TRACK
             ================================================== */}
 
             <motion.div
               drag={
                 reduceMotion
                   ? false
-                  : 'x'
+                  : "x"
               }
-
-              dragElastic={0.08}
-
+              dragElastic={0}
               dragMomentum={false}
 
               animate={controls}
@@ -1204,6 +1324,10 @@ export default function ClientTestimonials() {
               initial={{
                 x: 0,
               }}
+
+              onDragStart={
+                handleDragStart
+              }
 
               onDragEnd={
                 handleDragEnd
@@ -1214,9 +1338,9 @@ export default function ClientTestimonials() {
 
                 cursor-grab
 
-                select-none
+                items-stretch
 
-                gap-6
+                gap-[20px]
 
                 py-5
 
@@ -1234,69 +1358,72 @@ export default function ClientTestimonials() {
                 ) => (
                   <motion.article
                     key={`${testimonial.id}-${cardIndex}`}
-
                     style={{
                       width:
                         cardWidth ||
-                        '100%',
+                        "100%",
 
                       flexBasis:
                         cardWidth ||
-                        '100%',
+                        "100%",
                     }}
-
                     whileHover={
-                      reduceMotion
+                      reduceMotion ||
+                      isDragging
                         ? undefined
                         : {
-                            y: -7,
-                            scale: 1.005,
+                            y: -5,
+                            scale:
+                              1.006,
                           }
                     }
-
                     transition={{
                       duration: 0.4,
                       ease,
                     }}
-
                     className="
                       group
 
                       relative
+
+                      min-h-[440px]
 
                       min-w-0
                       shrink-0
 
                       overflow-hidden
 
-                      rounded-[30px]
+                      rounded-[24px]
 
                       border
+                      border-white/[0.075]
 
-                      border-white/7.5
+                      bg-[linear-gradient(145deg,#101a14_0%,#0b140f_52%,#07100b_100%)]
 
-                      bg-[linear-gradient(145deg,#0f1812_0%,#0a120d_55%,#07100b_100%)]
+                      p-5
 
-                      p-6
-
-                      shadow-[0_24px_65px_rgba(0,0,0,0.50),0_0_25px_rgba(0,255,102,0.025)]
+                      shadow-[0_22px_55px_rgba(0,0,0,0.50),0_8px_25px_rgba(0,0,0,0.28),0_0_24px_rgba(0,255,102,0.025),inset_0_1px_0_rgba(255,255,255,0.03)]
 
                       transition-[border-color,box-shadow]
 
                       duration-700
 
-                      hover:border-[#00FF66]/25
+                      hover:border-[#00FF66]/30
 
-                      hover:shadow-[0_38px_95px_rgba(0,0,0,0.68),0_0_45px_rgba(0,255,102,0.11)]
+                      hover:shadow-[0_34px_85px_rgba(0,0,0,0.67),0_0_42px_rgba(0,255,102,0.12),0_0_80px_rgba(0,255,102,0.045)]
 
-                      sm:p-8
+                      sm:min-h-[460px]
 
-                      lg:p-9
+                      sm:p-6
+
+                      xl:min-h-[485px]
+
+                      xl:p-[22px]
+
+                      2xl:p-6
                     "
                   >
-                    {/* =============================================
-                        CARD ATMOSPHERE
-                    ============================================== */}
+                    {/* PREMIUM BACKGROUND */}
 
                     <div
                       className="
@@ -1305,11 +1432,11 @@ export default function ClientTestimonials() {
                         absolute
                         inset-0
 
-                        bg-[radial-gradient(circle_at_92%_5%,rgba(0,255,102,0.09),transparent_27%),linear-gradient(135deg,rgba(255,255,255,0.025),transparent_42%)]
+                        bg-[radial-gradient(circle_at_92%_6%,rgba(0,255,102,0.11),transparent_27%),radial-gradient(circle_at_8%_100%,rgba(0,255,102,0.04),transparent_34%),linear-gradient(135deg,rgba(255,255,255,0.025),transparent_45%)]
                       "
                     />
 
-                    {/* Top Glow */}
+                    {/* TOP RIGHT GLOW */}
 
                     <div
                       className="
@@ -1318,7 +1445,6 @@ export default function ClientTestimonials() {
                         absolute
 
                         -right-[140px]
-
                         -top-[140px]
 
                         h-[340px]
@@ -1326,11 +1452,11 @@ export default function ClientTestimonials() {
 
                         rounded-full
 
-                        bg-[#00FF66]/10
+                        bg-[#00FF66]/[0.08]
 
-                        blur-[110px]
+                        blur-[115px]
 
-                        opacity-30
+                        opacity-35
 
                         transition-all
 
@@ -1342,7 +1468,7 @@ export default function ClientTestimonials() {
                       "
                     />
 
-                    {/* Bottom Glow */}
+                    {/* LOWER GLOW */}
 
                     <div
                       className="
@@ -1350,22 +1476,21 @@ export default function ClientTestimonials() {
 
                         absolute
 
-                        -bottom-[180px]
-
+                        -bottom-[190px]
                         left-1/2
 
-                        h-[300px]
-                        w-[300px]
+                        h-[320px]
+                        w-[320px]
 
                         -translate-x-1/2
 
                         rounded-full
 
-                        bg-[#00FF66]/5
+                        bg-[#00FF66]/[0.04]
 
-                        blur-[110px]
+                        blur-[120px]
 
-                        opacity-30
+                        opacity-40
 
                         transition-opacity
 
@@ -1375,7 +1500,7 @@ export default function ClientTestimonials() {
                       "
                     />
 
-                    {/* Grid */}
+                    {/* GRID */}
 
                     <div
                       className="
@@ -1384,7 +1509,7 @@ export default function ClientTestimonials() {
                         absolute
                         inset-0
 
-                        opacity-[0.028]
+                        opacity-[0.025]
 
                         [background-image:linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)]
 
@@ -1392,19 +1517,19 @@ export default function ClientTestimonials() {
                       "
                     />
 
-                    {/* Top Accent */}
+                    {/* TOP ACCENT */}
 
                     <div
                       className="
+                        pointer-events-none
+
                         absolute
 
                         left-1/2
-
                         top-0
 
-                        h-px
-
-                        w-[20%]
+                        h-[2px]
+                        w-[16%]
 
                         -translate-x-1/2
 
@@ -1412,9 +1537,13 @@ export default function ClientTestimonials() {
 
                         from-transparent
 
-                        via-[#00FF66]/50
+                        via-[#00FF66]/65
 
                         to-transparent
+
+                        opacity-75
+
+                        shadow-[0_0_12px_rgba(0,255,102,0.35)]
 
                         transition-all
 
@@ -1426,106 +1555,35 @@ export default function ClientTestimonials() {
                       "
                     />
 
-                    {/* =================================================
-                        TOP META
-                    ================================================== */}
+                    {/* LEFT ACCENT */}
 
-                    <div
+                    <span
                       className="
-                        relative
-                        z-10
+                        pointer-events-none
 
-                        mb-8
+                        absolute
 
-                        flex
+                        left-0
+                        top-[24%]
 
-                        items-center
+                        h-[50%]
+                        w-px
 
-                        justify-between
+                        bg-gradient-to-b
 
-                        gap-4
+                        from-transparent
+
+                        via-[#00FF66]/0
+
+                        to-transparent
+
+                        transition-all
+
+                        duration-700
+
+                        group-hover:via-[#00FF66]/35
                       "
-                    >
-                      {/* Category */}
-
-                      <div
-                        className="
-                          inline-flex
-
-                          items-center
-
-                          gap-2
-
-                          rounded-full
-
-                          border
-
-                          border-[#00FF66]/15
-
-                          bg-[#00FF66]/4.5
-
-                          px-3
-
-                          py-1.5
-
-                          font-mono
-
-                          text-[7px]
-
-                          font-bold
-
-                          uppercase
-
-                          tracking-[0.12em]
-
-                          text-[#75ffa9]
-
-                          sm:text-[8px]
-                        "
-                      >
-                        <span
-                          className="
-                            h-1.5
-                            w-1.5
-
-                            rounded-full
-
-                            bg-[#00FF66]
-
-                            shadow-[0_0_8px_rgba(0,255,102,0.8)]
-                          "
-                        />
-
-                        {
-                          testimonial.category
-                        }
-                      </div>
-
-                      {/* Number */}
-
-                      <span
-                        className="
-                          font-mono
-
-                          text-[8px]
-
-                          tracking-[0.14em]
-
-                          text-white/20
-                        "
-                      >
-                        {String(
-                          testimonial.id
-                        ).padStart(
-                          2,
-                          '0'
-                        )}
-
-                        {' / '}
-
-                        06
-                      </span>
-                    </div>
+                    />
 
                     {/* =================================================
                         CONTENT
@@ -1538,66 +1596,192 @@ export default function ClientTestimonials() {
 
                         flex
 
-                        min-h-[310px]
+                        h-full
 
                         flex-col
-
-                        sm:min-h-[330px]
-
-                        lg:min-h-[350px]
                       "
                     >
-                      {/* Quote Icon */}
+                      {/* TOP */}
 
                       <div
                         className="
-                          mb-6
+                          flex
+
+                          items-start
+
+                          justify-between
+
+                          gap-3
+                        "
+                      >
+                        {/* CATEGORY */}
+
+                        <div
+                          className="
+                            inline-flex
+
+                            min-w-0
+
+                            items-center
+
+                            gap-2
+
+                            rounded-full
+
+                            border
+                            border-[#00FF66]/20
+
+                            bg-[#00FF66]/[0.05]
+
+                            px-3.5
+                            py-2
+
+                            font-mono
+
+                            text-[9px]
+
+                            font-bold
+
+                            uppercase
+
+                            tracking-[0.10em]
+
+                            text-[#8effb8]
+
+                            shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]
+
+                            backdrop-blur-md
+
+                            transition-all
+
+                            duration-500
+
+                            group-hover:border-[#00FF66]/35
+
+                            group-hover:bg-[#00FF66]/[0.075]
+
+                            sm:text-[9.5px]
+
+                            2xl:text-[10px]
+                          "
+                        >
+                          <span
+                            className="
+                              h-1.5
+                              w-1.5
+
+                              shrink-0
+
+                              rounded-full
+
+                              bg-[#00FF66]
+
+                              shadow-[0_0_8px_rgba(0,255,102,0.9)]
+                            "
+                          />
+
+                          <span className="truncate">
+                            {
+                              testimonial.category
+                            }
+                          </span>
+                        </div>
+
+                        {/* NUMBER */}
+
+                        <span
+                          className="
+                            shrink-0
+
+                            pt-1.5
+
+                            font-mono
+
+                            text-[9px]
+
+                            font-bold
+
+                            tracking-[0.13em]
+
+                            text-white/30
+
+                            2xl:text-[9.5px]
+                          "
+                        >
+                          {String(
+                            testimonial.id
+                          ).padStart(
+                            2,
+                            "0"
+                          )}
+
+                          <span
+                            className="
+                              mx-1
+
+                              text-[#00FF66]/40
+                            "
+                          >
+                            /
+                          </span>
+
+                          12
+                        </span>
+                      </div>
+
+                      {/* QUOTE ICON */}
+
+                      <div
+                        className="
+                          mt-6
 
                           flex
 
-                          h-11
-                          w-11
+                          h-12
+                          w-12
 
                           items-center
-
                           justify-center
 
-                          rounded-[13px]
+                          rounded-[14px]
 
                           border
+                          border-[#00FF66]/18
 
-                          border-[#00FF66]/15
-
-                          bg-[#00FF66]/5
+                          bg-[linear-gradient(145deg,rgba(0,255,102,0.10),rgba(0,255,102,0.035))]
 
                           text-[#00FF66]
 
-                          shadow-[0_0_20px_rgba(0,255,102,0.07)]
+                          shadow-[0_0_22px_rgba(0,255,102,0.08),inset_0_1px_0_rgba(255,255,255,0.04)]
 
                           transition-all
 
                           duration-500
 
-                          group-hover:border-[#00FF66]/30
+                          group-hover:scale-105
 
-                          group-hover:bg-[#00FF66]/8
+                          group-hover:border-[#00FF66]/35
 
-                          group-hover:shadow-[0_0_28px_rgba(0,255,102,0.14)]
+                          group-hover:bg-[#00FF66]/[0.10]
+
+                          group-hover:shadow-[0_0_30px_rgba(0,255,102,0.16)]
                         "
                       >
                         <Quote
-                          size={18}
-                          strokeWidth={1.6}
+                          size={19}
+                          strokeWidth={
+                            1.7
+                          }
                         />
                       </div>
 
-                      {/* Quote */}
+                      {/* QUOTE TEXT */}
 
                       <blockquote
                         className="
-                          max-w-[680px]
+                          mt-5
 
-                          text-[16px]
+                          text-[17px]
 
                           font-normal
 
@@ -1605,7 +1789,7 @@ export default function ClientTestimonials() {
 
                           tracking-[-0.018em]
 
-                          text-[#e0e9e3]
+                          text-[#dce6df]
 
                           transition-colors
 
@@ -1613,11 +1797,11 @@ export default function ClientTestimonials() {
 
                           group-hover:text-white
 
-                          sm:text-[17px]
+                          sm:text-[18px]
 
-                          lg:text-[18px]
+                          xl:text-[16.5px]
 
-                          2xl:text-[19px]
+                          2xl:text-[17.5px]
                         "
                       >
                         “
@@ -1627,32 +1811,37 @@ export default function ClientTestimonials() {
                         ”
                       </blockquote>
 
-                      {/* =================================================
-                          CLIENT FOOTER
-                      ================================================== */}
+                      {/* CLIENT FOOTER */}
 
                       <div
                         className="
                           mt-auto
 
-                          pt-8
+                          pt-7
                         "
                       >
                         <div
                           className="
-                            mb-5
+                            mb-4
 
                             h-px
-
                             w-full
 
                             bg-gradient-to-r
 
-                            from-[#00FF66]/20
+                            from-[#00FF66]/25
 
-                            via-white/6
+                            via-white/[0.07]
 
                             to-transparent
+
+                            transition-all
+
+                            duration-700
+
+                            group-hover:from-[#00FF66]/45
+
+                            group-hover:via-[#00FF66]/10
                           "
                         />
 
@@ -1664,10 +1853,10 @@ export default function ClientTestimonials() {
 
                             justify-between
 
-                            gap-4
+                            gap-3
                           "
                         >
-                          {/* Person */}
+                          {/* PERSON */}
 
                           <div
                             className="
@@ -1680,7 +1869,7 @@ export default function ClientTestimonials() {
                               gap-3
                             "
                           >
-                            {/* Avatar */}
+                            {/* AVATAR */}
 
                             <motion.div
                               whileHover={
@@ -1688,61 +1877,96 @@ export default function ClientTestimonials() {
                                   ? undefined
                                   : {
                                       scale:
-                                        1.08,
+                                        1.07,
                                     }
                               }
                               className="
+                                relative
+
                                 flex
 
-                                h-11
-                                w-11
+                                h-12
+                                w-12
 
                                 shrink-0
 
                                 items-center
-
                                 justify-center
+
+                                overflow-hidden
 
                                 rounded-full
 
                                 border
+                                border-[#00FF66]/25
 
-                                border-[#00FF66]/20
-
-                                bg-gradient-to-br
-
-                                from-[#0b5832]
-
-                                to-[#052f1c]
+                                bg-[linear-gradient(145deg,#0e6139,#06321e)]
 
                                 text-[12px]
 
-                                font-bold
+                                font-black
 
-                                text-[#32ff83]
+                                tracking-[0.03em]
 
-                                shadow-[0_0_24px_rgba(0,255,102,0.10)]
+                                text-[#52ff94]
+
+                                shadow-[0_0_24px_rgba(0,255,102,0.10),inset_0_1px_0_rgba(255,255,255,0.06)]
                               "
                             >
-                              {
-                                testimonial.initials
-                              }
+                              <span
+                                className="
+                                  pointer-events-none
+
+                                  absolute
+
+                                  -right-3
+                                  -top-3
+
+                                  h-8
+                                  w-8
+
+                                  rounded-full
+
+                                  bg-white/15
+
+                                  blur-xl
+                                "
+                              />
+
+                              <span
+                                className="
+                                  relative
+                                  z-10
+                                "
+                              >
+                                {
+                                  testimonial.initials
+                                }
+                              </span>
                             </motion.div>
 
-                            {/* Name */}
+                            {/* CLIENT INFO */}
 
-                            <div className="min-w-0">
+                            <div
+                              className="
+                                min-w-0
+                              "
+                            >
                               <div
                                 className="
                                   truncate
 
-                                  text-[14px]
+                                  text-[15px]
 
                                   font-semibold
 
+                                  tracking-[-0.015em]
+
                                   text-white
 
-                                  sm:text-[15px]
+                                  sm:text-[16px]
+
+                                  2xl:text-[16.5px]
                                 "
                               >
                                 {
@@ -1754,19 +1978,25 @@ export default function ClientTestimonials() {
                                 className="
                                   mt-1
 
-                                  truncate
+                                  line-clamp-2
 
                                   font-mono
 
-                                  text-[7px]
+                                  text-[8.5px]
+
+                                  font-medium
 
                                   uppercase
 
-                                  tracking-[0.12em]
+                                  leading-[1.5]
 
-                                  text-[#718b7b]
+                                  tracking-[0.09em]
 
-                                  sm:text-[8px]
+                                  text-[#779084]
+
+                                  sm:text-[9px]
+
+                                  2xl:text-[9.5px]
                                 "
                               >
                                 {
@@ -1775,9 +2005,9 @@ export default function ClientTestimonials() {
 
                                 <span
                                   className="
-                                    mx-1.5
+                                    mx-1
 
-                                    text-[#00FF66]/35
+                                    text-[#00FF66]/40
                                   "
                                 >
                                   /
@@ -1790,19 +2020,22 @@ export default function ClientTestimonials() {
                             </div>
                           </div>
 
-                          <Sparkles
-                            size={14}
+                          {/* SPARK */}
 
+                          <Sparkles
+                            size={15}
                             className="
                               shrink-0
 
-                              text-[#00FF66]/35
+                              text-[#00FF66]/30
 
                               transition-all
 
                               duration-500
 
                               group-hover:rotate-12
+
+                              group-hover:scale-110
 
                               group-hover:text-[#00FF66]
                             "
@@ -1811,9 +2044,9 @@ export default function ClientTestimonials() {
                       </div>
                     </div>
 
-                    {/* Hover Shine */}
+                    {/* HOVER SHINE */}
 
-                    <div
+                    <span
                       className="
                         pointer-events-none
 
@@ -1823,7 +2056,7 @@ export default function ClientTestimonials() {
 
                         -left-[70%]
 
-                        w-[24%]
+                        w-[25%]
 
                         skew-x-[-22deg]
 
@@ -1831,7 +2064,7 @@ export default function ClientTestimonials() {
 
                         from-transparent
 
-                        via-white/3.5
+                        via-white/[0.035]
 
                         to-transparent
 
@@ -1855,13 +2088,13 @@ export default function ClientTestimonials() {
 
         <div
           className="
-            mt-4
+            mt-5
 
             flex
 
             flex-col
 
-            gap-5
+            gap-4
 
             sm:flex-row
 
@@ -1870,11 +2103,13 @@ export default function ClientTestimonials() {
             sm:justify-between
           "
         >
-          {/* Progress Dots */}
+          {/* DOT NAVIGATION */}
 
           <div
             className="
               flex
+
+              flex-wrap
 
               items-center
 
@@ -1890,26 +2125,20 @@ export default function ClientTestimonials() {
                   key={
                     testimonial.id
                   }
-
                   type="button"
-
                   aria-label={`Go to testimonial ${
                     dotIndex +
                     1
                   }`}
-
                   onClick={() =>
                     goToOriginalSlide(
                       dotIndex
                     )
                   }
-
                   className={`
-                    h-1.5
+                    h-2
 
                     cursor-pointer
-
-                    touch-manipulation
 
                     rounded-full
 
@@ -1928,11 +2157,11 @@ export default function ClientTestimonials() {
                           shadow-[0_0_14px_rgba(0,255,102,0.55)]
                         `
                         : `
-                          w-1.5
+                          w-2
 
                           bg-white/15
 
-                          hover:bg-[#00FF66]/45
+                          hover:bg-[#00FF66]/50
                         `
                     }
                   `}
@@ -1941,24 +2170,129 @@ export default function ClientTestimonials() {
             )}
           </div>
 
-          {/* Helper Text */}
+          {/* HELPER STATUS */}
 
           <div
             className="
+              relative
+
+              flex
+
+              items-center
+
+              gap-2.5
+
+              rounded-full
+
+              border
+              border-white/[0.07]
+
+              bg-white/[0.025]
+
+              px-4
+              py-2.5
+
               font-mono
 
-              text-[7px]
+              text-[9px]
+
+              font-semibold
 
               uppercase
 
-              tracking-[0.16em]
+              tracking-[0.13em]
 
-              text-white/20
+              text-white/40
 
-              sm:text-[8px]
+              shadow-[inset_0_1px_0_rgba(255,255,255,0.035)]
+
+              backdrop-blur-lg
+
+              sm:text-[10px]
+
+              lg:text-[10.5px]
             "
           >
-            INFINITE · DRAG · SWIPE · USE ARROWS
+            <span
+              className="
+                relative
+
+                flex
+
+                h-2
+                w-2
+
+                shrink-0
+              "
+            >
+              <span
+                className="
+                  absolute
+
+                  inline-flex
+
+                  h-full
+                  w-full
+
+                  animate-ping
+
+                  rounded-full
+
+                  bg-[#00FF66]
+
+                  opacity-35
+                "
+              />
+
+              <span
+                className="
+                  relative
+
+                  inline-flex
+
+                  h-2
+                  w-2
+
+                  rounded-full
+
+                  bg-[#00FF66]
+
+                  shadow-[0_0_8px_rgba(0,255,102,0.8)]
+                "
+              />
+            </span>
+
+            12 CLIENT STORIES
+
+            <span
+              className="
+                text-[#00FF66]/45
+              "
+            >
+              •
+            </span>
+
+            DRAG
+
+            <span
+              className="
+                text-[#00FF66]/45
+              "
+            >
+              •
+            </span>
+
+            MULTI-CARD
+
+            <span
+              className="
+                text-[#00FF66]/45
+              "
+            >
+              •
+            </span>
+
+            AUTO PLAY
           </div>
         </div>
       </div>

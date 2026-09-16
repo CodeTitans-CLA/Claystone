@@ -12,6 +12,7 @@ import TechStackSlider from '@/components/Home/TechStackSlider';
 import Services from '@/components/Home/Services';
 import CaseStudies from '@/components/Home/CaseStudies';
 import WhyMultidisciplinary from '@/components/Home/Multidisciplinary';
+import AffiliatesSection from '@/components/Home/affiliates';
 
 export default function Home() {
   return (
@@ -24,7 +25,8 @@ export default function Home() {
       {/* <MoreCapabilities /> */}
       {/* <StatsCounter /> */}
       <ClientTestimonials />
-      <TechStackSlider />
+      <AffiliatesSection/>
+      {/* <TechStackSlider /> */}
       {/* <CaseStudies /> */}
       {/* <WhyMultidisciplinary /> */}
     </main>

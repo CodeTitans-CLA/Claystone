@@ -1,58 +1,58 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 import {
   AnimatePresence,
   motion,
   useReducedMotion,
-} from 'framer-motion';
+} from "framer-motion";
 
 import {
   ArrowRight,
   MoveHorizontal,
   Sparkles,
-} from 'lucide-react';
+} from "lucide-react";
 
 /* =========================================================
    REAL IMAGE PLACEHOLDERS
 ========================================================= */
 
 const FALLBACK_IMAGE =
-  'https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1800&q=85';
+  "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1800&q=85";
 
 const images = {
   drawing:
-    'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=85',
+    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=85",
 
   architecture:
-    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85',
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85",
 
   architectureModel:
-    'https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1800&q=85',
+    "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1800&q=85",
 
   modernHouse:
-    'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=85',
+    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=85",
 
   interiorPlanning:
-    'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85',
+    "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85",
 
   premiumInterior:
-    'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85',
+    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85",
 
   interiorTwo:
-    'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1800&q=85',
+    "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1800&q=85",
 
   luxuryInterior:
-    'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1800&q=85',
+    "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1800&q=85",
 
   exterior:
-    'https://images.unsplash.com/photo-1600585152915-d208bec867a1?auto=format&fit=crop&w=1800&q=85',
+    "https://images.unsplash.com/photo-1600585152915-d208bec867a1?auto=format&fit=crop&w=1800&q=85",
 
   technical:
-    'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1800&q=85',
+    "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1800&q=85",
 
   visualization:
-    'https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1800&q=85',
+    "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1800&q=85",
 };
 
 /* =========================================================
@@ -61,217 +61,227 @@ const images = {
 
 const showcaseData = [
   {
-    id: 'drawings',
-    tab: '2D DRAWINGS & BLUEPRINTS',
-    code: '01 // STRUCTURAL CRAFT',
+    id: "drawings",
+    tab: "2D DRAWINGS & BLUEPRINTS",
+    code: "01 // STRUCTURAL CRAFT",
 
     title:
-      'Architecture Designed With Precision.',
+      "Architecture Designed With Precision.",
 
     description:
-      'From early planning and zoning studies to construction-ready architectural documentation and coordinated engineering systems, every detail is developed with technical accuracy.',
+      "From early planning and zoning studies to construction-ready architectural documentation and coordinated engineering systems, every detail is developed with technical accuracy.",
 
     leftImage: images.drawing,
     rightImage: images.architecture,
 
     leftStage:
-      'STAGE 01: ARCHITECTURAL STUDY',
+      "STAGE 01: ARCHITECTURAL STUDY",
 
     rightStage:
-      'STAGE 04: FINAL ARCHITECTURE',
+      "STAGE 04: FINAL ARCHITECTURE",
 
     stats: [
       {
-        label: 'TOTAL AREA',
-        value: '1,850 m²',
+        label: "TOTAL AREA",
+        value: "1,850 m²",
       },
       {
-        label: 'COORDINATION',
-        value: 'BIM LOD 400',
+        label: "COORDINATION",
+        value: "BIM LOD 400",
       },
       {
-        label: 'COMPLIANCE',
-        value: 'EN 1992-1 / ISO',
+        label: "COMPLIANCE",
+        value: "EN 1992-1 / ISO",
       },
     ],
   },
 
   {
-    id: 'architecture',
-    tab: '3D ARCHITECTURE',
-    code: '02 // DIGITAL BUILD',
+    id: "architecture",
+    tab: "3D ARCHITECTURE",
+    code: "02 // DIGITAL BUILD",
 
     title:
-      'Ideas Built Into Digital Space.',
+      "Ideas Built Into Digital Space.",
 
     description:
-      'Technical drawings are transformed into accurate three-dimensional environments with carefully resolved proportions, materials, details and spatial relationships.',
+      "Technical drawings are transformed into accurate three-dimensional environments with carefully resolved proportions, materials, details and spatial relationships.",
 
-    leftImage: images.architectureModel,
+    leftImage:
+      images.architectureModel,
     rightImage: images.modernHouse,
 
     leftStage:
-      'STAGE 01: DESIGN DEVELOPMENT',
+      "STAGE 01: DESIGN DEVELOPMENT",
 
     rightStage:
-      'STAGE 04: FINAL ARCHITECTURE',
+      "STAGE 04: FINAL ARCHITECTURE",
 
     stats: [
       {
-        label: 'MODEL LEVEL',
-        value: 'LOD 350+',
+        label: "MODEL LEVEL",
+        value: "LOD 350+",
       },
       {
-        label: 'WORKFLOW',
-        value: 'REVIT / SKP',
+        label: "WORKFLOW",
+        value: "REVIT / SKP",
       },
       {
-        label: 'OUTPUT',
-        value: '4K READY',
+        label: "OUTPUT",
+        value: "4K READY",
       },
     ],
   },
 
   {
-    id: 'interior',
-    tab: 'INTERIOR CONCEPTS',
-    code: '03 // SPATIAL EXPERIENCE',
+    id: "interior",
+    tab: "INTERIOR CONCEPTS",
+    code:
+      "03 // SPATIAL EXPERIENCE",
 
     title:
-      'Interiors Crafted Around Experience.',
+      "Interiors Crafted Around Experience.",
 
     description:
-      'Thoughtful layouts, premium materials, lighting and visual hierarchy are combined to create refined, functional and memorable interior environments.',
+      "Thoughtful layouts, premium materials, lighting and visual hierarchy are combined to create refined, functional and memorable interior environments.",
 
-    leftImage: images.interiorPlanning,
-    rightImage: images.premiumInterior,
+    leftImage:
+      images.interiorPlanning,
+    rightImage:
+      images.premiumInterior,
 
     leftStage:
-      'STAGE 01: INTERIOR PLANNING',
+      "STAGE 01: INTERIOR PLANNING",
 
     rightStage:
-      'STAGE 04: FINAL INTERIOR',
+      "STAGE 04: FINAL INTERIOR",
 
     stats: [
       {
-        label: 'DESIGN STYLE',
-        value: 'PREMIUM',
+        label: "DESIGN STYLE",
+        value: "PREMIUM",
       },
       {
-        label: 'MATERIALS',
-        value: 'PBR READY',
+        label: "MATERIALS",
+        value: "PBR READY",
       },
       {
-        label: 'OUTPUT',
-        value: '4K / 8K',
+        label: "OUTPUT",
+        value: "4K / 8K",
       },
     ],
   },
 
   {
-    id: 'exterior',
-    tab: 'EXTERIOR FACADES',
-    code: '04 // ENVELOPE DESIGN',
+    id: "exterior",
+    tab: "EXTERIOR FACADES",
+    code:
+      "04 // ENVELOPE DESIGN",
 
     title:
-      'Facades With Strong Architectural Identity.',
+      "Facades With Strong Architectural Identity.",
 
     description:
-      'Material selection, massing, landscape and architectural lighting are developed together to create distinctive and sophisticated exterior compositions.',
+      "Material selection, massing, landscape and architectural lighting are developed together to create distinctive and sophisticated exterior compositions.",
 
     leftImage: images.exterior,
     rightImage: images.modernHouse,
 
     leftStage:
-      'STAGE 01: FACADE DEVELOPMENT',
+      "STAGE 01: FACADE DEVELOPMENT",
 
     rightStage:
-      'STAGE 04: FINAL EXTERIOR',
+      "STAGE 04: FINAL EXTERIOR",
 
     stats: [
       {
-        label: 'FACADE SYSTEM',
-        value: 'CUSTOM',
+        label: "FACADE SYSTEM",
+        value: "CUSTOM",
       },
       {
-        label: 'DETAIL LEVEL',
-        value: 'HIGH',
+        label: "DETAIL LEVEL",
+        value: "HIGH",
       },
       {
-        label: 'VISUAL',
-        value: 'REAL-TIME',
+        label: "VISUAL",
+        value: "REAL-TIME",
       },
     ],
   },
 
   {
-    id: 'engineering',
-    tab: 'STRUCTURAL & MEP',
-    code: '05 // TECHNICAL SYSTEMS',
+    id: "engineering",
+    tab: "STRUCTURAL & MEP",
+    code:
+      "05 // TECHNICAL SYSTEMS",
 
     title:
-      'Engineering Integrated Into Design.',
+      "Engineering Integrated Into Design.",
 
     description:
-      'Structural, HVAC, electrical and plumbing systems are coordinated within a unified BIM workflow for accurate documentation and efficient construction delivery.',
+      "Structural, HVAC, electrical and plumbing systems are coordinated within a unified BIM workflow for accurate documentation and efficient construction delivery.",
 
     leftImage: images.technical,
     rightImage: images.interiorTwo,
 
     leftStage:
-      'STAGE 01: TECHNICAL COORDINATION',
+      "STAGE 01: TECHNICAL COORDINATION",
 
     rightStage:
-      'STAGE 04: INTEGRATED SYSTEM',
+      "STAGE 04: INTEGRATED SYSTEM",
 
     stats: [
       {
-        label: 'SYSTEM',
-        value: 'MEP',
+        label: "SYSTEM",
+        value: "MEP",
       },
       {
-        label: 'COORDINATION',
-        value: 'CLASH CHECK',
+        label: "COORDINATION",
+        value: "CLASH CHECK",
       },
       {
-        label: 'MODEL',
-        value: 'LOD 300+',
+        label: "MODEL",
+        value: "LOD 300+",
       },
     ],
   },
 
   {
-    id: 'visualization',
-    tab: 'PHOTOREAL VISUALIZATION',
-    code: '06 // VISUAL REALISM',
+    id: "visualization",
+    tab:
+      "PHOTOREAL VISUALIZATION",
+    code:
+      "06 // VISUAL REALISM",
 
     title:
-      'Visualization That Feels Real.',
+      "Visualization That Feels Real.",
 
     description:
-      'Advanced materials, lighting, atmosphere and cinematic composition transform architectural concepts into premium photorealistic presentations.',
+      "Advanced materials, lighting, atmosphere and cinematic composition transform architectural concepts into premium photorealistic presentations.",
 
-    leftImage: images.luxuryInterior,
-    rightImage: images.visualization,
+    leftImage:
+      images.luxuryInterior,
+    rightImage:
+      images.visualization,
 
     leftStage:
-      'STAGE 01: VISUAL DEVELOPMENT',
+      "STAGE 01: VISUAL DEVELOPMENT",
 
     rightStage:
-      'STAGE 04: FINAL VISUAL',
+      "STAGE 04: FINAL VISUAL",
 
     stats: [
       {
-        label: 'QUALITY',
-        value: 'PHOTOREAL',
+        label: "QUALITY",
+        value: "PHOTOREAL",
       },
       {
-        label: 'ENGINE',
-        value: 'D5 / BLENDER',
+        label: "ENGINE",
+        value: "D5 / BLENDER",
       },
       {
-        label: 'OUTPUT',
-        value: '4K / 8K',
+        label: "OUTPUT",
+        value: "4K / 8K",
       },
     ],
   },
@@ -301,7 +311,12 @@ function ShowcaseImage({
       }}
       transition={{
         duration: 1.15,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [
+          0.22,
+          1,
+          0.36,
+          1,
+        ],
       }}
       onError={(event) => {
         const image =
@@ -364,11 +379,11 @@ export default function ArchitectureShowcase() {
   ) => {
     if (
       index === activeIndex
-    )
+    ) {
       return;
+    }
 
     setActiveIndex(index);
-
     setSliderPosition(52);
   };
 
@@ -378,18 +393,17 @@ export default function ArchitectureShowcase() {
         relative
 
         w-full
-
         overflow-hidden
 
         bg-[#050907]
 
-        py-14
+        py-12
 
         text-white
 
-        sm:py-20
+        sm:py-16
 
-        lg:py-24
+        lg:py-20
       "
     >
       {/* =====================================================
@@ -431,8 +445,16 @@ export default function ArchitectureShowcase() {
         {!reduceMotion && (
           <motion.div
             animate={{
-              x: [0, 45, 0],
-              y: [0, 25, 0],
+              x: [
+                0,
+                45,
+                0,
+              ],
+              y: [
+                0,
+                25,
+                0,
+              ],
               scale: [
                 1,
                 1.08,
@@ -442,7 +464,7 @@ export default function ArchitectureShowcase() {
             transition={{
               duration: 13,
               repeat: Infinity,
-              ease: 'easeInOut',
+              ease: "easeInOut",
             }}
             className="
               absolute
@@ -479,7 +501,7 @@ export default function ArchitectureShowcase() {
             transition={{
               duration: 15,
               repeat: Infinity,
-              ease: 'easeInOut',
+              ease: "easeInOut",
             }}
             className="
               absolute
@@ -599,13 +621,13 @@ export default function ArchitectureShowcase() {
               ],
             }}
             className="
-              mb-8
+              mb-6
 
               max-w-[1000px]
 
-              sm:mb-10
+              sm:mb-8
 
-              lg:mb-12
+              lg:mb-9
             "
           >
             <div
@@ -613,7 +635,6 @@ export default function ArchitectureShowcase() {
                 mb-4
 
                 flex
-
                 items-center
 
                 gap-3
@@ -645,6 +666,7 @@ export default function ArchitectureShowcase() {
                           1,
                           0.45,
                         ],
+
                         scale: [
                           0.9,
                           1.15,
@@ -655,7 +677,7 @@ export default function ArchitectureShowcase() {
                 transition={{
                   duration: 2.2,
                   repeat: Infinity,
-                  ease: 'easeInOut',
+                  ease: "easeInOut",
                 }}
                 className="
                   h-2
@@ -725,258 +747,348 @@ export default function ArchitectureShowcase() {
         </AnimatePresence>
 
         {/* =================================================
-            TABS — CLIPPING FIXED
+            PREMIUM TAB NAVIGATION
         ================================================== */}
 
         <div
           className="
             relative
 
-            mb-5
+            mb-6
 
-            -mt-3
+            sm:mb-7
 
-            py-3
-
-            sm:mb-6
-
-            lg:-mt-4
-            lg:py-4
+            lg:mb-8
           "
         >
-          {/* Optional subtle glow behind tabs */}
+          {/* GLOW */}
+
           <div
             className="
               pointer-events-none
 
               absolute
 
-              left-1/2
+              left-[15%]
               top-1/2
 
-              h-[80px]
+              h-[90px]
               w-[70%]
 
-              -translate-x-1/2
               -translate-y-1/2
 
               rounded-full
 
-              bg-[#00FF66]/2.5
+              bg-[#00FF66]/[0.055]
 
-              blur-[45px]
+              blur-[55px]
             "
           />
+
+          {/* TAB RAIL */}
 
           <div
             className="
               relative
 
-              flex
+              rounded-[20px]
 
-              w-full
+              border
+              border-white/[0.07]
 
-              items-center
+              bg-[linear-gradient(135deg,rgba(14,25,18,0.92),rgba(5,11,8,0.96))]
 
-              gap-2.5
+              p-2
 
-              overflow-x-auto
-              overflow-y-hidden
+              shadow-[0_18px_50px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.035),0_0_35px_rgba(0,255,102,0.035)]
 
-              px-1
+              backdrop-blur-2xl
 
-              py-4
-
-              scroll-smooth
-
-              [scrollbar-width:none]
-
-              [-ms-overflow-style:none]
-
-              [&::-webkit-scrollbar]:hidden
-
-              touch-pan-x
-
-              lg:flex-wrap
-
-              lg:overflow-visible
-
-              lg:px-0
-
-              lg:py-3
+              sm:p-2.5
             "
           >
-            {showcaseData.map(
-              (
-                item,
-                index
-              ) => {
-                const isActive =
-                  activeIndex ===
-                  index;
+            {/* TOP LIGHT */}
 
-                return (
-                  <motion.button
-                    key={
-                      item.id
-                    }
-                    type="button"
-                    onClick={() =>
-                      changeTab(
-                        index
-                      )
-                    }
-                    whileHover={
-                      reduceMotion
-                        ? undefined
-                        : {
-                            y: -4,
-                            scale:
-                              1.025,
-                          }
-                    }
-                    whileTap={{
-                      scale:
-                        0.97,
-                    }}
-                    transition={{
-                      duration:
-                        0.28,
-                      ease: [
-                        0.22,
-                        1,
-                        0.36,
-                        1,
-                      ],
-                    }}
-                    className={`
-                      relative
+            <span
+              className="
+                pointer-events-none
 
-                      shrink-0
+                absolute
 
-                      whitespace-nowrap
+                left-[4%]
+                top-0
 
-                      overflow-hidden
+                h-px
+                w-[26%]
 
-                      rounded-full
+                bg-gradient-to-r
 
-                      bg-gradient-to-r
+                from-transparent
 
-                      from-[#00FF66]
+                via-[#00FF66]/60
 
-                      via-[#2bff88]
+                to-transparent
+              "
+            />
 
-                      to-[#00cc52]
+            <div
+              className="
+                flex
 
-                      px-4
+                w-full
 
-                      py-2.5
+                items-center
 
-                      font-mono
+                gap-2
 
-                      text-[8px]
+                overflow-x-auto
+                overflow-y-hidden
 
-                      font-bold
+                scroll-smooth
 
-                      uppercase
+                [scrollbar-width:none]
 
-                      tracking-[0.07em]
+                [-ms-overflow-style:none]
 
-                      text-[#031007]
+                [&::-webkit-scrollbar]:hidden
 
-                      shadow-[0_0_25px_rgba(0,255,102,0.4)]
+                touch-pan-x
 
-                      will-change-transform
+                lg:flex-wrap
+                lg:overflow-visible
+              "
+            >
+              {showcaseData.map(
+                (
+                  item,
+                  index
+                ) => {
+                  const isActive =
+                    activeIndex ===
+                    index;
 
-                      transition-[box-shadow,opacity,filter]
-
-                      duration-500
-
-                      hover:shadow-[0_0_40px_rgba(0,255,102,0.7)]
-
-                      sm:px-5
-
-                      sm:text-[9px]
-
-                      md:px-6
-
-                      lg:px-5
-
-                      xl:px-6
-
-                      ${
-                        isActive
-                          ? `
-                            opacity-100
-
-                            ring-1
-
-                            ring-white/40
-
-                            shadow-[0_0_32px_rgba(0,255,102,0.52)]
-                          `
-                          : `
-                            opacity-65
-
-                            hover:opacity-100
-                          `
+                  return (
+                    <motion.button
+                      key={
+                        item.id
                       }
-                    `}
-                  >
-                    {/* Active Shine */}
+                      type="button"
+                      onClick={() =>
+                        changeTab(
+                          index
+                        )
+                      }
+                      whileHover={
+                        reduceMotion
+                          ? undefined
+                          : {
+                              y: -2,
+                            }
+                      }
+                      whileTap={{
+                        scale:
+                          0.98,
+                      }}
+                      transition={{
+                        duration:
+                          0.28,
 
-                    {isActive &&
-                      !reduceMotion && (
-                        <motion.span
-                          initial={{
-                            x: '-180%',
-                          }}
-                          animate={{
-                            x: '260%',
-                          }}
-                          transition={{
-                            duration:
-                              1.25,
-                            repeat:
-                              Infinity,
-                            repeatDelay:
-                              2.8,
-                            ease:
-                              'easeInOut',
-                          }}
+                        ease: [
+                          0.22,
+                          1,
+                          0.36,
+                          1,
+                        ],
+                      }}
+                      className={`
+                        group/tab
+
+                        relative
+
+                        shrink-0
+
+                        overflow-hidden
+
+                        whitespace-nowrap
+
+                        rounded-[13px]
+
+                        border
+
+                        px-4
+                        py-3
+
+                        font-mono
+
+                        text-[9px]
+
+                        font-black
+
+                        uppercase
+
+                        tracking-[0.075em]
+
+                        transition-all
+
+                        duration-500
+
+                        sm:px-5
+
+                        sm:text-[10px]
+
+                        md:px-5
+
+                        md:text-[10.5px]
+
+                        lg:px-5
+
+                        xl:px-6
+
+                        xl:text-[11px]
+
+                        ${
+                          isActive
+                            ? `
+                              border-[#5dff9c]/55
+
+                              bg-gradient-to-r
+                              from-[#00FF66]
+                              via-[#35ff8d]
+                              to-[#00dc59]
+
+                              text-[#031008]
+
+                              shadow-[0_0_28px_rgba(0,255,102,0.34),0_8px_25px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.36)]
+                            `
+                            : `
+                              border-white/[0.09]
+
+                              bg-[linear-gradient(180deg,rgba(255,255,255,0.055),rgba(255,255,255,0.025))]
+
+                              text-[#e1ece5]
+
+                              shadow-[inset_0_1px_0_rgba(255,255,255,0.035)]
+
+                              hover:border-[#00FF66]/35
+
+                              hover:bg-[#00FF66]/[0.07]
+
+                              hover:text-white
+
+                              hover:shadow-[0_0_24px_rgba(0,255,102,0.08)]
+                            `
+                        }
+                      `}
+                    >
+                      {/* ACTIVE INNER GLOW */}
+
+                      {isActive && (
+                        <span
+                          className="
+                            pointer-events-none
+
+                            absolute
+                            inset-0
+
+                            rounded-[13px]
+
+                            shadow-[inset_0_0_16px_rgba(255,255,255,0.12)]
+                          "
+                        />
+                      )}
+
+                      {/* HOVER GLOW */}
+
+                      {!isActive && (
+                        <span
                           className="
                             pointer-events-none
 
                             absolute
 
-                            inset-y-0
+                            -right-8
+                            -top-8
 
-                            left-0
+                            h-16
+                            w-16
 
-                            w-[40%]
+                            rounded-full
 
-                            skew-x-[-24deg]
+                            bg-[#00FF66]/0
 
-                            bg-gradient-to-r
+                            blur-2xl
 
-                            from-transparent
+                            transition-all
 
-                            via-white/50
+                            duration-500
 
-                            to-transparent
+                            group-hover/tab:bg-[#00FF66]/[0.09]
                           "
                         />
                       )}
 
-                    <span className="relative z-10">
-                      {
-                        item.tab
-                      }
-                    </span>
-                  </motion.button>
-                );
-              }
-            )}
+                      {/* ACTIVE SHINE */}
+
+                      {isActive &&
+                        !reduceMotion && (
+                          <motion.span
+                            initial={{
+                              x: "-180%",
+                            }}
+                            animate={{
+                              x: "300%",
+                            }}
+                            transition={{
+                              duration:
+                                1.4,
+
+                              repeat:
+                                Infinity,
+
+                              repeatDelay:
+                                3,
+
+                              ease:
+                                "easeInOut",
+                            }}
+                            className="
+                              pointer-events-none
+
+                              absolute
+
+                              inset-y-0
+                              left-0
+
+                              w-[32%]
+
+                              skew-x-[-22deg]
+
+                              bg-gradient-to-r
+
+                              from-transparent
+
+                              via-white/45
+
+                              to-transparent
+                            "
+                          />
+                        )}
+
+                      <span
+                        className="
+                          relative
+                          z-10
+                        "
+                      >
+                        {
+                          item.tab
+                        }
+                      </span>
+                    </motion.button>
+                  );
+                }
+              )}
+            </div>
           </div>
         </div>
 
@@ -994,6 +1106,7 @@ export default function ArchitectureShowcase() {
           }
           transition={{
             duration: 0.45,
+
             ease: [
               0.22,
               1,
@@ -1011,7 +1124,6 @@ export default function ArchitectureShowcase() {
             rounded-[24px]
 
             border
-
             border-white/10
 
             bg-[#0a120d]
@@ -1035,7 +1147,7 @@ export default function ArchitectureShowcase() {
             lg:p-5
           "
         >
-          {/* Panel Glow */}
+          {/* PANEL GLOW */}
 
           <div
             className="
@@ -1044,11 +1156,9 @@ export default function ArchitectureShowcase() {
               absolute
 
               left-1/2
-
               top-[-300px]
 
               h-[520px]
-
               w-[900px]
 
               max-w-full
@@ -1071,14 +1181,13 @@ export default function ArchitectureShowcase() {
             "
           />
 
-          {/* Glass Highlight */}
+          {/* GLASS */}
 
           <div
             className="
               pointer-events-none
 
               absolute
-
               inset-0
 
               rounded-[28px]
@@ -1093,7 +1202,7 @@ export default function ArchitectureShowcase() {
             "
           />
 
-          {/* Animated Top Border */}
+          {/* TOP BORDER */}
 
           <div
             className="
@@ -1102,7 +1211,6 @@ export default function ArchitectureShowcase() {
               absolute
 
               left-1/2
-
               top-0
 
               h-px
@@ -1131,7 +1239,7 @@ export default function ArchitectureShowcase() {
             "
           />
 
-          {/* Viewer Header */}
+          {/* VIEWER HEADER */}
 
           <div
             className="
@@ -1151,7 +1259,6 @@ export default function ArchitectureShowcase() {
               sm:flex-row
 
               sm:items-center
-
               sm:justify-between
 
               sm:px-2
@@ -1235,7 +1342,6 @@ export default function ArchitectureShowcase() {
               rounded-[16px]
 
               border
-
               border-white/10
 
               bg-[#050907]
@@ -1260,14 +1366,14 @@ export default function ArchitectureShowcase() {
                         scale:
                           1.025,
                         filter:
-                          'blur(8px)',
+                          "blur(8px)",
                       }
                 }
                 animate={{
                   opacity: 1,
                   scale: 1,
                   filter:
-                    'blur(0px)',
+                    "blur(0px)",
                 }}
                 exit={
                   reduceMotion
@@ -1280,6 +1386,7 @@ export default function ArchitectureShowcase() {
                 }
                 transition={{
                   duration: 0.6,
+
                   ease: [
                     0.22,
                     1,
@@ -1337,7 +1444,7 @@ export default function ArchitectureShowcase() {
                   />
                 </div>
 
-                {/* Vignette */}
+                {/* VIGNETTE */}
 
                 <div
                   className="
@@ -1350,7 +1457,7 @@ export default function ArchitectureShowcase() {
                   "
                 />
 
-                {/* Top Gradient */}
+                {/* TOP GRADIENT */}
 
                 <div
                   className="
@@ -1371,20 +1478,24 @@ export default function ArchitectureShowcase() {
                   "
                 />
 
-                {/* Scan */}
+                {/* SCAN */}
 
                 {!reduceMotion && (
                   <motion.div
                     animate={{
                       y: [
-                        '-100%',
-                        '800%',
+                        "-100%",
+                        "800%",
                       ],
                     }}
                     transition={{
                       duration: 7,
-                      repeat: Infinity,
-                      ease: 'linear',
+
+                      repeat:
+                        Infinity,
+
+                      ease:
+                        "linear",
                     }}
                     className="
                       pointer-events-none
@@ -1408,7 +1519,7 @@ export default function ArchitectureShowcase() {
                   />
                 )}
 
-                {/* Labels */}
+                {/* LABELS */}
 
                 <div
                   className="
@@ -1424,7 +1535,6 @@ export default function ArchitectureShowcase() {
                     rounded-full
 
                     border
-
                     border-[#00FF66]/20
 
                     bg-black/60
@@ -1473,7 +1583,6 @@ export default function ArchitectureShowcase() {
                     rounded-full
 
                     border
-
                     border-[#00FF66]/25
 
                     bg-black/65
@@ -1513,7 +1622,7 @@ export default function ArchitectureShowcase() {
             </AnimatePresence>
 
             {/* =================================================
-                SLIDER LINE
+                SLIDER
             ================================================== */}
 
             <div
@@ -1544,16 +1653,22 @@ export default function ArchitectureShowcase() {
                     : {
                         boxShadow:
                           [
-                            '0 0 18px rgba(0,255,102,.25)',
-                            '0 0 38px rgba(0,255,102,.58)',
-                            '0 0 18px rgba(0,255,102,.25)',
+                            "0 0 18px rgba(0,255,102,.25)",
+
+                            "0 0 38px rgba(0,255,102,.58)",
+
+                            "0 0 18px rgba(0,255,102,.25)",
                           ],
                       }
                 }
                 transition={{
                   duration: 2.2,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
+
+                  repeat:
+                    Infinity,
+
+                  ease:
+                    "easeInOut",
                 }}
                 className="
                   absolute
@@ -1570,13 +1685,11 @@ export default function ArchitectureShowcase() {
                   -translate-y-1/2
 
                   items-center
-
                   justify-center
 
                   rounded-full
 
                   border
-
                   border-[#00FF66]/50
 
                   bg-[#07110b]/95
@@ -1586,13 +1699,14 @@ export default function ArchitectureShowcase() {
                   backdrop-blur-lg
 
                   sm:h-12
-
                   sm:w-12
                 "
               >
                 <MoveHorizontal
                   size={17}
-                  strokeWidth={1.8}
+                  strokeWidth={
+                    1.8
+                  }
                 />
               </motion.div>
             </div>
@@ -1683,6 +1797,7 @@ export default function ArchitectureShowcase() {
                   transition={{
                     duration:
                       0.45,
+
                     delay:
                       0.08 +
                       index *
@@ -1690,6 +1805,7 @@ export default function ArchitectureShowcase() {
                   }}
                   className="
                     group/stat
+
                     relative
                   "
                 >
@@ -1849,13 +1965,21 @@ export default function ArchitectureShowcase() {
                   lg:text-[11px]
                 "
               >
-                <span className="relative z-10">
+                <span
+                  className="
+                    relative
+                    z-10
+                  "
+                >
                   ALL ARCH PROJECTS
                 </span>
 
                 <ArrowRight
                   size={14}
-                  className="relative z-10"
+                  className="
+                    relative
+                    z-10
+                  "
                 />
               </motion.button>
             </div>
@@ -1892,7 +2016,6 @@ export default function ArchitectureShowcase() {
             flex
 
             items-center
-
             justify-center
 
             gap-2.5
