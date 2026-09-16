@@ -7,6 +7,7 @@ import {
   Mail,
   Sparkles,
 } from "lucide-react";
+
 import {
   useEffect,
   useRef,
@@ -71,30 +72,41 @@ const faqs = [
 ========================================================= */
 
 function useInView() {
-  const ref = useRef<HTMLElement | null>(null);
-  const [visible, setVisible] = useState(false);
+  const ref =
+    useRef<HTMLElement | null>(null);
+
+  const [visible, setVisible] =
+    useState(false);
 
   useEffect(() => {
     const element = ref.current;
 
     if (!element) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setVisible(entry.isIntersecting);
-      },
-      {
-        threshold: 0.08,
-        rootMargin: "-3% 0px -3% 0px",
-      }
-    );
+    const observer =
+      new IntersectionObserver(
+        ([entry]) => {
+          setVisible(
+            entry.isIntersecting
+          );
+        },
+        {
+          threshold: 0.08,
+          rootMargin:
+            "-3% 0px -3% 0px",
+        }
+      );
 
     observer.observe(element);
 
-    return () => observer.disconnect();
+    return () =>
+      observer.disconnect();
   }, []);
 
-  return { ref, visible };
+  return {
+    ref,
+    visible,
+  };
 }
 
 /* =========================================================
@@ -115,8 +127,6 @@ function FAQItem({
   visible: boolean;
 }) {
   return (
-    /* Reveal wrapper separate from hover card.
-       This prevents stagger delay from affecting hover. */
     <div
       style={
         {
@@ -147,6 +157,7 @@ function FAQItem({
           overflow-hidden
 
           rounded-[12px]
+
           border
 
           ${
@@ -162,19 +173,20 @@ function FAQItem({
           ease-[cubic-bezier(0.16,1,0.3,1)]
 
           hover:-translate-y-0.5
+
           hover:border-[#00ff66]/[0.18]
+
           hover:bg-[#181f1a]
 
           hover:shadow-[0_20px_55px_rgba(0,0,0,0.25),0_0_30px_rgba(0,255,102,0.04),inset_0_1px_0_rgba(255,255,255,0.025)]
         `}
       >
-        {/* ===================================================
-            TOP ACTIVE / HOVER LINE
-        =================================================== */}
+        {/* TOP ACTIVE / HOVER LINE */}
 
         <span
           className={`
             pointer-events-none
+
             absolute
             left-0
             top-0
@@ -200,13 +212,12 @@ function FAQItem({
           `}
         />
 
-        {/* ===================================================
-            AMBIENT HOVER GLOW
-        =================================================== */}
+        {/* AMBIENT HOVER GLOW */}
 
         <div
           className="
             pointer-events-none
+
             absolute
 
             -right-20
@@ -218,6 +229,7 @@ function FAQItem({
             rounded-full
 
             bg-[#00ff66]/0
+
             blur-[65px]
 
             transition-all
@@ -229,6 +241,7 @@ function FAQItem({
 
         {/* ===================================================
             QUESTION BUTTON
+            PADDING REDUCED
         =================================================== */}
 
         <button
@@ -242,6 +255,7 @@ function FAQItem({
             z-10
 
             flex
+
             min-h-[64px]
             w-full
 
@@ -249,13 +263,13 @@ function FAQItem({
             touch-manipulation
             select-none
 
-            items-start
+            items-center
             justify-between
 
             gap-3
 
             px-4
-            py-4
+            py-3.5
 
             text-left
 
@@ -270,21 +284,20 @@ function FAQItem({
             focus-visible:ring-inset
             focus-visible:ring-[#00ff66]/60
 
-            min-[420px]:gap-4
-
             sm:min-h-[68px]
             sm:px-5
-            sm:py-[17px]
+            sm:py-4
 
             lg:min-h-[70px]
             lg:px-5
-            lg:py-[18px]
+            lg:py-4
 
+            xl:min-h-[72px]
             xl:px-6
-            xl:py-5
+            xl:py-[17px]
           "
         >
-          {/* Question */}
+          {/* QUESTION */}
 
           <span
             className="
@@ -293,10 +306,12 @@ function FAQItem({
 
               pr-1
 
-              text-[14px]
+              text-[16px]
               font-bold
-              leading-[1.38]
-              tracking-[-0.022em]
+
+              leading-[1.35]
+
+              tracking-[-0.025em]
 
               text-[#effff2]
 
@@ -305,64 +320,81 @@ function FAQItem({
 
               group-hover:text-white
 
-              min-[420px]:text-[14.5px]
+              min-[420px]:text-[16.5px]
 
-              sm:text-[15.5px]
+              sm:text-[17.5px]
 
-              md:text-[16px]
+              md:text-[18px]
 
-              lg:text-[15.5px]
+              lg:text-[17.5px]
 
-              xl:text-[16.5px]
+              xl:text-[19px]
 
-              2xl:text-[17px]
+              2xl:text-[20px]
             "
           >
             {faq.question}
           </span>
 
-          {/* Chevron */}
+          {/* CHEVRON */}
 
           <span
             className={`
-              mt-0.5
-
               flex
+
               h-8
               w-8
+
               shrink-0
 
               items-center
               justify-center
 
               rounded-full
+
               border
 
               transition-all
               duration-300
 
+              sm:h-9
+              sm:w-9
+
               ${
                 open
                   ? `
                     rotate-180
+
                     border-[#00ff66]/25
+
                     bg-[#00ff66]/[0.08]
+
                     text-[#00ff66]
+
                     shadow-[0_0_18px_rgba(0,255,102,0.06)]
                   `
                   : `
                     border-transparent
+
                     bg-transparent
+
                     text-[#00ff66]
 
                     group-hover:border-[#00ff66]/15
+
                     group-hover:bg-[#00ff66]/[0.055]
                   `
               }
             `}
           >
             <ChevronDown
-              className="h-4 w-4"
+              className="
+                h-4
+                w-4
+
+                sm:h-[18px]
+                sm:w-[18px]
+              "
               strokeWidth={2.3}
             />
           </span>
@@ -381,7 +413,9 @@ function FAQItem({
             grid
 
             transition-[grid-template-rows,opacity]
+
             duration-500
+
             ease-[cubic-bezier(0.16,1,0.3,1)]
 
             ${
@@ -391,61 +425,72 @@ function FAQItem({
             }
           `}
         >
-          <div className="min-h-0 overflow-hidden">
+          <div
+            className="
+              min-h-0
+              overflow-hidden
+            "
+          >
+            {/* ANSWER PADDING REDUCED */}
+
             <div
               className="
                 px-4
-                pb-5
+                pb-4
 
                 sm:px-5
                 sm:pb-5
 
                 lg:px-5
+                lg:pb-5
 
                 xl:px-6
-                xl:pb-6
+                xl:pb-5
               "
             >
               {/* Divider */}
 
               <div
                 className="
-                  mb-4
+                  mb-3
 
                   h-px
                   w-full
 
                   bg-gradient-to-r
+
                   from-[#00ff66]/20
+
                   via-white/[0.045]
+
                   to-transparent
                 "
               />
 
-              {/* Answer */}
-
               <p
                 className="
-                  max-w-[940px]
+                  max-w-[980px]
 
-                  text-[12px]
+                  text-[14px]
                   font-normal
-                  leading-[1.72]
+
+                  leading-[1.68]
+
                   tracking-[-0.004em]
 
-                  text-[#cddbd0]/75
+                  text-[#cddbd0]/78
 
-                  min-[420px]:text-[12.25px]
+                  min-[420px]:text-[14.5px]
 
-                  sm:text-[12.75px]
+                  sm:text-[15px]
 
-                  md:text-[13px]
+                  md:text-[15.5px]
 
-                  lg:text-[12.75px]
+                  lg:text-[15px]
 
-                  xl:text-[13.5px]
+                  xl:text-[16px]
 
-                  2xl:text-[14px]
+                  2xl:text-[17px]
                 "
               >
                 {faq.answer}
@@ -463,14 +508,27 @@ function FAQItem({
 ========================================================= */
 
 export default function TechnicalFAQ() {
-  const { ref, visible } = useInView();
+  const {
+    ref,
+    visible,
+  } = useInView();
 
-  const [activeIndex, setActiveIndex] =
-    useState<number | null>(null);
+  const [
+    activeIndex,
+    setActiveIndex,
+  ] =
+    useState<number | null>(
+      null
+    );
 
-  const toggleFAQ = (index: number) => {
-    setActiveIndex((current) =>
-      current === index ? null : index
+  const toggleFAQ = (
+    index: number
+  ) => {
+    setActiveIndex(
+      (current) =>
+        current === index
+          ? null
+          : index
     );
   };
 
@@ -487,43 +545,44 @@ export default function TechnicalFAQ() {
         overflow-hidden
 
         bg-[#090e0b]
+
         text-white
 
-        py-12
+        py-8
 
-        sm:py-16
+        sm:py-10
 
-        md:py-18
+        md:py-12
 
-        lg:py-20
+        lg:py-14
 
-        xl:py-24
+        xl:py-16
       `}
     >
-      {/* =====================================================
-          BASE BACKGROUND
-      ===================================================== */}
+      {/* BASE BACKGROUND */}
 
       <div
         className="
           pointer-events-none
+
           absolute
           inset-0
+
           -z-50
 
           bg-[#090e0b]
         "
       />
 
-      {/* =====================================================
-          DOT GRID
-      ===================================================== */}
+      {/* DOT GRID */}
 
       <div
         className="
           pointer-events-none
+
           absolute
           inset-0
+
           -z-40
 
           opacity-[0.105]
@@ -534,17 +593,17 @@ export default function TechnicalFAQ() {
         "
       />
 
-      {/* =====================================================
-          LEFT GLOW
-      ===================================================== */}
+      {/* LEFT GLOW */}
 
       <div
         className="
           pointer-events-none
+
           absolute
 
           -left-[350px]
           -top-[260px]
+
           -z-30
 
           h-[720px]
@@ -553,21 +612,23 @@ export default function TechnicalFAQ() {
           rounded-full
 
           bg-[#00ff66]/[0.032]
+
           blur-[180px]
         "
       />
 
-      {/* =====================================================
-          RIGHT GLOW
-      ===================================================== */}
+      {/* RIGHT GLOW */}
 
       <div
         className="
           pointer-events-none
+
           absolute
 
           -right-[400px]
+
           top-[10%]
+
           -z-30
 
           h-[780px]
@@ -576,21 +637,22 @@ export default function TechnicalFAQ() {
           rounded-full
 
           bg-[#00ff66]/[0.022]
+
           blur-[200px]
         "
       />
 
-      {/* =====================================================
-          CENTER GLOW
-      ===================================================== */}
+      {/* CENTER GLOW */}
 
       <div
         className="
           pointer-events-none
+
           absolute
 
           left-[52%]
           top-[45%]
+
           -z-30
 
           h-[420px]
@@ -602,26 +664,30 @@ export default function TechnicalFAQ() {
           rounded-full
 
           bg-[#00ff66]/[0.012]
+
           blur-[150px]
         "
       />
 
-      {/* =====================================================
-          BOTTOM FADE
-      ===================================================== */}
+      {/* BOTTOM FADE */}
 
       <div
         className="
           pointer-events-none
+
           absolute
+
           inset-x-0
           bottom-0
+
           -z-20
 
-          h-[260px]
+          h-[180px]
 
           bg-gradient-to-t
+
           from-black/25
+
           to-transparent
         "
       />
@@ -633,7 +699,9 @@ export default function TechnicalFAQ() {
       <div
         className="
           mx-auto
+
           w-full
+
           max-w-[1540px]
 
           px-4
@@ -649,22 +717,30 @@ export default function TechnicalFAQ() {
           2xl:px-8
         "
       >
+        {/* ===================================================
+            MAIN GRID
+            GAP REDUCED
+        =================================================== */}
+
         <div
           className="
             grid
+
             items-start
 
-            gap-9
+            gap-6
 
-            sm:gap-10
+            sm:gap-7
 
-            lg:grid-cols-[minmax(250px,0.33fr)_minmax(0,0.67fr)]
-            lg:gap-9
+            lg:grid-cols-[minmax(300px,0.34fr)_minmax(0,0.66fr)]
 
-            xl:grid-cols-[minmax(290px,0.31fr)_minmax(0,0.69fr)]
-            xl:gap-14
+            lg:gap-8
 
-            2xl:gap-16
+            xl:grid-cols-[minmax(340px,0.32fr)_minmax(0,0.68fr)]
+
+            xl:gap-10
+
+            2xl:gap-12
           "
         >
           {/* =================================================
@@ -676,7 +752,9 @@ export default function TechnicalFAQ() {
               min-w-0
 
               transition-all
+
               duration-1000
+
               ease-[cubic-bezier(0.16,1,0.3,1)]
 
               ${
@@ -686,38 +764,48 @@ export default function TechnicalFAQ() {
               }
 
               motion-reduce:transform-none
+
               motion-reduce:transition-none
             `}
           >
-            {/* Eyebrow */}
+            {/* EYEBROW */}
 
             <div
               className="
-                mb-3
+                mb-2.5
 
                 flex
-                items-center
-                gap-2
 
-                text-[7px]
+                items-center
+
+                gap-2.5
+
+                text-[10px]
+
                 font-black
+
                 uppercase
+
                 leading-[1.4]
-                tracking-[0.17em]
+
+                tracking-[0.16em]
 
                 text-[#00ff66]
 
-                min-[420px]:text-[7.5px]
+                min-[420px]:text-[10.5px]
 
-                sm:text-[8px]
+                sm:text-[11px]
 
-                xl:text-[8.5px]
+                lg:text-[11.5px]
+
+                xl:text-[12px]
               "
             >
               <Sparkles
                 className="
-                  h-3
-                  w-3
+                  h-4
+                  w-4
+
                   shrink-0
 
                   text-[#00ff66]
@@ -729,34 +817,39 @@ export default function TechnicalFAQ() {
               Knowledge Base
             </div>
 
-            {/* Heading */}
+            {/* HEADING */}
 
             <h2
               className="
-                max-w-[520px]
+                max-w-[560px]
 
-                text-[32px]
+                text-[40px]
+
                 font-bold
-                leading-[1.07]
-                tracking-[-0.047em]
+
+                leading-[1.04]
+
+                tracking-[-0.05em]
 
                 text-[#f1fff3]
 
-                min-[390px]:text-[34px]
+                min-[390px]:text-[43px]
 
-                min-[460px]:text-[37px]
+                min-[460px]:text-[47px]
 
-                sm:text-[40px]
+                sm:text-[52px]
 
-                md:text-[42px]
+                md:text-[56px]
 
-                lg:max-w-[360px]
-                lg:text-[34px]
+                lg:max-w-[430px]
 
-                xl:max-w-[420px]
-                xl:text-[40px]
+                lg:text-[46px]
 
-                2xl:text-[44px]
+                xl:max-w-[480px]
+
+                xl:text-[52px]
+
+                2xl:text-[58px]
               "
             >
               Technical &amp; Statutory
@@ -766,61 +859,70 @@ export default function TechnicalFAQ() {
               </span>
             </h2>
 
-            {/* Description */}
+            {/* DESCRIPTION */}
 
             <p
               className="
-                mt-4
+                mt-3.5
 
-                max-w-[410px]
+                max-w-[450px]
 
-                text-[12px]
+                text-[14px]
+
                 font-normal
+
                 leading-[1.7]
+
                 tracking-[-0.004em]
 
-                text-[#c5ffd3]/75
+                text-[#c5ffd3]/78
 
-                min-[420px]:text-[12.5px]
+                min-[420px]:text-[14.5px]
 
-                sm:text-[13px]
+                sm:text-[15px]
 
-                md:text-[13.5px]
+                md:text-[15.5px]
 
-                lg:max-w-[340px]
-                lg:text-[12.5px]
+                lg:max-w-[390px]
 
-                xl:max-w-[380px]
-                xl:text-[13.5px]
+                lg:text-[15px]
 
-                2xl:text-[14px]
+                xl:max-w-[430px]
+
+                xl:text-[16px]
+
+                2xl:text-[17px]
               "
             >
               Everything you need to know about our BIM
-              integration protocols, licensing alignment, project
-              handoffs, and technical delivery standards.
+              integration protocols, licensing alignment,
+              project handoffs, and technical delivery
+              standards.
             </p>
 
-            {/* =================================================
-                CONTACT CTA
-            ================================================= */}
+            {/* CONTACT CTA */}
 
             <Link
               href="/contact"
               className="
                 group/contact
 
-                mt-6
+                mt-4
 
                 flex
+
                 w-fit
-                max-w-[360px]
+
+                max-w-[420px]
 
                 cursor-pointer
+
                 touch-manipulation
+
                 select-none
 
                 items-start
+
                 gap-2.5
 
                 rounded-[8px]
@@ -828,6 +930,7 @@ export default function TechnicalFAQ() {
                 outline-none
 
                 transition-all
+
                 duration-300
 
                 hover:translate-x-1
@@ -835,26 +938,30 @@ export default function TechnicalFAQ() {
                 active:scale-[0.985]
 
                 focus-visible:ring-2
+
                 focus-visible:ring-[#00ff66]/50
+
                 focus-visible:ring-offset-4
+
                 focus-visible:ring-offset-[#090e0b]
               "
             >
-              {/* Mail icon */}
+              {/* Mail Icon */}
 
               <span
                 className="
-                  mt-[1px]
-
                   flex
-                  h-7
-                  w-7
+
+                  h-8
+                  w-8
+
                   shrink-0
 
                   items-center
+
                   justify-center
 
-                  rounded-[7px]
+                  rounded-[8px]
 
                   border
                   border-[#00ff66]/10
@@ -864,41 +971,58 @@ export default function TechnicalFAQ() {
                   text-[#00ff66]
 
                   transition-all
+
                   duration-300
 
                   group-hover/contact:border-[#00ff66]/25
+
                   group-hover/contact:bg-[#00ff66]/[0.075]
 
                   group-hover/contact:shadow-[0_0_22px_rgba(0,255,102,0.08)]
+
+                  sm:h-9
+                  sm:w-9
                 "
               >
-                <Mail className="h-3.5 w-3.5" />
+                <Mail
+                  className="
+                    h-4
+                    w-4
+                  "
+                />
               </span>
 
               <span
                 className="
-                  pt-[3px]
+                  pt-[1px]
 
-                  text-[7.5px]
+                  text-[10px]
+
                   font-black
+
                   uppercase
-                  leading-[1.55]
-                  tracking-[0.14em]
+
+                  leading-[1.5]
+
+                  tracking-[0.13em]
 
                   text-[#00ff66]
 
                   transition-colors
+
                   duration-300
 
                   group-hover/contact:text-[#7dffad]
 
-                  min-[420px]:text-[8px]
+                  min-[420px]:text-[10.5px]
 
-                  sm:text-[8.5px]
+                  sm:text-[11px]
 
-                  lg:text-[8px]
+                  lg:text-[10.5px]
 
-                  xl:text-[8.5px]
+                  xl:text-[11.5px]
+
+                  2xl:text-[12px]
                 "
               >
                 Need custom stamping specifications? Inquire
@@ -909,29 +1033,48 @@ export default function TechnicalFAQ() {
 
           {/* =================================================
               FAQ LIST
+              GAP REDUCED
           ================================================= */}
 
           <div
             className="
               flex
+
               min-w-0
+
               flex-col
 
-              gap-2.5
+              gap-2
 
-              sm:gap-3
+              sm:gap-2.5
+
+              xl:gap-3
             "
           >
-            {faqs.map((faq, index) => (
-              <FAQItem
-                key={faq.question}
-                faq={faq}
-                index={index}
-                open={activeIndex === index}
-                onToggle={() => toggleFAQ(index)}
-                visible={visible}
-              />
-            ))}
+            {faqs.map(
+              (
+                faq,
+                index
+              ) => (
+                <FAQItem
+                  key={faq.question}
+                  faq={faq}
+                  index={index}
+                  open={
+                    activeIndex ===
+                    index
+                  }
+                  onToggle={() =>
+                    toggleFAQ(
+                      index
+                    )
+                  }
+                  visible={
+                    visible
+                  }
+                />
+              )
+            )}
           </div>
         </div>
       </div>

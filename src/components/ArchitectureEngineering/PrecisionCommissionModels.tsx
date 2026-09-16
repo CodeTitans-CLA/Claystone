@@ -6,6 +6,7 @@ import {
   CheckCircle2,
   Sparkles,
 } from "lucide-react";
+
 import {
   useEffect,
   useRef,
@@ -83,29 +84,41 @@ const plans = [
 ========================================================= */
 
 function useInView() {
-  const ref = useRef<HTMLElement | null>(null);
-  const [visible, setVisible] = useState(false);
+  const ref =
+    useRef<HTMLElement | null>(null);
+
+  const [visible, setVisible] =
+    useState(false);
 
   useEffect(() => {
     const element = ref.current;
+
     if (!element) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setVisible(entry.isIntersecting);
-      },
-      {
-        threshold: 0.1,
-        rootMargin: "-5% 0px -5% 0px",
-      }
-    );
+    const observer =
+      new IntersectionObserver(
+        ([entry]) => {
+          setVisible(
+            entry.isIntersecting
+          );
+        },
+        {
+          threshold: 0.1,
+          rootMargin:
+            "-5% 0px -5% 0px",
+        }
+      );
 
     observer.observe(element);
 
-    return () => observer.disconnect();
+    return () =>
+      observer.disconnect();
   }, []);
 
-  return { ref, visible };
+  return {
+    ref,
+    visible,
+  };
 }
 
 /* =========================================================
@@ -159,12 +172,9 @@ function PlanCard({
         hover:shadow-[0_36px_95px_rgba(0,0,0,0.4),0_0_45px_rgba(0,255,102,0.055),inset_0_1px_0_rgba(255,255,255,0.04)]
 
         sm:p-6
-
-        lg:p-5
-
-        xl:p-6
-
-        2xl:p-7
+        lg:p-6
+        xl:p-7
+        2xl:p-8
 
         ${
           plan.featured
@@ -210,9 +220,9 @@ function PlanCard({
             to-[#20f77a]
 
             px-4
-            py-1.5
+            py-2
 
-            text-[7px]
+            text-[9px]
             font-black
             uppercase
             tracking-[0.11em]
@@ -222,9 +232,11 @@ function PlanCard({
             shadow-[0_0_25px_rgba(0,255,102,0.35)]
 
             sm:px-5
-            sm:text-[7.5px]
+            sm:text-[10px]
 
-            xl:text-[8px]
+            lg:text-[10.5px]
+
+            xl:text-[11px]
           "
         >
           Most Recommended for Builders
@@ -290,6 +302,7 @@ function PlanCard({
 
       {/* =====================================================
           TIER
+          BIGGER FONT
       ===================================================== */}
 
       <div
@@ -297,17 +310,21 @@ function PlanCard({
           relative
           z-10
 
-          text-[7px]
+          text-[10px]
           font-black
           uppercase
           leading-[1.4]
-          tracking-[0.17em]
+          tracking-[0.15em]
 
           text-[#00ff66]
 
-          sm:text-[7.5px]
+          sm:text-[10.5px]
 
-          xl:text-[8px]
+          lg:text-[11px]
+
+          xl:text-[11.5px]
+
+          2xl:text-[12px]
         "
       >
         {plan.tier}
@@ -315,6 +332,7 @@ function PlanCard({
 
       {/* =====================================================
           TITLE
+          BIGGER FONT
       ===================================================== */}
 
       <h3
@@ -322,11 +340,11 @@ function PlanCard({
           relative
           z-10
 
-          mt-2.5
+          mt-3
 
-          text-[18px]
+          text-[22px]
           font-bold
-          leading-[1.22]
+          leading-[1.2]
           tracking-[-0.035em]
 
           text-[#effff2]
@@ -336,17 +354,17 @@ function PlanCard({
 
           group-hover:text-white
 
-          min-[420px]:text-[19px]
+          min-[420px]:text-[23px]
 
-          sm:text-[20px]
+          sm:text-[25px]
 
-          md:text-[21px]
+          md:text-[26px]
 
-          lg:text-[18px]
+          lg:text-[22px]
 
-          xl:text-[20px]
+          xl:text-[24px]
 
-          2xl:text-[22px]
+          2xl:text-[26px]
         "
       >
         {plan.title}
@@ -354,6 +372,7 @@ function PlanCard({
 
       {/* =====================================================
           DESCRIPTION
+          BIGGER FONT
       ===================================================== */}
 
       <p
@@ -361,24 +380,28 @@ function PlanCard({
           relative
           z-10
 
-          mt-2.5
+          mt-3
 
-          text-[11.5px]
+          text-[14px]
           font-normal
-          leading-[1.65]
+          leading-[1.7]
 
-          text-[#cfe1d3]/72
+          text-[#cfe1d3]/74
 
           transition-colors
           duration-500
 
-          group-hover:text-[#e4eee6]/85
+          group-hover:text-[#e4eee6]/88
 
-          min-[420px]:text-[12px]
+          min-[420px]:text-[14.5px]
 
-          sm:text-[12.5px]
+          sm:text-[15px]
 
-          xl:text-[13px]
+          lg:text-[14.5px]
+
+          xl:text-[15.5px]
+
+          2xl:text-[16px]
         "
       >
         {plan.description}
@@ -386,6 +409,7 @@ function PlanCard({
 
       {/* =====================================================
           PRICE
+          BIGGER FONT
       ===================================================== */}
 
       <div
@@ -393,33 +417,34 @@ function PlanCard({
           relative
           z-10
 
-          mt-5
+          mt-6
 
           flex
           flex-wrap
           items-end
-          gap-x-1.5
-          gap-y-1
+
+          gap-x-2
+          gap-y-1.5
         "
       >
         <span
           className="
-            text-[28px]
+            text-[34px]
             font-bold
             leading-none
             tracking-[-0.055em]
 
             text-[#f1fff3]
 
-            min-[420px]:text-[30px]
+            min-[420px]:text-[36px]
 
-            sm:text-[32px]
+            sm:text-[38px]
 
-            lg:text-[27px]
+            lg:text-[32px]
 
-            xl:text-[30px]
+            xl:text-[36px]
 
-            2xl:text-[34px]
+            2xl:text-[40px]
           "
         >
           {plan.price}
@@ -427,17 +452,19 @@ function PlanCard({
 
         <span
           className="
-            pb-[2px]
+            pb-[3px]
 
-            text-[8px]
+            text-[10px]
             font-medium
             leading-[1.4]
 
-            text-[#c6ffd4]/70
+            text-[#c6ffd4]/72
 
-            sm:text-[8.5px]
+            sm:text-[10.5px]
 
-            xl:text-[9px]
+            lg:text-[11px]
+
+            xl:text-[11.5px]
           "
         >
           {plan.priceNote}
@@ -446,6 +473,7 @@ function PlanCard({
 
       {/* =====================================================
           FEATURES
+          BIGGER FONT
       ===================================================== */}
 
       <div
@@ -453,74 +481,103 @@ function PlanCard({
           relative
           z-10
 
-          mt-5
+          mt-6
 
           flex
           flex-col
-          gap-3
+
+          gap-3.5
         "
       >
-        {plan.features.map((feature, featureIndex) => (
-          <div
-            key={feature}
-            style={
-              {
-                transitionDelay: `${featureIndex * 45}ms`,
-              } as CSSProperties
-            }
-            className="
-              group/feature
-
-              flex
-              items-start
-              gap-2.5
-
-              text-[11px]
-              font-normal
-              leading-[1.45]
-
-              text-[#d9e6dc]/82
-
-              transition-all
-              duration-300
-
-              hover:translate-x-0.5
-              hover:text-white
-
-              sm:text-[11.5px]
-
-              xl:text-[12px]
-            "
-          >
-            <CheckCircle2
+        {plan.features.map(
+          (
+            feature,
+            featureIndex
+          ) => (
+            <div
+              key={feature}
+              style={
+                {
+                  transitionDelay: `${featureIndex * 45}ms`,
+                } as CSSProperties
+              }
               className="
-                mt-[1px]
+                group/feature
 
-                h-3.5
-                w-3.5
-                shrink-0
+                flex
+                items-start
 
-                text-[#00ff66]
+                gap-3
+
+                text-[13px]
+                font-normal
+                leading-[1.5]
+
+                text-[#d9e6dc]/84
 
                 transition-all
                 duration-300
 
-                group-hover/feature:scale-110
-                group-hover/feature:drop-shadow-[0_0_7px_rgba(0,255,102,0.7)]
-              "
-              strokeWidth={2.5}
-            />
+                hover:translate-x-0.5
+                hover:text-white
 
-            <span>{feature}</span>
-          </div>
-        ))}
+                min-[420px]:text-[13.5px]
+
+                sm:text-[14px]
+
+                lg:text-[13.5px]
+
+                xl:text-[14.5px]
+
+                2xl:text-[15px]
+              "
+            >
+              <CheckCircle2
+                className="
+                  mt-[2px]
+
+                  h-4
+                  w-4
+
+                  shrink-0
+
+                  text-[#00ff66]
+
+                  transition-all
+                  duration-300
+
+                  group-hover/feature:scale-110
+
+                  group-hover/feature:drop-shadow-[0_0_7px_rgba(0,255,102,0.7)]
+
+                  sm:h-[18px]
+                  sm:w-[18px]
+                "
+                strokeWidth={2.5}
+              />
+
+              <span>
+                {feature}
+              </span>
+            </div>
+          )
+        )}
       </div>
 
       {/* =====================================================
           CTA
       ===================================================== */}
 
-      <div className="relative z-10 mt-auto pt-7">
+      <div
+        className="
+          relative
+          z-10
+
+          mt-auto
+
+          pt-8
+        "
+      >
         <button
           type="button"
           className={`
@@ -528,7 +585,9 @@ function PlanCard({
             relative
 
             flex
-            min-h-[48px]
+
+            min-h-[52px]
+
             w-full
 
             cursor-pointer
@@ -545,10 +604,11 @@ function PlanCard({
             rounded-[10px]
 
             px-4
-            py-3
+            py-3.5
 
             text-center
-            text-[12px]
+
+            text-[14px]
             font-bold
             leading-[1.2]
 
@@ -558,38 +618,55 @@ function PlanCard({
             active:scale-[0.985]
 
             focus-visible:outline-none
+
             focus-visible:ring-2
             focus-visible:ring-[#00ff66]/60
+
             focus-visible:ring-offset-2
+
             focus-visible:ring-offset-[#121714]
 
-            sm:text-[12.5px]
+            sm:text-[14.5px]
 
-            xl:text-[13px]
+            lg:text-[14px]
+
+            xl:text-[15px]
+
+            2xl:text-[15.5px]
 
             ${
               plan.featured
                 ? `
-                  border border-[#00ff66]/60
+                  border
+                  border-[#00ff66]/60
+
                   bg-gradient-to-r
                   from-[#00e85c]
                   via-[#00ff66]
                   to-[#13ee6c]
+
                   text-[#04200d]
 
                   shadow-[0_0_25px_rgba(0,255,102,0.2)]
 
                   hover:-translate-y-0.5
+
                   hover:shadow-[0_0_38px_rgba(0,255,102,0.38)]
                 `
                 : `
-                  border border-white/[0.035]
+                  border
+                  border-white/[0.035]
+
                   bg-white/[0.025]
+
                   text-[#f0fff3]
 
                   hover:-translate-y-0.5
+
                   hover:border-[#00ff66]/20
+
                   hover:bg-[#00ff66]/[0.045]
+
                   hover:text-[#7dffad]
                 `
             }
@@ -600,8 +677,11 @@ function PlanCard({
           <span
             className="
               pointer-events-none
+
               absolute
+
               inset-y-0
+
               -left-[35%]
 
               w-[25%]
@@ -609,8 +689,11 @@ function PlanCard({
               skew-x-[-20deg]
 
               bg-gradient-to-r
+
               from-transparent
+
               via-white/20
+
               to-transparent
 
               opacity-0
@@ -619,11 +702,17 @@ function PlanCard({
               duration-700
 
               group-hover/button:left-[120%]
+
               group-hover/button:opacity-100
             "
           />
 
-          <span className="relative z-10">
+          <span
+            className="
+              relative
+              z-10
+            "
+          >
             {plan.button}
           </span>
 
@@ -632,8 +721,8 @@ function PlanCard({
               relative
               z-10
 
-              h-3.5
-              w-3.5
+              h-4
+              w-4
 
               shrink-0
 
@@ -643,7 +732,9 @@ function PlanCard({
               duration-300
 
               group-hover/button:-translate-y-0.5
+
               group-hover/button:translate-x-0.5
+
               group-hover/button:opacity-100
             "
           />
@@ -658,7 +749,10 @@ function PlanCard({
 ========================================================= */
 
 export default function PrecisionCommissionModels() {
-  const { ref, visible } = useInView();
+  const {
+    ref,
+    visible,
+  } = useInView();
 
   return (
     <section
@@ -675,6 +769,7 @@ export default function PrecisionCommissionModels() {
         bg-[#090e0b]
 
         py-14
+
         text-white
 
         sm:py-16
@@ -690,39 +785,47 @@ export default function PrecisionCommissionModels() {
       <div
         className="
           pointer-events-none
+
           absolute
           inset-0
+
           -z-50
 
           bg-[#090e0b]
         "
       />
 
-      {/* Dot grid */}
+      {/* Dot Grid */}
 
       <div
         className="
           pointer-events-none
+
           absolute
           inset-0
+
           -z-40
 
           opacity-[0.11]
 
           [background-image:radial-gradient(rgba(123,255,168,0.5)_0.7px,transparent_0.7px)]
+
           [background-size:27px_27px]
         "
       />
 
-      {/* Top ambient */}
+      {/* Top Ambient */}
 
       <div
         className="
           pointer-events-none
+
           absolute
 
           -top-[420px]
+
           left-1/2
+
           -z-30
 
           h-[800px]
@@ -738,15 +841,18 @@ export default function PrecisionCommissionModels() {
         "
       />
 
-      {/* Left glow */}
+      {/* Left Glow */}
 
       <div
         className="
           pointer-events-none
+
           absolute
 
           -left-[380px]
+
           top-[25%]
+
           -z-30
 
           h-[700px]
@@ -760,15 +866,18 @@ export default function PrecisionCommissionModels() {
         "
       />
 
-      {/* Right glow */}
+      {/* Right Glow */}
 
       <div
         className="
           pointer-events-none
+
           absolute
 
           -right-[380px]
+
           top-[25%]
+
           -z-30
 
           h-[700px]
@@ -782,20 +891,25 @@ export default function PrecisionCommissionModels() {
         "
       />
 
-      {/* bottom */}
+      {/* Bottom Fade */}
 
       <div
         className="
           pointer-events-none
+
           absolute
+
           inset-x-0
           bottom-0
+
           -z-20
 
           h-[300px]
 
           bg-gradient-to-t
+
           from-black/25
+
           to-transparent
         "
       />
@@ -807,7 +921,9 @@ export default function PrecisionCommissionModels() {
       <div
         className="
           mx-auto
+
           w-full
+
           max-w-[1540px]
 
           px-4
@@ -826,12 +942,15 @@ export default function PrecisionCommissionModels() {
         <div
           className={`
             mx-auto
-            max-w-[850px]
+
+            max-w-[900px]
 
             text-center
 
             transition-all
+
             duration-1000
+
             ease-[cubic-bezier(0.16,1,0.3,1)]
 
             ${
@@ -841,36 +960,48 @@ export default function PrecisionCommissionModels() {
             }
 
             motion-reduce:transform-none
+
             motion-reduce:transition-none
           `}
         >
-          {/* eyebrow */}
+          {/* =================================================
+              EYEBROW
+              BIGGER FONT
+          ================================================= */}
 
           <div
             className="
-              mb-3
+              mb-4
 
               flex
-              items-center
-              justify-center
-              gap-2
 
-              text-[7px]
+              items-center
+
+              justify-center
+
+              gap-2.5
+
+              text-[10px]
+
               font-black
+
               uppercase
-              tracking-[0.17em]
+
+              tracking-[0.16em]
 
               text-[#00ff66]
 
-              sm:text-[8px]
+              sm:text-[11px]
 
-              xl:text-[8.5px]
+              lg:text-[11.5px]
+
+              xl:text-[12px]
             "
           >
             <Sparkles
               className="
-                h-3
-                w-3
+                h-4
+                w-4
 
                 text-[#00ff66]
 
@@ -881,33 +1012,40 @@ export default function PrecisionCommissionModels() {
             Engagement Frameworks
           </div>
 
-          {/* heading */}
+          {/* =================================================
+              HEADING
+              BIGGER FONT
+          ================================================= */}
 
           <h2
             className="
               mx-auto
-              max-w-[760px]
 
-              text-[36px]
+              max-w-[820px]
+
+              text-[42px]
+
               font-bold
-              leading-[1.03]
+
+              leading-[1.02]
+
               tracking-[-0.052em]
 
               text-[#f1fff3]
 
-              min-[390px]:text-[39px]
+              min-[390px]:text-[46px]
 
-              min-[460px]:text-[43px]
+              min-[460px]:text-[50px]
 
-              sm:text-[48px]
+              sm:text-[56px]
 
-              md:text-[52px]
+              md:text-[62px]
 
-              lg:text-[56px]
+              lg:text-[68px]
 
-              xl:text-[60px]
+              xl:text-[74px]
 
-              2xl:text-[64px]
+              2xl:text-[80px]
             "
           >
             Precision Commission
@@ -917,28 +1055,38 @@ export default function PrecisionCommissionModels() {
             </span>
           </h2>
 
-          {/* description */}
+          {/* =================================================
+              DESCRIPTION
+              BIGGER FONT
+          ================================================= */}
 
           <p
             className="
               mx-auto
-              mt-4
 
-              max-w-[650px]
+              mt-5
 
-              text-[12px]
+              max-w-[700px]
+
+              text-[14px]
+
               font-normal
-              leading-[1.65]
 
-              text-[#c8ffd5]/75
+              leading-[1.72]
 
-              min-[420px]:text-[12.5px]
+              text-[#c8ffd5]/78
 
-              sm:text-[13.5px]
+              min-[420px]:text-[14.5px]
 
-              lg:text-[14px]
+              sm:text-[15.5px]
 
-              xl:text-[14.5px]
+              md:text-[16px]
+
+              lg:text-[16.5px]
+
+              xl:text-[17px]
+
+              2xl:text-[17.5px]
             "
           >
             Transparent, rigorous architectural workflows tailored
@@ -953,34 +1101,41 @@ export default function PrecisionCommissionModels() {
 
         <div
           className="
-            mt-11
+            mt-12
 
             grid
             grid-cols-1
 
             gap-5
 
-            sm:mt-12
+            sm:mt-14
 
             md:grid-cols-2
 
-            lg:mt-14
+            lg:mt-16
+
             lg:grid-cols-3
-            lg:gap-4
 
-            xl:gap-5
+            lg:gap-5
 
-            2xl:gap-6
+            xl:gap-6
+
+            2xl:gap-7
           "
         >
-          {plans.map((plan, index) => (
-            <PlanCard
-              key={plan.title}
-              plan={plan}
-              index={index}
-              visible={visible}
-            />
-          ))}
+          {plans.map(
+            (
+              plan,
+              index
+            ) => (
+              <PlanCard
+                key={plan.title}
+                plan={plan}
+                index={index}
+                visible={visible}
+              />
+            )
+          )}
         </div>
       </div>
     </section>

@@ -1,26 +1,26 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element */
+
 import Image from "next/image";
 import { Geist } from "next/font/google";
+
 import {
-  Activity,
-  Box,
-  Check,
   ChevronRight,
-  CircleDot,
-  FileBox,
   Layers3,
-  MoveUpRight,
   Network,
-  ScanLine,
-  Sparkles,
 } from "lucide-react";
+
 import {
   useEffect,
   useRef,
   useState,
   type CSSProperties,
 } from "react";
+
+/* =========================================================
+   FONT
+========================================================= */
 
 const geist = Geist({
   subsets: ["latin"],
@@ -62,20 +62,55 @@ const phases = [
   },
 ];
 
-const formatBadges = [
-  ".RVT",
-  ".DWG / .DXF",
-  ".IFC OPEN BIM",
-  ".NWD / .NWC",
-  "UE 5.4 EXR",
-];
+/* =========================================================
+   TAB DATA
+========================================================= */
 
 const tabs = [
-  "Schematic",
-  "Wireframe",
-  "MEP Sync",
-  "Photoreal",
-];
+  {
+    id: "schematic",
+    label: "Schematic",
+    image: "/assets/imagesarchitecture-bim.png",
+    fallback:
+      "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1800&q=90",
+    alt: "Architectural schematic BIM visualization",
+    hud:
+      "Layer 01: 2D/3D Combined Schematics Active",
+  },
+  {
+    id: "wireframe",
+    label: "Wireframe",
+    image: "/assets/architecture-wireframe.png",
+    fallback:
+      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=90",
+    alt: "Architectural wireframe and technical building visualization",
+    hud:
+      "Layer 02: Architectural Wireframe Geometry Active",
+  },
+  {
+    id: "mep-sync",
+    label: "MEP Sync",
+    image: "/assets/architecture-mep-sync.png",
+    fallback:
+      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1800&q=90",
+    alt: "MEP engineering coordination and BIM systems visualization",
+    hud:
+      "Layer 03: MEP Coordination & Clash Sync Active",
+  },
+  {
+    id: "photoreal",
+    label: "Photoreal",
+    image: "/assets/architecture-photoreal.png",
+    fallback:
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=90",
+    alt: "Photorealistic modern architectural rendering",
+    hud:
+      "Layer 04: Photoreal Material & Lighting Output Active",
+  },
+] as const;
+
+type TabId =
+  (typeof tabs)[number]["id"];
 
 const bottomStats = [
   {
@@ -97,26 +132,36 @@ const bottomStats = [
 ========================================================= */
 
 function useSectionVisible() {
-  const ref = useRef<HTMLElement | null>(null);
-  const [visible, setVisible] = useState(false);
+  const ref =
+    useRef<HTMLElement | null>(null);
+
+  const [
+    visible,
+    setVisible,
+  ] = useState(false);
 
   useEffect(() => {
     const element = ref.current;
 
     if (!element) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setVisible(entry.isIntersecting);
-      },
-      {
-        threshold: 0.13,
-      }
-    );
+    const observer =
+      new IntersectionObserver(
+        ([entry]) => {
+          setVisible(
+            entry.isIntersecting
+          );
+        },
+        {
+          threshold: 0.12,
+        }
+      );
 
     observer.observe(element);
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   return {
@@ -130,112 +175,320 @@ function useSectionVisible() {
 ========================================================= */
 
 export default function PhaseTechnicalMatrix() {
-  const { ref, visible } = useSectionVisible();
+  const {
+    ref,
+    visible,
+  } = useSectionVisible();
 
-  const [activeTab, setActiveTab] = useState("Schematic");
-  const [imageFailed, setImageFailed] = useState(false);
+  const [
+    activeTab,
+    setActiveTab,
+  ] =
+    useState<TabId>("schematic");
+
+  const [
+    imageFailed,
+    setImageFailed,
+  ] = useState(false);
+
+  const [
+    fallbackFailed,
+    setFallbackFailed,
+  ] = useState(false);
+
+  const activeTabData =
+    tabs.find(
+      (tab) =>
+        tab.id === activeTab
+    ) ?? tabs[0];
+
+  /* =========================================================
+     RESET IMAGE STATE ON TAB CHANGE
+  ========================================================= */
+
+  useEffect(() => {
+    setImageFailed(false);
+    setFallbackFailed(false);
+  }, [activeTab]);
 
   return (
     <section
       ref={ref}
       className={`
         ${geist.className}
+
         relative
         isolate
         overflow-hidden
-        bg-[#080d0a]
-        py-12
+
+        bg-[linear-gradient(135deg,#020503_0%,#06100a_24%,#0a1a11_52%,#07130c_74%,#020503_100%)]
+
+        py-8
+
         text-white
 
-        sm:py-16
-        md:py-20
-        lg:py-24
+        sm:py-10
+        md:py-12
+        lg:py-14
+        xl:py-16
       `}
     >
       {/* =====================================================
-          BACKGROUND
-      ===================================================== */}
-
-      <div className="pointer-events-none absolute inset-0 -z-50 bg-[#080d0a]" />
-
-      {/* Dotted background */}
+          BASE GRADIENT
+      ====================================================== */}
 
       <div
         className="
           pointer-events-none
-          absolute inset-0
-          -z-40
-          opacity-[0.10]
-          [background-image:radial-gradient(rgba(86,255,145,0.65)_0.75px,transparent_0.75px)]
-          [background-size:26px_26px]
+
+          absolute
+          inset-0
+
+          -z-50
+
+          bg-[linear-gradient(135deg,#020503_0%,#06100a_24%,#0a1a11_52%,#07130c_74%,#020503_100%)]
         "
       />
 
-      {/* Top glow */}
+      {/* =====================================================
+          TOP LEFT GREEN AMBIENT
+      ====================================================== */}
 
       <div
         className="
           pointer-events-none
-          absolute
-          -top-[330px]
-          left-[10%]
-          -z-40
-          h-[700px]
-          w-[700px]
-          rounded-full
-          bg-[#00ff66]/[0.04]
-          blur-[180px]
-        "
-      />
 
-      {/* Right glow */}
-
-      <div
-        className="
-          pointer-events-none
           absolute
-          -right-[380px]
-          top-[15%]
+
+          -left-[320px]
+          -top-[360px]
+
           -z-40
-          h-[800px]
-          w-[800px]
+
+          h-[820px]
+          w-[820px]
+
           rounded-full
-          bg-[#00ff66]/[0.035]
+
+          bg-[#00ff66]/[0.095]
+
           blur-[190px]
         "
       />
 
-      {/* Bottom fade */}
+      {/* =====================================================
+          CENTER EMERALD AMBIENT
+      ====================================================== */}
 
       <div
         className="
           pointer-events-none
+
           absolute
+
+          left-[48%]
+          top-[36%]
+
+          -z-40
+
+          h-[700px]
+          w-[900px]
+
+          -translate-x-1/2
+          -translate-y-1/2
+
+          rounded-full
+
+          bg-[#00ff66]/[0.043]
+
+          blur-[200px]
+        "
+      />
+
+      {/* =====================================================
+          RIGHT GREEN AMBIENT
+      ====================================================== */}
+
+      <div
+        className="
+          pointer-events-none
+
+          absolute
+
+          -right-[360px]
+          top-[8%]
+
+          -z-40
+
+          h-[850px]
+          w-[850px]
+
+          rounded-full
+
+          bg-[#18ff7b]/[0.06]
+
+          blur-[220px]
+        "
+      />
+
+      {/* =====================================================
+          LOWER CENTER DARK DEPTH
+      ====================================================== */}
+
+      <div
+        className="
+          pointer-events-none
+
+          absolute
+
+          bottom-[-280px]
+          left-1/2
+
+          -z-40
+
+          h-[620px]
+          w-[1100px]
+
+          -translate-x-1/2
+
+          rounded-full
+
+          bg-black/45
+
+          blur-[180px]
+        "
+      />
+
+      {/* =====================================================
+          DOT GRID
+      ====================================================== */}
+
+      <div
+        className="
+          pointer-events-none
+
+          absolute
+          inset-0
+
+          -z-30
+
+          opacity-[0.105]
+
+          [background-image:radial-gradient(rgba(112,255,164,0.68)_0.75px,transparent_0.75px)]
+
+          [background-size:26px_26px]
+
+          [mask-image:linear-gradient(to_bottom,black_5%,rgba(0,0,0,0.85)_60%,transparent_100%)]
+        "
+      />
+
+      {/* =====================================================
+          SUBTLE DIAGONAL LIGHT
+      ====================================================== */}
+
+      <div
+        className="
+          pointer-events-none
+
+          absolute
+
+          -left-[20%]
+          top-[23%]
+
+          -z-30
+
+          h-[220px]
+          w-[140%]
+
+          rotate-[-7deg]
+
+          bg-gradient-to-r
+
+          from-transparent
+
+          via-[#00ff66]/[0.028]
+
+          to-transparent
+
+          blur-[60px]
+        "
+      />
+
+      {/* =====================================================
+          TOP SHADE
+      ====================================================== */}
+
+      <div
+        className="
+          pointer-events-none
+
+          absolute
+
+          inset-x-0
+          top-0
+
+          -z-20
+
+          h-[220px]
+
+          bg-gradient-to-b
+
+          from-black/30
+
+          via-black/[0.08]
+
+          to-transparent
+        "
+      />
+
+      {/* =====================================================
+          BOTTOM SHADE
+      ====================================================== */}
+
+      <div
+        className="
+          pointer-events-none
+
+          absolute
+
           inset-x-0
           bottom-0
-          -z-30
-          h-[320px]
+
+          -z-20
+
+          h-[240px]
+
           bg-gradient-to-t
-          from-black/35
+
+          from-[#010302]/90
+
+          via-[#041008]/35
+
           to-transparent
         "
       />
 
       {/* =====================================================
           MAIN WRAPPER
-      ===================================================== */}
+      ====================================================== */}
 
       <div
         className="
+          relative
+          z-10
+
           mx-auto
+
           w-full
-          max-w-[1540px]
+          max-w-[1600px]
+
           px-4
 
           sm:px-6
           md:px-8
           lg:px-10
           xl:px-12
+          2xl:px-14
         "
       >
         {/* ===================================================
@@ -245,24 +498,32 @@ export default function PhaseTechnicalMatrix() {
         <div
           className={`
             relative
+
             overflow-hidden
+
             rounded-[22px]
+
             border
-            border-white/[0.055]
-            bg-[#0a0f0c]/90
+            border-white/[0.065]
+
+            bg-[linear-gradient(145deg,rgba(14,25,18,0.93)_0%,rgba(7,15,10,0.94)_48%,rgba(10,22,14,0.94)_100%)]
 
             p-4
-            shadow-[0_30px_100px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.025)]
-            backdrop-blur-xl
+
+            shadow-[0_35px_110px_rgba(0,0,0,0.40),0_0_80px_rgba(0,255,102,0.035),inset_0_1px_0_rgba(255,255,255,0.035)]
+
+            backdrop-blur-2xl
 
             transition-all
+
             duration-1000
+
             ease-[cubic-bezier(0.16,1,0.3,1)]
 
             sm:p-5
-            md:p-7
-            lg:p-8
-            xl:p-9
+            md:p-5
+            lg:p-6
+            xl:p-7
 
             ${
               visible
@@ -271,21 +532,86 @@ export default function PhaseTechnicalMatrix() {
             }
           `}
         >
-          {/* top neon */}
+          {/* PANEL LEFT GLOW */}
 
           <div
             className="
               pointer-events-none
+
               absolute
+
+              -left-[180px]
+              -top-[220px]
+
+              h-[520px]
+              w-[560px]
+
+              rounded-full
+
+              bg-[#00ff66]/[0.055]
+
+              blur-[140px]
+            "
+          />
+
+          {/* PANEL RIGHT GLOW */}
+
+          <div
+            className="
+              pointer-events-none
+
+              absolute
+
+              -right-[200px]
+              bottom-[-250px]
+
+              h-[600px]
+              w-[600px]
+
+              rounded-full
+
+              bg-[#00ff66]/[0.04]
+
+              blur-[160px]
+            "
+          />
+
+          {/* PANEL INNER SHADE */}
+
+          <div
+            className="
+              pointer-events-none
+
+              absolute
+              inset-0
+
+              bg-[radial-gradient(circle_at_55%_35%,rgba(0,255,102,0.025),transparent_48%)]
+            "
+          />
+
+          {/* NEON TOP LINE */}
+
+          <div
+            className="
+              pointer-events-none
+
+              absolute
+
               left-[5%]
               top-0
+
               h-px
               w-[32%]
+
               bg-gradient-to-r
+
               from-transparent
-              via-[#00ff66]/60
+
+              via-[#00ff66]/75
+
               to-transparent
-              shadow-[0_0_16px_rgba(0,255,102,0.45)]
+
+              shadow-[0_0_18px_rgba(0,255,102,0.5)]
             "
           />
 
@@ -295,160 +621,119 @@ export default function PhaseTechnicalMatrix() {
 
           <div
             className="
-              grid
-              gap-7
+              relative
+              z-10
 
-              md:grid-cols-[1fr_auto]
-              md:items-center
-              md:gap-10
-
-              lg:grid-cols-[minmax(0,1.25fr)_minmax(360px,0.75fr)]
+              max-w-[1100px]
             "
           >
-            {/* Left */}
-
-            <div>
-              <div
-                className="
-                  mb-4
-                  flex
-                  items-center
-                  gap-2
-                  text-[8px]
-                  font-black
-                  uppercase
-                  tracking-[0.17em]
-                  text-[#00ff66]
-
-                  sm:text-[9px]
-                "
-              >
-                <span
-                  className="
-                    h-1.5
-                    w-1.5
-                    rounded-full
-                    bg-[#00ff66]
-                    shadow-[0_0_10px_rgba(0,255,102,0.9)]
-                  "
-                />
-
-                Pipeline • Interactive Inspector
-              </div>
-
-              <h2
-                className="
-                  max-w-[760px]
-                  text-[38px]
-                  font-[700]
-                  leading-[1.02]
-                  tracking-[-0.055em]
-                  text-[#f1fff4]
-
-                  min-[420px]:text-[42px]
-
-                  sm:text-[50px]
-
-                  md:text-[54px]
-
-                  lg:text-[58px]
-
-                  xl:text-[64px]
-                "
-              >
-                Phase-by-Phase Technical
-                <span className="block">
-                  Matrix
-                </span>
-              </h2>
-            </div>
-
-            {/* Format badges */}
+            {/* Eyebrow */}
 
             <div
               className="
-                flex
-                flex-wrap
-                gap-2
+                mb-3
 
-                md:max-w-[430px]
-                md:justify-end
+                flex
+
+                items-center
+
+                gap-2.5
+
+                text-[10px]
+
+                font-black
+
+                uppercase
+
+                tracking-[0.15em]
+
+                text-[#00ff66]
+
+                sm:text-[11px]
+
+                lg:text-[12px]
+
+                xl:text-[13px]
               "
             >
-              {formatBadges.map((badge, index) => (
-                <div
-                  key={badge}
-                  style={
-                    {
-                      "--badgeDelay": `${index * 80}ms`,
-                    } as CSSProperties
-                  }
-                  className={`
-                    format-badge
-                    group
-                    relative
-                    overflow-hidden
-                    rounded-[5px]
-                    border
-                    border-white/[0.04]
-                    bg-white/[0.065]
+              <span
+                className="
+                  h-2
+                  w-2
 
-                    px-3
-                    py-2
+                  shrink-0
 
-                    text-[7px]
-                    font-black
-                    uppercase
-                    tracking-[0.14em]
-                    text-white/85
+                  rounded-full
 
-                    shadow-[inset_0_1px_0_rgba(255,255,255,0.035)]
+                  bg-[#00ff66]
 
-                    transition-all
-                    duration-500
+                  shadow-[0_0_10px_rgba(0,255,102,0.9)]
+                "
+              />
 
-                    hover:-translate-y-0.5
-                    hover:border-[#00ff66]/20
-                    hover:bg-[#00ff66]/[0.06]
-                    hover:text-[#00ff66]
-
-                    sm:text-[8px]
-
-                    ${
-                      badge.includes("IFC") ||
-                      badge.includes("UE")
-                        ? "text-[#00ff66]"
-                        : ""
-                    }
-
-                    ${
-                      visible
-                        ? "translate-y-0 opacity-100"
-                        : "translate-y-3 opacity-0"
-                    }
-                  `}
-                >
-                  <span
-                    className="
-                      absolute
-                      inset-0
-                      -translate-x-[130%]
-                      bg-gradient-to-r
-                      from-transparent
-                      via-white/[0.07]
-                      to-transparent
-                      transition-transform
-                      duration-700
-                      group-hover:translate-x-[130%]
-                    "
-                  />
-
-                  <span className="relative z-10">
-                    {badge}
-                  </span>
-                </div>
-              ))}
+              Pipeline • Interactive Inspector
             </div>
+
+            {/* Heading */}
+
+            <h2
+              className="
+                max-w-[1000px]
+
+                text-[44px]
+
+                font-[700]
+
+                leading-[1.01]
+
+                tracking-[-0.055em]
+
+                text-[#f1fff4]
+
+                min-[420px]:text-[48px]
+
+                sm:text-[58px]
+
+                md:text-[64px]
+
+                lg:text-[72px]
+
+                xl:text-[80px]
+              "
+            >
+              Phase-by-Phase Technical
+
+              <span className="block">
+                Matrix
+              </span>
+            </h2>
+
+            {/* Description */}
+
+            <p
+              className="
+                mt-4
+
+                max-w-[800px]
+
+                text-[15px]
+
+                leading-[1.72]
+
+                text-white/50
+
+                sm:text-[16px]
+
+                lg:text-[17px]
+
+                xl:text-[18px]
+              "
+            >
+              A coordinated project pipeline connecting early
+              feasibility, design development, permit documentation,
+              and construction-stage BIM coordination within one
+              integrated technical workflow.
+            </p>
           </div>
 
           {/* =================================================
@@ -457,13 +742,20 @@ export default function PhaseTechnicalMatrix() {
 
           <div
             className="
-              mt-10
+              relative
+              z-10
+
+              mt-7
+
               grid
+
               gap-4
 
-              lg:grid-cols-[minmax(330px,0.82fr)_minmax(0,1.18fr)]
+              lg:mt-8
 
-              xl:grid-cols-[minmax(380px,0.78fr)_minmax(0,1.22fr)]
+              lg:grid-cols-[minmax(350px,0.78fr)_minmax(0,1.22fr)]
+
+              xl:grid-cols-[minmax(410px,0.75fr)_minmax(0,1.25fr)]
 
               xl:gap-5
             "
@@ -472,213 +764,312 @@ export default function PhaseTechnicalMatrix() {
                 LEFT PHASES
             ================================================= */}
 
-            <div className="flex flex-col gap-3">
-              {phases.map((phase, index) => (
-                <article
-                  key={phase.number}
-                  style={
-                    {
-                      "--phaseDelay": `${index * 90}ms`,
-                    } as CSSProperties
-                  }
-                  className={`
-                    phase-card
-                    group
-                    relative
-                    overflow-hidden
-                    rounded-[12px]
-                    border
-                    border-white/[0.045]
-                    bg-[#151b17]/95
-                    px-4
-                    py-4
+            <div
+              className="
+                flex
+                flex-col
 
-                    shadow-[0_16px_36px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.02)]
-
-                    transition-all
-                    duration-500
-                    ease-[cubic-bezier(0.16,1,0.3,1)]
-
-                    hover:-translate-y-1
-                    hover:border-[#00ff66]/20
-                    hover:bg-[#182019]
-                    hover:shadow-[0_20px_55px_rgba(0,0,0,0.28),0_0_35px_rgba(0,255,102,0.04)]
-
-                    sm:px-5
-                    sm:py-5
-
-                    ${
-                      visible
-                        ? "translate-x-0 opacity-100"
-                        : "-translate-x-6 opacity-0"
+                gap-3
+              "
+            >
+              {phases.map(
+                (
+                  phase,
+                  index
+                ) => (
+                  <article
+                    key={phase.number}
+                    style={
+                      {
+                        "--phaseDelay": `${index * 90}ms`,
+                      } as CSSProperties
                     }
-                  `}
-                >
-                  {/* hover top line */}
+                    className={`
+                      phase-card
 
-                  <span
-                    className="
-                      absolute
-                      left-0
-                      top-0
-                      h-[2px]
-                      w-0
-                      bg-gradient-to-r
-                      from-[#00ff66]
-                      via-[#4cff8e]
-                      to-transparent
-                      transition-all
-                      duration-500
-                      group-hover:w-full
-                    "
-                  />
+                      group
 
-                  {/* hover glow */}
-
-                  <span
-                    className="
-                      pointer-events-none
-                      absolute
-                      -right-14
-                      -top-14
-                      h-28
-                      w-28
-                      rounded-full
-                      bg-[#00ff66]/0
-                      blur-3xl
-                      transition-all
-                      duration-500
-                      group-hover:bg-[#00ff66]/[0.07]
-                    "
-                  />
-
-                  {/* Header */}
-
-                  <div
-                    className="
                       relative
-                      z-10
-                      flex
-                      items-center
-                      justify-between
-                      gap-4
-                    "
+
+                      overflow-hidden
+
+                      rounded-[15px]
+
+                      border
+                      border-white/[0.06]
+
+                      bg-[linear-gradient(135deg,rgba(25,37,29,0.96)_0%,rgba(14,24,18,0.96)_100%)]
+
+                      px-4
+                      py-4
+
+                      shadow-[0_16px_36px_rgba(0,0,0,0.20),inset_0_1px_0_rgba(255,255,255,0.025)]
+
+                      transition-all
+
+                      duration-500
+
+                      ease-[cubic-bezier(0.16,1,0.3,1)]
+
+                      hover:-translate-y-1
+
+                      hover:border-[#00ff66]/25
+
+                      hover:bg-[linear-gradient(135deg,rgba(29,46,34,0.98)_0%,rgba(15,31,21,0.98)_100%)]
+
+                      hover:shadow-[0_22px_60px_rgba(0,0,0,0.32),0_0_38px_rgba(0,255,102,0.08)]
+
+                      sm:px-5
+                      sm:py-5
+
+                      ${
+                        visible
+                          ? "translate-x-0 opacity-100"
+                          : "-translate-x-6 opacity-0"
+                      }
+                    `}
                   >
+                    {/* Top Line */}
+
                     <span
                       className="
-                        text-[7px]
-                        font-black
-                        uppercase
-                        tracking-[0.18em]
+                        absolute
+
+                        left-0
+                        top-0
+
+                        h-[2px]
+                        w-0
+
+                        bg-gradient-to-r
+
+                        from-[#00ff66]
+
+                        via-[#4cff8e]
+
+                        to-transparent
+
+                        transition-all
+
+                        duration-500
+
+                        group-hover:w-full
+                      "
+                    />
+
+                    {/* Glow */}
+
+                    <span
+                      className="
+                        pointer-events-none
+
+                        absolute
+
+                        -right-14
+                        -top-14
+
+                        h-32
+                        w-32
+
+                        rounded-full
+
+                        bg-[#00ff66]/0
+
+                        blur-3xl
+
+                        transition-all
+
+                        duration-500
+
+                        group-hover:bg-[#00ff66]/[0.10]
+                      "
+                    />
+
+                    {/* Meta */}
+
+                    <div
+                      className="
+                        relative
+                        z-10
+
+                        flex
+
+                        items-center
+                        justify-between
+
+                        gap-3
+                      "
+                    >
+                      <span
+                        className="
+                          text-[10px]
+
+                          font-black
+
+                          uppercase
+
+                          tracking-[0.15em]
+
+                          text-[#00ff66]
+
+                          sm:text-[11px]
+
+                          xl:text-[12px]
+                        "
+                      >
+                        {phase.number}
+                      </span>
+
+                      <span
+                        className="
+                          text-right
+
+                          text-[10px]
+
+                          font-black
+
+                          uppercase
+
+                          tracking-[0.13em]
+
+                          text-[#b7ffc9]/75
+
+                          sm:text-[11px]
+
+                          xl:text-[12px]
+                        "
+                      >
+                        {phase.timing}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+
+                    <h3
+                      className="
+                        relative
+                        z-10
+
+                        mt-2.5
+
+                        pr-8
+
+                        text-[21px]
+
+                        font-[700]
+
+                        leading-[1.2]
+
+                        tracking-[-0.03em]
+
+                        text-[#f1fff3]
+
+                        transition-colors
+
+                        duration-500
+
+                        group-hover:text-white
+
+                        sm:text-[23px]
+
+                        lg:text-[22px]
+
+                        xl:text-[24px]
+
+                        2xl:text-[26px]
+                      "
+                    >
+                      {phase.title}
+                    </h3>
+
+                    {/* Description */}
+
+                    <p
+                      className="
+                        relative
+                        z-10
+
+                        mt-2.5
+
+                        max-w-[700px]
+
+                        text-[14px]
+
+                        font-normal
+
+                        leading-[1.65]
+
+                        tracking-[-0.008em]
+
+                        text-[#b6ffc7]/72
+
+                        transition-colors
+
+                        duration-500
+
+                        group-hover:text-[#d0ffdc]/90
+
+                        sm:text-[15px]
+
+                        xl:text-[15.5px]
+
+                        2xl:text-[16px]
+                      "
+                    >
+                      {phase.description}
+                    </p>
+
+                    {/* Arrow */}
+
+                    <div
+                      className="
+                        absolute
+
+                        bottom-4
+                        right-4
+
+                        flex
+
+                        h-8
+                        w-8
+
+                        translate-x-2
+
+                        items-center
+                        justify-center
+
+                        rounded-full
+
+                        border
+                        border-[#00ff66]/0
+
                         text-[#00ff66]
 
-                        sm:text-[8px]
+                        opacity-0
+
+                        transition-all
+
+                        duration-500
+
+                        group-hover:translate-x-0
+
+                        group-hover:border-[#00ff66]/20
+
+                        group-hover:bg-[#00ff66]/[0.05]
+
+                        group-hover:opacity-100
                       "
                     >
-                      {phase.number}
-                    </span>
-
-                    <span
-                      className="
-                        text-right
-                        text-[7px]
-                        font-black
-                        uppercase
-                        tracking-[0.18em]
-                        text-[#b7ffc9]/80
-
-                        sm:text-[8px]
-                      "
-                    >
-                      {phase.timing}
-                    </span>
-                  </div>
-
-                  {/* title */}
-
-                  <h3
-                    className="
-                      relative
-                      z-10
-                      mt-2
-                      pr-5
-                      text-[17px]
-                      font-[700]
-                      leading-[1.25]
-                      tracking-[-0.03em]
-                      text-[#f1fff3]
-
-                      transition-colors
-                      duration-500
-
-                      group-hover:text-white
-
-                      sm:text-[18px]
-
-                      lg:text-[17px]
-
-                      xl:text-[19px]
-                    "
-                  >
-                    {phase.title}
-                  </h3>
-
-                  {/* description */}
-
-                  <p
-                    className="
-                      relative
-                      z-10
-                      mt-1.5
-                      max-w-[620px]
-                      text-[11px]
-                      font-normal
-                      leading-[1.6]
-                      tracking-[-0.008em]
-                      text-[#b6ffc7]/75
-
-                      transition-colors
-                      duration-500
-
-                      group-hover:text-[#d0ffdc]/90
-
-                      sm:text-[12px]
-
-                      xl:text-[12.5px]
-                    "
-                  >
-                    {phase.description}
-                  </p>
-
-                  {/* arrow */}
-
-                  <div
-                    className="
-                      absolute
-                      bottom-4
-                      right-4
-                      flex
-                      h-7
-                      w-7
-                      translate-x-2
-                      items-center
-                      justify-center
-                      rounded-full
-
-                      text-[#00ff66]
-                      opacity-0
-
-                      transition-all
-                      duration-500
-
-                      group-hover:translate-x-0
-                      group-hover:opacity-100
-                    "
-                  >
-                    <ChevronRight className="h-4 w-4" />
-                  </div>
-                </article>
-              ))}
+                      <ChevronRight
+                        className="
+                          h-4
+                          w-4
+                        "
+                      />
+                    </div>
+                  </article>
+                )
+              )}
             </div>
 
             {/* =================================================
@@ -688,26 +1079,37 @@ export default function PhaseTechnicalMatrix() {
             <div
               className={`
                 inspector-enter
+
                 group/inspector
+
                 relative
+
                 overflow-hidden
-                rounded-[14px]
+
+                rounded-[16px]
+
                 border
-                border-white/[0.055]
-                bg-[#191f1b]
+                border-white/[0.07]
 
-                p-3
+                bg-[linear-gradient(145deg,rgba(29,41,34,0.97)_0%,rgba(15,24,18,0.98)_100%)]
 
-                shadow-[0_25px_70px_rgba(0,0,0,0.23),inset_0_1px_0_rgba(255,255,255,0.025)]
+                p-3.5
+
+                shadow-[0_25px_70px_rgba(0,0,0,0.30),0_0_40px_rgba(0,255,102,0.03),inset_0_1px_0_rgba(255,255,255,0.03)]
 
                 transition-all
+
                 duration-700
+
                 ease-[cubic-bezier(0.16,1,0.3,1)]
 
-                hover:border-[#00ff66]/16
-                hover:shadow-[0_32px_95px_rgba(0,0,0,0.32),0_0_50px_rgba(0,255,102,0.045)]
+                hover:border-[#00ff66]/20
+
+                hover:shadow-[0_34px_100px_rgba(0,0,0,0.40),0_0_55px_rgba(0,255,102,0.07)]
 
                 sm:p-4
+                lg:p-4
+                xl:p-5
 
                 ${
                   visible
@@ -716,19 +1118,26 @@ export default function PhaseTechnicalMatrix() {
                 }
               `}
             >
-              {/* top glow */}
+              {/* Inspector Top Line */}
 
               <div
                 className="
                   pointer-events-none
+
                   absolute
+
                   left-[8%]
                   top-0
+
                   h-px
                   w-[34%]
+
                   bg-gradient-to-r
+
                   from-transparent
-                  via-[#00ff66]/60
+
+                  via-[#00ff66]/70
+
                   to-transparent
                 "
               />
@@ -740,10 +1149,13 @@ export default function PhaseTechnicalMatrix() {
               <div
                 className="
                   flex
+
                   flex-col
+
                   gap-3
 
                   sm:flex-row
+
                   sm:items-center
                   sm:justify-between
                 "
@@ -751,21 +1163,41 @@ export default function PhaseTechnicalMatrix() {
                 <div
                   className="
                     flex
+
                     min-w-0
+
                     items-center
-                    gap-2
+
+                    gap-2.5
                   "
                 >
-                  <span className="relative flex h-2 w-2 shrink-0">
+                  <span
+                    className="
+                      relative
+
+                      flex
+
+                      h-2.5
+                      w-2.5
+
+                      shrink-0
+                    "
+                  >
                     <span
                       className="
                         absolute
+
                         inline-flex
+
                         h-full
                         w-full
+
                         animate-ping
+
                         rounded-full
+
                         bg-[#00ff66]
+
                         opacity-50
                       "
                     />
@@ -773,11 +1205,16 @@ export default function PhaseTechnicalMatrix() {
                     <span
                       className="
                         relative
+
                         inline-flex
-                        h-2
-                        w-2
+
+                        h-2.5
+                        w-2.5
+
                         rounded-full
+
                         bg-[#00ff66]
+
                         shadow-[0_0_10px_rgba(0,255,102,0.85)]
                       "
                     />
@@ -786,27 +1223,43 @@ export default function PhaseTechnicalMatrix() {
                   <p
                     className="
                       truncate
-                      text-[7px]
-                      font-black
-                      uppercase
-                      tracking-[0.14em]
-                      text-white/85
 
-                      sm:text-[8px]
+                      text-[11px]
+
+                      font-black
+
+                      uppercase
+
+                      tracking-[0.11em]
+
+                      text-white/90
+
+                      sm:text-[12px]
+
+                      lg:text-[12px]
+
+                      xl:text-[13px]
                     "
                   >
-                    Specimen Inspector: "The Aeon Research Arch"
+                    Specimen Inspector: &quot;The Aeon Research Arch&quot;
                   </p>
                 </div>
 
                 <Network
                   className="
                     hidden
-                    h-4
-                    w-4
-                    text-[#00ff66]/45
+
+                    h-5
+                    w-5
+
+                    shrink-0
+
+                    text-[#00ff66]/55
 
                     sm:block
+
+                    xl:h-6
+                    xl:w-6
                   "
                 />
               </div>
@@ -817,50 +1270,84 @@ export default function PhaseTechnicalMatrix() {
 
               <div
                 className="
-                  mt-3
+                  mt-3.5
+
                   flex
+
                   w-full
+
                   overflow-x-auto
-                  rounded-[7px]
-                  bg-[#080d0a]
+
+                  rounded-[9px]
+
+                  border
+                  border-white/[0.04]
+
+                  bg-black/35
+
                   p-1
+
+                  shadow-[inset_0_1px_8px_rgba(0,0,0,0.3)]
+
                   [scrollbar-width:none]
+
                   [&::-webkit-scrollbar]:hidden
 
                   sm:w-fit
                 "
               >
-                {tabs.map((tab) => (
-                  <button
-                    key={tab}
-                    type="button"
-                    onClick={() => setActiveTab(tab)}
-                    className={`
-                      relative
-                      shrink-0
-                      rounded-[5px]
-                      px-3
-                      py-1.5
-
-                      text-[7px]
-                      font-black
-                      tracking-[0.13em]
-
-                      transition-all
-                      duration-300
-
-                      sm:px-4
-
-                      ${
-                        activeTab === tab
-                          ? "bg-[#00ff66] text-[#021208] shadow-[0_0_18px_rgba(0,255,102,0.2)]"
-                          : "text-[#c4ffd3]/70 hover:bg-white/[0.035] hover:text-white"
+                {tabs.map(
+                  (tab) => (
+                    <button
+                      key={tab.id}
+                      type="button"
+                      onClick={() =>
+                        setActiveTab(
+                          tab.id
+                        )
                       }
-                    `}
-                  >
-                    {tab}
-                  </button>
-                ))}
+                      className={`
+                        relative
+
+                        shrink-0
+
+                        cursor-pointer
+
+                        rounded-[7px]
+
+                        px-3.5
+                        py-2
+
+                        text-[10px]
+
+                        font-black
+
+                        tracking-[0.10em]
+
+                        transition-all
+
+                        duration-300
+
+                        sm:px-4
+
+                        sm:text-[11px]
+
+                        xl:px-5
+
+                        xl:text-[12px]
+
+                        ${
+                          activeTab ===
+                          tab.id
+                            ? "bg-gradient-to-r from-[#00FF66] via-[#2bff88] to-[#00cc52] text-[#021208] shadow-[0_0_22px_rgba(0,255,102,0.32)]"
+                            : "text-[#c4ffd3]/75 hover:bg-white/[0.05] hover:text-white"
+                        }
+                      `}
+                    >
+                      {tab.label}
+                    </button>
+                  )
+                )}
               </div>
 
               {/* =================================================
@@ -870,49 +1357,116 @@ export default function PhaseTechnicalMatrix() {
               <div
                 className="
                   relative
-                  mt-4
-                  aspect-[1.15/1]
+
+                  mt-3.5
+
+                  aspect-[1.08/1]
+
                   overflow-hidden
-                  rounded-[9px]
+
+                  rounded-[11px]
+
                   border
                   border-white/[0.06]
+
                   bg-[#07100b]
 
-                  sm:aspect-[1.55/1]
+                  shadow-[0_20px_45px_rgba(0,0,0,0.22)]
 
-                  md:aspect-[1.75/1]
+                  sm:aspect-[1.45/1]
 
-                  lg:aspect-[1.55/1]
+                  md:aspect-[1.62/1]
 
-                  xl:aspect-[1.75/1]
+                  lg:aspect-[1.48/1]
+
+                  xl:aspect-[1.70/1]
                 "
               >
+                {/* PRIMARY */}
+
                 {!imageFailed ? (
                   <Image
-                    src="/assets/imagesarchitecture-bim.png"
-                    alt="BIM architectural technical visualization"
+                    key={`${activeTabData.id}-primary`}
+                    src={
+                      activeTabData.image
+                    }
+                    alt={
+                      activeTabData.alt
+                    }
                     fill
+                    priority={
+                      activeTab ===
+                      "schematic"
+                    }
                     sizes="(max-width: 1024px) 100vw, 60vw"
-                    onError={() => setImageFailed(true)}
+                    onError={() =>
+                      setImageFailed(true)
+                    }
                     className="
+                      inspector-image-swap
+
                       object-cover
                       object-center
 
-                      transition-all
+                      transition-transform
+
                       duration-[1400ms]
+
+                      ease-[cubic-bezier(0.16,1,0.3,1)]
+
+                      group-hover/inspector:scale-[1.025]
+                    "
+                  />
+                ) : !fallbackFailed ? (
+                  /* FALLBACK */
+
+                  <img
+                    key={`${activeTabData.id}-fallback`}
+                    src={
+                      activeTabData.fallback
+                    }
+                    alt={
+                      activeTabData.alt
+                    }
+                    onError={() =>
+                      setFallbackFailed(true)
+                    }
+                    className="
+                      inspector-image-swap
+
+                      absolute
+                      inset-0
+
+                      h-full
+                      w-full
+
+                      object-cover
+                      object-center
+
+                      transition-transform
+
+                      duration-[1400ms]
+
                       ease-[cubic-bezier(0.16,1,0.3,1)]
 
                       group-hover/inspector:scale-[1.025]
                     "
                   />
                 ) : (
+                  /* FINAL FALLBACK */
+
                   <div
                     className="
+                      inspector-image-swap
+
                       absolute
                       inset-0
+
                       flex
+
                       items-center
                       justify-center
+
                       bg-[#05100a]
                     "
                   >
@@ -920,8 +1474,11 @@ export default function PhaseTechnicalMatrix() {
                       className="
                         absolute
                         inset-0
+
                         opacity-[0.17]
+
                         [background-image:linear-gradient(rgba(0,255,102,0.25)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,102,0.25)_1px,transparent_1px)]
+
                         [background-size:32px_32px]
                       "
                     />
@@ -929,15 +1486,22 @@ export default function PhaseTechnicalMatrix() {
                     <div
                       className="
                         relative
+
                         flex
+
                         h-28
                         w-28
+
                         items-center
                         justify-center
+
                         rounded-[24px]
+
                         border
                         border-[#00ff66]/15
+
                         bg-[#00ff66]/[0.025]
+
                         shadow-[0_0_60px_rgba(0,255,102,0.07)]
                       "
                     >
@@ -945,6 +1509,7 @@ export default function PhaseTechnicalMatrix() {
                         className="
                           h-12
                           w-12
+
                           text-[#00ff66]/70
                         "
                       />
@@ -952,138 +1517,231 @@ export default function PhaseTechnicalMatrix() {
                   </div>
                 )}
 
-                {/* image dark overlay */}
+                {/* Dark Overlay */}
 
                 <div
                   className="
                     pointer-events-none
-                    absolute inset-0
+
+                    absolute
+                    inset-0
+
                     bg-gradient-to-t
-                    from-[#021008]/70
+
+                    from-[#021008]/76
+
                     via-transparent
+
                     to-black/15
                   "
                 />
 
-                {/* green overlay */}
+                {/* Green Overlay */}
 
                 <div
                   className="
                     pointer-events-none
-                    absolute inset-0
+
+                    absolute
+                    inset-0
+
                     bg-gradient-to-r
+
                     from-[#00ff66]/[0.025]
+
                     via-transparent
+
                     to-[#00ff66]/[0.035]
                   "
                 />
 
-                {/* scanning line */}
+                {/* Scan */}
 
                 <div
+                  key={`scan-${activeTab}`}
                   className="
                     matrix-scan
+
                     pointer-events-none
+
                     absolute
+
                     left-0
                     top-0
+
                     z-20
+
                     h-px
                     w-full
+
                     bg-gradient-to-r
+
                     from-transparent
+
                     via-[#00ff66]
+
                     to-transparent
+
                     opacity-60
+
                     shadow-[0_0_18px_rgba(0,255,102,0.7)]
                   "
                 />
 
-                {/* Top HUD */}
+                {/* TOP HUD */}
 
                 <div
+                  key={`hud-${activeTab}`}
                   className="
+                    inspector-hud-swap
+
                     absolute
+
                     left-3
                     top-3
-                    z-20
-                    max-w-[86%]
-                    rounded-[5px]
-                    border
-                    border-[#00ff66]/10
-                    bg-[#04120b]/80
-                    px-2.5
-                    py-1.5
 
-                    text-[6px]
+                    z-20
+
+                    max-w-[92%]
+
+                    rounded-[8px]
+
+                    border
+                    border-[#00ff66]/20
+
+                    bg-[#04120b]/88
+
+                    px-3
+                    py-2
+
+                    text-[10px]
+
                     font-black
+
                     uppercase
-                    tracking-[0.1em]
+
+                    tracking-[0.08em]
+
                     text-[#00ff66]
 
-                    backdrop-blur-md
+                    shadow-[0_10px_28px_rgba(0,0,0,0.28),0_0_20px_rgba(0,255,102,0.06)]
 
-                    sm:text-[7px]
+                    backdrop-blur-xl
+
+                    sm:text-[11px]
+
+                    lg:text-[11.5px]
+
+                    xl:text-[12.5px]
                   "
                 >
-                  Layer 01: 2D/3D Combined Schematics Active
+                  {
+                    activeTabData.hud
+                  }
                 </div>
 
-                {/* corner marks */}
+                {/* LEFT CORNER */}
 
                 <span
                   className="
                     absolute
+
                     left-3
-                    top-12
+                    top-[64px]
+
                     z-20
-                    h-5
-                    w-5
+
+                    h-6
+                    w-6
+
                     border-l
                     border-t
-                    border-[#00ff66]/35
+
+                    border-[#00ff66]/45
                   "
                 />
+
+                {/* RIGHT CORNER */}
 
                 <span
                   className="
                     absolute
+
                     right-3
                     top-3
+
                     z-20
-                    h-5
-                    w-5
+
+                    h-6
+                    w-6
+
                     border-r
                     border-t
-                    border-[#00ff66]/35
+
+                    border-[#00ff66]/45
                   "
                 />
 
-                {/* bottom HUD */}
+                {/* BOTTOM HUD */}
 
                 <div
                   className="
                     absolute
+
                     bottom-3
                     left-3
                     right-3
+
                     z-20
+
                     flex
                     flex-wrap
+
                     items-center
                     justify-between
+
                     gap-2
 
-                    text-[6px]
-                    font-black
-                    uppercase
-                    tracking-[0.08em]
-                    text-[#b9ffc9]/75
+                    rounded-[8px]
 
-                    sm:text-[7px]
+                    border
+                    border-white/[0.05]
+
+                    bg-[#031009]/72
+
+                    px-3
+                    py-2
+
+                    text-[9px]
+
+                    font-black
+
+                    uppercase
+
+                    tracking-[0.065em]
+
+                    text-[#b9ffc9]/80
+
+                    shadow-[0_8px_30px_rgba(0,0,0,0.22)]
+
+                    backdrop-blur-lg
+
+                    sm:text-[10px]
+
+                    lg:text-[10.5px]
+
+                    xl:text-[11px]
                   "
                 >
-                  <div className="flex flex-wrap gap-x-4 gap-y-1">
+                  <div
+                    className="
+                      flex
+                      flex-wrap
+
+                      gap-x-4
+                      gap-y-1.5
+                    "
+                  >
                     <span>
                       Nodes:{" "}
                       <span className="text-white">
@@ -1119,77 +1777,120 @@ export default function PhaseTechnicalMatrix() {
               <div
                 className="
                   mt-3
+
                   grid
+
                   gap-2
 
                   sm:grid-cols-3
                 "
               >
-                {bottomStats.map((stat, index) => (
-                  <div
-                    key={stat.label}
-                    className="
-                      group/stat
-                      relative
-                      overflow-hidden
-                      rounded-[6px]
-                      border
-                      border-white/[0.04]
-                      bg-[#080d0a]
-                      px-3
-                      py-2.5
-
-                      transition-all
-                      duration-400
-
-                      hover:border-[#00ff66]/15
-                      hover:bg-[#0b120e]
-                    "
-                  >
-                    <span
+                {bottomStats.map(
+                  (stat) => (
+                    <div
+                      key={stat.label}
                       className="
-                        absolute
-                        left-0
-                        top-0
-                        h-px
-                        w-0
-                        bg-[#00ff66]
+                        group/stat
+
+                        relative
+
+                        overflow-hidden
+
+                        rounded-[8px]
+
+                        border
+                        border-white/[0.055]
+
+                        bg-[linear-gradient(135deg,rgba(8,16,11,0.94),rgba(13,25,17,0.94))]
+
+                        px-3.5
+                        py-3
+
                         transition-all
+
                         duration-500
-                        group-hover/stat:w-full
-                      "
-                    />
 
-                    <p
-                      className="
-                        text-[6px]
-                        font-black
-                        uppercase
-                        tracking-[0.13em]
-                        text-white/55
+                        hover:border-[#00ff66]/20
 
-                        sm:text-[7px]
+                        hover:bg-[linear-gradient(135deg,rgba(10,24,15,0.98),rgba(14,32,20,0.98))]
+
+                        hover:shadow-[0_10px_30px_rgba(0,0,0,0.20),0_0_22px_rgba(0,255,102,0.05)]
                       "
                     >
-                      {stat.label}
-                    </p>
+                      {/* Accent */}
 
-                    <p
-                      className="
-                        mt-1
-                        text-[7px]
-                        font-black
-                        uppercase
-                        tracking-[0.11em]
-                        text-[#00ff66]
+                      <span
+                        className="
+                          absolute
 
-                        sm:text-[8px]
-                      "
-                    >
-                      {stat.value}
-                    </p>
-                  </div>
-                ))}
+                          left-0
+                          top-0
+
+                          h-px
+                          w-0
+
+                          bg-[#00ff66]
+
+                          transition-all
+
+                          duration-500
+
+                          group-hover/stat:w-full
+                        "
+                      />
+
+                      {/* Label */}
+
+                      <p
+                        className="
+                          text-[9px]
+
+                          font-black
+
+                          uppercase
+
+                          tracking-[0.10em]
+
+                          text-white/60
+
+                          sm:text-[9.5px]
+
+                          lg:text-[10px]
+
+                          xl:text-[10.5px]
+                        "
+                      >
+                        {stat.label}
+                      </p>
+
+                      {/* Value */}
+
+                      <p
+                        className="
+                          mt-1.5
+
+                          text-[11px]
+
+                          font-black
+
+                          uppercase
+
+                          tracking-[0.09em]
+
+                          text-[#00ff66]
+
+                          sm:text-[11.5px]
+
+                          lg:text-[12px]
+
+                          xl:text-[13px]
+                        "
+                      >
+                        {stat.value}
+                      </p>
+                    </div>
+                  )
+                )}
               </div>
             </div>
           </div>
@@ -1198,20 +1899,83 @@ export default function PhaseTechnicalMatrix() {
 
       {/* =====================================================
           CUSTOM ANIMATION
-      ===================================================== */}
+      ====================================================== */}
 
       <style jsx global>{`
         .phase-card {
-          transition-delay: var(--phaseDelay);
+          transition-delay: var(
+            --phaseDelay
+          );
         }
 
-        .format-badge {
-          transition-delay: var(--badgeDelay);
+        @keyframes inspectorImageSwap {
+          0% {
+            opacity: 0;
+            transform: scale(
+              1.035
+            );
+            filter: blur(4px);
+          }
+
+          45% {
+            opacity: 0.75;
+            filter: blur(1px);
+          }
+
+          100% {
+            opacity: 1;
+            transform: scale(1);
+            filter: blur(0);
+          }
+        }
+
+        .inspector-image-swap {
+          animation:
+            inspectorImageSwap
+            650ms
+            cubic-bezier(
+              0.16,
+              1,
+              0.3,
+              1
+            )
+            both;
+        }
+
+        @keyframes inspectorHudSwap {
+          0% {
+            opacity: 0;
+            transform: translateY(
+              -6px
+            );
+          }
+
+          100% {
+            opacity: 1;
+            transform: translateY(
+              0
+            );
+          }
+        }
+
+        .inspector-hud-swap {
+          animation:
+            inspectorHudSwap
+            450ms
+            cubic-bezier(
+              0.16,
+              1,
+              0.3,
+              1
+            )
+            both;
         }
 
         @keyframes matrixScan {
           0% {
-            transform: translateY(0);
+            transform: translateY(
+              0
+            );
             opacity: 0;
           }
 
@@ -1228,22 +1992,32 @@ export default function PhaseTechnicalMatrix() {
           }
 
           100% {
-            transform: translateY(480px);
+            transform: translateY(
+              700px
+            );
             opacity: 0;
           }
         }
 
         .matrix-scan {
-          animation: matrixScan 5.5s linear infinite;
+          animation:
+            matrixScan
+            5.5s
+            linear
+            infinite;
         }
 
-        @media (prefers-reduced-motion: reduce) {
-          .matrix-scan {
+        @media (
+          prefers-reduced-motion:
+            reduce
+        ) {
+          .matrix-scan,
+          .inspector-image-swap,
+          .inspector-hud-swap {
             animation: none !important;
           }
 
           .phase-card,
-          .format-badge,
           .inspector-enter {
             transition-duration: 0.01ms !important;
             transition-delay: 0ms !important;

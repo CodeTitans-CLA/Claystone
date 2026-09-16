@@ -14,7 +14,7 @@ const page = () => {
     <IntegratedArchitecturalExecution/>
     <PhaseTechnicalMatrix/>
     <FeaturedArchitectureCaseStudies/>
-    <PrecisionCommissionModels />
+    {/* <PrecisionCommissionModels /> */}
     <TechnicalFAQ />
        <ArchitectureFinalCTA />
     </>

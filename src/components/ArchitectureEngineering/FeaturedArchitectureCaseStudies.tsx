@@ -2,7 +2,13 @@
 
 import Image from "next/image";
 import { Geist } from "next/font/google";
-import { ArrowUpRight, ImageIcon, Sparkles } from "lucide-react";
+
+import {
+  ArrowUpRight,
+  ImageIcon,
+  Sparkles,
+} from "lucide-react";
+
 import {
   useEffect,
   useRef,
@@ -55,30 +61,41 @@ const projects = [
 ========================================================= */
 
 function useInView() {
-  const ref = useRef<HTMLElement | null>(null);
-  const [visible, setVisible] = useState(false);
+  const ref =
+    useRef<HTMLElement | null>(null);
+
+  const [visible, setVisible] =
+    useState(false);
 
   useEffect(() => {
     const element = ref.current;
 
     if (!element) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setVisible(entry.isIntersecting);
-      },
-      {
-        threshold: 0.1,
-        rootMargin: "-5% 0px -5% 0px",
-      }
-    );
+    const observer =
+      new IntersectionObserver(
+        ([entry]) => {
+          setVisible(
+            entry.isIntersecting
+          );
+        },
+        {
+          threshold: 0.1,
+          rootMargin:
+            "-5% 0px -5% 0px",
+        }
+      );
 
     observer.observe(element);
 
-    return () => observer.disconnect();
+    return () =>
+      observer.disconnect();
   }, []);
 
-  return { ref, visible };
+  return {
+    ref,
+    visible,
+  };
 }
 
 /* =========================================================
@@ -94,7 +111,10 @@ function ProjectCard({
   index: number;
   visible: boolean;
 }) {
-  const [imageFailed, setImageFailed] = useState(false);
+  const [
+    imageFailed,
+    setImageFailed,
+  ] = useState(false);
 
   return (
     <article
@@ -113,8 +133,10 @@ function ProjectCard({
         overflow-hidden
 
         rounded-[16px]
+
         border
         border-white/[0.055]
+
         bg-[#121814]
 
         shadow-[0_25px_70px_rgba(0,0,0,0.26),inset_0_1px_0_rgba(255,255,255,0.025)]
@@ -124,7 +146,9 @@ function ProjectCard({
         ease-[cubic-bezier(0.16,1,0.3,1)]
 
         hover:-translate-y-1
+
         hover:border-[#00ff66]/20
+
         hover:shadow-[0_38px_100px_rgba(0,0,0,0.42),0_0_55px_rgba(0,255,102,0.055),inset_0_1px_0_rgba(255,255,255,0.04)]
 
         sm:rounded-[18px]
@@ -148,14 +172,17 @@ function ProjectCard({
       <span
         className="
           pointer-events-none
+
           absolute
           left-0
           top-0
           z-40
+
           h-[2px]
           w-0
 
           bg-gradient-to-r
+
           from-[#00ff66]
           via-[#62ffa0]
           to-transparent
@@ -176,9 +203,13 @@ function ProjectCard({
       <div
         className="
           relative
+
           aspect-[1.22/1]
+
           w-full
+
           overflow-hidden
+
           bg-[#07100b]
 
           min-[420px]:aspect-[1.35/1]
@@ -206,14 +237,19 @@ function ProjectCard({
               (max-width: 1023px) 100vw,
               50vw
             "
-            onError={() => setImageFailed(true)}
+            onError={() =>
+              setImageFailed(true)
+            }
             className="
               select-none
+
               object-cover
               object-center
 
               transition-transform
+
               duration-[1200ms]
+
               ease-[cubic-bezier(0.16,1,0.3,1)]
 
               group-hover:scale-[1.045]
@@ -221,6 +257,7 @@ function ProjectCard({
               lg:group-hover:scale-[1.055]
 
               motion-reduce:transform-none
+
               motion-reduce:transition-none
             "
           />
@@ -231,18 +268,19 @@ function ProjectCard({
               inset-0
 
               flex
+
               items-center
               justify-center
 
               overflow-hidden
+
               bg-[#07110b]
             "
           >
-            {/* Grid */}
-
             <div
               className="
                 pointer-events-none
+
                 absolute
                 inset-0
 
@@ -254,18 +292,19 @@ function ProjectCard({
               "
             />
 
-            {/* Glow */}
-
             <div
               className="
                 pointer-events-none
+
                 absolute
 
                 h-44
                 w-44
 
                 rounded-full
+
                 bg-[#00ff66]/10
+
                 blur-[90px]
               "
             />
@@ -276,6 +315,7 @@ function ProjectCard({
                 z-10
 
                 flex
+
                 h-14
                 w-14
 
@@ -293,6 +333,7 @@ function ProjectCard({
 
                 sm:h-16
                 sm:w-16
+
                 sm:rounded-[18px]
               "
             >
@@ -300,6 +341,7 @@ function ProjectCard({
                 className="
                   h-5
                   w-5
+
                   text-[#00ff66]/70
 
                   sm:h-6
@@ -310,30 +352,34 @@ function ProjectCard({
           </div>
         )}
 
-        {/* Cinematic overlay */}
+        {/* Cinematic Overlay */}
 
         <div
           className="
             pointer-events-none
+
             absolute
             inset-0
 
             bg-gradient-to-t
+
             from-black/60
             via-black/[0.02]
             to-black/10
           "
         />
 
-        {/* Green tint */}
+        {/* Green Tint */}
 
         <div
           className="
             pointer-events-none
+
             absolute
             inset-0
 
             bg-gradient-to-r
+
             from-[#00ff66]/[0.03]
             via-transparent
             to-transparent
@@ -345,6 +391,7 @@ function ProjectCard({
         <div
           className="
             pointer-events-none
+
             absolute
             inset-0
 
@@ -359,6 +406,7 @@ function ProjectCard({
         <div
           className="
             absolute
+
             left-3
             top-3
             z-30
@@ -366,19 +414,23 @@ function ProjectCard({
             max-w-[calc(100%_-_24px)]
 
             rounded-full
+
             border
             border-[#00ff66]/20
 
             bg-[#03120a]/80
 
-            px-2.5
-            py-1.5
+            px-3
+            py-2
 
-            text-[6px]
+            text-[8.5px]
+
             font-black
             uppercase
+
             leading-none
-            tracking-[0.12em]
+
+            tracking-[0.11em]
 
             text-[#00ff66]
 
@@ -390,18 +442,24 @@ function ProjectCard({
             duration-500
 
             group-hover:border-[#00ff66]/35
+
             group-hover:bg-[#03170c]/90
 
-            min-[420px]:text-[6.5px]
+            min-[420px]:text-[9px]
 
             sm:left-4
             sm:top-4
-            sm:px-3
-            sm:text-[7px]
 
-            lg:text-[7.5px]
+            sm:px-3.5
+            sm:py-2
 
-            xl:text-[8px]
+            sm:text-[9.5px]
+
+            lg:text-[10px]
+
+            xl:text-[10.5px]
+
+            2xl:text-[11px]
           "
         >
           {project.badge}
@@ -414,50 +472,62 @@ function ProjectCard({
         <div
           className="
             absolute
+
             bottom-3
             right-3
+
             z-30
 
-            rounded-[4px]
+            rounded-[5px]
+
             border
-            border-white/[0.05]
+            border-white/[0.06]
 
-            bg-black/65
+            bg-black/70
 
-            px-2
+            px-2.5
             py-1.5
 
-            text-[5.5px]
+            text-[8px]
+
             font-black
             uppercase
-            leading-none
-            tracking-[0.11em]
 
-            text-white/75
+            leading-none
+
+            tracking-[0.1em]
+
+            text-white/80
 
             backdrop-blur-lg
 
-            min-[420px]:text-[6px]
+            min-[420px]:text-[8.5px]
 
             sm:bottom-4
             sm:right-4
-            sm:px-2.5
-            sm:text-[6.5px]
 
-            xl:text-[7px]
+            sm:px-3
+
+            sm:text-[9px]
+
+            lg:text-[9.5px]
+
+            xl:text-[10px]
           "
         >
           {project.location}
         </div>
 
         {/* =====================================================
-            SCAN EFFECT
+            SCAN
         ===================================================== */}
 
         <span
           className="
             pointer-events-none
+
             absolute
+
             left-0
             top-0
             z-20
@@ -468,6 +538,7 @@ function ProjectCard({
             -translate-y-full
 
             bg-gradient-to-r
+
             from-transparent
             via-[#00ff66]
             to-transparent
@@ -477,28 +548,33 @@ function ProjectCard({
             shadow-[0_0_20px_rgba(0,255,102,0.8)]
 
             transition-all
+
             duration-[1300ms]
+
             ease-out
 
             group-hover:translate-y-[320px]
+
             group-hover:opacity-40
 
             motion-reduce:hidden
           "
         />
 
-        {/* Bottom Glow */}
-
         <div
           className="
             pointer-events-none
+
             absolute
+
             inset-x-[12%]
+
             bottom-0
 
             h-px
 
             bg-gradient-to-r
+
             from-transparent
             via-[#00ff66]/35
             to-transparent
@@ -506,6 +582,7 @@ function ProjectCard({
             opacity-0
 
             transition-opacity
+
             duration-700
 
             group-hover:opacity-100
@@ -515,33 +592,34 @@ function ProjectCard({
 
       {/* =====================================================
           CONTENT
+          PADDING REDUCED
       ===================================================== */}
 
       <div
         className="
           relative
+
           flex
           flex-1
           flex-col
 
           p-4
 
-          min-[420px]:p-5
-
-          sm:p-6
+          sm:p-5
 
           lg:p-5
 
-          xl:p-6
+          xl:p-5
 
-          2xl:p-7
+          2xl:p-6
         "
       >
-        {/* Ambient glow */}
+        {/* Ambient Glow */}
 
         <div
           className="
             pointer-events-none
+
             absolute
 
             -right-20
@@ -563,9 +641,7 @@ function ProjectCard({
           "
         />
 
-        {/* =====================================================
-            CATEGORY
-        ===================================================== */}
+        {/* CATEGORY */}
 
         <div
           className="
@@ -575,30 +651,42 @@ function ProjectCard({
             flex
             flex-wrap
             items-center
+
             gap-1.5
 
-            text-[6.5px]
+            text-[9px]
+
             font-black
             uppercase
-            leading-[1.4]
-            tracking-[0.14em]
+
+            leading-[1.45]
+
+            tracking-[0.13em]
 
             text-[#00ff66]
 
-            min-[420px]:text-[7px]
+            min-[420px]:text-[9.5px]
 
             sm:gap-2
-            sm:text-[7.5px]
 
-            xl:text-[8px]
+            sm:text-[10px]
+
+            lg:text-[10.5px]
+
+            xl:text-[11px]
+
+            2xl:text-[11.5px]
           "
         >
-          <span>{project.category}</span>
+          <span>
+            {project.category}
+          </span>
 
           <span
             className="
-              h-1
-              w-1
+              h-1.5
+              w-1.5
+
               shrink-0
 
               rounded-full
@@ -609,53 +697,55 @@ function ProjectCard({
             "
           />
 
-          <span>{project.type}</span>
+          <span>
+            {project.type}
+          </span>
         </div>
 
-        {/* =====================================================
-            TITLE
-        ===================================================== */}
+        {/* TITLE */}
 
         <h3
           className="
             relative
             z-10
 
-            mt-2.5
+            mt-2
 
-            text-[18px]
+            text-[22px]
+
             font-bold
-            leading-[1.24]
-            tracking-[-0.035em]
+
+            leading-[1.2]
+
+            tracking-[-0.04em]
 
             text-[#effff2]
 
             transition-colors
+
             duration-500
 
             group-hover:text-white
 
-            min-[390px]:text-[19px]
+            min-[390px]:text-[23px]
 
-            min-[480px]:text-[20px]
+            min-[480px]:text-[24px]
 
-            sm:text-[22px]
+            sm:text-[26px]
 
-            md:text-[23px]
+            md:text-[28px]
 
-            lg:text-[20px]
+            lg:text-[25px]
 
-            xl:text-[22px]
+            xl:text-[28px]
 
-            2xl:text-[24px]
+            2xl:text-[30px]
           "
         >
           {project.title}
         </h3>
 
-        {/* =====================================================
-            DESCRIPTION
-        ===================================================== */}
+        {/* DESCRIPTION */}
 
         <p
           className="
@@ -664,31 +754,35 @@ function ProjectCard({
 
             mt-2.5
 
-            max-w-[720px]
+            max-w-[760px]
 
-            text-[11.5px]
+            text-[14px]
+
             font-normal
-            leading-[1.72]
+
+            leading-[1.65]
+
             tracking-[-0.008em]
 
-            text-[#d2dfd5]/70
+            text-[#d2dfd5]/72
 
             transition-colors
+
             duration-500
 
-            group-hover:text-[#e4eee6]/85
+            group-hover:text-[#e4eee6]/88
 
-            min-[420px]:text-[12px]
+            min-[420px]:text-[14.5px]
 
-            sm:text-[12.5px]
+            sm:text-[15px]
 
-            md:text-[13px]
+            md:text-[15.5px]
 
-            lg:text-[12px]
+            lg:text-[14.5px]
 
-            xl:text-[13px]
+            xl:text-[15.5px]
 
-            2xl:text-[13.5px]
+            2xl:text-[16px]
           "
         >
           {project.description}
@@ -696,6 +790,7 @@ function ProjectCard({
 
         {/* =====================================================
             BOTTOM AREA
+            GAP REDUCED
         ===================================================== */}
 
         <div
@@ -708,11 +803,11 @@ function ProjectCard({
             flex
             flex-col
 
-            gap-4
+            gap-2.5
 
-            pt-5
+            pt-4
 
-            sm:pt-6
+            sm:pt-4
 
             md:flex-row
             md:items-end
@@ -726,7 +821,7 @@ function ProjectCard({
             xl:justify-between
           "
         >
-          {/* Stats */}
+          {/* STATS */}
 
           <div
             className="
@@ -735,53 +830,68 @@ function ProjectCard({
               items-center
 
               gap-x-2
-              gap-y-1.5
+              gap-y-1
 
-              text-[6.5px]
+              text-[9px]
+
               font-black
+
               leading-[1.5]
-              tracking-[0.1em]
 
-              text-[#caffd6]/75
+              tracking-[0.095em]
 
-              min-[420px]:text-[7px]
+              text-[#caffd6]/78
 
-              sm:gap-x-3
-              sm:text-[7.5px]
+              min-[420px]:text-[9.5px]
 
-              2xl:text-[8px]
+              sm:text-[10px]
+
+              lg:text-[10px]
+
+              xl:text-[10.5px]
+
+              2xl:text-[11px]
             "
           >
-            <span>{project.statLeft}</span>
+            <span>
+              {project.statLeft}
+            </span>
 
             <span className="text-[#00ff66]/60">
               •
             </span>
 
-            <span>{project.statRight}</span>
+            <span>
+              {project.statRight}
+            </span>
           </div>
 
-          {/* =================================================
-              BUTTON
-          ================================================= */}
+          {/* BUTTON */}
 
           <button
             type="button"
             aria-label={`View blueprint for ${project.title}`}
             className="
               group/button
+
               relative
 
               flex
-              min-h-[44px]
+
+              min-h-[40px]
+
               w-fit
+
               shrink-0
 
               cursor-pointer
+
               touch-manipulation
+
               select-none
 
               items-center
+
               justify-center
 
               gap-1.5
@@ -792,61 +902,73 @@ function ProjectCard({
 
               px-1
 
-              text-[11.5px]
+              text-[13px]
+
               font-bold
+
               tracking-[-0.02em]
 
               text-[#00ff66]
 
               transition-all
+
               duration-300
 
               hover:text-[#7dffad]
 
               active:scale-[0.97]
-              active:text-[#a2ffc3]
 
               focus-visible:outline-none
+
               focus-visible:ring-2
+
               focus-visible:ring-[#00ff66]/60
+
               focus-visible:ring-offset-2
+
               focus-visible:ring-offset-[#121814]
 
-              sm:text-[12px]
+              sm:text-[13.5px]
 
-              xl:text-[12.5px]
+              lg:text-[14px]
 
-              2xl:text-[13px]
+              xl:text-[14.5px]
+
+              2xl:text-[15px]
             "
           >
-            <span>View Blueprint</span>
+            <span>
+              View Blueprint
+            </span>
 
             <ArrowUpRight
               className="
-                h-3.5
-                w-3.5
+                h-4
+                w-4
 
                 shrink-0
 
                 transition-transform
+
                 duration-300
 
                 group-hover/button:-translate-y-0.5
+
                 group-hover/button:translate-x-0.5
 
                 lg:group-hover/button:-translate-y-1
+
                 lg:group-hover/button:translate-x-1
               "
             />
 
-            {/* underline */}
-
             <span
               className="
                 pointer-events-none
+
                 absolute
 
-                bottom-[5px]
+                bottom-[2px]
                 left-1
 
                 h-px
@@ -855,6 +977,7 @@ function ProjectCard({
                 bg-[#00ff66]
 
                 transition-all
+
                 duration-300
 
                 group-hover/button:w-[calc(100%_-_8px)]
@@ -872,7 +995,10 @@ function ProjectCard({
 ========================================================= */
 
 export default function FeaturedArchitectureCaseStudies() {
-  const { ref, visible } = useInView();
+  const {
+    ref,
+    visible,
+  } = useInView();
 
   return (
     <section
@@ -884,46 +1010,48 @@ export default function FeaturedArchitectureCaseStudies() {
         isolate
 
         w-full
+
         overflow-hidden
 
         bg-[#090e0b]
 
-        py-12
+        py-8
+
         text-white
 
-        sm:py-16
+        sm:py-10
 
-        md:py-20
+        md:py-12
 
-        lg:py-24
+        lg:py-14
 
-        xl:py-28
+        xl:py-16
       `}
     >
-      {/* =====================================================
-          BASE BACKGROUND
-      ===================================================== */}
+      {/* BASE */}
 
       <div
         className="
           pointer-events-none
+
           absolute
           inset-0
+
           -z-50
 
           bg-[#090e0b]
         "
       />
 
-      {/* =====================================================
-          DOT GRID
-      ===================================================== */}
+      {/* DOT GRID */}
 
       <div
         className="
           pointer-events-none
+
           absolute
           inset-0
+
           -z-40
 
           opacity-[0.11]
@@ -934,17 +1062,17 @@ export default function FeaturedArchitectureCaseStudies() {
         "
       />
 
-      {/* =====================================================
-          LEFT GLOW
-      ===================================================== */}
+      {/* LEFT GLOW */}
 
       <div
         className="
           pointer-events-none
+
           absolute
 
           -left-[350px]
           -top-[300px]
+
           -z-30
 
           h-[800px]
@@ -958,17 +1086,18 @@ export default function FeaturedArchitectureCaseStudies() {
         "
       />
 
-      {/* =====================================================
-          RIGHT GLOW
-      ===================================================== */}
+      {/* RIGHT GLOW */}
 
       <div
         className="
           pointer-events-none
+
           absolute
 
           -right-[350px]
+
           top-[20%]
+
           -z-30
 
           h-[750px]
@@ -982,17 +1111,17 @@ export default function FeaturedArchitectureCaseStudies() {
         "
       />
 
-      {/* =====================================================
-          CENTER GLOW
-      ===================================================== */}
+      {/* CENTER GLOW */}
 
       <div
         className="
           pointer-events-none
+
           absolute
 
           left-1/2
           top-[42%]
+
           -z-30
 
           h-[450px]
@@ -1008,22 +1137,24 @@ export default function FeaturedArchitectureCaseStudies() {
         "
       />
 
-      {/* =====================================================
-          BOTTOM FADE
-      ===================================================== */}
+      {/* BOTTOM FADE */}
 
       <div
         className="
           pointer-events-none
+
           absolute
+
           inset-x-0
           bottom-0
+
           -z-20
 
-          h-[300px]
+          h-[200px]
 
           bg-gradient-to-t
-          from-black/30
+
+          from-black/25
           to-transparent
         "
       />
@@ -1035,7 +1166,9 @@ export default function FeaturedArchitectureCaseStudies() {
       <div
         className="
           mx-auto
+
           w-full
+
           max-w-[1540px]
 
           px-4
@@ -1053,26 +1186,33 @@ export default function FeaturedArchitectureCaseStudies() {
       >
         {/* ===================================================
             HEADER
+            GAP REDUCED
         =================================================== */}
 
         <div
           className={`
             grid
 
-            gap-7
+            gap-4
 
             transition-all
+
             duration-1000
+
             ease-[cubic-bezier(0.16,1,0.3,1)]
 
             md:grid-cols-[1.2fr_0.8fr]
+
             md:items-end
-            md:gap-10
+
+            md:gap-6
 
             lg:grid-cols-[1.28fr_0.72fr]
-            lg:gap-14
+
+            lg:gap-8
 
             motion-reduce:transform-none
+
             motion-reduce:transition-none
 
             ${
@@ -1082,43 +1222,49 @@ export default function FeaturedArchitectureCaseStudies() {
             }
           `}
         >
-          {/* =================================================
-              LEFT
-          ================================================= */}
+          {/* LEFT */}
 
           <div className="min-w-0">
-            {/* Eyebrow */}
+            {/* EYEBROW */}
 
             <div
               className="
-                mb-3
+                mb-2.5
 
                 flex
                 items-center
-                gap-2
 
-                text-[7px]
+                gap-2.5
+
+                text-[10px]
+
                 font-black
                 uppercase
+
                 leading-[1.4]
-                tracking-[0.16em]
+
+                tracking-[0.15em]
 
                 text-[#00ff66]
 
-                min-[420px]:text-[7.5px]
+                min-[420px]:text-[10.5px]
 
-                sm:mb-4
-                sm:text-[8px]
+                sm:mb-3
 
-                lg:text-[8.5px]
+                sm:text-[11px]
 
-                xl:text-[9px]
+                lg:text-[11.5px]
+
+                xl:text-[12px]
+
+                2xl:text-[12.5px]
               "
             >
               <Sparkles
                 className="
-                  h-3
-                  w-3
+                  h-4
+                  w-4
+
                   shrink-0
 
                   text-[#00ff66]
@@ -1130,84 +1276,83 @@ export default function FeaturedArchitectureCaseStudies() {
               Portfolio // Blueprints in Production
             </div>
 
-            {/* Heading */}
+            {/* HEADING */}
 
             <h2
               className="
-                max-w-[830px]
+                max-w-[900px]
 
                 break-words
 
                 pb-1
 
-                text-[34px]
+                text-[40px]
+
                 font-bold
-                leading-[1.055]
-                tracking-[-0.048em]
+
+                leading-[1.04]
+
+                tracking-[-0.05em]
 
                 text-[#f1fff3]
 
-                min-[390px]:text-[37px]
+                min-[390px]:text-[43px]
 
-                min-[460px]:text-[41px]
+                min-[460px]:text-[47px]
 
-                sm:text-[47px]
+                sm:text-[54px]
 
-                md:text-[50px]
+                md:text-[58px]
 
-                lg:text-[54px]
+                lg:text-[64px]
 
-                xl:text-[60px]
+                xl:text-[70px]
 
-                2xl:text-[64px]
+                2xl:text-[73px]
               "
             >
               Featured Architecture Case
 
-              <span
-                className="
-                  block
-                  pb-[0.04em]
-                "
-              >
+              <span className="block">
                 Studies
               </span>
             </h2>
           </div>
 
-          {/* =================================================
-              DESCRIPTION
-          ================================================= */}
+          {/* DESCRIPTION */}
 
           <div
             className="
               min-w-0
 
               md:flex
+
               md:justify-end
-              md:pb-1
             "
           >
             <p
               className="
-                max-w-[430px]
+                max-w-[470px]
 
-                text-[12px]
+                text-[14px]
+
                 font-normal
+
                 leading-[1.7]
+
                 tracking-[-0.008em]
 
-                text-[#c5ffd3]/75
+                text-[#c5ffd3]/78
 
-                min-[420px]:text-[12.5px]
+                min-[420px]:text-[14.5px]
 
-                sm:text-[13.5px]
+                sm:text-[15.5px]
 
-                lg:text-[14px]
+                lg:text-[16px]
 
-                xl:text-[14.5px]
+                xl:text-[16.5px]
 
-                2xl:text-[15px]
+                2xl:text-[17px]
               "
             >
               A showcase of computational spatial precision
@@ -1219,35 +1364,42 @@ export default function FeaturedArchitectureCaseStudies() {
 
         {/* ===================================================
             PROJECT GRID
+            TOP/GAP REDUCED
         =================================================== */}
 
         <div
           className="
-            mt-8
+            mt-6
 
             grid
             grid-cols-1
 
-            gap-4
+            gap-3
 
-            sm:mt-10
+            sm:mt-7
 
-            md:gap-5
+            md:gap-4
 
-            lg:mt-12
+            lg:mt-8
+
             lg:grid-cols-2
 
-            xl:mt-14
+            xl:mt-9
           "
         >
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={project.title}
-              project={project}
-              index={index}
-              visible={visible}
-            />
-          ))}
+          {projects.map(
+            (
+              project,
+              index
+            ) => (
+              <ProjectCard
+                key={project.title}
+                project={project}
+                index={index}
+                visible={visible}
+              />
+            )
+          )}
         </div>
       </div>
     </section>
