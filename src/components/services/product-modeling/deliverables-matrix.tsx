@@ -45,7 +45,7 @@ const deliverables = [
 
 export default function DeliverablesMatrix() {
   return (
-    <section className="relative bg-[#050706] py-14 lg:py-18
+    <section className="relative border-t border-white/30 bg-[#050706] py-14 lg:py-18
     ">
       <div className="mx-auto w-[calc(100%-32px)] max-w-[1600px] lg:w-[calc(100%-64px)]">
         <div className="mb-14 grid gap-8 lg:mb-20 lg:grid-cols-[1fr_0.55fr] lg:gap-20">
@@ -69,18 +69,18 @@ export default function DeliverablesMatrix() {
           </p>
         </div>
 
-        <div className="border-t border-white/10">
+        <div className="">
           {deliverables.map((item) => (
             <div
               key={item.number}
-              className="group grid min-h-[135px] grid-cols-[50px_1fr_25px] items-center gap-4 border-b border-white/10 px-2 transition duration-300 hover:bg-[#00ff87]/5 hover:px-5 sm:grid-cols-[80px_1fr_30px] sm:gap-8 lg:grid-cols-[100px_1fr_30px]"
+              className="group grid min-h-[135px] grid-cols-[50px_1fr_25px] items-center gap-4 border-b border-white/40 px-2 transition duration-300 hover:bg-[#00ff87]/[0.025] sm:grid-cols-[80px_1fr_30px] sm:gap-8 lg:grid-cols-[100px_1fr_30px]"
             >
               <span className="font-mono text-[12px] text-[#00ff87]">
                 {item.number}
               </span>
 
               <div className="grid gap-2 sm:grid-cols-[100px_1fr_1.5fr] sm:items-center sm:gap-8">
-                <span className="font-mono text-[11px] tracking-[0.15em] text-[#58665e]">
+                <span className="font-mono text-[11px] tracking-[0.15em] text-white/70">
                   {item.format}
                 </span>
 
@@ -88,14 +88,14 @@ export default function DeliverablesMatrix() {
                   {item.title}
                 </h3>
 
-                <p className="text-[14px] leading-6 text-[#6e7b73]">
+                <p className="text-[16px] leading-6 text-white/70">
                   {item.description}
                 </p>
               </div>
 
-              <span className="text-[#00ff87] transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">
+              {/* <span className="text-[#00ff87] transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">
                 ↗
-              </span>
+              </span> */}
             </div>
           ))}
         </div>

@@ -1,6 +1,6 @@
 export default function CtaBanner() {
   return (
-    <section className="relative overflow-hidden border-t border-white/5 bg-[#08110b] py-14 lg:py-18">
+    <section className="relative overflow-hidden border-t border-white/30 bg-[#08110b] py-14 lg:py-18">
       {/* Grid */}
       <div
         className="pointer-events-none absolute inset-0 opacity-30"
@@ -14,7 +14,7 @@ export default function CtaBanner() {
       />
 
       {/* Glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#00ff87]/10 blur-[110px]" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#00ff87]/8 blur-[110px]" />
 
       <div className="relative mx-auto w-[calc(100%-32px)] max-w-[1600px] lg:w-[calc(100%-64px)]">
         <div className="max-w-4xl">
@@ -39,7 +39,7 @@ export default function CtaBanner() {
           </p>
 
           <a
-            href="/quote"
+            href="/contact"
             className="group mt-9 inline-flex h-14 items-center gap-5 bg-[#00ff87] px-7 text-[12px] font-bold uppercase tracking-[0.08em] text-[#031008] transition duration-300 hover:-translate-y-1 hover:bg-[#42ffab]"
           >
             Discuss your project

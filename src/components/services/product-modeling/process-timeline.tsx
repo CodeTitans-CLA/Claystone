@@ -35,7 +35,7 @@ export default function ProcessTimeline() {
   return (
     <section
       id="process"
-      className="relative bg-[#070a08] py-14 lg:py-18 border border-white/10"
+      className="relative bg-[#070a08] py-14 lg:py-18 border-t border-white/30"
     >
       <div className="mx-auto w-[calc(100%-32px)] max-w-[1600px] lg:w-[calc(100%-64px)]">
         <div className="mb-20">
