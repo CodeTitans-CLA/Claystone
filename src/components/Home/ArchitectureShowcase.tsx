@@ -330,7 +330,7 @@ function ShowcaseImage({
             FALLBACK_IMAGE;
         }
       }}
-      className="
+      className={`
         absolute
         inset-0
 
@@ -347,8 +347,8 @@ function ShowcaseImage({
 
         ease-out
 
-        group-hover/viewer:scale-[1.035]
-      "
+        group-hover:scale-[1.035]
+      `}
     />
   );
 }
@@ -389,7 +389,7 @@ export default function ArchitectureShowcase() {
 
   return (
     <section
-      className="
+      className={`
         relative
 
         w-full
@@ -404,24 +404,24 @@ export default function ArchitectureShowcase() {
         sm:py-16
 
         lg:py-20
-      "
+      `}
     >
       {/* =====================================================
           BACKGROUND
       ====================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
           inset-0
 
           overflow-hidden
-        "
+        `}
       >
         <div
-          className="
+          className={`
             absolute
 
             left-1/2
@@ -439,7 +439,7 @@ export default function ArchitectureShowcase() {
             bg-[#00FF66]/5
 
             blur-[160px]
-          "
+          `}
         />
 
         {!reduceMotion && (
@@ -466,7 +466,7 @@ export default function ArchitectureShowcase() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="
+            className={`
               absolute
 
               left-[3%]
@@ -480,7 +480,7 @@ export default function ArchitectureShowcase() {
               bg-[#00FF66]/5
 
               blur-[140px]
-            "
+            `}
           />
         )}
 
@@ -503,7 +503,7 @@ export default function ArchitectureShowcase() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="
+            className={`
               absolute
 
               bottom-[5%]
@@ -517,12 +517,12 @@ export default function ArchitectureShowcase() {
               bg-[#00FF66]/5
 
               blur-[150px]
-            "
+            `}
           />
         )}
 
         <div
-          className="
+          className={`
             absolute
             inset-0
 
@@ -531,11 +531,11 @@ export default function ArchitectureShowcase() {
             [background-image:linear-gradient(rgba(255,255,255,0.11)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.11)_1px,transparent_1px)]
 
             [background-size:72px_72px]
-          "
+          `}
         />
 
         <div
-          className="
+          className={`
             absolute
 
             left-1/2
@@ -555,7 +555,7 @@ export default function ArchitectureShowcase() {
             via-[#00FF66]/20
 
             to-transparent
-          "
+          `}
         />
       </div>
 
@@ -564,7 +564,7 @@ export default function ArchitectureShowcase() {
       ====================================================== */}
 
       <div
-        className="
+        className={`
           relative
           z-10
 
@@ -582,7 +582,7 @@ export default function ArchitectureShowcase() {
           xl:px-10
 
           2xl:px-12
-        "
+        `}
       >
         {/* =================================================
             HEADER
@@ -620,7 +620,7 @@ export default function ArchitectureShowcase() {
                 1,
               ],
             }}
-            className="
+            className={`
               mb-6
 
               max-w-[1000px]
@@ -628,10 +628,10 @@ export default function ArchitectureShowcase() {
               sm:mb-8
 
               lg:mb-9
-            "
+            `}
           >
             <div
-              className="
+              className={`
                 mb-4
 
                 flex
@@ -654,7 +654,7 @@ export default function ArchitectureShowcase() {
                 sm:text-[10px]
 
                 lg:text-[11px]
-              "
+              `}
             >
               <motion.span
                 animate={
@@ -679,7 +679,7 @@ export default function ArchitectureShowcase() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="
+                className={`
                   h-2
                   w-2
 
@@ -688,14 +688,14 @@ export default function ArchitectureShowcase() {
                   bg-[#00FF66]
 
                   shadow-[0_0_14px_rgba(0,255,102,0.9)]
-                "
+                `}
               />
 
               {current.code}
             </div>
 
             <h2
-              className="
+              className={`
                 max-w-[950px]
 
                 text-[38px]
@@ -715,13 +715,13 @@ export default function ArchitectureShowcase() {
                 lg:text-[68px]
 
                 xl:text-[74px]
-              "
+              `}
             >
               {current.title}
             </h2>
 
             <p
-              className="
+              className={`
                 mt-5
 
                 max-w-[820px]
@@ -737,7 +737,7 @@ export default function ArchitectureShowcase() {
                 md:text-[15px]
 
                 lg:text-[16px]
-              "
+              `}
             >
               {
                 current.description
@@ -751,7 +751,7 @@ export default function ArchitectureShowcase() {
         ================================================== */}
 
         <div
-          className="
+          className={`
             relative
 
             mb-6
@@ -759,12 +759,12 @@ export default function ArchitectureShowcase() {
             sm:mb-7
 
             lg:mb-8
-          "
+          `}
         >
           {/* GLOW */}
 
           <div
-            className="
+            className={`
               pointer-events-none
 
               absolute
@@ -779,22 +779,22 @@ export default function ArchitectureShowcase() {
 
               rounded-full
 
-              bg-[#00FF66]/[0.055]
+              bg-[#00FF66]/5
 
               blur-[55px]
-            "
+            `}
           />
 
           {/* TAB RAIL */}
 
           <div
-            className="
+            className={`
               relative
 
               rounded-[20px]
 
               border
-              border-white/[0.07]
+              border-white/5
 
               bg-[linear-gradient(135deg,rgba(14,25,18,0.92),rgba(5,11,8,0.96))]
 
@@ -805,12 +805,12 @@ export default function ArchitectureShowcase() {
               backdrop-blur-2xl
 
               sm:p-2.5
-            "
+            `}
           >
             {/* TOP LIGHT */}
 
             <span
-              className="
+              className={`
                 pointer-events-none
 
                 absolute
@@ -828,11 +828,11 @@ export default function ArchitectureShowcase() {
                 via-[#00FF66]/60
 
                 to-transparent
-              "
+              `}
             />
 
             <div
-              className="
+              className={`
                 flex
 
                 w-full
@@ -856,7 +856,7 @@ export default function ArchitectureShowcase() {
 
                 lg:flex-wrap
                 lg:overflow-visible
-              "
+              `}
             >
               {showcaseData.map(
                 (
@@ -901,7 +901,7 @@ export default function ArchitectureShowcase() {
                         ],
                       }}
                       className={`
-                        group/tab
+                        group
 
                         relative
 
@@ -961,7 +961,7 @@ export default function ArchitectureShowcase() {
                               shadow-[0_0_28px_rgba(0,255,102,0.34),0_8px_25px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.36)]
                             `
                             : `
-                              border-white/[0.09]
+                              border-white/10
 
                               bg-[linear-gradient(180deg,rgba(255,255,255,0.055),rgba(255,255,255,0.025))]
 
@@ -971,7 +971,7 @@ export default function ArchitectureShowcase() {
 
                               hover:border-[#00FF66]/35
 
-                              hover:bg-[#00FF66]/[0.07]
+                              hover:bg-[#00FF66]/5
 
                               hover:text-white
 
@@ -984,7 +984,7 @@ export default function ArchitectureShowcase() {
 
                       {isActive && (
                         <span
-                          className="
+                          className={`
                             pointer-events-none
 
                             absolute
@@ -993,7 +993,7 @@ export default function ArchitectureShowcase() {
                             rounded-[13px]
 
                             shadow-[inset_0_0_16px_rgba(255,255,255,0.12)]
-                          "
+                          `}
                         />
                       )}
 
@@ -1001,7 +1001,7 @@ export default function ArchitectureShowcase() {
 
                       {!isActive && (
                         <span
-                          className="
+                          className={`
                             pointer-events-none
 
                             absolute
@@ -1022,8 +1022,8 @@ export default function ArchitectureShowcase() {
 
                             duration-500
 
-                            group-hover/tab:bg-[#00FF66]/[0.09]
-                          "
+                            group-hover:bg-[#00FF66]/10
+                          `}
                         />
                       )}
 
@@ -1051,7 +1051,7 @@ export default function ArchitectureShowcase() {
                               ease:
                                 "easeInOut",
                             }}
-                            className="
+                            className={`
                               pointer-events-none
 
                               absolute
@@ -1070,15 +1070,15 @@ export default function ArchitectureShowcase() {
                               via-white/45
 
                               to-transparent
-                            "
+                            `}
                           />
                         )}
 
                       <span
-                        className="
+                        className={`
                           relative
                           z-10
-                        "
+                        `}
                       >
                         {
                           item.tab
@@ -1114,7 +1114,7 @@ export default function ArchitectureShowcase() {
               1,
             ],
           }}
-          className="
+          className={`
             group
 
             relative
@@ -1145,12 +1145,12 @@ export default function ArchitectureShowcase() {
             sm:p-4
 
             lg:p-5
-          "
+          `}
         >
           {/* PANEL GLOW */}
 
           <div
-            className="
+            className={`
               pointer-events-none
 
               absolute
@@ -1178,13 +1178,13 @@ export default function ArchitectureShowcase() {
               duration-700
 
               group-hover:opacity-100
-            "
+            `}
           />
 
           {/* GLASS */}
 
           <div
-            className="
+            className={`
               pointer-events-none
 
               absolute
@@ -1194,18 +1194,18 @@ export default function ArchitectureShowcase() {
 
               bg-gradient-to-br
 
-              from-white/4
+              from-white/5
 
               via-transparent
 
-              to-[#00FF66]/2.5
-            "
+              to-[#00FF66]/5
+            `}
           />
 
           {/* TOP BORDER */}
 
           <div
-            className="
+            className={`
               pointer-events-none
 
               absolute
@@ -1236,13 +1236,13 @@ export default function ArchitectureShowcase() {
               group-hover:w-[72%]
 
               group-hover:opacity-100
-            "
+            `}
           />
 
           {/* VIEWER HEADER */}
 
           <div
-            className="
+            className={`
               relative
               z-10
 
@@ -1262,10 +1262,10 @@ export default function ArchitectureShowcase() {
               sm:justify-between
 
               sm:px-2
-            "
+            `}
           >
             <div
-              className="
+              className={`
                 flex
 
                 items-center
@@ -1283,10 +1283,10 @@ export default function ArchitectureShowcase() {
                 text-white/80
 
                 sm:text-[9px]
-              "
+              `}
             >
               <span
-                className="
+                className={`
                   h-2
                   w-2
 
@@ -1295,14 +1295,14 @@ export default function ArchitectureShowcase() {
                   bg-[#00FF66]
 
                   shadow-[0_0_10px_rgba(0,255,102,0.8)]
-                "
+                `}
               />
 
               TRANSFORMATION STAGE VIEWER
             </div>
 
             <div
-              className="
+              className={`
                 font-mono
 
                 text-[6px]
@@ -1316,7 +1316,7 @@ export default function ArchitectureShowcase() {
                 sm:text-[7px]
 
                 lg:text-[8px]
-              "
+              `}
             >
               SCALE 1:100 · BIM READY · PRECISION WORKFLOW
             </div>
@@ -1327,8 +1327,8 @@ export default function ArchitectureShowcase() {
           ================================================== */}
 
           <div
-            className="
-              group/viewer
+            className={`
+              group
 
               relative
               z-10
@@ -1353,7 +1353,7 @@ export default function ArchitectureShowcase() {
               sm:rounded-[20px]
 
               lg:aspect-[16/7]
-            "
+            `}
           >
             <AnimatePresence mode="wait">
               <motion.div
@@ -1394,10 +1394,10 @@ export default function ArchitectureShowcase() {
                     1,
                   ],
                 }}
-                className="
+                className={`
                   absolute
                   inset-0
-                "
+                `}
               >
                 {/* LEFT */}
 
@@ -1411,25 +1411,25 @@ export default function ArchitectureShowcase() {
                 />
 
                 <div
-                  className="
+                  className={`
                     pointer-events-none
 
                     absolute
                     inset-0
 
-                    bg-[#00FF66]/1.8
-                  "
+                    bg-[#00FF66]/0
+                  `}
                 />
 
                 {/* RIGHT */}
 
                 <div
-                  className="
+                  className={`
                     absolute
                     inset-0
 
                     overflow-hidden
-                  "
+                  `}
                   style={{
                     clipPath: `inset(0 0 0 ${sliderPosition}%)`,
                   }}
@@ -1447,20 +1447,20 @@ export default function ArchitectureShowcase() {
                 {/* VIGNETTE */}
 
                 <div
-                  className="
+                  className={`
                     pointer-events-none
 
                     absolute
                     inset-0
 
                     bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.45)_100%)]
-                  "
+                  `}
                 />
 
                 {/* TOP GRADIENT */}
 
                 <div
-                  className="
+                  className={`
                     pointer-events-none
 
                     absolute
@@ -1475,7 +1475,7 @@ export default function ArchitectureShowcase() {
                     from-black/25
 
                     to-transparent
-                  "
+                  `}
                 />
 
                 {/* SCAN */}
@@ -1497,7 +1497,7 @@ export default function ArchitectureShowcase() {
                       ease:
                         "linear",
                     }}
-                    className="
+                    className={`
                       pointer-events-none
 
                       absolute
@@ -1515,14 +1515,14 @@ export default function ArchitectureShowcase() {
                       via-[#00FF66]/5
 
                       to-transparent
-                    "
+                    `}
                   />
                 )}
 
                 {/* LABELS */}
 
                 <div
-                  className="
+                  className={`
                     absolute
 
                     bottom-3
@@ -1562,7 +1562,7 @@ export default function ArchitectureShowcase() {
                     sm:text-[7px]
 
                     lg:text-[8px]
-                  "
+                  `}
                 >
                   {
                     current.leftStage
@@ -1570,7 +1570,7 @@ export default function ArchitectureShowcase() {
                 </div>
 
                 <div
-                  className="
+                  className={`
                     absolute
 
                     bottom-3
@@ -1612,7 +1612,7 @@ export default function ArchitectureShowcase() {
                     sm:text-[7px]
 
                     lg:text-[8px]
-                  "
+                  `}
                 >
                   {
                     current.rightStage
@@ -1626,7 +1626,7 @@ export default function ArchitectureShowcase() {
             ================================================== */}
 
             <div
-              className="
+              className={`
                 pointer-events-none
 
                 absolute
@@ -1641,7 +1641,7 @@ export default function ArchitectureShowcase() {
                 bg-[#00FF66]
 
                 shadow-[0_0_20px_rgba(0,255,102,0.95)]
-              "
+              `}
               style={{
                 left: `${sliderPosition}%`,
               }}
@@ -1670,7 +1670,7 @@ export default function ArchitectureShowcase() {
                   ease:
                     "easeInOut",
                 }}
-                className="
+                className={`
                   absolute
 
                   left-1/2
@@ -1700,7 +1700,7 @@ export default function ArchitectureShowcase() {
 
                   sm:h-12
                   sm:w-12
-                "
+                `}
               >
                 <MoveHorizontal
                   size={17}
@@ -1730,7 +1730,7 @@ export default function ArchitectureShowcase() {
                 )
               }
               aria-label="Compare design stages"
-              className="
+              className={`
                 absolute
                 inset-0
 
@@ -1742,7 +1742,7 @@ export default function ArchitectureShowcase() {
                 cursor-ew-resize
 
                 opacity-0
-              "
+              `}
             />
           </div>
 
@@ -1751,7 +1751,7 @@ export default function ArchitectureShowcase() {
           ================================================== */}
 
           <div
-            className="
+            className={`
               relative
               z-10
 
@@ -1773,7 +1773,7 @@ export default function ArchitectureShowcase() {
 
               lg:px-3
               lg:pt-7
-            "
+            `}
           >
             {current.stats.map(
               (
@@ -1803,14 +1803,14 @@ export default function ArchitectureShowcase() {
                       index *
                         0.08,
                   }}
-                  className="
-                    group/stat
+                  className={`
+                    group
 
                     relative
-                  "
+                  `}
                 >
                   <div
-                    className="
+                    className={`
                       mb-1
 
                       font-mono
@@ -1827,10 +1827,10 @@ export default function ArchitectureShowcase() {
 
                       duration-500
 
-                      group-hover/stat:text-[#00FF66]/70
+                      group-hover:text-[#00FF66]/70
 
                       sm:text-[8px]
-                    "
+                    `}
                   >
                     {
                       stat.label
@@ -1838,7 +1838,7 @@ export default function ArchitectureShowcase() {
                   </div>
 
                   <div
-                    className="
+                    className={`
                       text-[14px]
 
                       font-semibold
@@ -1851,14 +1851,14 @@ export default function ArchitectureShowcase() {
 
                       duration-500
 
-                      group-hover/stat:translate-x-1
+                      group-hover:translate-x-1
 
-                      group-hover/stat:text-[#87ffb6]
+                      group-hover:text-[#87ffb6]
 
                       sm:text-[16px]
 
                       lg:text-[18px]
-                    "
+                    `}
                   >
                     {
                       stat.value
@@ -1866,7 +1866,7 @@ export default function ArchitectureShowcase() {
                   </div>
 
                   <div
-                    className="
+                    className={`
                       mt-2
 
                       h-px
@@ -1882,8 +1882,8 @@ export default function ArchitectureShowcase() {
 
                       duration-500
 
-                      group-hover/stat:w-[65%]
-                    "
+                      group-hover:w-[65%]
+                    `}
                   />
                 </motion.div>
               )
@@ -1892,7 +1892,7 @@ export default function ArchitectureShowcase() {
             {/* CTA */}
 
             <div
-              className="
+              className={`
                 col-span-2
 
                 flex
@@ -1904,7 +1904,7 @@ export default function ArchitectureShowcase() {
                 sm:col-span-1
 
                 sm:justify-end
-              "
+              `}
             >
               <motion.button
                 type="button"
@@ -1920,7 +1920,7 @@ export default function ArchitectureShowcase() {
                 whileTap={{
                   scale: 0.97,
                 }}
-                className="
+                className={`
                   relative
 
                   flex
@@ -1963,23 +1963,23 @@ export default function ArchitectureShowcase() {
                   lg:px-6
 
                   lg:text-[11px]
-                "
+                `}
               >
                 <span
-                  className="
+                  className={`
                     relative
                     z-10
-                  "
+                  `}
                 >
                   ALL ARCH PROJECTS
                 </span>
 
                 <ArrowRight
                   size={14}
-                  className="
+                  className={`
                     relative
                     z-10
-                  "
+                  `}
                 />
               </motion.button>
             </div>
@@ -2010,7 +2010,7 @@ export default function ArchitectureShowcase() {
             delay: 0.3,
             duration: 0.6,
           }}
-          className="
+          className={`
             mt-5
 
             flex
@@ -2033,7 +2033,7 @@ export default function ArchitectureShowcase() {
             text-white/20
 
             sm:text-[8px]
-          "
+          `}
         >
           <Sparkles
             size={12}

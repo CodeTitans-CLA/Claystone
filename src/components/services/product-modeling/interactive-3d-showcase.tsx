@@ -84,7 +84,7 @@ export default function Interactive3DShowcase() {
   return (
     <section
       id="interactive-3d"
-      className="relative overflow-hidden border-y border-white/6 bg-[#050706] py-14 lg:py-18"
+      className="relative overflow-hidden border-y border-white/5 bg-[#050706] py-14 lg:py-18"
     >
       <div className="mx-auto w-[calc(100%-32px)] max-w-[1600px] lg:w-[calc(100%-64px)]">
         {/* Header */}
@@ -139,7 +139,7 @@ export default function Interactive3DShowcase() {
 
           {/* MODEL SELECTOR */}
           <aside className="border-t border-[#00ff87]/10 bg-[#060907] lg:border-l lg:border-t-0">
-            <div className="border-b border-white/[0.06] p-5">
+            <div className="border-b border-white/5 p-5">
               <span className="font-mono text-[8px] tracking-[0.18em] text-[#58655d]">
                 AVAILABLE MODELS
               </span>
@@ -155,8 +155,8 @@ export default function Interactive3DShowcase() {
                     type="button"
                     onClick={() => setSelectedModel(model)}
                     className={`group relative mb-2 w-full border p-4 text-left transition duration-300 ${active
-                        ? "border-[#00ff87]/40 bg-[#00ff87]/[0.05]"
-                        : "border-white/[0.06] hover:border-[#00ff87]/20 hover:bg-white/[0.02]"
+                        ? "border-[#00ff87]/40 bg-[#00ff87]/5"
+                        : "border-white/5 hover:border-[#00ff87]/20 hover:bg-white/0"
                       }`}
                   >
                     <div className="flex items-start justify-between">
@@ -193,7 +193,7 @@ export default function Interactive3DShowcase() {
               })}
             </div>
 
-            <div className="mt-auto border-t border-white/[0.06] p-5">
+            <div className="mt-auto border-t border-white/5 p-5">
               <span className="block font-mono text-[8px] tracking-[0.15em] text-[#58655d]">
                 CONTROLS
               </span>
@@ -233,7 +233,7 @@ export default function Interactive3DShowcase() {
           ].map(([label, value]) => (
             <div
               key={label}
-              className="flex justify-between border border-white/[0.06] bg-white/[0.015] px-5 py-4"
+              className="flex justify-between border border-white/5 bg-white/0 px-5 py-4"
             >
               <span className="font-mono text-[8px] tracking-[0.15em] text-[#536058]">
                 {label}

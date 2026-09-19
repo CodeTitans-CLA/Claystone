@@ -162,8 +162,8 @@ function FAQItem({
 
           ${
             open
-              ? "border-[#00ff66]/[0.20] bg-[#171e19]"
-              : "border-white/[0.045] bg-[#141916]"
+              ? "border-[#00ff66]/20 bg-[#171e19]"
+              : "border-white/5 bg-[#141916]"
           }
 
           shadow-[0_14px_40px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.02)]
@@ -174,7 +174,7 @@ function FAQItem({
 
           hover:-translate-y-0.5
 
-          hover:border-[#00ff66]/[0.18]
+          hover:border-[#00ff66]/20
 
           hover:bg-[#181f1a]
 
@@ -215,7 +215,7 @@ function FAQItem({
         {/* AMBIENT HOVER GLOW */}
 
         <div
-          className="
+          className={`
             pointer-events-none
 
             absolute
@@ -235,8 +235,8 @@ function FAQItem({
             transition-all
             duration-700
 
-            group-hover:bg-[#00ff66]/[0.05]
-          "
+            group-hover:bg-[#00ff66]/5
+          `}
         />
 
         {/* ===================================================
@@ -250,7 +250,7 @@ function FAQItem({
           onClick={onToggle}
           aria-expanded={open}
           aria-controls={`faq-panel-${index}`}
-          className="
+          className={`
             relative
             z-10
 
@@ -278,7 +278,7 @@ function FAQItem({
             transition-colors
             duration-300
 
-            active:bg-white/[0.015]
+            active:bg-white/0
 
             focus-visible:ring-2
             focus-visible:ring-inset
@@ -295,12 +295,12 @@ function FAQItem({
             xl:min-h-[72px]
             xl:px-6
             xl:py-[17px]
-          "
+          `}
         >
           {/* QUESTION */}
 
           <span
-            className="
+            className={`
               min-w-0
               flex-1
 
@@ -331,7 +331,7 @@ function FAQItem({
               xl:text-[19px]
 
               2xl:text-[20px]
-            "
+            `}
           >
             {faq.question}
           </span>
@@ -367,7 +367,7 @@ function FAQItem({
 
                     border-[#00ff66]/25
 
-                    bg-[#00ff66]/[0.08]
+                    bg-[#00ff66]/10
 
                     text-[#00ff66]
 
@@ -382,19 +382,19 @@ function FAQItem({
 
                     group-hover:border-[#00ff66]/15
 
-                    group-hover:bg-[#00ff66]/[0.055]
+                    group-hover:bg-[#00ff66]/5
                   `
               }
             `}
           >
             <ChevronDown
-              className="
+              className={`
                 h-4
                 w-4
 
                 sm:h-[18px]
                 sm:w-[18px]
-              "
+              `}
               strokeWidth={2.3}
             />
           </span>
@@ -426,15 +426,15 @@ function FAQItem({
           `}
         >
           <div
-            className="
+            className={`
               min-h-0
               overflow-hidden
-            "
+            `}
           >
             {/* ANSWER PADDING REDUCED */}
 
             <div
-              className="
+              className={`
                 px-4
                 pb-4
 
@@ -446,12 +446,12 @@ function FAQItem({
 
                 xl:px-6
                 xl:pb-5
-              "
+              `}
             >
               {/* Divider */}
 
               <div
-                className="
+                className={`
                   mb-3
 
                   h-px
@@ -461,14 +461,14 @@ function FAQItem({
 
                   from-[#00ff66]/20
 
-                  via-white/[0.045]
+                  via-white/5
 
                   to-transparent
-                "
+                `}
               />
 
               <p
-                className="
+                className={`
                   max-w-[980px]
 
                   text-[14px]
@@ -478,7 +478,7 @@ function FAQItem({
 
                   tracking-[-0.004em]
 
-                  text-[#cddbd0]/78
+                  text-[#cddbd0]/80
 
                   min-[420px]:text-[14.5px]
 
@@ -491,7 +491,7 @@ function FAQItem({
                   xl:text-[16px]
 
                   2xl:text-[17px]
-                "
+                `}
               >
                 {faq.answer}
               </p>
@@ -562,7 +562,7 @@ export default function TechnicalFAQ() {
       {/* BASE BACKGROUND */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -571,13 +571,13 @@ export default function TechnicalFAQ() {
           -z-50
 
           bg-[#090e0b]
-        "
+        `}
       />
 
       {/* DOT GRID */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -590,13 +590,13 @@ export default function TechnicalFAQ() {
           [background-image:radial-gradient(rgba(123,255,168,0.5)_0.7px,transparent_0.7px)]
 
           [background-size:27px_27px]
-        "
+        `}
       />
 
       {/* LEFT GLOW */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -611,16 +611,16 @@ export default function TechnicalFAQ() {
 
           rounded-full
 
-          bg-[#00ff66]/[0.032]
+          bg-[#00ff66]/5
 
           blur-[180px]
-        "
+        `}
       />
 
       {/* RIGHT GLOW */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -636,16 +636,16 @@ export default function TechnicalFAQ() {
 
           rounded-full
 
-          bg-[#00ff66]/[0.022]
+          bg-[#00ff66]/0
 
           blur-[200px]
-        "
+        `}
       />
 
       {/* CENTER GLOW */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -663,16 +663,16 @@ export default function TechnicalFAQ() {
 
           rounded-full
 
-          bg-[#00ff66]/[0.012]
+          bg-[#00ff66]/0
 
           blur-[150px]
-        "
+        `}
       />
 
       {/* BOTTOM FADE */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -689,7 +689,7 @@ export default function TechnicalFAQ() {
           from-black/25
 
           to-transparent
-        "
+        `}
       />
 
       {/* =====================================================
@@ -697,7 +697,7 @@ export default function TechnicalFAQ() {
       ===================================================== */}
 
       <div
-        className="
+        className={`
           mx-auto
 
           w-full
@@ -715,7 +715,7 @@ export default function TechnicalFAQ() {
           xl:px-12
 
           2xl:px-8
-        "
+        `}
       >
         {/* ===================================================
             MAIN GRID
@@ -723,7 +723,7 @@ export default function TechnicalFAQ() {
         =================================================== */}
 
         <div
-          className="
+          className={`
             grid
 
             items-start
@@ -741,7 +741,7 @@ export default function TechnicalFAQ() {
             xl:gap-10
 
             2xl:gap-12
-          "
+          `}
         >
           {/* =================================================
               LEFT CONTENT
@@ -771,7 +771,7 @@ export default function TechnicalFAQ() {
             {/* EYEBROW */}
 
             <div
-              className="
+              className={`
                 mb-2.5
 
                 flex
@@ -799,10 +799,10 @@ export default function TechnicalFAQ() {
                 lg:text-[11.5px]
 
                 xl:text-[12px]
-              "
+              `}
             >
               <Sparkles
-                className="
+                className={`
                   h-4
                   w-4
 
@@ -811,7 +811,7 @@ export default function TechnicalFAQ() {
                   text-[#00ff66]
 
                   drop-shadow-[0_0_7px_rgba(0,255,102,0.55)]
-                "
+                `}
               />
 
               Knowledge Base
@@ -820,7 +820,7 @@ export default function TechnicalFAQ() {
             {/* HEADING */}
 
             <h2
-              className="
+              className={`
                 max-w-[560px]
 
                 text-[40px]
@@ -850,7 +850,7 @@ export default function TechnicalFAQ() {
                 xl:text-[52px]
 
                 2xl:text-[58px]
-              "
+              `}
             >
               Technical &amp; Statutory
 
@@ -862,7 +862,7 @@ export default function TechnicalFAQ() {
             {/* DESCRIPTION */}
 
             <p
-              className="
+              className={`
                 mt-3.5
 
                 max-w-[450px]
@@ -875,7 +875,7 @@ export default function TechnicalFAQ() {
 
                 tracking-[-0.004em]
 
-                text-[#c5ffd3]/78
+                text-[#c5ffd3]/80
 
                 min-[420px]:text-[14.5px]
 
@@ -892,7 +892,7 @@ export default function TechnicalFAQ() {
                 xl:text-[16px]
 
                 2xl:text-[17px]
-              "
+              `}
             >
               Everything you need to know about our BIM
               integration protocols, licensing alignment,
@@ -904,8 +904,8 @@ export default function TechnicalFAQ() {
 
             <Link
               href="/contact"
-              className="
-                group/contact
+              className={`
+                group
 
                 mt-4
 
@@ -944,12 +944,12 @@ export default function TechnicalFAQ() {
                 focus-visible:ring-offset-4
 
                 focus-visible:ring-offset-[#090e0b]
-              "
+              `}
             >
               {/* Mail Icon */}
 
               <span
-                className="
+                className={`
                   flex
 
                   h-8
@@ -966,7 +966,7 @@ export default function TechnicalFAQ() {
                   border
                   border-[#00ff66]/10
 
-                  bg-[#00ff66]/[0.035]
+                  bg-[#00ff66]/5
 
                   text-[#00ff66]
 
@@ -974,26 +974,26 @@ export default function TechnicalFAQ() {
 
                   duration-300
 
-                  group-hover/contact:border-[#00ff66]/25
+                  group-hover:border-[#00ff66]/25
 
-                  group-hover/contact:bg-[#00ff66]/[0.075]
+                  group-hover:bg-[#00ff66]/10
 
-                  group-hover/contact:shadow-[0_0_22px_rgba(0,255,102,0.08)]
+                  group-hover:shadow-[0_0_22px_rgba(0,255,102,0.08)]
 
                   sm:h-9
                   sm:w-9
-                "
+                `}
               >
                 <Mail
-                  className="
+                  className={`
                     h-4
                     w-4
-                  "
+                  `}
                 />
               </span>
 
               <span
-                className="
+                className={`
                   pt-[1px]
 
                   text-[10px]
@@ -1012,7 +1012,7 @@ export default function TechnicalFAQ() {
 
                   duration-300
 
-                  group-hover/contact:text-[#7dffad]
+                  group-hover:text-[#7dffad]
 
                   min-[420px]:text-[10.5px]
 
@@ -1023,7 +1023,7 @@ export default function TechnicalFAQ() {
                   xl:text-[11.5px]
 
                   2xl:text-[12px]
-                "
+                `}
               >
                 Need custom stamping specifications? Inquire
                 directly
@@ -1037,7 +1037,7 @@ export default function TechnicalFAQ() {
           ================================================= */}
 
           <div
-            className="
+            className={`
               flex
 
               min-w-0
@@ -1049,7 +1049,7 @@ export default function TechnicalFAQ() {
               sm:gap-2.5
 
               xl:gap-3
-            "
+            `}
           >
             {faqs.map(
               (

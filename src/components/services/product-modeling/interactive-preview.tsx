@@ -109,7 +109,7 @@ export default function InteractivePreview() {
               `,
             }}
           >
-            <div className="absolute inset-0 border border-[#00ff87]/60 bg-[#00ff87]/[0.025] shadow-[0_0_60px_rgba(0,255,135,0.08)]" />
+            <div className="absolute inset-0 border border-[#00ff87]/60 bg-[#00ff87]/5 shadow-[0_0_60px_rgba(0,255,135,0.08)]" />
 
             <div className="absolute left-5 top-5 right-5 bottom-5 border border-[#00ff87]/20" />
 

@@ -69,11 +69,11 @@ export default function DeliverablesMatrix() {
           </p>
         </div>
 
-        <div className="border-t border-white/[0.08]">
+        <div className="border-t border-white/10">
           {deliverables.map((item) => (
             <div
               key={item.number}
-              className="group grid min-h-[135px] grid-cols-[50px_1fr_25px] items-center gap-4 border-b border-white/[0.08] px-2 transition duration-300 hover:bg-[#00ff87]/[0.025] hover:px-5 sm:grid-cols-[80px_1fr_30px] sm:gap-8 lg:grid-cols-[100px_1fr_30px]"
+              className="group grid min-h-[135px] grid-cols-[50px_1fr_25px] items-center gap-4 border-b border-white/10 px-2 transition duration-300 hover:bg-[#00ff87]/5 hover:px-5 sm:grid-cols-[80px_1fr_30px] sm:gap-8 lg:grid-cols-[100px_1fr_30px]"
             >
               <span className="font-mono text-[12px] text-[#00ff87]">
                 {item.number}

@@ -116,7 +116,7 @@ export default function ArchitectureFinalCTA() {
       ===================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -125,7 +125,7 @@ export default function ArchitectureFinalCTA() {
           -z-50
 
           bg-[#07100b]
-        "
+        `}
       />
 
       {/* =====================================================
@@ -133,7 +133,7 @@ export default function ArchitectureFinalCTA() {
       ===================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -146,7 +146,7 @@ export default function ArchitectureFinalCTA() {
           [background-image:radial-gradient(rgba(123,255,168,0.5)_0.7px,transparent_0.7px)]
 
           [background-size:27px_27px]
-        "
+        `}
       />
 
       {/* =====================================================
@@ -154,7 +154,7 @@ export default function ArchitectureFinalCTA() {
       ===================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -172,7 +172,7 @@ export default function ArchitectureFinalCTA() {
 
           rounded-full
 
-          bg-[#00ff66]/[0.045]
+          bg-[#00ff66]/5
 
           blur-[150px]
 
@@ -181,7 +181,7 @@ export default function ArchitectureFinalCTA() {
 
           lg:h-[620px]
           lg:w-[950px]
-        "
+        `}
       />
 
       {/* =====================================================
@@ -189,7 +189,7 @@ export default function ArchitectureFinalCTA() {
       ===================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -205,10 +205,10 @@ export default function ArchitectureFinalCTA() {
 
           rounded-full
 
-          bg-[#00ff66]/[0.018]
+          bg-[#00ff66]/0
 
           blur-[170px]
-        "
+        `}
       />
 
       {/* =====================================================
@@ -216,7 +216,7 @@ export default function ArchitectureFinalCTA() {
       ===================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -232,10 +232,10 @@ export default function ArchitectureFinalCTA() {
 
           rounded-full
 
-          bg-[#00ff66]/[0.018]
+          bg-[#00ff66]/0
 
           blur-[170px]
-        "
+        `}
       />
 
       {/* =====================================================
@@ -258,7 +258,7 @@ export default function ArchitectureFinalCTA() {
           rounded-[22px]
 
           border
-          border-white/[0.055]
+          border-white/5
 
           bg-[#07100b]/75
 
@@ -300,7 +300,7 @@ export default function ArchitectureFinalCTA() {
         {/* Top Highlight */}
 
         <div
-          className="
+          className={`
             pointer-events-none
 
             absolute
@@ -320,7 +320,7 @@ export default function ArchitectureFinalCTA() {
             via-[#00ff66]/45
 
             to-transparent
-          "
+          `}
         />
 
         {/* ===================================================
@@ -328,7 +328,7 @@ export default function ArchitectureFinalCTA() {
         =================================================== */}
 
         <div
-          className="
+          className={`
             relative
             z-10
 
@@ -343,7 +343,7 @@ export default function ArchitectureFinalCTA() {
             items-center
 
             text-center
-          "
+          `}
         >
           {/* =================================================
               STATUS
@@ -363,9 +363,9 @@ export default function ArchitectureFinalCTA() {
               rounded-full
 
               border
-              border-white/[0.05]
+              border-white/5
 
-              bg-white/[0.055]
+              bg-white/5
 
               px-3.5
               py-2
@@ -415,17 +415,17 @@ export default function ArchitectureFinalCTA() {
             }}
           >
             <span
-              className="
+              className={`
                 relative
 
                 flex
 
                 h-2
                 w-2
-              "
+              `}
             >
               <span
-                className="
+                className={`
                   absolute
 
                   inline-flex
@@ -440,11 +440,11 @@ export default function ArchitectureFinalCTA() {
                   bg-[#00ff66]
 
                   opacity-40
-                "
+                `}
               />
 
               <span
-                className="
+                className={`
                   relative
 
                   inline-flex
@@ -457,7 +457,7 @@ export default function ArchitectureFinalCTA() {
                   bg-[#00ff66]
 
                   shadow-[0_0_10px_rgba(0,255,102,0.85)]
-                "
+                `}
               />
             </span>
 
@@ -543,7 +543,7 @@ export default function ArchitectureFinalCTA() {
 
               tracking-[-0.008em]
 
-              text-[#d7e4d9]/72
+              text-[#d7e4d9]/70
 
               transition-all
 
@@ -634,8 +634,8 @@ export default function ArchitectureFinalCTA() {
 
             <Link
               href="/contact"
-              className="
-                group/primary
+              className={`
+                group
 
                 relative
 
@@ -701,12 +701,12 @@ export default function ArchitectureFinalCTA() {
                 xl:text-[16px]
 
                 2xl:text-[16.5px]
-              "
+              `}
             >
               {/* Green Base */}
 
               <span
-                className="
+                className={`
                   absolute
                   inset-0
 
@@ -722,14 +722,14 @@ export default function ArchitectureFinalCTA() {
 
                   duration-500
 
-                  group-hover/primary:scale-[1.04]
-                "
+                  group-hover:scale-[1.04]
+                `}
               />
 
               {/* Glow */}
 
               <span
-                className="
+                className={`
                   pointer-events-none
 
                   absolute
@@ -743,14 +743,14 @@ export default function ArchitectureFinalCTA() {
 
                   duration-500
 
-                  group-hover/primary:shadow-[0_0_42px_rgba(0,255,102,0.62)]
-                "
+                  group-hover:shadow-[0_0_42px_rgba(0,255,102,0.62)]
+                `}
               />
 
               {/* Shine */}
 
               <span
-                className="
+                className={`
                   pointer-events-none
 
                   absolute
@@ -772,21 +772,21 @@ export default function ArchitectureFinalCTA() {
 
                   duration-700
 
-                  group-hover/primary:left-[125%]
-                "
+                  group-hover:left-[125%]
+                `}
               />
 
               <span
-                className="
+                className={`
                   relative
                   z-10
-                "
+                `}
               >
                 Initiate Architecture Brief
               </span>
 
               <ArrowRight
-                className="
+                className={`
                   relative
                   z-10
 
@@ -799,11 +799,11 @@ export default function ArchitectureFinalCTA() {
 
                   duration-300
 
-                  group-hover/primary:translate-x-1
+                  group-hover:translate-x-1
 
                   sm:h-5
                   sm:w-5
-                "
+                `}
               />
             </Link>
 
@@ -813,8 +813,8 @@ export default function ArchitectureFinalCTA() {
 
             <Link
               href="/contact"
-              className="
-                group/secondary
+              className={`
+                group
 
                 relative
 
@@ -839,9 +839,9 @@ export default function ArchitectureFinalCTA() {
                 rounded-full
 
                 border
-                border-white/[0.06]
+                border-white/5
 
-                bg-white/[0.065]
+                bg-white/5
 
                 px-6
                 py-3
@@ -866,7 +866,7 @@ export default function ArchitectureFinalCTA() {
 
                 hover:border-[#00ff66]/20
 
-                hover:bg-[#00ff66]/[0.045]
+                hover:bg-[#00ff66]/5
 
                 hover:shadow-[0_16px_38px_rgba(0,0,0,0.25),0_0_30px_rgba(0,255,102,0.06)]
 
@@ -893,12 +893,12 @@ export default function ArchitectureFinalCTA() {
                 xl:text-[16px]
 
                 2xl:text-[16.5px]
-              "
+              `}
             >
               {/* Shine */}
 
               <span
-                className="
+                className={`
                   pointer-events-none
 
                   absolute
@@ -911,7 +911,7 @@ export default function ArchitectureFinalCTA() {
 
                   from-transparent
 
-                  via-white/[0.06]
+                  via-white/5
 
                   to-transparent
 
@@ -919,12 +919,12 @@ export default function ArchitectureFinalCTA() {
 
                   duration-700
 
-                  group-hover/secondary:translate-x-[120%]
-                "
+                  group-hover:translate-x-[120%]
+                `}
               />
 
               <CalendarDays
-                className="
+                className={`
                   relative
                   z-10
 
@@ -939,18 +939,18 @@ export default function ArchitectureFinalCTA() {
 
                   duration-300
 
-                  group-hover/secondary:scale-110
+                  group-hover:scale-110
 
                   sm:h-5
                   sm:w-5
-                "
+                `}
               />
 
               <span
-                className="
+                className={`
                   relative
                   z-10
-                "
+                `}
               >
                 Book Technical Discovery Call
               </span>
@@ -1039,8 +1039,8 @@ function TrustItem({
 }) {
   return (
     <div
-      className="
-        group/trust
+      className={`
+        group
 
         flex
 
@@ -1058,7 +1058,7 @@ function TrustItem({
 
         tracking-[0.145em]
 
-        text-[#d7e6da]/68
+        text-[#d7e6da]/70
 
         transition-all
 
@@ -1077,10 +1077,10 @@ function TrustItem({
         xl:text-[11.5px]
 
         2xl:text-[12px]
-      "
+      `}
     >
       <Icon
-        className="
+        className={`
           h-4
           w-4
 
@@ -1092,16 +1092,16 @@ function TrustItem({
 
           duration-300
 
-          group-hover/trust:scale-110
+          group-hover:scale-110
 
-          group-hover/trust:text-[#00ff66]
+          group-hover:text-[#00ff66]
 
           sm:h-[17px]
           sm:w-[17px]
 
           lg:h-[18px]
           lg:w-[18px]
-        "
+        `}
         strokeWidth={2.2}
       />
 

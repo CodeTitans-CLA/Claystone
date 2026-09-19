@@ -135,7 +135,7 @@ function ProjectCard({
         rounded-[16px]
 
         border
-        border-white/[0.055]
+        border-white/5
 
         bg-[#121814]
 
@@ -170,7 +170,7 @@ function ProjectCard({
       ===================================================== */}
 
       <span
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -193,7 +193,7 @@ function ProjectCard({
           duration-700
 
           group-hover:w-full
-        "
+        `}
       />
 
       {/* =====================================================
@@ -201,10 +201,10 @@ function ProjectCard({
       ===================================================== */}
 
       <div
-        className="
+        className={`
           relative
 
-          aspect-[1.22/1]
+          aspect-[1.22/100]
 
           w-full
 
@@ -212,18 +212,18 @@ function ProjectCard({
 
           bg-[#07100b]
 
-          min-[420px]:aspect-[1.35/1]
+          min-[420px]:aspect-[1.35/100]
 
-          sm:aspect-[1.48/1]
+          sm:aspect-[1.48/100]
 
-          md:aspect-[1.62/1]
+          md:aspect-[1.62/100]
 
-          lg:aspect-[1.5/1]
+          lg:aspect-[1.5/100]
 
-          xl:aspect-[1.62/1]
+          xl:aspect-[1.62/100]
 
-          2xl:aspect-[1.68/1]
-        "
+          2xl:aspect-[1.68/100]
+        `}
       >
         {!imageFailed ? (
           <Image
@@ -240,7 +240,7 @@ function ProjectCard({
             onError={() =>
               setImageFailed(true)
             }
-            className="
+            className={`
               select-none
 
               object-cover
@@ -259,11 +259,11 @@ function ProjectCard({
               motion-reduce:transform-none
 
               motion-reduce:transition-none
-            "
+            `}
           />
         ) : (
           <div
-            className="
+            className={`
               absolute
               inset-0
 
@@ -275,10 +275,10 @@ function ProjectCard({
               overflow-hidden
 
               bg-[#07110b]
-            "
+            `}
           >
             <div
-              className="
+              className={`
                 pointer-events-none
 
                 absolute
@@ -289,11 +289,11 @@ function ProjectCard({
                 [background-image:linear-gradient(rgba(0,255,102,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,102,0.18)_1px,transparent_1px)]
 
                 [background-size:34px_34px]
-              "
+              `}
             />
 
             <div
-              className="
+              className={`
                 pointer-events-none
 
                 absolute
@@ -306,11 +306,11 @@ function ProjectCard({
                 bg-[#00ff66]/10
 
                 blur-[90px]
-              "
+              `}
             />
 
             <div
-              className="
+              className={`
                 relative
                 z-10
 
@@ -327,7 +327,7 @@ function ProjectCard({
                 border
                 border-[#00ff66]/15
 
-                bg-[#00ff66]/[0.035]
+                bg-[#00ff66]/5
 
                 shadow-[0_0_45px_rgba(0,255,102,0.08)]
 
@@ -335,10 +335,10 @@ function ProjectCard({
                 sm:w-16
 
                 sm:rounded-[18px]
-              "
+              `}
             >
               <ImageIcon
-                className="
+                className={`
                   h-5
                   w-5
 
@@ -346,7 +346,7 @@ function ProjectCard({
 
                   sm:h-6
                   sm:w-6
-                "
+                `}
               />
             </div>
           </div>
@@ -355,7 +355,7 @@ function ProjectCard({
         {/* Cinematic Overlay */}
 
         <div
-          className="
+          className={`
             pointer-events-none
 
             absolute
@@ -364,15 +364,15 @@ function ProjectCard({
             bg-gradient-to-t
 
             from-black/60
-            via-black/[0.02]
+            via-black/0
             to-black/10
-          "
+          `}
         />
 
         {/* Green Tint */}
 
         <div
-          className="
+          className={`
             pointer-events-none
 
             absolute
@@ -380,23 +380,23 @@ function ProjectCard({
 
             bg-gradient-to-r
 
-            from-[#00ff66]/[0.03]
+            from-[#00ff66]/5
             via-transparent
             to-transparent
-          "
+          `}
         />
 
         {/* Vignette */}
 
         <div
-          className="
+          className={`
             pointer-events-none
 
             absolute
             inset-0
 
             shadow-[inset_0_0_90px_rgba(0,0,0,0.34)]
-          "
+          `}
         />
 
         {/* =====================================================
@@ -404,7 +404,7 @@ function ProjectCard({
         ===================================================== */}
 
         <div
-          className="
+          className={`
             absolute
 
             left-3
@@ -460,7 +460,7 @@ function ProjectCard({
             xl:text-[10.5px]
 
             2xl:text-[11px]
-          "
+          `}
         >
           {project.badge}
         </div>
@@ -470,7 +470,7 @@ function ProjectCard({
         ===================================================== */}
 
         <div
-          className="
+          className={`
             absolute
 
             bottom-3
@@ -481,7 +481,7 @@ function ProjectCard({
             rounded-[5px]
 
             border
-            border-white/[0.06]
+            border-white/5
 
             bg-black/70
 
@@ -513,7 +513,7 @@ function ProjectCard({
             lg:text-[9.5px]
 
             xl:text-[10px]
-          "
+          `}
         >
           {project.location}
         </div>
@@ -523,7 +523,7 @@ function ProjectCard({
         ===================================================== */}
 
         <span
-          className="
+          className={`
             pointer-events-none
 
             absolute
@@ -558,11 +558,11 @@ function ProjectCard({
             group-hover:opacity-40
 
             motion-reduce:hidden
-          "
+          `}
         />
 
         <div
-          className="
+          className={`
             pointer-events-none
 
             absolute
@@ -586,7 +586,7 @@ function ProjectCard({
             duration-700
 
             group-hover:opacity-100
-          "
+          `}
         />
       </div>
 
@@ -596,7 +596,7 @@ function ProjectCard({
       ===================================================== */}
 
       <div
-        className="
+        className={`
           relative
 
           flex
@@ -612,12 +612,12 @@ function ProjectCard({
           xl:p-5
 
           2xl:p-6
-        "
+        `}
       >
         {/* Ambient Glow */}
 
         <div
-          className="
+          className={`
             pointer-events-none
 
             absolute
@@ -637,14 +637,14 @@ function ProjectCard({
             transition-all
             duration-700
 
-            group-hover:bg-[#00ff66]/[0.055]
-          "
+            group-hover:bg-[#00ff66]/5
+          `}
         />
 
         {/* CATEGORY */}
 
         <div
-          className="
+          className={`
             relative
             z-10
 
@@ -676,14 +676,14 @@ function ProjectCard({
             xl:text-[11px]
 
             2xl:text-[11.5px]
-          "
+          `}
         >
           <span>
             {project.category}
           </span>
 
           <span
-            className="
+            className={`
               h-1.5
               w-1.5
 
@@ -694,7 +694,7 @@ function ProjectCard({
               bg-[#00ff66]
 
               shadow-[0_0_8px_rgba(0,255,102,0.65)]
-            "
+            `}
           />
 
           <span>
@@ -705,7 +705,7 @@ function ProjectCard({
         {/* TITLE */}
 
         <h3
-          className="
+          className={`
             relative
             z-10
 
@@ -740,7 +740,7 @@ function ProjectCard({
             xl:text-[28px]
 
             2xl:text-[30px]
-          "
+          `}
         >
           {project.title}
         </h3>
@@ -748,7 +748,7 @@ function ProjectCard({
         {/* DESCRIPTION */}
 
         <p
-          className="
+          className={`
             relative
             z-10
 
@@ -764,13 +764,13 @@ function ProjectCard({
 
             tracking-[-0.008em]
 
-            text-[#d2dfd5]/72
+            text-[#d2dfd5]/70
 
             transition-colors
 
             duration-500
 
-            group-hover:text-[#e4eee6]/88
+            group-hover:text-[#e4eee6]/90
 
             min-[420px]:text-[14.5px]
 
@@ -783,7 +783,7 @@ function ProjectCard({
             xl:text-[15.5px]
 
             2xl:text-[16px]
-          "
+          `}
         >
           {project.description}
         </p>
@@ -794,7 +794,7 @@ function ProjectCard({
         ===================================================== */}
 
         <div
-          className="
+          className={`
             relative
             z-10
 
@@ -819,12 +819,12 @@ function ProjectCard({
             xl:flex-row
             xl:items-end
             xl:justify-between
-          "
+          `}
         >
           {/* STATS */}
 
           <div
-            className="
+            className={`
               flex
               flex-wrap
               items-center
@@ -840,7 +840,7 @@ function ProjectCard({
 
               tracking-[0.095em]
 
-              text-[#caffd6]/78
+              text-[#caffd6]/80
 
               min-[420px]:text-[9.5px]
 
@@ -851,7 +851,7 @@ function ProjectCard({
               xl:text-[10.5px]
 
               2xl:text-[11px]
-            "
+            `}
           >
             <span>
               {project.statLeft}
@@ -871,8 +871,8 @@ function ProjectCard({
           <button
             type="button"
             aria-label={`View blueprint for ${project.title}`}
-            className="
-              group/button
+            className={`
+              group
 
               relative
 
@@ -935,14 +935,14 @@ function ProjectCard({
               xl:text-[14.5px]
 
               2xl:text-[15px]
-            "
+            `}
           >
             <span>
               View Blueprint
             </span>
 
             <ArrowUpRight
-              className="
+              className={`
                 h-4
                 w-4
 
@@ -952,18 +952,18 @@ function ProjectCard({
 
                 duration-300
 
-                group-hover/button:-translate-y-0.5
+                group-hover:-translate-y-0.5
 
-                group-hover/button:translate-x-0.5
+                group-hover:translate-x-0.5
 
-                lg:group-hover/button:-translate-y-1
+                lg:group-hover:-translate-y-1
 
-                lg:group-hover/button:translate-x-1
-              "
+                lg:group-hover:translate-x-1
+              `}
             />
 
             <span
-              className="
+              className={`
                 pointer-events-none
 
                 absolute
@@ -980,8 +980,8 @@ function ProjectCard({
 
                 duration-300
 
-                group-hover/button:w-[calc(100%_-_8px)]
-              "
+                group-hover:w-[calc(100%_-_8px)]
+              `}
             />
           </button>
         </div>
@@ -1031,7 +1031,7 @@ export default function FeaturedArchitectureCaseStudies() {
       {/* BASE */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -1040,13 +1040,13 @@ export default function FeaturedArchitectureCaseStudies() {
           -z-50
 
           bg-[#090e0b]
-        "
+        `}
       />
 
       {/* DOT GRID */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -1059,13 +1059,13 @@ export default function FeaturedArchitectureCaseStudies() {
           [background-image:radial-gradient(rgba(123,255,168,0.5)_0.7px,transparent_0.7px)]
 
           [background-size:27px_27px]
-        "
+        `}
       />
 
       {/* LEFT GLOW */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -1080,16 +1080,16 @@ export default function FeaturedArchitectureCaseStudies() {
 
           rounded-full
 
-          bg-[#00ff66]/[0.04]
+          bg-[#00ff66]/5
 
           blur-[180px]
-        "
+        `}
       />
 
       {/* RIGHT GLOW */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -1105,16 +1105,16 @@ export default function FeaturedArchitectureCaseStudies() {
 
           rounded-full
 
-          bg-[#00ff66]/[0.03]
+          bg-[#00ff66]/5
 
           blur-[190px]
-        "
+        `}
       />
 
       {/* CENTER GLOW */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -1131,16 +1131,16 @@ export default function FeaturedArchitectureCaseStudies() {
 
           rounded-full
 
-          bg-[#00ff66]/[0.015]
+          bg-[#00ff66]/0
 
           blur-[150px]
-        "
+        `}
       />
 
       {/* BOTTOM FADE */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -1156,7 +1156,7 @@ export default function FeaturedArchitectureCaseStudies() {
 
           from-black/25
           to-transparent
-        "
+        `}
       />
 
       {/* =====================================================
@@ -1164,7 +1164,7 @@ export default function FeaturedArchitectureCaseStudies() {
       ===================================================== */}
 
       <div
-        className="
+        className={`
           mx-auto
 
           w-full
@@ -1182,7 +1182,7 @@ export default function FeaturedArchitectureCaseStudies() {
           xl:px-12
 
           2xl:px-8
-        "
+        `}
       >
         {/* ===================================================
             HEADER
@@ -1228,7 +1228,7 @@ export default function FeaturedArchitectureCaseStudies() {
             {/* EYEBROW */}
 
             <div
-              className="
+              className={`
                 mb-2.5
 
                 flex
@@ -1258,10 +1258,10 @@ export default function FeaturedArchitectureCaseStudies() {
                 xl:text-[12px]
 
                 2xl:text-[12.5px]
-              "
+              `}
             >
               <Sparkles
-                className="
+                className={`
                   h-4
                   w-4
 
@@ -1270,7 +1270,7 @@ export default function FeaturedArchitectureCaseStudies() {
                   text-[#00ff66]
 
                   drop-shadow-[0_0_7px_rgba(0,255,102,0.5)]
-                "
+                `}
               />
 
               Portfolio // Blueprints in Production
@@ -1279,7 +1279,7 @@ export default function FeaturedArchitectureCaseStudies() {
             {/* HEADING */}
 
             <h2
-              className="
+              className={`
                 max-w-[900px]
 
                 break-words
@@ -1309,7 +1309,7 @@ export default function FeaturedArchitectureCaseStudies() {
                 xl:text-[70px]
 
                 2xl:text-[73px]
-              "
+              `}
             >
               Featured Architecture Case
 
@@ -1322,16 +1322,16 @@ export default function FeaturedArchitectureCaseStudies() {
           {/* DESCRIPTION */}
 
           <div
-            className="
+            className={`
               min-w-0
 
               md:flex
 
               md:justify-end
-            "
+            `}
           >
             <p
-              className="
+              className={`
                 max-w-[470px]
 
                 text-[14px]
@@ -1342,7 +1342,7 @@ export default function FeaturedArchitectureCaseStudies() {
 
                 tracking-[-0.008em]
 
-                text-[#c5ffd3]/78
+                text-[#c5ffd3]/80
 
                 min-[420px]:text-[14.5px]
 
@@ -1353,7 +1353,7 @@ export default function FeaturedArchitectureCaseStudies() {
                 xl:text-[16.5px]
 
                 2xl:text-[17px]
-              "
+              `}
             >
               A showcase of computational spatial precision
               translated into executed landmarks and virtual
@@ -1368,7 +1368,7 @@ export default function FeaturedArchitectureCaseStudies() {
         =================================================== */}
 
         <div
-          className="
+          className={`
             mt-6
 
             grid
@@ -1385,7 +1385,7 @@ export default function FeaturedArchitectureCaseStudies() {
             lg:grid-cols-2
 
             xl:mt-9
-          "
+          `}
         >
           {projects.map(
             (

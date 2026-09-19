@@ -114,7 +114,7 @@ export default function ProductGallery() {
                 key={product.src}
                 type="button"
                 onClick={() => setActiveImage(product.src)}
-                className={`group relative min-h-0 overflow-hidden border border-white/[0.07] bg-[#090d0a] text-left ${sizeClasses}`}
+                className={`group relative min-h-0 overflow-hidden border border-white/5 bg-[#090d0a] text-left ${sizeClasses}`}
               >
                 <div className="absolute inset-0">
                   <Image
@@ -130,7 +130,7 @@ export default function ProductGallery() {
                 <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/90 transition duration-500 group-hover:bg-black/20" />
 
                 {/* Green hover glow */}
-                <div className="absolute inset-0 bg-[#00ff87]/0 transition duration-500 group-hover:bg-[#00ff87]/[0.04]" />
+                <div className="absolute inset-0 bg-[#00ff87]/0 transition duration-500 group-hover:bg-[#00ff87]/5" />
 
                 {/* Top data */}
                 <div className="absolute left-5 right-5 top-5 flex justify-between">

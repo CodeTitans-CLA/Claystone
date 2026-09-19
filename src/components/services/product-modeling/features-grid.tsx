@@ -53,11 +53,11 @@ export default function FeaturesGrid() {
           </p>
         </div>
 
-        <div className="grid border-l border-t border-white/[0.08] sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid border-l border-t border-white/10 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((feature) => (
             <article
               key={feature.number}
-              className="group relative min-h-[390px] border-b border-r border-white/[0.08] p-6 transition duration-500 hover:bg-[#00ff87]/[0.025] lg:min-h-[430px]"
+              className="group relative min-h-[390px] border-b border-r border-white/10 p-6 transition duration-500 hover:bg-[#00ff87]/5 lg:min-h-[430px]"
             >
               <div className="flex items-center justify-between">
                 <span className="font-mono text-[9px] text-[#00ff87]">

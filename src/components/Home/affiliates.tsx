@@ -134,7 +134,7 @@ function AffiliateCard({
 
   return (
     <article
-      className="
+      className={`
         affiliate-glass-card
         group
         relative
@@ -148,7 +148,7 @@ function AffiliateCard({
         rounded-[20px]
 
         border
-        border-white/[0.075]
+        border-white/10
 
         bg-[linear-gradient(145deg,rgba(15,29,21,0.92)_0%,rgba(8,20,13,0.96)_55%,rgba(4,12,8,0.98)_100%)]
 
@@ -182,24 +182,24 @@ function AffiliateCard({
 
         2xl:h-[136px]
         2xl:w-[325px]
-      "
+      `}
     >
       {/* BACKGROUND DEPTH */}
 
       <div
-        className="
+        className={`
           pointer-events-none
           absolute
           inset-0
 
           bg-[radial-gradient(circle_at_88%_7%,rgba(0,255,102,0.11),transparent_30%),linear-gradient(135deg,rgba(255,255,255,0.03),transparent_48%)]
-        "
+        `}
       />
 
       {/* INNER BORDER */}
 
       <div
-        className="
+        className={`
           pointer-events-none
           absolute
           inset-[1px]
@@ -207,14 +207,14 @@ function AffiliateCard({
           rounded-[19px]
 
           border
-          border-white/[0.025]
-        "
+          border-white/5
+        `}
       />
 
       {/* TOP NEON ACCENT */}
 
       <span
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -241,13 +241,13 @@ function AffiliateCard({
 
           group-hover:w-[74%]
           group-hover:via-[#00FF66]
-        "
+        `}
       />
 
       {/* UPPER GREEN GLOW */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -266,14 +266,14 @@ function AffiliateCard({
           transition-all
           duration-700
 
-          group-hover:bg-[#00FF66]/[0.13]
-        "
+          group-hover:bg-[#00FF66]/15
+        `}
       />
 
       {/* LOWER AMBIENT */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -287,21 +287,21 @@ function AffiliateCard({
 
           rounded-full
 
-          bg-[#00FF66]/[0.02]
+          bg-[#00FF66]/0
 
           blur-[55px]
 
           transition-all
           duration-700
 
-          group-hover:bg-[#00FF66]/[0.07]
-        "
+          group-hover:bg-[#00FF66]/5
+        `}
       />
 
       {/* MOVING SHINE */}
 
       <span
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -316,20 +316,20 @@ function AffiliateCard({
 
           bg-gradient-to-r
           from-transparent
-          via-white/[0.075]
+          via-white/10
           to-transparent
 
           transition-all
           duration-700
 
           group-hover:left-[135%]
-        "
+        `}
       />
 
       {/* LOGO STAGE */}
 
       <div
-        className="
+        className={`
           relative
           z-10
 
@@ -346,7 +346,7 @@ function AffiliateCard({
           rounded-[15px]
 
           border
-          border-white/[0.52]
+          border-white/50
 
           bg-[linear-gradient(145deg,rgba(255,255,255,0.99)_0%,rgba(244,250,246,0.98)_48%,rgba(228,242,234,0.965)_100%)]
 
@@ -365,12 +365,12 @@ function AffiliateCard({
           group-hover:shadow-[inset_0_1px_0_rgba(255,255,255,1),0_10px_30px_rgba(0,0,0,0.20),0_0_22px_rgba(0,255,102,0.085)]
 
           sm:px-6
-        "
+        `}
       >
         {/* DOT TEXTURE */}
 
         <div
-          className="
+          className={`
             pointer-events-none
 
             absolute
@@ -380,13 +380,13 @@ function AffiliateCard({
 
             [background-image:radial-gradient(rgba(0,55,25,0.65)_0.7px,transparent_0.7px)]
             [background-size:17px_17px]
-          "
+          `}
         />
 
         {/* GREEN REFLECTION */}
 
         <div
-          className="
+          className={`
             pointer-events-none
 
             absolute
@@ -398,16 +398,16 @@ function AffiliateCard({
 
             rounded-full
 
-            bg-[#00FF66]/[0.09]
+            bg-[#00FF66]/10
 
             blur-[38px]
-          "
+          `}
         />
 
         {/* TOP REFLECTION */}
 
         <div
-          className="
+          className={`
             pointer-events-none
 
             absolute
@@ -422,7 +422,7 @@ function AffiliateCard({
             to-transparent
 
             opacity-60
-          "
+          `}
         />
 
         {/* LOGO */}
@@ -442,7 +442,7 @@ function AffiliateCard({
               270px
             "
             onError={() => setImageFailed(true)}
-            className="
+            className={`
               relative
               z-10
 
@@ -484,11 +484,11 @@ function AffiliateCard({
 
               2xl:max-h-[76px]
               2xl:max-w-[270px]
-            "
+            `}
           />
         ) : (
           <span
-            className="
+            className={`
               relative
               z-10
 
@@ -504,7 +504,7 @@ function AffiliateCard({
 
               sm:text-[16px]
               lg:text-[17px]
-            "
+            `}
           >
             {affiliate.name}
           </span>
@@ -530,7 +530,7 @@ function AffiliateCopy({
   return (
     <div
       aria-hidden={hidden ? true : undefined}
-      className="
+      className={`
         affiliate-copy
 
         flex
@@ -547,7 +547,7 @@ function AffiliateCopy({
 
         lg:gap-5
         lg:pr-5
-      "
+      `}
     >
       {items.map((affiliate) => (
         <AffiliateCard
@@ -574,7 +574,7 @@ function AffiliateRow({
 }) {
   return (
     <div
-      className="
+      className={`
         affiliate-row
 
         relative
@@ -592,12 +592,12 @@ function AffiliateRow({
         sm:py-4
 
         lg:w-[calc(100%_-_64px)]
-      "
+      `}
     >
       {/* LEFT FADE */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -614,13 +614,13 @@ function AffiliateRow({
 
           sm:w-[65px]
           lg:w-[95px]
-        "
+        `}
       />
 
       {/* RIGHT FADE */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -637,7 +637,7 @@ function AffiliateRow({
 
           sm:w-[65px]
           lg:w-[95px]
-        "
+        `}
       />
 
       {/* TRACK */}
@@ -691,7 +691,7 @@ function AffiliateRow({
 export default function AffiliatesSection() {
   return (
     <section
-      className="
+      className={`
         relative
         isolate
 
@@ -709,12 +709,12 @@ export default function AffiliatesSection() {
         md:py-14
         lg:py-16
         xl:py-[68px]
-      "
+      `}
     >
       {/* BACKGROUND */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -723,13 +723,13 @@ export default function AffiliatesSection() {
           -z-50
 
           bg-[linear-gradient(135deg,#020503_0%,#041009_24%,#071b0f_50%,#041109_76%,#020503_100%)]
-        "
+        `}
       />
 
       {/* CENTER AMBIENT */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -746,16 +746,16 @@ export default function AffiliatesSection() {
 
           rounded-full
 
-          bg-[#00FF66]/[0.085]
+          bg-[#00FF66]/10
 
           blur-[205px]
-        "
+        `}
       />
 
       {/* MIDDLE AMBIENT */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -773,16 +773,16 @@ export default function AffiliatesSection() {
 
           rounded-full
 
-          bg-[#00FF66]/[0.025]
+          bg-[#00FF66]/5
 
           blur-[165px]
-        "
+        `}
       />
 
       {/* LEFT GLOW */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -797,16 +797,16 @@ export default function AffiliatesSection() {
 
           rounded-full
 
-          bg-[#00FF66]/[0.033]
+          bg-[#00FF66]/5
 
           blur-[185px]
-        "
+        `}
       />
 
       {/* RIGHT GLOW */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -821,16 +821,16 @@ export default function AffiliatesSection() {
 
           rounded-full
 
-          bg-[#00FF66]/[0.028]
+          bg-[#00FF66]/5
 
           blur-[190px]
-        "
+        `}
       />
 
       {/* DOT GRID */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -844,13 +844,13 @@ export default function AffiliatesSection() {
           [background-size:28px_28px]
 
           [mask-image:linear-gradient(to_bottom,black,rgba(0,0,0,.72),transparent)]
-        "
+        `}
       />
 
       {/* TOP LINE */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -873,13 +873,13 @@ export default function AffiliatesSection() {
           to-transparent
 
           shadow-[0_0_12px_rgba(0,255,102,0.2)]
-        "
+        `}
       />
 
       {/* BOTTOM SHADE */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -894,7 +894,7 @@ export default function AffiliatesSection() {
           bg-gradient-to-t
           from-black/30
           to-transparent
-        "
+        `}
       />
 
       {/* =====================================================
@@ -902,7 +902,7 @@ export default function AffiliatesSection() {
       ===================================================== */}
 
       <div
-        className="
+        className={`
           relative
           z-10
 
@@ -920,12 +920,12 @@ export default function AffiliatesSection() {
           sm:px-6
 
           lg:mb-9
-        "
+        `}
       >
         {/* EYEBROW */}
 
         <div
-          className="
+          className={`
             mb-3
 
             inline-flex
@@ -939,7 +939,7 @@ export default function AffiliatesSection() {
             border
             border-[#00FF66]/20
 
-            bg-[#00FF66]/[0.055]
+            bg-[#00FF66]/5
 
             px-4
             py-2.5
@@ -962,16 +962,16 @@ export default function AffiliatesSection() {
 
             sm:text-[10px]
             lg:text-[11px]
-          "
+          `}
         >
           <Network
-            className="
+            className={`
               h-3.5
               w-3.5
 
               sm:h-4
               sm:w-4
-            "
+            `}
           />
 
           TRUSTED NETWORK
@@ -980,7 +980,7 @@ export default function AffiliatesSection() {
         {/* TITLE */}
 
         <h2
-          className="
+          className={`
             text-[40px]
 
             font-bold
@@ -995,11 +995,11 @@ export default function AffiliatesSection() {
             md:text-[56px]
             lg:text-[62px]
             xl:text-[68px]
-          "
+          `}
         >
           Our{" "}
           <span
-            className="
+            className={`
               bg-gradient-to-r
 
               from-[#00FF66]
@@ -1011,7 +1011,7 @@ export default function AffiliatesSection() {
               text-transparent
 
               drop-shadow-[0_0_26px_rgba(0,255,102,0.13)]
-            "
+            `}
           >
             Affiliates
           </span>
@@ -1020,7 +1020,7 @@ export default function AffiliatesSection() {
         {/* DESCRIPTION */}
 
         <p
-          className="
+          className={`
             mx-auto
 
             mt-4
@@ -1036,7 +1036,7 @@ export default function AffiliatesSection() {
             sm:text-[15px]
             md:text-[15.5px]
             lg:text-[16px]
-          "
+          `}
         >
           A curated network of studios, technology partners,
           builders and creative teams connected through precision,
@@ -1049,12 +1049,12 @@ export default function AffiliatesSection() {
       ===================================================== */}
 
       <div
-        className="
+        className={`
           relative
           z-10
 
           w-full
-        "
+        `}
       >
         <AffiliateRow
           items={rowOne}
@@ -1073,7 +1073,7 @@ export default function AffiliatesSection() {
       ===================================================== */}
 
       <div
-        className="
+        className={`
           relative
           z-10
 
@@ -1092,9 +1092,9 @@ export default function AffiliatesSection() {
           rounded-full
 
           border
-          border-white/[0.07]
+          border-white/5
 
-          bg-white/[0.025]
+          bg-white/5
 
           px-4
           py-2.5
@@ -1109,7 +1109,7 @@ export default function AffiliatesSection() {
 
           tracking-[0.14em]
 
-          text-white/38
+          text-white/40
 
           shadow-[inset_0_1px_0_rgba(255,255,255,0.035),0_8px_25px_rgba(0,0,0,0.14)]
 
@@ -1117,20 +1117,20 @@ export default function AffiliatesSection() {
 
           sm:text-[9px]
           lg:text-[10px]
-        "
+        `}
       >
         <span
-          className="
+          className={`
             relative
 
             flex
 
             h-2
             w-2
-          "
+          `}
         >
           <span
-            className="
+            className={`
               absolute
 
               inline-flex
@@ -1145,11 +1145,11 @@ export default function AffiliatesSection() {
               bg-[#00FF66]
 
               opacity-30
-            "
+            `}
           />
 
           <span
-            className="
+            className={`
               relative
 
               inline-flex
@@ -1162,19 +1162,19 @@ export default function AffiliatesSection() {
               bg-[#00FF66]
 
               shadow-[0_0_8px_rgba(0,255,102,0.8)]
-            "
+            `}
           />
         </span>
 
         {affiliates.length} AFFILIATE PARTNERS
 
         <Sparkles
-          className="
+          className={`
             h-3.5
             w-3.5
 
             text-[#00FF66]/60
-          "
+          `}
         />
       </div>
 

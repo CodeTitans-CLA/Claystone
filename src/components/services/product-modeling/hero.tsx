@@ -19,7 +19,7 @@ export default function ProductModelingHero() {
       />
 
       {/* Green ambient glow */}
-      <div className="pointer-events-none absolute right-[5%] top-[15%] h-137.5 w-137.5 rounded-full bg-[#00ff87]/[0.07] blur-[140px]" />
+      <div className="pointer-events-none absolute right-[5%] top-[15%] h-137.5 w-137.5 rounded-full bg-[#00ff87]/5 blur-[140px]" />
 
       <div className="relative mx-auto max-w-[1600px] px-6 pt-34 pb-14 sm:px-10 lg:px-16 lg:pt-28 lg:pb-18">
         <div className="grid min-h-180 items-center gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-38">
@@ -80,7 +80,7 @@ export default function ProductModelingHero() {
             </div>
 
             {/* Technical details */}
-            <div className="mt-14 grid max-w-lg grid-cols-3 border-y border-white/[0.08] py-5">
+            <div className="mt-14 grid max-w-lg grid-cols-3 border-y border-white/10 py-5">
               <div>
                 <p className="font-mono text-[9px] tracking-[0.18em] text-white/30">
                   FORMAT
@@ -90,7 +90,7 @@ export default function ProductModelingHero() {
                 </p>
               </div>
 
-              <div className="border-l border-white/[0.08] pl-5">
+              <div className="border-l border-white/10 pl-5">
                 <p className="font-mono text-[9px] tracking-[0.18em] text-white/30">
                   QUALITY
                 </p>
@@ -99,7 +99,7 @@ export default function ProductModelingHero() {
                 </p>
               </div>
 
-              <div className="border-l border-white/[0.08] pl-5">
+              <div className="border-l border-white/10 pl-5">
                 <p className="font-mono text-[9px] tracking-[0.18em] text-white/30">
                   OUTPUT
                 </p>
@@ -116,7 +116,7 @@ export default function ProductModelingHero() {
               {/* Large technical frame */}
               <div className="absolute -inset-5 rounded-[32px] border border-[#00ff87]/10" />
 
-              <div className="absolute -inset-10 rounded-full bg-[#00ff87]/[0.035] blur-3xl" />
+              <div className="absolute -inset-10 rounded-full bg-[#00ff87]/5 blur-3xl" />
 
               <HeroGLB />
             </div>

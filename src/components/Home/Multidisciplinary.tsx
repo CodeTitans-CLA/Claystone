@@ -140,7 +140,7 @@ export default function WhyMultidisciplinary(): React.ReactElement {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0c0f0e] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#00e676]/8 via-[#0c0f0e] to-[#0c0f0e] text-white font-sans py-16 px-4 sm:px-6 lg:px-12 antialiased selection:bg-[#00e676] selection:text-[#0c0f0e] relative overflow-hidden">
+    <div className="min-h-screen bg-[#0c0f0e] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#00e676]/10 via-[#0c0f0e] to-[#0c0f0e] text-white font-sans py-16 px-4 sm:px-6 lg:px-12 antialiased selection:bg-[#00e676] selection:text-[#0c0f0e] relative overflow-hidden">
       {}
       <style>{`
         @keyframes comet-rotate {

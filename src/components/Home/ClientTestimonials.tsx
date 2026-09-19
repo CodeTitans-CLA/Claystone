@@ -575,7 +575,7 @@ export default function ClientTestimonials() {
 
   return (
     <section
-      className="
+      className={`
         relative
 
         w-full
@@ -592,26 +592,26 @@ export default function ClientTestimonials() {
         lg:py-16
 
         xl:py-[72px]
-      "
+      `}
     >
       {/* =====================================================
           BACKGROUND
       ====================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
           inset-0
 
           overflow-hidden
-        "
+        `}
       >
         {/* TOP GLOW */}
 
         <div
-          className="
+          className={`
             absolute
 
             left-1/2
@@ -626,10 +626,10 @@ export default function ClientTestimonials() {
 
             rounded-full
 
-            bg-[#00FF66]/[0.05]
+            bg-[#00FF66]/5
 
             blur-[190px]
-          "
+          `}
         />
 
         {/* LEFT GLOW */}
@@ -646,7 +646,7 @@ export default function ClientTestimonials() {
               ease:
                 "easeInOut",
             }}
-            className="
+            className={`
               absolute
 
               -left-[260px]
@@ -657,10 +657,10 @@ export default function ClientTestimonials() {
 
               rounded-full
 
-              bg-[#00FF66]/[0.045]
+              bg-[#00FF66]/5
 
               blur-[170px]
-            "
+            `}
           />
         )}
 
@@ -678,7 +678,7 @@ export default function ClientTestimonials() {
               ease:
                 "easeInOut",
             }}
-            className="
+            className={`
               absolute
 
               -right-[260px]
@@ -689,17 +689,17 @@ export default function ClientTestimonials() {
 
               rounded-full
 
-              bg-[#00FF66]/[0.04]
+              bg-[#00FF66]/5
 
               blur-[170px]
-            "
+            `}
           />
         )}
 
         {/* GRID */}
 
         <div
-          className="
+          className={`
             absolute
             inset-0
 
@@ -708,13 +708,13 @@ export default function ClientTestimonials() {
             [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)]
 
             [background-size:72px_72px]
-          "
+          `}
         />
 
         {/* TOP LINE */}
 
         <div
-          className="
+          className={`
             absolute
 
             left-1/2
@@ -734,13 +734,13 @@ export default function ClientTestimonials() {
             via-[#00FF66]/25
 
             to-transparent
-          "
+          `}
         />
 
         {/* BOTTOM SHADE */}
 
         <div
-          className="
+          className={`
             absolute
 
             inset-x-0
@@ -753,7 +753,7 @@ export default function ClientTestimonials() {
             from-black/30
 
             to-transparent
-          "
+          `}
         />
       </div>
 
@@ -762,7 +762,7 @@ export default function ClientTestimonials() {
       ====================================================== */}
 
       <div
-        className="
+        className={`
           relative
           z-10
 
@@ -780,14 +780,14 @@ export default function ClientTestimonials() {
           xl:px-10
 
           2xl:px-12
-        "
+        `}
       >
         {/* =================================================
             HEADER
         ================================================== */}
 
         <div
-          className="
+          className={`
             mb-8
 
             grid
@@ -802,7 +802,7 @@ export default function ClientTestimonials() {
             lg:gap-12
 
             xl:mb-12
-          "
+          `}
         >
           {/* LEFT */}
 
@@ -831,7 +831,7 @@ export default function ClientTestimonials() {
             {/* EYEBROW */}
 
             <div
-              className="
+              className={`
                 mb-4
 
                 flex
@@ -854,7 +854,7 @@ export default function ClientTestimonials() {
                 sm:text-[11px]
 
                 lg:text-[12px]
-              "
+              `}
             >
               <motion.span
                 animate={
@@ -881,7 +881,7 @@ export default function ClientTestimonials() {
                   ease:
                     "easeInOut",
                 }}
-                className="
+                className={`
                   h-2
                   w-2
 
@@ -890,7 +890,7 @@ export default function ClientTestimonials() {
                   bg-[#00FF66]
 
                   shadow-[0_0_14px_rgba(0,255,102,0.9)]
-                "
+                `}
               />
 
               CLIENT TELEMETRY
@@ -899,7 +899,7 @@ export default function ClientTestimonials() {
             {/* HEADING */}
 
             <h2
-              className="
+              className={`
                 max-w-[940px]
 
                 text-[42px]
@@ -919,13 +919,13 @@ export default function ClientTestimonials() {
                 lg:text-[68px]
 
                 xl:text-[74px]
-              "
+              `}
             >
               Trusted by people
               <br />
 
               <span
-                className="
+                className={`
                   bg-gradient-to-r
 
                   from-white
@@ -937,7 +937,7 @@ export default function ClientTestimonials() {
                   bg-clip-text
 
                   text-transparent
-                "
+                `}
               >
                 building what’s next.
               </span>
@@ -946,7 +946,7 @@ export default function ClientTestimonials() {
             {/* DESCRIPTION */}
 
             <p
-              className="
+              className={`
                 mt-4
 
                 max-w-[760px]
@@ -960,7 +960,7 @@ export default function ClientTestimonials() {
                 sm:text-[17px]
 
                 lg:text-[18px]
-              "
+              `}
             >
               Real experiences across architecture,
               digital development, visualization,
@@ -993,7 +993,7 @@ export default function ClientTestimonials() {
               delay: 0.12,
               ease,
             }}
-            className="
+            className={`
               flex
 
               items-center
@@ -1001,12 +1001,12 @@ export default function ClientTestimonials() {
               gap-3
 
               lg:pb-2
-            "
+            `}
           >
             {/* CURRENT */}
 
             <div
-              className="
+              className={`
                 mr-2
 
                 hidden
@@ -1022,7 +1022,7 @@ export default function ClientTestimonials() {
                 text-white/40
 
                 sm:block
-              "
+              `}
             >
               {String(
                 activeIndex + 1
@@ -1032,11 +1032,11 @@ export default function ClientTestimonials() {
               )}
 
               <span
-                className="
+                className={`
                   mx-2
 
                   text-[#00FF66]/55
-                "
+                `}
               >
                 /
               </span>
@@ -1068,7 +1068,7 @@ export default function ClientTestimonials() {
               whileTap={{
                 scale: 0.95,
               }}
-              className="
+              className={`
                 group
 
                 flex
@@ -1086,7 +1086,7 @@ export default function ClientTestimonials() {
                 rounded-full
 
                 border
-                border-white/[0.11]
+                border-white/10
 
                 bg-[linear-gradient(145deg,#101913,#09110d)]
 
@@ -1100,22 +1100,22 @@ export default function ClientTestimonials() {
 
                 hover:border-[#00FF66]/40
 
-                hover:bg-[#00FF66]/[0.07]
+                hover:bg-[#00FF66]/5
 
                 hover:text-[#00FF66]
 
                 hover:shadow-[0_15px_40px_rgba(0,0,0,0.50),0_0_28px_rgba(0,255,102,0.10)]
-              "
+              `}
             >
               <ArrowLeft
                 size={18}
-                className="
+                className={`
                   transition-transform
 
                   duration-500
 
                   group-hover:-translate-x-0.5
-                "
+                `}
               />
             </motion.button>
 
@@ -1138,7 +1138,7 @@ export default function ClientTestimonials() {
               whileTap={{
                 scale: 0.95,
               }}
-              className="
+              className={`
                 group
 
                 relative
@@ -1176,10 +1176,10 @@ export default function ClientTestimonials() {
                 duration-500
 
                 hover:shadow-[0_0_42px_rgba(0,255,102,0.7)]
-              "
+              `}
             >
               <span
-                className="
+                className={`
                   pointer-events-none
 
                   absolute
@@ -1205,12 +1205,12 @@ export default function ClientTestimonials() {
                   duration-700
 
                   group-hover:left-[150%]
-                "
+                `}
               />
 
               <ArrowRight
                 size={18}
-                className="
+                className={`
                   relative
                   z-10
 
@@ -1219,7 +1219,7 @@ export default function ClientTestimonials() {
                   duration-500
 
                   group-hover:translate-x-0.5
-                "
+                `}
               />
             </motion.button>
           </motion.div>
@@ -1240,26 +1240,26 @@ export default function ClientTestimonials() {
               false
             )
           }
-          className="
+          className={`
             py-3
 
             sm:py-4
-          "
+          `}
         >
           <div
             ref={viewportRef}
-            className="
+            className={`
               relative
 
               w-full
 
               overflow-hidden
-            "
+            `}
           >
             {/* LEFT FADE */}
 
             <div
-              className="
+              className={`
                 pointer-events-none
 
                 absolute
@@ -1278,13 +1278,13 @@ export default function ClientTestimonials() {
                 to-transparent
 
                 sm:w-5
-              "
+              `}
             />
 
             {/* RIGHT FADE */}
 
             <div
-              className="
+              className={`
                 pointer-events-none
 
                 absolute
@@ -1303,7 +1303,7 @@ export default function ClientTestimonials() {
                 to-transparent
 
                 sm:w-5
-              "
+              `}
             />
 
             {/* =================================================
@@ -1333,7 +1333,7 @@ export default function ClientTestimonials() {
                 handleDragEnd
               }
 
-              className="
+              className={`
                 flex
 
                 cursor-grab
@@ -1349,7 +1349,7 @@ export default function ClientTestimonials() {
                 will-change-transform
 
                 touch-pan-y
-              "
+              `}
             >
               {extendedTestimonials.map(
                 (
@@ -1381,7 +1381,7 @@ export default function ClientTestimonials() {
                       duration: 0.4,
                       ease,
                     }}
-                    className="
+                    className={`
                       group
 
                       relative
@@ -1396,7 +1396,7 @@ export default function ClientTestimonials() {
                       rounded-[24px]
 
                       border
-                      border-white/[0.075]
+                      border-white/10
 
                       bg-[linear-gradient(145deg,#101a14_0%,#0b140f_52%,#07100b_100%)]
 
@@ -1421,25 +1421,25 @@ export default function ClientTestimonials() {
                       xl:p-[22px]
 
                       2xl:p-6
-                    "
+                    `}
                   >
                     {/* PREMIUM BACKGROUND */}
 
                     <div
-                      className="
+                      className={`
                         pointer-events-none
 
                         absolute
                         inset-0
 
                         bg-[radial-gradient(circle_at_92%_6%,rgba(0,255,102,0.11),transparent_27%),radial-gradient(circle_at_8%_100%,rgba(0,255,102,0.04),transparent_34%),linear-gradient(135deg,rgba(255,255,255,0.025),transparent_45%)]
-                      "
+                      `}
                     />
 
                     {/* TOP RIGHT GLOW */}
 
                     <div
-                      className="
+                      className={`
                         pointer-events-none
 
                         absolute
@@ -1452,7 +1452,7 @@ export default function ClientTestimonials() {
 
                         rounded-full
 
-                        bg-[#00FF66]/[0.08]
+                        bg-[#00FF66]/10
 
                         blur-[115px]
 
@@ -1465,13 +1465,13 @@ export default function ClientTestimonials() {
                         group-hover:scale-125
 
                         group-hover:opacity-100
-                      "
+                      `}
                     />
 
                     {/* LOWER GLOW */}
 
                     <div
-                      className="
+                      className={`
                         pointer-events-none
 
                         absolute
@@ -1486,7 +1486,7 @@ export default function ClientTestimonials() {
 
                         rounded-full
 
-                        bg-[#00FF66]/[0.04]
+                        bg-[#00FF66]/5
 
                         blur-[120px]
 
@@ -1497,13 +1497,13 @@ export default function ClientTestimonials() {
                         duration-700
 
                         group-hover:opacity-100
-                      "
+                      `}
                     />
 
                     {/* GRID */}
 
                     <div
-                      className="
+                      className={`
                         pointer-events-none
 
                         absolute
@@ -1514,13 +1514,13 @@ export default function ClientTestimonials() {
                         [background-image:linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)]
 
                         [background-size:48px_48px]
-                      "
+                      `}
                     />
 
                     {/* TOP ACCENT */}
 
                     <div
-                      className="
+                      className={`
                         pointer-events-none
 
                         absolute
@@ -1552,13 +1552,13 @@ export default function ClientTestimonials() {
                         group-hover:w-[72%]
 
                         group-hover:via-[#00FF66]
-                      "
+                      `}
                     />
 
                     {/* LEFT ACCENT */}
 
                     <span
-                      className="
+                      className={`
                         pointer-events-none
 
                         absolute
@@ -1582,7 +1582,7 @@ export default function ClientTestimonials() {
                         duration-700
 
                         group-hover:via-[#00FF66]/35
-                      "
+                      `}
                     />
 
                     {/* =================================================
@@ -1590,7 +1590,7 @@ export default function ClientTestimonials() {
                     ================================================== */}
 
                     <div
-                      className="
+                      className={`
                         relative
                         z-10
 
@@ -1599,12 +1599,12 @@ export default function ClientTestimonials() {
                         h-full
 
                         flex-col
-                      "
+                      `}
                     >
                       {/* TOP */}
 
                       <div
-                        className="
+                        className={`
                           flex
 
                           items-start
@@ -1612,12 +1612,12 @@ export default function ClientTestimonials() {
                           justify-between
 
                           gap-3
-                        "
+                        `}
                       >
                         {/* CATEGORY */}
 
                         <div
-                          className="
+                          className={`
                             inline-flex
 
                             min-w-0
@@ -1631,7 +1631,7 @@ export default function ClientTestimonials() {
                             border
                             border-[#00FF66]/20
 
-                            bg-[#00FF66]/[0.05]
+                            bg-[#00FF66]/5
 
                             px-3.5
                             py-2
@@ -1658,15 +1658,15 @@ export default function ClientTestimonials() {
 
                             group-hover:border-[#00FF66]/35
 
-                            group-hover:bg-[#00FF66]/[0.075]
+                            group-hover:bg-[#00FF66]/10
 
                             sm:text-[9.5px]
 
                             2xl:text-[10px]
-                          "
+                          `}
                         >
                           <span
-                            className="
+                            className={`
                               h-1.5
                               w-1.5
 
@@ -1677,7 +1677,7 @@ export default function ClientTestimonials() {
                               bg-[#00FF66]
 
                               shadow-[0_0_8px_rgba(0,255,102,0.9)]
-                            "
+                            `}
                           />
 
                           <span className="truncate">
@@ -1690,7 +1690,7 @@ export default function ClientTestimonials() {
                         {/* NUMBER */}
 
                         <span
-                          className="
+                          className={`
                             shrink-0
 
                             pt-1.5
@@ -1706,7 +1706,7 @@ export default function ClientTestimonials() {
                             text-white/30
 
                             2xl:text-[9.5px]
-                          "
+                          `}
                         >
                           {String(
                             testimonial.id
@@ -1716,11 +1716,11 @@ export default function ClientTestimonials() {
                           )}
 
                           <span
-                            className="
+                            className={`
                               mx-1
 
                               text-[#00FF66]/40
-                            "
+                            `}
                           >
                             /
                           </span>
@@ -1732,7 +1732,7 @@ export default function ClientTestimonials() {
                       {/* QUOTE ICON */}
 
                       <div
-                        className="
+                        className={`
                           mt-6
 
                           flex
@@ -1746,7 +1746,7 @@ export default function ClientTestimonials() {
                           rounded-[14px]
 
                           border
-                          border-[#00FF66]/18
+                          border-[#00FF66]/20
 
                           bg-[linear-gradient(145deg,rgba(0,255,102,0.10),rgba(0,255,102,0.035))]
 
@@ -1762,10 +1762,10 @@ export default function ClientTestimonials() {
 
                           group-hover:border-[#00FF66]/35
 
-                          group-hover:bg-[#00FF66]/[0.10]
+                          group-hover:bg-[#00FF66]/10
 
                           group-hover:shadow-[0_0_30px_rgba(0,255,102,0.16)]
-                        "
+                        `}
                       >
                         <Quote
                           size={19}
@@ -1778,7 +1778,7 @@ export default function ClientTestimonials() {
                       {/* QUOTE TEXT */}
 
                       <blockquote
-                        className="
+                        className={`
                           mt-5
 
                           text-[17px]
@@ -1802,7 +1802,7 @@ export default function ClientTestimonials() {
                           xl:text-[16.5px]
 
                           2xl:text-[17.5px]
-                        "
+                        `}
                       >
                         “
                         {
@@ -1814,14 +1814,14 @@ export default function ClientTestimonials() {
                       {/* CLIENT FOOTER */}
 
                       <div
-                        className="
+                        className={`
                           mt-auto
 
                           pt-7
-                        "
+                        `}
                       >
                         <div
-                          className="
+                          className={`
                             mb-4
 
                             h-px
@@ -1831,7 +1831,7 @@ export default function ClientTestimonials() {
 
                             from-[#00FF66]/25
 
-                            via-white/[0.07]
+                            via-white/5
 
                             to-transparent
 
@@ -1842,11 +1842,11 @@ export default function ClientTestimonials() {
                             group-hover:from-[#00FF66]/45
 
                             group-hover:via-[#00FF66]/10
-                          "
+                          `}
                         />
 
                         <div
-                          className="
+                          className={`
                             flex
 
                             items-center
@@ -1854,12 +1854,12 @@ export default function ClientTestimonials() {
                             justify-between
 
                             gap-3
-                          "
+                          `}
                         >
                           {/* PERSON */}
 
                           <div
-                            className="
+                            className={`
                               flex
 
                               min-w-0
@@ -1867,7 +1867,7 @@ export default function ClientTestimonials() {
                               items-center
 
                               gap-3
-                            "
+                            `}
                           >
                             {/* AVATAR */}
 
@@ -1880,7 +1880,7 @@ export default function ClientTestimonials() {
                                         1.07,
                                     }
                               }
-                              className="
+                              className={`
                                 relative
 
                                 flex
@@ -1911,10 +1911,10 @@ export default function ClientTestimonials() {
                                 text-[#52ff94]
 
                                 shadow-[0_0_24px_rgba(0,255,102,0.10),inset_0_1px_0_rgba(255,255,255,0.06)]
-                              "
+                              `}
                             >
                               <span
-                                className="
+                                className={`
                                   pointer-events-none
 
                                   absolute
@@ -1930,14 +1930,14 @@ export default function ClientTestimonials() {
                                   bg-white/15
 
                                   blur-xl
-                                "
+                                `}
                               />
 
                               <span
-                                className="
+                                className={`
                                   relative
                                   z-10
-                                "
+                                `}
                               >
                                 {
                                   testimonial.initials
@@ -1948,12 +1948,12 @@ export default function ClientTestimonials() {
                             {/* CLIENT INFO */}
 
                             <div
-                              className="
+                              className={`
                                 min-w-0
-                              "
+                              `}
                             >
                               <div
-                                className="
+                                className={`
                                   truncate
 
                                   text-[15px]
@@ -1967,7 +1967,7 @@ export default function ClientTestimonials() {
                                   sm:text-[16px]
 
                                   2xl:text-[16.5px]
-                                "
+                                `}
                               >
                                 {
                                   testimonial.name
@@ -1975,7 +1975,7 @@ export default function ClientTestimonials() {
                               </div>
 
                               <div
-                                className="
+                                className={`
                                   mt-1
 
                                   line-clamp-2
@@ -1997,18 +1997,18 @@ export default function ClientTestimonials() {
                                   sm:text-[9px]
 
                                   2xl:text-[9.5px]
-                                "
+                                `}
                               >
                                 {
                                   testimonial.role
                                 }
 
                                 <span
-                                  className="
+                                  className={`
                                     mx-1
 
                                     text-[#00FF66]/40
-                                  "
+                                  `}
                                 >
                                   /
                                 </span>
@@ -2024,7 +2024,7 @@ export default function ClientTestimonials() {
 
                           <Sparkles
                             size={15}
-                            className="
+                            className={`
                               shrink-0
 
                               text-[#00FF66]/30
@@ -2038,7 +2038,7 @@ export default function ClientTestimonials() {
                               group-hover:scale-110
 
                               group-hover:text-[#00FF66]
-                            "
+                            `}
                           />
                         </div>
                       </div>
@@ -2047,7 +2047,7 @@ export default function ClientTestimonials() {
                     {/* HOVER SHINE */}
 
                     <span
-                      className="
+                      className={`
                         pointer-events-none
 
                         absolute
@@ -2064,7 +2064,7 @@ export default function ClientTestimonials() {
 
                         from-transparent
 
-                        via-white/[0.035]
+                        via-white/5
 
                         to-transparent
 
@@ -2073,7 +2073,7 @@ export default function ClientTestimonials() {
                         duration-1000
 
                         group-hover:left-[130%]
-                      "
+                      `}
                     />
                   </motion.article>
                 )
@@ -2087,7 +2087,7 @@ export default function ClientTestimonials() {
         ================================================== */}
 
         <div
-          className="
+          className={`
             mt-5
 
             flex
@@ -2101,12 +2101,12 @@ export default function ClientTestimonials() {
             sm:items-center
 
             sm:justify-between
-          "
+          `}
         >
           {/* DOT NAVIGATION */}
 
           <div
-            className="
+            className={`
               flex
 
               flex-wrap
@@ -2114,7 +2114,7 @@ export default function ClientTestimonials() {
               items-center
 
               gap-2
-            "
+            `}
           >
             {testimonials.map(
               (
@@ -2173,7 +2173,7 @@ export default function ClientTestimonials() {
           {/* HELPER STATUS */}
 
           <div
-            className="
+            className={`
               relative
 
               flex
@@ -2185,9 +2185,9 @@ export default function ClientTestimonials() {
               rounded-full
 
               border
-              border-white/[0.07]
+              border-white/5
 
-              bg-white/[0.025]
+              bg-white/5
 
               px-4
               py-2.5
@@ -2211,10 +2211,10 @@ export default function ClientTestimonials() {
               sm:text-[10px]
 
               lg:text-[10.5px]
-            "
+            `}
           >
             <span
-              className="
+              className={`
                 relative
 
                 flex
@@ -2223,10 +2223,10 @@ export default function ClientTestimonials() {
                 w-2
 
                 shrink-0
-              "
+              `}
             >
               <span
-                className="
+                className={`
                   absolute
 
                   inline-flex
@@ -2241,11 +2241,11 @@ export default function ClientTestimonials() {
                   bg-[#00FF66]
 
                   opacity-35
-                "
+                `}
               />
 
               <span
-                className="
+                className={`
                   relative
 
                   inline-flex
@@ -2258,16 +2258,16 @@ export default function ClientTestimonials() {
                   bg-[#00FF66]
 
                   shadow-[0_0_8px_rgba(0,255,102,0.8)]
-                "
+                `}
               />
             </span>
 
             12 CLIENT STORIES
 
             <span
-              className="
+              className={`
                 text-[#00FF66]/45
-              "
+              `}
             >
               •
             </span>
@@ -2275,9 +2275,9 @@ export default function ClientTestimonials() {
             DRAG
 
             <span
-              className="
+              className={`
                 text-[#00FF66]/45
-              "
+              `}
             >
               •
             </span>
@@ -2285,9 +2285,9 @@ export default function ClientTestimonials() {
             MULTI-CARD
 
             <span
-              className="
+              className={`
                 text-[#00FF66]/45
-              "
+              `}
             >
               •
             </span>

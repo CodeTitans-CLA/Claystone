@@ -111,7 +111,7 @@ export default function MoreCapabilities() {
 
   return (
     <section
-      className="
+      className={`
         relative
         w-full
         overflow-hidden
@@ -124,7 +124,7 @@ export default function MoreCapabilities() {
 
         sm:py-20
         lg:py-24
-      "
+      `}
     >
       {/* =====================================================
           BACKGROUND
@@ -133,7 +133,7 @@ export default function MoreCapabilities() {
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {/* Top Glow */}
         <div
-          className="
+          className={`
             absolute
 
             left-1/2
@@ -151,7 +151,7 @@ export default function MoreCapabilities() {
             bg-[#00FF66]/5
 
             blur-[170px]
-          "
+          `}
         />
 
         {/* Left Floating Glow */}
@@ -183,7 +183,7 @@ export default function MoreCapabilities() {
               ease:
                 'easeInOut',
             }}
-            className="
+            className={`
               absolute
 
               -left-[220px]
@@ -197,7 +197,7 @@ export default function MoreCapabilities() {
               bg-[#00FF66]/5
 
               blur-[150px]
-            "
+            `}
           />
         )}
 
@@ -224,7 +224,7 @@ export default function MoreCapabilities() {
               ease:
                 'easeInOut',
             }}
-            className="
+            className={`
               absolute
 
               -right-[220px]
@@ -238,13 +238,13 @@ export default function MoreCapabilities() {
               bg-[#00FF66]/5
 
               blur-[160px]
-            "
+            `}
           />
         )}
 
         {/* Grid */}
         <div
-          className="
+          className={`
             absolute
             inset-0
 
@@ -253,12 +253,12 @@ export default function MoreCapabilities() {
             [background-image:linear-gradient(rgba(255,255,255,0.10)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.10)_1px,transparent_1px)]
 
             [background-size:74px_74px]
-          "
+          `}
         />
 
         {/* Section Divider */}
         <div
-          className="
+          className={`
             absolute
 
             left-1/2
@@ -278,7 +278,7 @@ export default function MoreCapabilities() {
             via-[#00FF66]/20
 
             to-transparent
-          "
+          `}
         />
       </div>
 
@@ -287,7 +287,7 @@ export default function MoreCapabilities() {
       ====================================================== */}
 
       <div
-        className="
+        className={`
           relative
           z-10
 
@@ -305,14 +305,14 @@ export default function MoreCapabilities() {
           xl:px-10
 
           2xl:px-12
-        "
+        `}
       >
         {/* =================================================
             HEADER
         ================================================== */}
 
         <div
-          className="
+          className={`
             mb-12
 
             grid
@@ -328,7 +328,7 @@ export default function MoreCapabilities() {
             lg:gap-16
 
             xl:gap-24
-          "
+          `}
         >
           {/* Left */}
           <motion.div
@@ -355,7 +355,7 @@ export default function MoreCapabilities() {
           >
             {/* Eyebrow */}
             <div
-              className="
+              className={`
                 mb-5
 
                 flex
@@ -379,7 +379,7 @@ export default function MoreCapabilities() {
                 sm:text-[10px]
 
                 lg:text-[11px]
-              "
+              `}
             >
               <motion.span
                 animate={
@@ -406,7 +406,7 @@ export default function MoreCapabilities() {
                   ease:
                     'easeInOut',
                 }}
-                className="
+                className={`
                   h-2
                   w-2
 
@@ -415,7 +415,7 @@ export default function MoreCapabilities() {
                   bg-[#00FF66]
 
                   shadow-[0_0_14px_rgba(0,255,102,0.9)]
-                "
+                `}
               />
 
               EXPANDED TOOLSET
@@ -423,7 +423,7 @@ export default function MoreCapabilities() {
 
             {/* Heading */}
             <h2
-              className="
+              className={`
                 max-w-[900px]
 
                 text-[42px]
@@ -443,7 +443,7 @@ export default function MoreCapabilities() {
                 lg:text-[68px]
 
                 xl:text-[76px]
-              "
+              `}
             >
               More Capabilities.
 
@@ -478,13 +478,13 @@ export default function MoreCapabilities() {
               delay: 0.12,
               ease,
             }}
-            className="
+            className={`
               lg:justify-self-end
               lg:pb-2
-            "
+            `}
           >
             <div
-              className="
+              className={`
                 mb-4
 
                 h-px
@@ -497,11 +497,11 @@ export default function MoreCapabilities() {
                 to-transparent
 
                 shadow-[0_0_16px_rgba(0,255,102,0.30)]
-              "
+              `}
             />
 
             <p
-              className="
+              className={`
                 max-w-[520px]
 
                 text-[14px]
@@ -513,7 +513,7 @@ export default function MoreCapabilities() {
                 sm:text-[15px]
 
                 lg:text-[16px]
-              "
+              `}
             >
               Our specialized supplementary
               capabilities integrate
@@ -529,7 +529,7 @@ export default function MoreCapabilities() {
         ================================================== */}
 
         <div
-          className="
+          className={`
             grid
 
             grid-cols-1
@@ -543,7 +543,7 @@ export default function MoreCapabilities() {
             xl:grid-cols-3
 
             2xl:gap-7
-          "
+          `}
         >
           {capabilities.map(
             (
@@ -608,7 +608,7 @@ export default function MoreCapabilities() {
                             1.008,
                         }
                   }
-                  className="
+                  className={`
                     group
 
                     relative
@@ -636,14 +636,14 @@ export default function MoreCapabilities() {
                     sm:min-h-[410px]
 
                     lg:min-h-[430px]
-                  "
+                  `}
                 >
                   {/* =========================================
                       STATIC PREMIUM BORDER
                   ========================================== */}
 
                   <div
-                    className="
+                    className={`
                       pointer-events-none
 
                       absolute
@@ -655,14 +655,14 @@ export default function MoreCapabilities() {
 
                       border
 
-                      border-white/8.5
+                      border-white/10
 
                       transition-colors
 
                       duration-500
 
                       group-hover:border-[#00FF66]/20
-                    "
+                    `}
                   />
 
                   {/* =========================================
@@ -671,7 +671,7 @@ export default function MoreCapabilities() {
 
                   {!reduceMotion && (
                     <svg
-                      className="
+                      className={`
                         pointer-events-none
 
                         absolute
@@ -683,7 +683,7 @@ export default function MoreCapabilities() {
                         w-full
 
                         overflow-visible
-                      "
+                      `}
                       aria-hidden="true"
                     >
                       <defs>
@@ -774,7 +774,7 @@ export default function MoreCapabilities() {
 
                         filter={`url(#capabilityGlow-${item.number})`}
 
-                        className="
+                        className={`
                           opacity-0
 
                           transition-opacity
@@ -782,7 +782,7 @@ export default function MoreCapabilities() {
                           duration-500
 
                           group-hover:opacity-40
-                        "
+                        `}
                       />
 
                       {/* Main Green Orbit */}
@@ -846,7 +846,7 @@ export default function MoreCapabilities() {
                               }
                         }
 
-                        className="
+                        className={`
                           opacity-0
 
                           transition-opacity
@@ -854,7 +854,7 @@ export default function MoreCapabilities() {
                           duration-300
 
                           group-hover:opacity-100
-                        "
+                        `}
                       />
 
                       {/* Bright Leading Head */}
@@ -918,7 +918,7 @@ export default function MoreCapabilities() {
                               }
                         }
 
-                        className="
+                        className={`
                           opacity-0
 
                           transition-opacity
@@ -926,7 +926,7 @@ export default function MoreCapabilities() {
                           duration-300
 
                           group-hover:opacity-100
-                        "
+                        `}
                       />
                     </svg>
                   )}
@@ -934,7 +934,7 @@ export default function MoreCapabilities() {
                   {/* Reduced Motion Border */}
                   {reduceMotion && (
                     <div
-                      className="
+                      className={`
                         pointer-events-none
 
                         absolute
@@ -947,7 +947,7 @@ export default function MoreCapabilities() {
                         border
 
                         border-[#00FF66]/20
-                      "
+                      `}
                     />
                   )}
 
@@ -956,7 +956,7 @@ export default function MoreCapabilities() {
                   ========================================== */}
 
                   <div
-                    className="
+                    className={`
                       relative
 
                       z-[1]
@@ -984,11 +984,11 @@ export default function MoreCapabilities() {
                       lg:min-h-[428px]
 
                       xl:p-8
-                    "
+                    `}
                   >
                     {/* Card Atmosphere */}
                     <div
-                      className="
+                      className={`
                         pointer-events-none
 
                         absolute
@@ -1003,12 +1003,12 @@ export default function MoreCapabilities() {
                         duration-700
 
                         group-hover:opacity-100
-                      "
+                      `}
                     />
 
                     {/* Right Glow */}
                     <div
-                      className="
+                      className={`
                         pointer-events-none
 
                         absolute
@@ -1036,12 +1036,12 @@ export default function MoreCapabilities() {
                         group-hover:scale-125
 
                         group-hover:opacity-100
-                      "
+                      `}
                     />
 
                     {/* Bottom Glow */}
                     <div
-                      className="
+                      className={`
                         pointer-events-none
 
                         absolute
@@ -1069,12 +1069,12 @@ export default function MoreCapabilities() {
                         duration-700
 
                         group-hover:opacity-100
-                      "
+                      `}
                     />
 
                     {/* Subtle Grid */}
                     <div
-                      className="
+                      className={`
                         pointer-events-none
 
                         absolute
@@ -1085,12 +1085,12 @@ export default function MoreCapabilities() {
                         [background-image:linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)]
 
                         [background-size:46px_46px]
-                      "
+                      `}
                     />
 
                     {/* Top Inner Highlight */}
                     <div
-                      className="
+                      className={`
                         pointer-events-none
 
                         absolute
@@ -1105,7 +1105,7 @@ export default function MoreCapabilities() {
 
                         from-transparent
 
-                        via-white/14
+                        via-white/15
 
                         to-transparent
 
@@ -1114,12 +1114,12 @@ export default function MoreCapabilities() {
                         duration-700
 
                         group-hover:via-[#cffff0]/30
-                      "
+                      `}
                     />
 
                     {/* Editorial Number */}
                     <div
-                      className="
+                      className={`
                         pointer-events-none
 
                         absolute
@@ -1140,7 +1140,7 @@ export default function MoreCapabilities() {
 
                         tracking-[-0.08em]
 
-                        text-white/1.8
+                        text-white/0
 
                         transition-all
 
@@ -1148,10 +1148,10 @@ export default function MoreCapabilities() {
 
                         group-hover:-translate-y-1
 
-                        group-hover:text-[#00FF66]/4.5
+                        group-hover:text-[#00FF66]/5
 
                         lg:text-[66px]
-                      "
+                      `}
                     >
                       {
                         item.number
@@ -1163,7 +1163,7 @@ export default function MoreCapabilities() {
                     ========================================== */}
 
                     <div
-                      className="
+                      className={`
                         relative
                         z-10
 
@@ -1172,7 +1172,7 @@ export default function MoreCapabilities() {
                         h-full
 
                         flex-col
-                      "
+                      `}
                     >
                       {/* Icon */}
                       <motion.div
@@ -1191,7 +1191,7 @@ export default function MoreCapabilities() {
                           duration: 0.35,
                           ease,
                         }}
-                        className="
+                        className={`
                           mb-8
 
                           flex
@@ -1207,9 +1207,9 @@ export default function MoreCapabilities() {
 
                           border
 
-                          border-white/7
+                          border-white/5
 
-                          bg-white/3.5
+                          bg-white/5
 
                           text-[#00FF66]
 
@@ -1221,10 +1221,10 @@ export default function MoreCapabilities() {
 
                           group-hover:border-[#00FF66]/30
 
-                          group-hover:bg-[#00FF66]/7.5
+                          group-hover:bg-[#00FF66]/10
 
                           group-hover:shadow-[0_0_30px_rgba(0,255,102,0.14)]
-                        "
+                        `}
                       >
                         <Icon
                           size={21}
@@ -1237,7 +1237,7 @@ export default function MoreCapabilities() {
 
                       {/* Small Label */}
                       <div
-                        className="
+                        className={`
                           mb-3
 
                           flex
@@ -1263,10 +1263,10 @@ export default function MoreCapabilities() {
                           duration-500
 
                           group-hover:text-[#00FF66]
-                        "
+                        `}
                       >
                         <span
-                          className="
+                          className={`
                             h-px
 
                             w-4
@@ -1280,7 +1280,7 @@ export default function MoreCapabilities() {
                             group-hover:w-7
 
                             group-hover:bg-[#00FF66]
-                          "
+                          `}
                         />
 
                         CAPABILITY{' '}
@@ -1291,7 +1291,7 @@ export default function MoreCapabilities() {
 
                       {/* Title */}
                       <h3
-                        className="
+                        className={`
                           max-w-[410px]
 
                           text-[27px]
@@ -1317,7 +1317,7 @@ export default function MoreCapabilities() {
                           lg:text-[30px]
 
                           2xl:text-[32px]
-                        "
+                        `}
                       >
                         {
                           item.title
@@ -1326,7 +1326,7 @@ export default function MoreCapabilities() {
 
                       {/* Description */}
                       <p
-                        className="
+                        className={`
                           mt-5
 
                           max-w-[440px]
@@ -1344,7 +1344,7 @@ export default function MoreCapabilities() {
                           group-hover:text-[#c7d2cb]
 
                           sm:text-[14px]
-                        "
+                        `}
                       >
                         {
                           item.description
@@ -1353,11 +1353,11 @@ export default function MoreCapabilities() {
 
                       {/* CTA */}
                       <div
-                        className="
+                        className={`
                           mt-auto
 
                           pt-8
-                        "
+                        `}
                       >
                         <motion.a
                           href="#"
@@ -1373,8 +1373,8 @@ export default function MoreCapabilities() {
                             scale:
                               0.98,
                           }}
-                          className="
-                            group/link
+                          className={`
+                            group
 
                             relative
 
@@ -1425,11 +1425,11 @@ export default function MoreCapabilities() {
                             sm:text-[9px]
 
                             2xl:text-[10px]
-                          "
+                          `}
                         >
                           {/* Shine */}
                           <span
-                            className="
+                            className={`
                               absolute
 
                               inset-y-0
@@ -1452,8 +1452,8 @@ export default function MoreCapabilities() {
 
                               duration-700
 
-                              group-hover/link:left-[130%]
-                            "
+                              group-hover:left-[130%]
+                            `}
                           />
 
                           <span className="relative z-10">
@@ -1471,7 +1471,7 @@ export default function MoreCapabilities() {
                               2
                             }
 
-                            className="
+                            className={`
                               relative
                               z-10
 
@@ -1479,10 +1479,10 @@ export default function MoreCapabilities() {
 
                               duration-500
 
-                              group-hover/link:translate-x-0.5
+                              group-hover:translate-x-0.5
 
-                              group-hover/link:-translate-y-0.5
-                            "
+                              group-hover:-translate-y-0.5
+                            `}
                           />
                         </motion.a>
                       </div>
@@ -1499,7 +1499,7 @@ export default function MoreCapabilities() {
         ================================================== */}
 
         <div
-          className="
+          className={`
             mx-auto
 
             mt-14
@@ -1514,10 +1514,10 @@ export default function MoreCapabilities() {
 
             from-transparent
 
-            via-white/7
+            via-white/5
 
             to-transparent
-          "
+          `}
         />
       </div>
     </section>

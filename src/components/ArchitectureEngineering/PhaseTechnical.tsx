@@ -75,7 +75,7 @@ const tabs = [
       "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1800&q=90",
     alt: "Architectural schematic BIM visualization",
     hud:
-      "Layer 01: 2D/3D Combined Schematics Active",
+      "Layer 01: 2D/300D Combined Schematics Active",
   },
   {
     id: "wireframe",
@@ -238,7 +238,7 @@ export default function PhaseTechnicalMatrix() {
       ====================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -247,7 +247,7 @@ export default function PhaseTechnicalMatrix() {
           -z-50
 
           bg-[linear-gradient(135deg,#020503_0%,#06100a_24%,#0a1a11_52%,#07130c_74%,#020503_100%)]
-        "
+        `}
       />
 
       {/* =====================================================
@@ -255,7 +255,7 @@ export default function PhaseTechnicalMatrix() {
       ====================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -270,10 +270,10 @@ export default function PhaseTechnicalMatrix() {
 
           rounded-full
 
-          bg-[#00ff66]/[0.095]
+          bg-[#00ff66]/10
 
           blur-[190px]
-        "
+        `}
       />
 
       {/* =====================================================
@@ -281,7 +281,7 @@ export default function PhaseTechnicalMatrix() {
       ====================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -299,10 +299,10 @@ export default function PhaseTechnicalMatrix() {
 
           rounded-full
 
-          bg-[#00ff66]/[0.043]
+          bg-[#00ff66]/5
 
           blur-[200px]
-        "
+        `}
       />
 
       {/* =====================================================
@@ -310,7 +310,7 @@ export default function PhaseTechnicalMatrix() {
       ====================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -325,10 +325,10 @@ export default function PhaseTechnicalMatrix() {
 
           rounded-full
 
-          bg-[#18ff7b]/[0.06]
+          bg-[#18ff7b]/5
 
           blur-[220px]
-        "
+        `}
       />
 
       {/* =====================================================
@@ -336,7 +336,7 @@ export default function PhaseTechnicalMatrix() {
       ====================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -356,7 +356,7 @@ export default function PhaseTechnicalMatrix() {
           bg-black/45
 
           blur-[180px]
-        "
+        `}
       />
 
       {/* =====================================================
@@ -364,7 +364,7 @@ export default function PhaseTechnicalMatrix() {
       ====================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -379,7 +379,7 @@ export default function PhaseTechnicalMatrix() {
           [background-size:26px_26px]
 
           [mask-image:linear-gradient(to_bottom,black_5%,rgba(0,0,0,0.85)_60%,transparent_100%)]
-        "
+        `}
       />
 
       {/* =====================================================
@@ -387,7 +387,7 @@ export default function PhaseTechnicalMatrix() {
       ====================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -406,12 +406,12 @@ export default function PhaseTechnicalMatrix() {
 
           from-transparent
 
-          via-[#00ff66]/[0.028]
+          via-[#00ff66]/5
 
           to-transparent
 
           blur-[60px]
-        "
+        `}
       />
 
       {/* =====================================================
@@ -419,7 +419,7 @@ export default function PhaseTechnicalMatrix() {
       ====================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -435,10 +435,10 @@ export default function PhaseTechnicalMatrix() {
 
           from-black/30
 
-          via-black/[0.08]
+          via-black/10
 
           to-transparent
-        "
+        `}
       />
 
       {/* =====================================================
@@ -446,7 +446,7 @@ export default function PhaseTechnicalMatrix() {
       ====================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -465,7 +465,7 @@ export default function PhaseTechnicalMatrix() {
           via-[#041008]/35
 
           to-transparent
-        "
+        `}
       />
 
       {/* =====================================================
@@ -473,7 +473,7 @@ export default function PhaseTechnicalMatrix() {
       ====================================================== */}
 
       <div
-        className="
+        className={`
           relative
           z-10
 
@@ -489,7 +489,7 @@ export default function PhaseTechnicalMatrix() {
           lg:px-10
           xl:px-12
           2xl:px-14
-        "
+        `}
       >
         {/* ===================================================
             OUTER PANEL
@@ -504,7 +504,7 @@ export default function PhaseTechnicalMatrix() {
             rounded-[22px]
 
             border
-            border-white/[0.065]
+            border-white/5
 
             bg-[linear-gradient(145deg,rgba(14,25,18,0.93)_0%,rgba(7,15,10,0.94)_48%,rgba(10,22,14,0.94)_100%)]
 
@@ -535,7 +535,7 @@ export default function PhaseTechnicalMatrix() {
           {/* PANEL LEFT GLOW */}
 
           <div
-            className="
+            className={`
               pointer-events-none
 
               absolute
@@ -548,16 +548,16 @@ export default function PhaseTechnicalMatrix() {
 
               rounded-full
 
-              bg-[#00ff66]/[0.055]
+              bg-[#00ff66]/5
 
               blur-[140px]
-            "
+            `}
           />
 
           {/* PANEL RIGHT GLOW */}
 
           <div
-            className="
+            className={`
               pointer-events-none
 
               absolute
@@ -570,29 +570,29 @@ export default function PhaseTechnicalMatrix() {
 
               rounded-full
 
-              bg-[#00ff66]/[0.04]
+              bg-[#00ff66]/5
 
               blur-[160px]
-            "
+            `}
           />
 
           {/* PANEL INNER SHADE */}
 
           <div
-            className="
+            className={`
               pointer-events-none
 
               absolute
               inset-0
 
               bg-[radial-gradient(circle_at_55%_35%,rgba(0,255,102,0.025),transparent_48%)]
-            "
+            `}
           />
 
           {/* NEON TOP LINE */}
 
           <div
-            className="
+            className={`
               pointer-events-none
 
               absolute
@@ -612,7 +612,7 @@ export default function PhaseTechnicalMatrix() {
               to-transparent
 
               shadow-[0_0_18px_rgba(0,255,102,0.5)]
-            "
+            `}
           />
 
           {/* =================================================
@@ -620,17 +620,17 @@ export default function PhaseTechnicalMatrix() {
           ================================================= */}
 
           <div
-            className="
+            className={`
               relative
               z-10
 
               max-w-[1100px]
-            "
+            `}
           >
             {/* Eyebrow */}
 
             <div
-              className="
+              className={`
                 mb-3
 
                 flex
@@ -654,10 +654,10 @@ export default function PhaseTechnicalMatrix() {
                 lg:text-[12px]
 
                 xl:text-[13px]
-              "
+              `}
             >
               <span
-                className="
+                className={`
                   h-2
                   w-2
 
@@ -668,7 +668,7 @@ export default function PhaseTechnicalMatrix() {
                   bg-[#00ff66]
 
                   shadow-[0_0_10px_rgba(0,255,102,0.9)]
-                "
+                `}
               />
 
               Pipeline • Interactive Inspector
@@ -677,7 +677,7 @@ export default function PhaseTechnicalMatrix() {
             {/* Heading */}
 
             <h2
-              className="
+              className={`
                 max-w-[1000px]
 
                 text-[44px]
@@ -699,7 +699,7 @@ export default function PhaseTechnicalMatrix() {
                 lg:text-[72px]
 
                 xl:text-[80px]
-              "
+              `}
             >
               Phase-by-Phase Technical
 
@@ -711,7 +711,7 @@ export default function PhaseTechnicalMatrix() {
             {/* Description */}
 
             <p
-              className="
+              className={`
                 mt-4
 
                 max-w-[800px]
@@ -727,7 +727,7 @@ export default function PhaseTechnicalMatrix() {
                 lg:text-[17px]
 
                 xl:text-[18px]
-              "
+              `}
             >
               A coordinated project pipeline connecting early
               feasibility, design development, permit documentation,
@@ -741,7 +741,7 @@ export default function PhaseTechnicalMatrix() {
           ================================================= */}
 
           <div
-            className="
+            className={`
               relative
               z-10
 
@@ -758,19 +758,19 @@ export default function PhaseTechnicalMatrix() {
               xl:grid-cols-[minmax(410px,0.75fr)_minmax(0,1.25fr)]
 
               xl:gap-5
-            "
+            `}
           >
             {/* =================================================
                 LEFT PHASES
             ================================================= */}
 
             <div
-              className="
+              className={`
                 flex
                 flex-col
 
                 gap-3
-              "
+              `}
             >
               {phases.map(
                 (
@@ -796,7 +796,7 @@ export default function PhaseTechnicalMatrix() {
                       rounded-[15px]
 
                       border
-                      border-white/[0.06]
+                      border-white/5
 
                       bg-[linear-gradient(135deg,rgba(25,37,29,0.96)_0%,rgba(14,24,18,0.96)_100%)]
 
@@ -832,7 +832,7 @@ export default function PhaseTechnicalMatrix() {
                     {/* Top Line */}
 
                     <span
-                      className="
+                      className={`
                         absolute
 
                         left-0
@@ -854,13 +854,13 @@ export default function PhaseTechnicalMatrix() {
                         duration-500
 
                         group-hover:w-full
-                      "
+                      `}
                     />
 
                     {/* Glow */}
 
                     <span
-                      className="
+                      className={`
                         pointer-events-none
 
                         absolute
@@ -881,14 +881,14 @@ export default function PhaseTechnicalMatrix() {
 
                         duration-500
 
-                        group-hover:bg-[#00ff66]/[0.10]
-                      "
+                        group-hover:bg-[#00ff66]/10
+                      `}
                     />
 
                     {/* Meta */}
 
                     <div
-                      className="
+                      className={`
                         relative
                         z-10
 
@@ -898,10 +898,10 @@ export default function PhaseTechnicalMatrix() {
                         justify-between
 
                         gap-3
-                      "
+                      `}
                     >
                       <span
-                        className="
+                        className={`
                           text-[10px]
 
                           font-black
@@ -915,13 +915,13 @@ export default function PhaseTechnicalMatrix() {
                           sm:text-[11px]
 
                           xl:text-[12px]
-                        "
+                        `}
                       >
                         {phase.number}
                       </span>
 
                       <span
-                        className="
+                        className={`
                           text-right
 
                           text-[10px]
@@ -937,7 +937,7 @@ export default function PhaseTechnicalMatrix() {
                           sm:text-[11px]
 
                           xl:text-[12px]
-                        "
+                        `}
                       >
                         {phase.timing}
                       </span>
@@ -946,7 +946,7 @@ export default function PhaseTechnicalMatrix() {
                     {/* Title */}
 
                     <h3
-                      className="
+                      className={`
                         relative
                         z-10
 
@@ -977,7 +977,7 @@ export default function PhaseTechnicalMatrix() {
                         xl:text-[24px]
 
                         2xl:text-[26px]
-                      "
+                      `}
                     >
                       {phase.title}
                     </h3>
@@ -985,7 +985,7 @@ export default function PhaseTechnicalMatrix() {
                     {/* Description */}
 
                     <p
-                      className="
+                      className={`
                         relative
                         z-10
 
@@ -1001,7 +1001,7 @@ export default function PhaseTechnicalMatrix() {
 
                         tracking-[-0.008em]
 
-                        text-[#b6ffc7]/72
+                        text-[#b6ffc7]/70
 
                         transition-colors
 
@@ -1014,7 +1014,7 @@ export default function PhaseTechnicalMatrix() {
                         xl:text-[15.5px]
 
                         2xl:text-[16px]
-                      "
+                      `}
                     >
                       {phase.description}
                     </p>
@@ -1022,7 +1022,7 @@ export default function PhaseTechnicalMatrix() {
                     {/* Arrow */}
 
                     <div
-                      className="
+                      className={`
                         absolute
 
                         bottom-4
@@ -1055,16 +1055,16 @@ export default function PhaseTechnicalMatrix() {
 
                         group-hover:border-[#00ff66]/20
 
-                        group-hover:bg-[#00ff66]/[0.05]
+                        group-hover:bg-[#00ff66]/5
 
                         group-hover:opacity-100
-                      "
+                      `}
                     >
                       <ChevronRight
-                        className="
+                        className={`
                           h-4
                           w-4
-                        "
+                        `}
                       />
                     </div>
                   </article>
@@ -1080,7 +1080,7 @@ export default function PhaseTechnicalMatrix() {
               className={`
                 inspector-enter
 
-                group/inspector
+                group
 
                 relative
 
@@ -1089,7 +1089,7 @@ export default function PhaseTechnicalMatrix() {
                 rounded-[16px]
 
                 border
-                border-white/[0.07]
+                border-white/5
 
                 bg-[linear-gradient(145deg,rgba(29,41,34,0.97)_0%,rgba(15,24,18,0.98)_100%)]
 
@@ -1121,7 +1121,7 @@ export default function PhaseTechnicalMatrix() {
               {/* Inspector Top Line */}
 
               <div
-                className="
+                className={`
                   pointer-events-none
 
                   absolute
@@ -1139,7 +1139,7 @@ export default function PhaseTechnicalMatrix() {
                   via-[#00ff66]/70
 
                   to-transparent
-                "
+                `}
               />
 
               {/* =================================================
@@ -1147,7 +1147,7 @@ export default function PhaseTechnicalMatrix() {
               ================================================= */}
 
               <div
-                className="
+                className={`
                   flex
 
                   flex-col
@@ -1158,10 +1158,10 @@ export default function PhaseTechnicalMatrix() {
 
                   sm:items-center
                   sm:justify-between
-                "
+                `}
               >
                 <div
-                  className="
+                  className={`
                     flex
 
                     min-w-0
@@ -1169,10 +1169,10 @@ export default function PhaseTechnicalMatrix() {
                     items-center
 
                     gap-2.5
-                  "
+                  `}
                 >
                   <span
-                    className="
+                    className={`
                       relative
 
                       flex
@@ -1181,10 +1181,10 @@ export default function PhaseTechnicalMatrix() {
                       w-2.5
 
                       shrink-0
-                    "
+                    `}
                   >
                     <span
-                      className="
+                      className={`
                         absolute
 
                         inline-flex
@@ -1199,11 +1199,11 @@ export default function PhaseTechnicalMatrix() {
                         bg-[#00ff66]
 
                         opacity-50
-                      "
+                      `}
                     />
 
                     <span
-                      className="
+                      className={`
                         relative
 
                         inline-flex
@@ -1216,12 +1216,12 @@ export default function PhaseTechnicalMatrix() {
                         bg-[#00ff66]
 
                         shadow-[0_0_10px_rgba(0,255,102,0.85)]
-                      "
+                      `}
                     />
                   </span>
 
                   <p
-                    className="
+                    className={`
                       truncate
 
                       text-[11px]
@@ -1239,14 +1239,14 @@ export default function PhaseTechnicalMatrix() {
                       lg:text-[12px]
 
                       xl:text-[13px]
-                    "
+                    `}
                   >
                     Specimen Inspector: &quot;The Aeon Research Arch&quot;
                   </p>
                 </div>
 
                 <Network
-                  className="
+                  className={`
                     hidden
 
                     h-5
@@ -1260,7 +1260,7 @@ export default function PhaseTechnicalMatrix() {
 
                     xl:h-6
                     xl:w-6
-                  "
+                  `}
                 />
               </div>
 
@@ -1269,7 +1269,7 @@ export default function PhaseTechnicalMatrix() {
               ================================================= */}
 
               <div
-                className="
+                className={`
                   mt-3.5
 
                   flex
@@ -1281,7 +1281,7 @@ export default function PhaseTechnicalMatrix() {
                   rounded-[9px]
 
                   border
-                  border-white/[0.04]
+                  border-white/5
 
                   bg-black/35
 
@@ -1294,7 +1294,7 @@ export default function PhaseTechnicalMatrix() {
                   [&::-webkit-scrollbar]:hidden
 
                   sm:w-fit
-                "
+                `}
               >
                 {tabs.map(
                   (tab) => (
@@ -1340,7 +1340,7 @@ export default function PhaseTechnicalMatrix() {
                           activeTab ===
                           tab.id
                             ? "bg-gradient-to-r from-[#00FF66] via-[#2bff88] to-[#00cc52] text-[#021208] shadow-[0_0_22px_rgba(0,255,102,0.32)]"
-                            : "text-[#c4ffd3]/75 hover:bg-white/[0.05] hover:text-white"
+                            : "text-[#c4ffd3]/75 hover:bg-white/5 hover:text-white"
                         }
                       `}
                     >
@@ -1355,32 +1355,32 @@ export default function PhaseTechnicalMatrix() {
               ================================================= */}
 
               <div
-                className="
+                className={`
                   relative
 
                   mt-3.5
 
-                  aspect-[1.08/1]
+                  aspect-[1.08/100]
 
                   overflow-hidden
 
                   rounded-[11px]
 
                   border
-                  border-white/[0.06]
+                  border-white/5
 
                   bg-[#07100b]
 
                   shadow-[0_20px_45px_rgba(0,0,0,0.22)]
 
-                  sm:aspect-[1.45/1]
+                  sm:aspect-[1.45/100]
 
-                  md:aspect-[1.62/1]
+                  md:aspect-[1.62/100]
 
-                  lg:aspect-[1.48/1]
+                  lg:aspect-[1.48/100]
 
-                  xl:aspect-[1.70/1]
-                "
+                  xl:aspect-[1.70/100]
+                `}
               >
                 {/* PRIMARY */}
 
@@ -1402,7 +1402,7 @@ export default function PhaseTechnicalMatrix() {
                     onError={() =>
                       setImageFailed(true)
                     }
-                    className="
+                    className={`
                       inspector-image-swap
 
                       object-cover
@@ -1414,8 +1414,8 @@ export default function PhaseTechnicalMatrix() {
 
                       ease-[cubic-bezier(0.16,1,0.3,1)]
 
-                      group-hover/inspector:scale-[1.025]
-                    "
+                      group-hover:scale-[1.025]
+                    `}
                   />
                 ) : !fallbackFailed ? (
                   /* FALLBACK */
@@ -1431,7 +1431,7 @@ export default function PhaseTechnicalMatrix() {
                     onError={() =>
                       setFallbackFailed(true)
                     }
-                    className="
+                    className={`
                       inspector-image-swap
 
                       absolute
@@ -1449,14 +1449,14 @@ export default function PhaseTechnicalMatrix() {
 
                       ease-[cubic-bezier(0.16,1,0.3,1)]
 
-                      group-hover/inspector:scale-[1.025]
-                    "
+                      group-hover:scale-[1.025]
+                    `}
                   />
                 ) : (
                   /* FINAL FALLBACK */
 
                   <div
-                    className="
+                    className={`
                       inspector-image-swap
 
                       absolute
@@ -1468,10 +1468,10 @@ export default function PhaseTechnicalMatrix() {
                       justify-center
 
                       bg-[#05100a]
-                    "
+                    `}
                   >
                     <div
-                      className="
+                      className={`
                         absolute
                         inset-0
 
@@ -1480,11 +1480,11 @@ export default function PhaseTechnicalMatrix() {
                         [background-image:linear-gradient(rgba(0,255,102,0.25)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,102,0.25)_1px,transparent_1px)]
 
                         [background-size:32px_32px]
-                      "
+                      `}
                     />
 
                     <div
-                      className="
+                      className={`
                         relative
 
                         flex
@@ -1500,18 +1500,18 @@ export default function PhaseTechnicalMatrix() {
                         border
                         border-[#00ff66]/15
 
-                        bg-[#00ff66]/[0.025]
+                        bg-[#00ff66]/5
 
                         shadow-[0_0_60px_rgba(0,255,102,0.07)]
-                      "
+                      `}
                     >
                       <Layers3
-                        className="
+                        className={`
                           h-12
                           w-12
 
                           text-[#00ff66]/70
-                        "
+                        `}
                       />
                     </div>
                   </div>
@@ -1520,7 +1520,7 @@ export default function PhaseTechnicalMatrix() {
                 {/* Dark Overlay */}
 
                 <div
-                  className="
+                  className={`
                     pointer-events-none
 
                     absolute
@@ -1528,18 +1528,18 @@ export default function PhaseTechnicalMatrix() {
 
                     bg-gradient-to-t
 
-                    from-[#021008]/76
+                    from-[#021008]/75
 
                     via-transparent
 
                     to-black/15
-                  "
+                  `}
                 />
 
                 {/* Green Overlay */}
 
                 <div
-                  className="
+                  className={`
                     pointer-events-none
 
                     absolute
@@ -1547,19 +1547,19 @@ export default function PhaseTechnicalMatrix() {
 
                     bg-gradient-to-r
 
-                    from-[#00ff66]/[0.025]
+                    from-[#00ff66]/5
 
                     via-transparent
 
-                    to-[#00ff66]/[0.035]
-                  "
+                    to-[#00ff66]/5
+                  `}
                 />
 
                 {/* Scan */}
 
                 <div
                   key={`scan-${activeTab}`}
-                  className="
+                  className={`
                     matrix-scan
 
                     pointer-events-none
@@ -1585,14 +1585,14 @@ export default function PhaseTechnicalMatrix() {
                     opacity-60
 
                     shadow-[0_0_18px_rgba(0,255,102,0.7)]
-                  "
+                  `}
                 />
 
                 {/* TOP HUD */}
 
                 <div
                   key={`hud-${activeTab}`}
-                  className="
+                  className={`
                     inspector-hud-swap
 
                     absolute
@@ -1609,7 +1609,7 @@ export default function PhaseTechnicalMatrix() {
                     border
                     border-[#00ff66]/20
 
-                    bg-[#04120b]/88
+                    bg-[#04120b]/90
 
                     px-3
                     py-2
@@ -1633,7 +1633,7 @@ export default function PhaseTechnicalMatrix() {
                     lg:text-[11.5px]
 
                     xl:text-[12.5px]
-                  "
+                  `}
                 >
                   {
                     activeTabData.hud
@@ -1643,7 +1643,7 @@ export default function PhaseTechnicalMatrix() {
                 {/* LEFT CORNER */}
 
                 <span
-                  className="
+                  className={`
                     absolute
 
                     left-3
@@ -1658,13 +1658,13 @@ export default function PhaseTechnicalMatrix() {
                     border-t
 
                     border-[#00ff66]/45
-                  "
+                  `}
                 />
 
                 {/* RIGHT CORNER */}
 
                 <span
-                  className="
+                  className={`
                     absolute
 
                     right-3
@@ -1679,13 +1679,13 @@ export default function PhaseTechnicalMatrix() {
                     border-t
 
                     border-[#00ff66]/45
-                  "
+                  `}
                 />
 
                 {/* BOTTOM HUD */}
 
                 <div
-                  className="
+                  className={`
                     absolute
 
                     bottom-3
@@ -1705,9 +1705,9 @@ export default function PhaseTechnicalMatrix() {
                     rounded-[8px]
 
                     border
-                    border-white/[0.05]
+                    border-white/5
 
-                    bg-[#031009]/72
+                    bg-[#031009]/70
 
                     px-3
                     py-2
@@ -1731,16 +1731,16 @@ export default function PhaseTechnicalMatrix() {
                     lg:text-[10.5px]
 
                     xl:text-[11px]
-                  "
+                  `}
                 >
                   <div
-                    className="
+                    className={`
                       flex
                       flex-wrap
 
                       gap-x-4
                       gap-y-1.5
-                    "
+                    `}
                   >
                     <span>
                       Nodes:{" "}
@@ -1775,7 +1775,7 @@ export default function PhaseTechnicalMatrix() {
               ================================================= */}
 
               <div
-                className="
+                className={`
                   mt-3
 
                   grid
@@ -1783,14 +1783,14 @@ export default function PhaseTechnicalMatrix() {
                   gap-2
 
                   sm:grid-cols-3
-                "
+                `}
               >
                 {bottomStats.map(
                   (stat) => (
                     <div
                       key={stat.label}
-                      className="
-                        group/stat
+                      className={`
+                        group
 
                         relative
 
@@ -1799,7 +1799,7 @@ export default function PhaseTechnicalMatrix() {
                         rounded-[8px]
 
                         border
-                        border-white/[0.055]
+                        border-white/5
 
                         bg-[linear-gradient(135deg,rgba(8,16,11,0.94),rgba(13,25,17,0.94))]
 
@@ -1815,12 +1815,12 @@ export default function PhaseTechnicalMatrix() {
                         hover:bg-[linear-gradient(135deg,rgba(10,24,15,0.98),rgba(14,32,20,0.98))]
 
                         hover:shadow-[0_10px_30px_rgba(0,0,0,0.20),0_0_22px_rgba(0,255,102,0.05)]
-                      "
+                      `}
                     >
                       {/* Accent */}
 
                       <span
-                        className="
+                        className={`
                           absolute
 
                           left-0
@@ -1835,14 +1835,14 @@ export default function PhaseTechnicalMatrix() {
 
                           duration-500
 
-                          group-hover/stat:w-full
-                        "
+                          group-hover:w-full
+                        `}
                       />
 
                       {/* Label */}
 
                       <p
-                        className="
+                        className={`
                           text-[9px]
 
                           font-black
@@ -1858,7 +1858,7 @@ export default function PhaseTechnicalMatrix() {
                           lg:text-[10px]
 
                           xl:text-[10.5px]
-                        "
+                        `}
                       >
                         {stat.label}
                       </p>
@@ -1866,7 +1866,7 @@ export default function PhaseTechnicalMatrix() {
                       {/* Value */}
 
                       <p
-                        className="
+                        className={`
                           mt-1.5
 
                           text-[11px]
@@ -1884,7 +1884,7 @@ export default function PhaseTechnicalMatrix() {
                           lg:text-[12px]
 
                           xl:text-[13px]
-                        "
+                        `}
                       >
                         {stat.value}
                       </p>

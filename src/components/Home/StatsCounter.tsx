@@ -190,13 +190,13 @@ export default function StatsCounter() {
 
   return (
     <section
-      className="
+      className={`
         relative
         w-full
         overflow-hidden
 
         border-y
-        border-white/3.5
+        border-white/5
 
         bg-[#050907]
 
@@ -205,7 +205,7 @@ export default function StatsCounter() {
 
         sm:py-14
         lg:py-16
-      "
+      `}
     >
       {/* =====================================================
           BACKGROUND
@@ -214,7 +214,7 @@ export default function StatsCounter() {
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {/* Center ambient glow */}
         <div
-          className="
+          className={`
             absolute
             left-1/2
             top-1/2
@@ -228,15 +228,15 @@ export default function StatsCounter() {
 
             rounded-full
 
-            bg-[#00FF66]/4
+            bg-[#00FF66]/5
 
             blur-[140px]
-          "
+          `}
         />
 
         {/* Grid */}
         <div
-          className="
+          className={`
             absolute
             inset-0
 
@@ -245,12 +245,12 @@ export default function StatsCounter() {
             [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)]
 
             [background-size:70px_70px]
-          "
+          `}
         />
 
         {/* Top divider */}
         <div
-          className="
+          className={`
             absolute
             left-1/2
             top-0
@@ -265,12 +265,12 @@ export default function StatsCounter() {
             from-transparent
             via-[#00FF66]/25
             to-transparent
-          "
+          `}
         />
 
         {/* Bottom divider */}
         <div
-          className="
+          className={`
             absolute
             bottom-0
             left-1/2
@@ -285,7 +285,7 @@ export default function StatsCounter() {
             from-transparent
             via-[#00FF66]/15
             to-transparent
-          "
+          `}
         />
       </div>
 
@@ -294,7 +294,7 @@ export default function StatsCounter() {
       ====================================================== */}
 
       <div
-        className="
+        className={`
           relative
           z-10
 
@@ -308,7 +308,7 @@ export default function StatsCounter() {
           lg:px-8
           xl:px-10
           2xl:px-12
-        "
+        `}
       >
         {/* =================================================
             CARDS
@@ -316,7 +316,7 @@ export default function StatsCounter() {
 
         <div
           ref={statsRef}
-          className="
+          className={`
             grid
 
             grid-cols-1
@@ -328,7 +328,7 @@ export default function StatsCounter() {
             xl:grid-cols-4
 
             2xl:gap-6
-          "
+          `}
         >
           {stats.map((stat, index) => {
             const Icon = stat.icon;
@@ -379,7 +379,7 @@ export default function StatsCounter() {
                         scale: 1.008,
                       }
                 }
-                className="
+                className={`
                   group
 
                   relative
@@ -404,7 +404,7 @@ export default function StatsCounter() {
                   sm:min-h-[200px]
 
                   lg:min-h-[210px]
-                "
+                `}
               >
                 {/* =================================================
                     STATIC PREMIUM BORDER
@@ -412,7 +412,7 @@ export default function StatsCounter() {
                 ================================================= */}
 
                 <div
-                  className="
+                  className={`
                     pointer-events-none
 
                     absolute
@@ -424,7 +424,7 @@ export default function StatsCounter() {
 
                     border
                     border-[#00FF66]/20
-                  "
+                  `}
                 />
 
                 {/* =================================================
@@ -434,7 +434,7 @@ export default function StatsCounter() {
 
                 {!reduceMotion && (
                   <svg
-                    className="
+                    className={`
                       pointer-events-none
 
                       absolute
@@ -446,7 +446,7 @@ export default function StatsCounter() {
                       w-full
 
                       overflow-visible
-                    "
+                    `}
                     aria-hidden="true"
                   >
                     <defs>
@@ -523,14 +523,14 @@ export default function StatsCounter() {
 
                       filter={`url(#statsGlow-${stat.id})`}
 
-                      className="
+                      className={`
                         opacity-0
 
                         transition-opacity
                         duration-500
 
                         group-hover:opacity-40
-                      "
+                      `}
                     />
 
                     {/* 2. Main Green Orbit */}
@@ -585,14 +585,14 @@ export default function StatsCounter() {
                             }
                       }
 
-                      className="
+                      className={`
                         opacity-0
 
                         transition-opacity
                         duration-300
 
                         group-hover:opacity-100
-                      "
+                      `}
                     />
 
                     {/* 3. Bright Leading Head */}
@@ -647,14 +647,14 @@ export default function StatsCounter() {
                             }
                       }
 
-                      className="
+                      className={`
                         opacity-0
 
                         transition-opacity
                         duration-300
 
                         group-hover:opacity-100
-                      "
+                      `}
                     />
                   </svg>
                 )}
@@ -664,7 +664,7 @@ export default function StatsCounter() {
                 ================================================= */}
 
                 <div
-                  className="
+                  className={`
                     relative
                     z-[1]
 
@@ -689,7 +689,7 @@ export default function StatsCounter() {
                     xl:p-6
 
                     2xl:p-7
-                  "
+                  `}
                 >
                   {/* =================================================
                       ALWAYS ACTIVE EFFECTS
@@ -697,7 +697,7 @@ export default function StatsCounter() {
 
                   {/* Permanent Green Glow */}
                   <div
-                    className="
+                    className={`
                       pointer-events-none
 
                       absolute
@@ -715,12 +715,12 @@ export default function StatsCounter() {
                       blur-[90px]
 
                       opacity-100
-                    "
+                    `}
                   />
 
                   {/* Permanent Bottom Glow */}
                   <div
-                    className="
+                    className={`
                       pointer-events-none
 
                       absolute
@@ -739,24 +739,24 @@ export default function StatsCounter() {
                       bg-[#00FF66]/5
 
                       blur-[90px]
-                    "
+                    `}
                   />
 
                   {/* Permanent Glass Highlight */}
                   <div
-                    className="
+                    className={`
                       pointer-events-none
 
                       absolute
                       inset-0
 
                       bg-[radial-gradient(circle_at_90%_5%,rgba(0,255,102,0.08),transparent_27%),linear-gradient(135deg,rgba(255,255,255,0.03),transparent_45%)]
-                    "
+                    `}
                   />
 
                   {/* Permanent Grid */}
                   <div
-                    className="
+                    className={`
                       pointer-events-none
 
                       absolute
@@ -767,12 +767,12 @@ export default function StatsCounter() {
                       [background-image:linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)]
 
                       [background-size:42px_42px]
-                    "
+                    `}
                   />
 
                   {/* Permanent Top Green Line */}
                   <div
-                    className="
+                    className={`
                       pointer-events-none
 
                       absolute
@@ -794,7 +794,7 @@ export default function StatsCounter() {
                       to-transparent
 
                       shadow-[0_0_14px_rgba(0,255,102,0.20)]
-                    "
+                    `}
                   />
 
                   {/* Slow shine always active */}
@@ -812,7 +812,7 @@ export default function StatsCounter() {
                         repeatDelay: 3,
                         ease: 'easeInOut',
                       }}
-                      className="
+                      className={`
                         pointer-events-none
 
                         absolute
@@ -828,10 +828,10 @@ export default function StatsCounter() {
 
                         from-transparent
 
-                        via-white/3.5
+                        via-white/5
 
                         to-transparent
-                      "
+                      `}
                     />
                   )}
 
@@ -856,7 +856,7 @@ export default function StatsCounter() {
                       repeat: Infinity,
                       ease: 'easeInOut',
                     }}
-                    className="
+                    className={`
                       absolute
 
                       right-5
@@ -878,7 +878,7 @@ export default function StatsCounter() {
 
                       border-[#00FF66]/25
 
-                      bg-[#00FF66]/6.5
+                      bg-[#00FF66]/5
 
                       text-[#00FF66]
 
@@ -893,7 +893,7 @@ export default function StatsCounter() {
                       group-hover:rotate-6
 
                       group-hover:scale-110
-                    "
+                    `}
                   >
                     <Icon
                       size={17}
@@ -906,18 +906,18 @@ export default function StatsCounter() {
                   ================================================= */}
 
                   <div
-                    className="
+                    className={`
                       relative
                       z-10
 
                       flex
                       h-full
                       flex-col
-                    "
+                    `}
                   >
                     {/* Label - already highlighted */}
                     <div
-                      className="
+                      className={`
                         mb-3
 
                         font-mono
@@ -933,14 +933,14 @@ export default function StatsCounter() {
                         text-[#00FF66]/75
 
                         sm:text-[9px]
-                      "
+                      `}
                     >
                       {stat.label}
                     </div>
 
                     {/* Number + Description */}
                     <div
-                      className="
+                      className={`
                         flex
 
                         flex-wrap
@@ -949,11 +949,11 @@ export default function StatsCounter() {
 
                         gap-x-2.5
                         gap-y-1
-                      "
+                      `}
                     >
                       {/* Number */}
                       <div
-                        className="
+                        className={`
                           text-[52px]
 
                           font-medium
@@ -973,7 +973,7 @@ export default function StatsCounter() {
                           xl:text-[58px]
 
                           2xl:text-[64px]
-                        "
+                        `}
                       >
                         <LiveCounter
                           value={stat.value}
@@ -990,7 +990,7 @@ export default function StatsCounter() {
 
                       {/* Description */}
                       <p
-                        className="
+                        className={`
                           max-w-[155px]
 
                           pb-0.5
@@ -1002,7 +1002,7 @@ export default function StatsCounter() {
                           text-[#bfffd4]
 
                           sm:text-[12px]
-                        "
+                        `}
                       >
                         {stat.description}
                       </p>
@@ -1014,7 +1014,7 @@ export default function StatsCounter() {
 
                     <div className="mt-auto pt-6">
                       <div
-                        className="
+                        className={`
                           h-px
                           w-full
 
@@ -1022,14 +1022,14 @@ export default function StatsCounter() {
 
                           from-[#00FF66]/25
 
-                          via-white/7
+                          via-white/5
 
                           to-transparent
-                        "
+                        `}
                       />
 
                       <div
-                        className="
+                        className={`
                           mt-3
 
                           h-px
@@ -1045,7 +1045,7 @@ export default function StatsCounter() {
                           to-transparent
 
                           shadow-[0_0_12px_rgba(0,255,102,0.18)]
-                        "
+                        `}
                       />
                     </div>
                   </div>

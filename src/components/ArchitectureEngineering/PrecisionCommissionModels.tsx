@@ -156,7 +156,7 @@ function PlanCard({
         ${
           plan.featured
             ? "border-[#00ff66]/20 bg-[#171e19]"
-            : "border-white/[0.055] bg-[#121714]"
+            : "border-white/5 bg-[#121714]"
         }
 
         p-5
@@ -168,7 +168,7 @@ function PlanCard({
         ease-[cubic-bezier(0.16,1,0.3,1)]
 
         hover:-translate-y-1.5
-        hover:border-[#00ff66]/22
+        hover:border-[#00ff66]/20
         hover:shadow-[0_36px_95px_rgba(0,0,0,0.4),0_0_45px_rgba(0,255,102,0.055),inset_0_1px_0_rgba(255,255,255,0.04)]
 
         sm:p-6
@@ -198,7 +198,7 @@ function PlanCard({
 
       {plan.featured && (
         <div
-          className="
+          className={`
             absolute
             left-1/2
             top-0
@@ -237,7 +237,7 @@ function PlanCard({
             lg:text-[10.5px]
 
             xl:text-[11px]
-          "
+          `}
         >
           Most Recommended for Builders
         </div>
@@ -248,7 +248,7 @@ function PlanCard({
       ===================================================== */}
 
       <span
-        className="
+        className={`
           pointer-events-none
           absolute
           left-[8%]
@@ -269,7 +269,7 @@ function PlanCard({
           duration-700
 
           group-hover:w-[84%]
-        "
+        `}
       />
 
       {/* =====================================================
@@ -277,7 +277,7 @@ function PlanCard({
       ===================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
           absolute
 
@@ -296,8 +296,8 @@ function PlanCard({
           transition-all
           duration-700
 
-          group-hover:bg-[#00ff66]/[0.065]
-        "
+          group-hover:bg-[#00ff66]/5
+        `}
       />
 
       {/* =====================================================
@@ -306,7 +306,7 @@ function PlanCard({
       ===================================================== */}
 
       <div
-        className="
+        className={`
           relative
           z-10
 
@@ -325,7 +325,7 @@ function PlanCard({
           xl:text-[11.5px]
 
           2xl:text-[12px]
-        "
+        `}
       >
         {plan.tier}
       </div>
@@ -336,7 +336,7 @@ function PlanCard({
       ===================================================== */}
 
       <h3
-        className="
+        className={`
           relative
           z-10
 
@@ -365,7 +365,7 @@ function PlanCard({
           xl:text-[24px]
 
           2xl:text-[26px]
-        "
+        `}
       >
         {plan.title}
       </h3>
@@ -376,7 +376,7 @@ function PlanCard({
       ===================================================== */}
 
       <p
-        className="
+        className={`
           relative
           z-10
 
@@ -386,12 +386,12 @@ function PlanCard({
           font-normal
           leading-[1.7]
 
-          text-[#cfe1d3]/74
+          text-[#cfe1d3]/75
 
           transition-colors
           duration-500
 
-          group-hover:text-[#e4eee6]/88
+          group-hover:text-[#e4eee6]/90
 
           min-[420px]:text-[14.5px]
 
@@ -402,7 +402,7 @@ function PlanCard({
           xl:text-[15.5px]
 
           2xl:text-[16px]
-        "
+        `}
       >
         {plan.description}
       </p>
@@ -413,7 +413,7 @@ function PlanCard({
       ===================================================== */}
 
       <div
-        className="
+        className={`
           relative
           z-10
 
@@ -425,10 +425,10 @@ function PlanCard({
 
           gap-x-2
           gap-y-1.5
-        "
+        `}
       >
         <span
-          className="
+          className={`
             text-[34px]
             font-bold
             leading-none
@@ -445,27 +445,27 @@ function PlanCard({
             xl:text-[36px]
 
             2xl:text-[40px]
-          "
+          `}
         >
           {plan.price}
         </span>
 
         <span
-          className="
+          className={`
             pb-[3px]
 
             text-[10px]
             font-medium
             leading-[1.4]
 
-            text-[#c6ffd4]/72
+            text-[#c6ffd4]/70
 
             sm:text-[10.5px]
 
             lg:text-[11px]
 
             xl:text-[11.5px]
-          "
+          `}
         >
           {plan.priceNote}
         </span>
@@ -477,7 +477,7 @@ function PlanCard({
       ===================================================== */}
 
       <div
-        className="
+        className={`
           relative
           z-10
 
@@ -487,7 +487,7 @@ function PlanCard({
           flex-col
 
           gap-3.5
-        "
+        `}
       >
         {plan.features.map(
           (
@@ -501,8 +501,8 @@ function PlanCard({
                   transitionDelay: `${featureIndex * 45}ms`,
                 } as CSSProperties
               }
-              className="
-                group/feature
+              className={`
+                group
 
                 flex
                 items-start
@@ -513,7 +513,7 @@ function PlanCard({
                 font-normal
                 leading-[1.5]
 
-                text-[#d9e6dc]/84
+                text-[#d9e6dc]/85
 
                 transition-all
                 duration-300
@@ -530,10 +530,10 @@ function PlanCard({
                 xl:text-[14.5px]
 
                 2xl:text-[15px]
-              "
+              `}
             >
               <CheckCircle2
-                className="
+                className={`
                   mt-[2px]
 
                   h-4
@@ -546,13 +546,13 @@ function PlanCard({
                   transition-all
                   duration-300
 
-                  group-hover/feature:scale-110
+                  group-hover:scale-110
 
-                  group-hover/feature:drop-shadow-[0_0_7px_rgba(0,255,102,0.7)]
+                  group-hover:drop-shadow-[0_0_7px_rgba(0,255,102,0.7)]
 
                   sm:h-[18px]
                   sm:w-[18px]
-                "
+                `}
                 strokeWidth={2.5}
               />
 
@@ -569,19 +569,19 @@ function PlanCard({
       ===================================================== */}
 
       <div
-        className="
+        className={`
           relative
           z-10
 
           mt-auto
 
           pt-8
-        "
+        `}
       >
         <button
           type="button"
           className={`
-            group/button
+            group
             relative
 
             flex
@@ -655,9 +655,9 @@ function PlanCard({
                 `
                 : `
                   border
-                  border-white/[0.035]
+                  border-white/5
 
-                  bg-white/[0.025]
+                  bg-white/5
 
                   text-[#f0fff3]
 
@@ -665,7 +665,7 @@ function PlanCard({
 
                   hover:border-[#00ff66]/20
 
-                  hover:bg-[#00ff66]/[0.045]
+                  hover:bg-[#00ff66]/5
 
                   hover:text-[#7dffad]
                 `
@@ -675,7 +675,7 @@ function PlanCard({
           {/* Shine */}
 
           <span
-            className="
+            className={`
               pointer-events-none
 
               absolute
@@ -701,23 +701,23 @@ function PlanCard({
               transition-all
               duration-700
 
-              group-hover/button:left-[120%]
+              group-hover:left-[120%]
 
-              group-hover/button:opacity-100
-            "
+              group-hover:opacity-100
+            `}
           />
 
           <span
-            className="
+            className={`
               relative
               z-10
-            "
+            `}
           >
             {plan.button}
           </span>
 
           <ArrowUpRight
-            className="
+            className={`
               relative
               z-10
 
@@ -731,12 +731,12 @@ function PlanCard({
               transition-all
               duration-300
 
-              group-hover/button:-translate-y-0.5
+              group-hover:-translate-y-0.5
 
-              group-hover/button:translate-x-0.5
+              group-hover:translate-x-0.5
 
-              group-hover/button:opacity-100
-            "
+              group-hover:opacity-100
+            `}
           />
         </button>
       </div>
@@ -783,7 +783,7 @@ export default function PrecisionCommissionModels() {
       ===================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -792,13 +792,13 @@ export default function PrecisionCommissionModels() {
           -z-50
 
           bg-[#090e0b]
-        "
+        `}
       />
 
       {/* Dot Grid */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -811,13 +811,13 @@ export default function PrecisionCommissionModels() {
           [background-image:radial-gradient(rgba(123,255,168,0.5)_0.7px,transparent_0.7px)]
 
           [background-size:27px_27px]
-        "
+        `}
       />
 
       {/* Top Ambient */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -835,16 +835,16 @@ export default function PrecisionCommissionModels() {
 
           rounded-full
 
-          bg-[#00ff66]/[0.035]
+          bg-[#00ff66]/5
 
           blur-[190px]
-        "
+        `}
       />
 
       {/* Left Glow */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -860,16 +860,16 @@ export default function PrecisionCommissionModels() {
 
           rounded-full
 
-          bg-[#00ff66]/[0.025]
+          bg-[#00ff66]/5
 
           blur-[180px]
-        "
+        `}
       />
 
       {/* Right Glow */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -885,16 +885,16 @@ export default function PrecisionCommissionModels() {
 
           rounded-full
 
-          bg-[#00ff66]/[0.025]
+          bg-[#00ff66]/5
 
           blur-[180px]
-        "
+        `}
       />
 
       {/* Bottom Fade */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -911,7 +911,7 @@ export default function PrecisionCommissionModels() {
           from-black/25
 
           to-transparent
-        "
+        `}
       />
 
       {/* =====================================================
@@ -919,7 +919,7 @@ export default function PrecisionCommissionModels() {
       ===================================================== */}
 
       <div
-        className="
+        className={`
           mx-auto
 
           w-full
@@ -933,7 +933,7 @@ export default function PrecisionCommissionModels() {
           lg:px-10
           xl:px-12
           2xl:px-8
-        "
+        `}
       >
         {/* ===================================================
             HEADER
@@ -970,7 +970,7 @@ export default function PrecisionCommissionModels() {
           ================================================= */}
 
           <div
-            className="
+            className={`
               mb-4
 
               flex
@@ -996,17 +996,17 @@ export default function PrecisionCommissionModels() {
               lg:text-[11.5px]
 
               xl:text-[12px]
-            "
+            `}
           >
             <Sparkles
-              className="
+              className={`
                 h-4
                 w-4
 
                 text-[#00ff66]
 
                 drop-shadow-[0_0_7px_rgba(0,255,102,0.6)]
-              "
+              `}
             />
 
             Engagement Frameworks
@@ -1018,7 +1018,7 @@ export default function PrecisionCommissionModels() {
           ================================================= */}
 
           <h2
-            className="
+            className={`
               mx-auto
 
               max-w-[820px]
@@ -1046,7 +1046,7 @@ export default function PrecisionCommissionModels() {
               xl:text-[74px]
 
               2xl:text-[80px]
-            "
+            `}
           >
             Precision Commission
 
@@ -1061,7 +1061,7 @@ export default function PrecisionCommissionModels() {
           ================================================= */}
 
           <p
-            className="
+            className={`
               mx-auto
 
               mt-5
@@ -1074,7 +1074,7 @@ export default function PrecisionCommissionModels() {
 
               leading-[1.72]
 
-              text-[#c8ffd5]/78
+              text-[#c8ffd5]/80
 
               min-[420px]:text-[14.5px]
 
@@ -1087,7 +1087,7 @@ export default function PrecisionCommissionModels() {
               xl:text-[17px]
 
               2xl:text-[17.5px]
-            "
+            `}
           >
             Transparent, rigorous architectural workflows tailored
             to developer scale, design firms, and visionary private
@@ -1100,7 +1100,7 @@ export default function PrecisionCommissionModels() {
         =================================================== */}
 
         <div
-          className="
+          className={`
             mt-12
 
             grid
@@ -1121,7 +1121,7 @@ export default function PrecisionCommissionModels() {
             xl:gap-6
 
             2xl:gap-7
-          "
+          `}
         >
           {plans.map(
             (

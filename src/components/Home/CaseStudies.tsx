@@ -32,7 +32,7 @@ export default function CaseStudies(): React.ReactElement {
       colSpan: 'lg:col-span-8',
       image:
         'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
-      fallbackImage: 'https://placehold.co/1200x800/141816/00e676?text=Vestra+Pavilion',
+      fallbackImage: 'https://placehold.co/120000x800/100/0e676?text=Vestra+Pavilion',
       tag: 'ARCHITECTURE // BERLIN • MUNICH',
       year: '2024',
       title: 'Vestra Pavilion & Spatial Labs',
@@ -56,7 +56,7 @@ export default function CaseStudies(): React.ReactElement {
       colSpan: 'lg:col-span-4',
       image:
         'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
-      fallbackImage: 'https://placehold.co/800x600/141816/00e676?text=Nordic+Horizon',
+      fallbackImage: 'https://placehold.co/80000x600/100/0e676?text=Nordic+Horizon',
       tag: 'ARCHITECTURE // OSLO',
       title: 'Nordic Horizon Residence',
       description:
@@ -99,7 +99,7 @@ export default function CaseStudies(): React.ReactElement {
     <div className="min-h-screen bg-[#0c0f0e] bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#00e676]/10 via-[#0c0f0e]/95 to-[#0c0f0e] text-white font-sans py-16 px-4 sm:px-6 lg:px-12 antialiased selection:bg-[#00e676] selection:text-[#0c0f0e] relative overflow-hidden">
       {/* Background Ambient Glow Accents */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#00e676]/5 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-10 left-10 w-[400px] h-[400px] bg-[#00e676]/3 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-10 left-10 w-[400px] h-[400px] bg-[#00e676]/5 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-[1600px] mx-auto relative z-10">
         {/* Header and Filters Section */}

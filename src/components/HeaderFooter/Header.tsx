@@ -148,7 +148,7 @@ export default function Header(): React.ReactElement {
                   : 'opacity-0 invisible -translate-y-2 pointer-events-none'
               }`}
             >
-              <div className="w-64 rounded-xl border border-[#1b3a27] bg-[#0c0f0e]/98 backdrop-blur-2xl p-2 shadow-[0_20px_50px_rgba(0,0,0,0.7)]">
+              <div className="w-64 rounded-xl border border-[#1b3a27] bg-[#0c0f0e]/100 backdrop-blur-2xl p-2 shadow-[0_20px_50px_rgba(0,0,0,0.7)]">
                 {serviceItems.map((item) => (
                   <Link
                     key={item.name}
@@ -211,13 +211,13 @@ export default function Header(): React.ReactElement {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="absolute top-[calc(100%+12px)] left-3 right-3 sm:left-4 sm:right-4 bg-[#0c0f0e]/98 backdrop-blur-2xl border border-[#162b1e] rounded-2xl p-5 shadow-2xl lg:hidden z-50 flex flex-col gap-5 animate-in fade-in slide-in-from-top-2 duration-300">
+        <div className="absolute top-[calc(100%+12px)] left-3 right-3 sm:left-4 sm:right-4 bg-[#0c0f0e]/100 backdrop-blur-2xl border border-[#162b1e] rounded-2xl p-5 shadow-2xl lg:hidden z-50 flex flex-col gap-5 animate-in fade-in slide-in-from-top-2 duration-300">
           <nav className="flex flex-col gap-2 text-sm sm:text-base font-medium text-gray-200">
             {/* Home */}
             <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex uppercase items-center justify-between py-3 px-4 rounded-xl bg-white/[0.02] hover:bg-white/5 hover:text-[#00FF66] transition-colors border border-white/5"
+              className="flex uppercase items-center justify-between py-3 px-4 rounded-xl bg-white/0 hover:bg-white/5 hover:text-[#00FF66] transition-colors border border-white/5"
             >
               <span>Home</span>
               <ArrowRight className="w-4 h-4 text-[#00FF66]" />
@@ -228,7 +228,7 @@ export default function Header(): React.ReactElement {
               <button
                 type="button"
                 onClick={() => setServicesOpen(!servicesOpen)}
-                className="w-full flex uppercase items-center justify-between py-3 px-4 bg-white/[0.02] hover:bg-white/5 hover:text-[#00FF66] transition-colors"
+                className="w-full flex uppercase items-center justify-between py-3 px-4 bg-white/0 hover:bg-white/5 hover:text-[#00FF66] transition-colors"
                 aria-expanded={servicesOpen}
               >
                 <span>Service</span>
@@ -266,7 +266,7 @@ export default function Header(): React.ReactElement {
                 key={item.name}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex uppercase items-center justify-between py-3 px-4 rounded-xl bg-white/[0.02] hover:bg-white/5 hover:text-[#00FF66] transition-colors border border-white/5"
+                className="flex uppercase items-center justify-between py-3 px-4 rounded-xl bg-white/0 hover:bg-white/5 hover:text-[#00FF66] transition-colors border border-white/5"
               >
                 <span>{item.name}</span>
                 <ArrowRight className="w-4 h-4 text-[#00FF66]" />

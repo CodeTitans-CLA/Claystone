@@ -192,8 +192,8 @@ function ServiceImage({
 
   return (
     <div
-      className="
-        group/image
+      className={`
+        group
         relative
         z-10
 
@@ -208,7 +208,7 @@ function ServiceImage({
         rounded-[18px]
 
         border
-        border-white/[0.08]
+        border-white/10
 
         bg-[#07100b]
 
@@ -221,7 +221,7 @@ function ServiceImage({
         group-hover:border-[#00ff66]/30
 
         group-hover:shadow-[0_25px_60px_rgba(0,0,0,0.48),0_0_35px_rgba(0,255,102,0.11)]
-      "
+      `}
     >
       {/* IMAGE */}
 
@@ -230,7 +230,7 @@ function ServiceImage({
         alt={item.title}
         onError={handleError}
         draggable={false}
-        className="
+        className={`
           absolute
           inset-0
 
@@ -247,14 +247,14 @@ function ServiceImage({
 
           ease-[cubic-bezier(0.16,1,0.3,1)]
 
-          group-hover/image:scale-[1.08]
-        "
+          group-hover:scale-[1.08]
+        `}
       />
 
       {/* DARK GRADIENT */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -262,18 +262,18 @@ function ServiceImage({
 
           bg-gradient-to-t
 
-          from-[#021108]/72
+          from-[#021108]/70
 
           via-transparent
 
-          to-black/[0.03]
-        "
+          to-black/5
+        `}
       />
 
       {/* GREEN TINT */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -281,31 +281,31 @@ function ServiceImage({
 
           bg-gradient-to-br
 
-          from-[#00ff66]/[0.035]
+          from-[#00ff66]/5
 
           via-transparent
 
-          to-[#00ff66]/[0.11]
-        "
+          to-[#00ff66]/10
+        `}
       />
 
       {/* INNER VIGNETTE */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
           inset-0
 
           shadow-[inset_0_0_70px_rgba(0,0,0,0.22)]
-        "
+        `}
       />
 
       {/* IMAGE LABEL */}
 
       <div
-        className="
+        className={`
           absolute
 
           bottom-3
@@ -345,7 +345,7 @@ function ServiceImage({
           sm:text-[9px]
 
           xl:text-[9.5px]
-        "
+        `}
       >
         {item.category}
       </div>
@@ -353,7 +353,7 @@ function ServiceImage({
       {/* TOP HOVER LIGHT */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -378,8 +378,8 @@ function ServiceImage({
 
           duration-700
 
-          group-hover/image:w-[75%]
-        "
+          group-hover:w-[75%]
+        `}
       />
     </div>
   );
@@ -405,7 +405,7 @@ function ServiceCard({
           "--delay": `${index * 80}ms`,
         } as CSSProperties
       }
-      className="
+      className={`
         service-card
 
         group
@@ -421,7 +421,7 @@ function ServiceCard({
         rounded-[22px]
 
         border
-        border-white/[0.07]
+        border-white/5
 
         bg-[linear-gradient(145deg,#101813_0%,#0b120e_58%,#08100b_100%)]
 
@@ -446,27 +446,27 @@ function ServiceCard({
         sm:p-5
 
         xl:p-6
-      "
+      `}
     >
       {/* ===================================================
           CARD BACKGROUND
       =================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
           inset-0
 
           bg-[radial-gradient(circle_at_88%_7%,rgba(0,255,102,0.075),transparent_28%),linear-gradient(135deg,rgba(255,255,255,0.025),transparent_44%)]
-        "
+        `}
       />
 
       {/* TOP GLOW */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -479,7 +479,7 @@ function ServiceCard({
 
           rounded-full
 
-          bg-[#00ff66]/[0.045]
+          bg-[#00ff66]/5
 
           blur-[90px]
 
@@ -488,14 +488,14 @@ function ServiceCard({
 
           group-hover:scale-125
 
-          group-hover:bg-[#00ff66]/[0.095]
-        "
+          group-hover:bg-[#00ff66]/10
+        `}
       />
 
       {/* BOTTOM GLOW */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -511,21 +511,21 @@ function ServiceCard({
 
           rounded-full
 
-          bg-[#00ff66]/[0.025]
+          bg-[#00ff66]/5
 
           blur-[110px]
 
           transition-all
           duration-700
 
-          group-hover:bg-[#00ff66]/[0.055]
-        "
+          group-hover:bg-[#00ff66]/5
+        `}
       />
 
       {/* GRID */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -536,13 +536,13 @@ function ServiceCard({
           [background-image:linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)]
 
           [background-size:46px_46px]
-        "
+        `}
       />
 
       {/* TOP BORDER */}
 
       <div
-        className="
+        className={`
           absolute
 
           left-1/2
@@ -567,13 +567,13 @@ function ServiceCard({
           group-hover:w-[75%]
 
           group-hover:via-[#00ff66]
-        "
+        `}
       />
 
       {/* SHINE */}
 
       <span
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -590,7 +590,7 @@ function ServiceCard({
 
           from-transparent
 
-          via-white/[0.035]
+          via-white/5
 
           to-transparent
 
@@ -598,7 +598,7 @@ function ServiceCard({
           duration-1000
 
           group-hover:left-[130%]
-        "
+        `}
       />
 
       {/* ===================================================
@@ -606,7 +606,7 @@ function ServiceCard({
       =================================================== */}
 
       <div
-        className="
+        className={`
           relative
           z-10
 
@@ -617,12 +617,12 @@ function ServiceCard({
           justify-between
 
           gap-3
-        "
+        `}
       >
         {/* ICON */}
 
         <div
-          className="
+          className={`
             flex
 
             h-11
@@ -639,7 +639,7 @@ function ServiceCard({
             border
             border-[#00ff66]/15
 
-            bg-[#00ff66]/[0.045]
+            bg-[#00ff66]/5
 
             text-[#00ff66]
 
@@ -655,16 +655,16 @@ function ServiceCard({
 
             group-hover:border-[#00ff66]/30
 
-            group-hover:bg-[#00ff66]/[0.08]
+            group-hover:bg-[#00ff66]/10
 
             group-hover:shadow-[0_0_30px_rgba(0,255,102,0.13)]
-          "
+          `}
         >
           <Icon
-            className="
+            className={`
               h-5
               w-5
-            "
+            `}
             strokeWidth={1.8}
           />
         </div>
@@ -672,7 +672,7 @@ function ServiceCard({
         {/* META */}
 
         <div
-          className="
+          className={`
             flex
 
             items-center
@@ -698,7 +698,7 @@ function ServiceCard({
             sm:text-[10px]
 
             xl:text-[10.5px]
-          "
+          `}
         >
           <span>
             {item.number}
@@ -720,7 +720,7 @@ function ServiceCard({
       =================================================== */}
 
       <div
-        className="
+        className={`
           relative
           z-10
 
@@ -740,12 +740,12 @@ function ServiceCard({
           xl:min-h-[180px]
 
           2xl:min-h-[172px]
-        "
+        `}
       >
         {/* TITLE */}
 
         <h3
-          className="
+          className={`
             min-h-[54px]
 
             max-w-[460px]
@@ -779,7 +779,7 @@ function ServiceCard({
             xl:text-[25px]
 
             2xl:text-[27px]
-          "
+          `}
         >
           {item.title}
         </h3>
@@ -787,7 +787,7 @@ function ServiceCard({
         {/* DESCRIPTION */}
 
         <p
-          className="
+          className={`
             mt-3
 
             max-w-[470px]
@@ -815,7 +815,7 @@ function ServiceCard({
             xl:text-[15px]
 
             2xl:text-[15.5px]
-          "
+          `}
         >
           {item.description}
         </p>
@@ -864,7 +864,7 @@ export default function IntegratedArchitecturalExecution() {
       ===================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -873,13 +873,13 @@ export default function IntegratedArchitecturalExecution() {
           -z-50
 
           bg-[#090e0b]
-        "
+        `}
       />
 
       {/* DOTTED GRID */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -892,13 +892,13 @@ export default function IntegratedArchitecturalExecution() {
           [background-image:radial-gradient(rgba(129,255,171,0.5)_0.7px,transparent_0.7px)]
 
           [background-size:26px_26px]
-        "
+        `}
       />
 
       {/* LEFT GLOW */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -914,16 +914,16 @@ export default function IntegratedArchitecturalExecution() {
 
           rounded-full
 
-          bg-[#00ff66]/[0.045]
+          bg-[#00ff66]/5
 
           blur-[170px]
-        "
+        `}
       />
 
       {/* CENTER GLOW */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -939,16 +939,16 @@ export default function IntegratedArchitecturalExecution() {
 
           rounded-full
 
-          bg-[#00ff66]/[0.018]
+          bg-[#00ff66]/0
 
           blur-[150px]
-        "
+        `}
       />
 
       {/* BOTTOM FADE */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -965,7 +965,7 @@ export default function IntegratedArchitecturalExecution() {
           from-black/25
 
           to-transparent
-        "
+        `}
       />
 
       {/* =====================================================
@@ -974,7 +974,7 @@ export default function IntegratedArchitecturalExecution() {
       ===================================================== */}
 
       <div
-        className="
+        className={`
           mx-auto
 
           w-full
@@ -998,7 +998,7 @@ export default function IntegratedArchitecturalExecution() {
 
           2xl:px-14
           2xl:py-[68px]
-        "
+        `}
       >
         {/* ===================================================
             HEADER
@@ -1039,7 +1039,7 @@ export default function IntegratedArchitecturalExecution() {
             {/* EYEBROW */}
 
             <div
-              className="
+              className={`
                 mb-3
 
                 flex
@@ -1061,10 +1061,10 @@ export default function IntegratedArchitecturalExecution() {
                 sm:text-[10px]
 
                 lg:text-[11px]
-              "
+              `}
             >
               <span
-                className="
+                className={`
                   h-2
                   w-2
 
@@ -1073,7 +1073,7 @@ export default function IntegratedArchitecturalExecution() {
                   bg-[#00ff66]
 
                   shadow-[0_0_10px_rgba(0,255,102,0.8)]
-                "
+                `}
               />
 
               Pillars of Practice
@@ -1082,7 +1082,7 @@ export default function IntegratedArchitecturalExecution() {
             {/* TITLE */}
 
             <h2
-              className="
+              className={`
                 max-w-[820px]
 
                 text-[44px]
@@ -1106,7 +1106,7 @@ export default function IntegratedArchitecturalExecution() {
                 xl:text-[70px]
 
                 2xl:text-[74px]
-              "
+              `}
             >
               Integrated Architectural
 
@@ -1119,16 +1119,16 @@ export default function IntegratedArchitecturalExecution() {
           {/* RIGHT */}
 
           <div
-            className="
+            className={`
               md:pb-1
               md:pl-2
 
               lg:pb-2
               lg:pl-5
-            "
+            `}
           >
             <p
-              className="
+              className={`
                 max-w-[520px]
 
                 text-[14px]
@@ -1148,7 +1148,7 @@ export default function IntegratedArchitecturalExecution() {
                 lg:text-[16px]
 
                 xl:text-[17px]
-              "
+              `}
             >
               A coherent continuum spanning analytical space
               programming, rigid structural calculations,

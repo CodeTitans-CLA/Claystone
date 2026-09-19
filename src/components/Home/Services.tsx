@@ -117,7 +117,7 @@ export default function Services() {
 
   return (
     <section
-      className="
+      className={`
         relative
         w-full
         overflow-hidden
@@ -139,19 +139,19 @@ export default function Services() {
         xl:py-16
 
         2xl:px-12
-      "
+      `}
     >
       {/* =====================================================
           BACKGROUND
       ====================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
           absolute
           inset-0
           overflow-hidden
-        "
+        `}
       >
         {/* CENTRAL GLOW */}
 
@@ -177,7 +177,7 @@ export default function Services() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="
+          className={`
             absolute
 
             left-1/2
@@ -190,10 +190,10 @@ export default function Services() {
 
             rounded-full
 
-            bg-[#0fff6e]/[0.04]
+            bg-[#0fff6e]/5
 
             blur-[160px]
-          "
+          `}
         />
 
         {/* LEFT AMBIENT */}
@@ -220,7 +220,7 @@ export default function Services() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="
+          className={`
             absolute
 
             -bottom-[280px]
@@ -231,16 +231,16 @@ export default function Services() {
 
             rounded-full
 
-            bg-[#0fff6e]/[0.025]
+            bg-[#0fff6e]/5
 
             blur-[145px]
-          "
+          `}
         />
 
         {/* RIGHT AMBIENT */}
 
         <div
-          className="
+          className={`
             absolute
 
             -right-[300px]
@@ -251,16 +251,16 @@ export default function Services() {
 
             rounded-full
 
-            bg-[#00ff88]/[0.025]
+            bg-[#00ff88]/5
 
             blur-[190px]
-          "
+          `}
         />
 
         {/* GRID */}
 
         <div
-          className="
+          className={`
             absolute
             inset-0
 
@@ -269,13 +269,13 @@ export default function Services() {
             [background-image:linear-gradient(rgba(255,255,255,0.16)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.16)_1px,transparent_1px)]
 
             [background-size:72px_72px]
-          "
+          `}
         />
 
         {/* TOP LINE */}
 
         <div
-          className="
+          className={`
             absolute
 
             inset-x-0
@@ -290,13 +290,13 @@ export default function Services() {
             via-[#0fff6e]/25
 
             to-transparent
-          "
+          `}
         />
 
         {/* BOTTOM FADE */}
 
         <div
-          className="
+          className={`
             absolute
 
             inset-x-0
@@ -309,7 +309,7 @@ export default function Services() {
             from-black/35
 
             to-transparent
-          "
+          `}
         />
       </div>
 
@@ -318,7 +318,7 @@ export default function Services() {
       ====================================================== */}
 
       <div
-        className="
+        className={`
           relative
           z-10
 
@@ -326,7 +326,7 @@ export default function Services() {
 
           w-full
           max-w-[1600px]
-        "
+        `}
       >
         {/* =================================================
             HEADER
@@ -353,7 +353,7 @@ export default function Services() {
             duration: 0.75,
             ease,
           }}
-          className="
+          className={`
             mb-8
 
             grid
@@ -371,7 +371,7 @@ export default function Services() {
             lg:gap-10
 
             xl:gap-14
-          "
+          `}
         >
           {/* LEFT */}
 
@@ -399,7 +399,7 @@ export default function Services() {
                 delay: 0.08,
                 ease,
               }}
-              className="
+              className={`
                 mb-3
 
                 flex
@@ -423,17 +423,17 @@ export default function Services() {
                 sm:text-[11px]
 
                 lg:text-[12px]
-              "
+              `}
             >
               <span
-                className="
+                className={`
                   h-px
                   w-6
 
                   bg-[#0fff6e]
 
                   shadow-[0_0_8px_rgba(15,255,110,0.45)]
-                "
+                `}
               />
 
               MULTI-DISCIPLINARY CREATIVE STUDIO
@@ -442,7 +442,7 @@ export default function Services() {
             {/* HEADING */}
 
             <h1
-              className="
+              className={`
                 m-0
 
                 max-w-[1020px]
@@ -462,7 +462,7 @@ export default function Services() {
                 md:text-[62px]
 
                 lg:text-[clamp(58px,4.8vw,78px)]
-              "
+              `}
             >
               Four Core Disciplines.
 
@@ -499,7 +499,7 @@ export default function Services() {
             }}
           >
             <div
-              className="
+              className={`
                 mb-3
 
                 h-px
@@ -512,11 +512,11 @@ export default function Services() {
                 to-[#0fff6e]/10
 
                 shadow-[0_0_16px_rgba(15,255,110,0.3)]
-              "
+              `}
             />
 
             <p
-              className="
+              className={`
                 m-0
 
                 max-w-[530px]
@@ -532,7 +532,7 @@ export default function Services() {
                 lg:text-[16px]
 
                 xl:text-[17px]
-              "
+              `}
             >
               From built environments and digital products to 3D
               product experiences and visual communication, we
@@ -551,7 +551,7 @@ export default function Services() {
         ================================================== */}
 
         <div
-          className="
+          className={`
             grid
 
             auto-rows-fr
@@ -569,7 +569,7 @@ export default function Services() {
             xl:gap-4
 
             2xl:gap-5
-          "
+          `}
         >
           {services.map(
             (
@@ -624,7 +624,7 @@ export default function Services() {
                           1.008,
                       }
                 }
-                className="
+                className={`
                   group
 
                   relative
@@ -649,14 +649,14 @@ export default function Services() {
                   ease-[cubic-bezier(0.22,1,0.36,1)]
 
                   hover:shadow-[0_35px_90px_rgba(0,0,0,0.66),0_16px_45px_rgba(0,0,0,0.42),0_0_40px_rgba(15,255,110,0.14),0_0_80px_rgba(15,255,110,0.06)]
-                "
+                `}
               >
                 {/* =================================================
                     STATIC BORDER
                 ================================================= */}
 
                 <div
-                  className="
+                  className={`
                     pointer-events-none
 
                     absolute
@@ -667,14 +667,14 @@ export default function Services() {
                     rounded-[24px]
 
                     border
-                    border-white/[0.075]
+                    border-white/10
 
                     transition-colors
 
                     duration-500
 
                     group-hover:border-[#0fff6e]/30
-                  "
+                  `}
                 />
 
                 {/* =================================================
@@ -683,7 +683,7 @@ export default function Services() {
 
                 {!reduceMotion && (
                   <svg
-                    className="
+                    className={`
                       pointer-events-none
 
                       absolute
@@ -695,7 +695,7 @@ export default function Services() {
                       w-full
 
                       overflow-visible
-                    "
+                    `}
                     aria-hidden="true"
                   >
                     <defs>
@@ -784,7 +784,7 @@ export default function Services() {
 
                       filter={`url(#borderGlow-${service.number})`}
 
-                      className="
+                      className={`
                         opacity-0
 
                         transition-opacity
@@ -792,7 +792,7 @@ export default function Services() {
                         duration-500
 
                         group-hover:opacity-40
-                      "
+                      `}
                     />
 
                     {/* GREEN ORBIT */}
@@ -858,7 +858,7 @@ export default function Services() {
                             }
                       }
 
-                      className="
+                      className={`
                         opacity-0
 
                         transition-opacity
@@ -866,7 +866,7 @@ export default function Services() {
                         duration-300
 
                         group-hover:opacity-100
-                      "
+                      `}
                     />
 
                     {/* BRIGHT HEAD */}
@@ -932,7 +932,7 @@ export default function Services() {
                             }
                       }
 
-                      className="
+                      className={`
                         opacity-0
 
                         transition-opacity
@@ -940,7 +940,7 @@ export default function Services() {
                         duration-300
 
                         group-hover:opacity-100
-                      "
+                      `}
                     />
                   </svg>
                 )}
@@ -952,7 +952,7 @@ export default function Services() {
                 ================================================= */}
 
                 <div
-                  className="
+                  className={`
                     relative
                     z-[2]
 
@@ -973,12 +973,12 @@ export default function Services() {
                     xl:p-5
 
                     2xl:p-[22px]
-                  "
+                  `}
                 >
                   {/* PREMIUM ATMOSPHERE */}
 
                   <div
-                    className="
+                    className={`
                       pointer-events-none
 
                       absolute
@@ -993,13 +993,13 @@ export default function Services() {
                       duration-700
 
                       group-hover:opacity-100
-                    "
+                    `}
                   />
 
                   {/* TOP RIGHT GLOW */}
 
                   <div
-                    className="
+                    className={`
                       pointer-events-none
 
                       absolute
@@ -1012,7 +1012,7 @@ export default function Services() {
 
                       rounded-full
 
-                      bg-[#0fff6e]/[0.025]
+                      bg-[#0fff6e]/5
 
                       blur-[85px]
 
@@ -1022,14 +1022,14 @@ export default function Services() {
 
                       group-hover:scale-125
 
-                      group-hover:bg-[#0fff6e]/[0.08]
-                    "
+                      group-hover:bg-[#0fff6e]/10
+                    `}
                   />
 
                   {/* GRID */}
 
                   <div
-                    className="
+                    className={`
                       pointer-events-none
 
                       absolute
@@ -1040,13 +1040,13 @@ export default function Services() {
                       [background-image:linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)]
 
                       [background-size:46px_46px]
-                    "
+                    `}
                   />
 
                   {/* PREMIUM TOP LINE */}
 
                   <div
-                    className="
+                    className={`
                       pointer-events-none
 
                       absolute
@@ -1061,7 +1061,7 @@ export default function Services() {
 
                       from-transparent
 
-                      via-white/[0.16]
+                      via-white/15
 
                       to-transparent
 
@@ -1070,13 +1070,13 @@ export default function Services() {
                       duration-700
 
                       group-hover:via-[#aaffc7]/40
-                    "
+                    `}
                   />
 
                   {/* SIDE ACCENT */}
 
                   <span
-                    className="
+                    className={`
                       pointer-events-none
 
                       absolute
@@ -1100,7 +1100,7 @@ export default function Services() {
                       duration-700
 
                       group-hover:via-[#0fff6e]/35
-                    "
+                    `}
                   />
 
                   {/* =================================================
@@ -1110,21 +1110,21 @@ export default function Services() {
                   ================================================= */}
 
                   <div
-                    className="
+                    className={`
                       relative
                       z-10
 
                       flex
                       h-full
                       flex-col
-                    "
+                    `}
                   >
                     {/* ===============================================
                         TOP META
                     ================================================ */}
 
                     <div
-                      className="
+                      className={`
                         flex
 
                         min-h-[38px]
@@ -1134,12 +1134,12 @@ export default function Services() {
                         justify-between
 
                         gap-3
-                      "
+                      `}
                     >
                       {/* DISCIPLINE */}
 
                       <div
-                        className="
+                        className={`
                           flex
 
                           items-center
@@ -1149,9 +1149,9 @@ export default function Services() {
                           rounded-full
 
                           border
-                          border-white/[0.09]
+                          border-white/10
 
-                          bg-white/[0.04]
+                          bg-white/5
 
                           px-3.5
                           py-2
@@ -1178,17 +1178,17 @@ export default function Services() {
 
                           group-hover:border-[#0fff6e]/35
 
-                          group-hover:bg-[#0fff6e]/[0.07]
+                          group-hover:bg-[#0fff6e]/5
 
                           group-hover:shadow-[0_0_20px_rgba(15,255,110,0.05)]
 
                           sm:text-[10.5px]
 
                           2xl:text-[11px]
-                        "
+                        `}
                       >
                         <span
-                          className="
+                          className={`
                             h-1.5
                             w-1.5
 
@@ -1199,7 +1199,7 @@ export default function Services() {
                             bg-[#0fff6e]
 
                             shadow-[0_0_9px_rgba(15,255,110,0.95)]
-                          "
+                          `}
                         />
 
                         {
@@ -1210,7 +1210,7 @@ export default function Services() {
                       {/* TECH */}
 
                       <span
-                        className="
+                        className={`
                           max-w-[145px]
 
                           pt-1
@@ -1242,7 +1242,7 @@ export default function Services() {
                           xl:text-[9px]
 
                           2xl:text-[10px]
-                        "
+                        `}
                       >
                         {
                           service.tech
@@ -1257,7 +1257,7 @@ export default function Services() {
                     ================================================ */}
 
                     <div
-                      className="
+                      className={`
                         mt-5
 
                         flex
@@ -1265,12 +1265,12 @@ export default function Services() {
                         flex-col
 
                         sm:mt-[22px]
-                      "
+                      `}
                     >
                       {/* SERVICE NUMBER */}
 
                       <div
-                        className="
+                        className={`
                           mb-2.5
 
                           flex
@@ -1294,10 +1294,10 @@ export default function Services() {
                           sm:text-[11px]
 
                           2xl:text-[11.5px]
-                        "
+                        `}
                       >
                         <span
-                          className="
+                          className={`
                             h-px
                             w-5
 
@@ -1312,7 +1312,7 @@ export default function Services() {
                             duration-500
 
                             group-hover:w-8
-                          "
+                          `}
                         />
 
                         {
@@ -1328,7 +1328,7 @@ export default function Services() {
                       ================================================= */}
 
                       <h2
-                        className="
+                        className={`
                           m-0
 
                           max-w-[345px]
@@ -1362,7 +1362,7 @@ export default function Services() {
 
                           2xl:min-h-[72px]
                           2xl:text-[35px]
-                        "
+                        `}
                       >
                         {
                           service.title
@@ -1372,7 +1372,7 @@ export default function Services() {
                       {/* TITLE ACCENT */}
 
                       <div
-                        className="
+                        className={`
                           mt-3
 
                           h-px
@@ -1395,7 +1395,7 @@ export default function Services() {
                           group-hover:w-14
 
                           group-hover:from-[#0fff6e]
-                        "
+                        `}
                       />
 
                       {/* =================================================
@@ -1405,7 +1405,7 @@ export default function Services() {
                       ================================================= */}
 
                       <p
-                        className="
+                        className={`
                           m-0
 
                           mt-3.5
@@ -1437,7 +1437,7 @@ export default function Services() {
 
                           2xl:min-h-[118px]
                           2xl:text-[14.75px]
-                        "
+                        `}
                       >
                         {
                           service.description
@@ -1451,7 +1451,7 @@ export default function Services() {
                       ================================================= */}
 
                       <div
-                        className="
+                        className={`
                           mt-4
 
                           flex
@@ -1464,7 +1464,7 @@ export default function Services() {
                           xl:min-h-[84px]
 
                           2xl:min-h-[88px]
-                        "
+                        `}
                       >
                         {service.tags.map(
                           (
@@ -1487,7 +1487,7 @@ export default function Services() {
                                 ease:
                                   "easeOut",
                               }}
-                              className="
+                              className={`
                                 h-fit
 
                                 cursor-default
@@ -1495,7 +1495,7 @@ export default function Services() {
                                 rounded-full
 
                                 border
-                                border-white/[0.10]
+                                border-white/10
 
                                 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.025))]
 
@@ -1522,7 +1522,7 @@ export default function Services() {
 
                                 hover:border-[#0fff6e]/45
 
-                                hover:bg-[#0fff6e]/[0.09]
+                                hover:bg-[#0fff6e]/10
 
                                 hover:text-white
 
@@ -1537,7 +1537,7 @@ export default function Services() {
                                 2xl:px-3.5
 
                                 2xl:text-[11px]
-                              "
+                              `}
                             >
                               {
                                 tag
@@ -1554,11 +1554,11 @@ export default function Services() {
                       ================================================= */}
 
                       <div
-                        className="
+                        className={`
                           mt-auto
 
                           border-t
-                          border-white/[0.075]
+                          border-white/10
 
                           pt-4
 
@@ -1567,12 +1567,12 @@ export default function Services() {
                           duration-500
 
                           group-hover:border-[#0fff6e]/20
-                        "
+                        `}
                       >
                         <a
                           href="#"
-                          className="
-                            group/button
+                          className={`
+                            group
 
                             flex
 
@@ -1610,7 +1610,7 @@ export default function Services() {
                             xl:text-[10.5px]
 
                             2xl:text-[11.5px]
-                          "
+                          `}
                         >
                           <span>
                             {
@@ -1619,7 +1619,7 @@ export default function Services() {
                           </span>
 
                           <span
-                            className="
+                            className={`
                               flex
 
                               h-9
@@ -1634,9 +1634,9 @@ export default function Services() {
                               rounded-full
 
                               border
-                              border-white/[0.11]
+                              border-white/10
 
-                              bg-white/[0.04]
+                              bg-white/5
 
                               text-white
 
@@ -1648,27 +1648,27 @@ export default function Services() {
 
                               ease-out
 
-                              group-hover/button:translate-x-1
+                              group-hover:translate-x-1
 
-                              group-hover/button:border-[#0fff6e]/45
+                              group-hover:border-[#0fff6e]/45
 
-                              group-hover/button:bg-[#0fff6e]/10
+                              group-hover:bg-[#0fff6e]/10
 
-                              group-hover/button:text-[#0fff6e]
+                              group-hover:text-[#0fff6e]
 
-                              group-hover/button:shadow-[0_0_25px_rgba(15,255,110,0.14)]
-                            "
+                              group-hover:shadow-[0_0_25px_rgba(15,255,110,0.14)]
+                            `}
                           >
                             <ArrowRight
                               size={15}
                               strokeWidth={1.8}
-                              className="
+                              className={`
                                 transition-transform
 
                                 duration-500
 
-                                group-hover/button:translate-x-0.5
-                              "
+                                group-hover:translate-x-0.5
+                              `}
                             />
                           </span>
                         </a>

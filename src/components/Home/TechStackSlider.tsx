@@ -88,7 +88,7 @@ function SliderGroup({
 }) {
   return (
     <div
-      className="
+      className={`
         flex
         shrink-0
         items-center
@@ -101,7 +101,7 @@ function SliderGroup({
 
         lg:gap-5
         lg:pr-5
-      "
+      `}
     >
       {techStack.map((item) => {
         const Icon = item.icon;
@@ -124,21 +124,21 @@ function SliderGroup({
               duration: 0.28,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="
+            className={`
               group
               relative
 
               shrink-0
 
               cursor-default
-            "
+            `}
           >
             {/* =================================================
                 OUTER HOVER GLOW
             ================================================== */}
 
             <div
-              className="
+              className={`
                 pointer-events-none
 
                 absolute
@@ -158,7 +158,7 @@ function SliderGroup({
 
                 group-hover:scale-110
                 group-hover:opacity-100
-              "
+              `}
             />
 
             {/* =================================================
@@ -211,7 +211,7 @@ function SliderGroup({
                     ? `
                       border-[#00FF66]/15
 
-                      bg-[#00FF66]/4.5
+                      bg-[#00FF66]/5
 
                       text-[#29ff7e]
 
@@ -219,14 +219,14 @@ function SliderGroup({
 
                       group-hover:border-[#00FF66]/45
 
-                      group-hover:bg-[#00FF66]/8.5
+                      group-hover:bg-[#00FF66]/10
 
                       group-hover:text-[#70ffab]
 
                       group-hover:shadow-[0_14px_35px_rgba(0,0,0,0.38),0_0_28px_rgba(0,255,102,0.14),inset_0_1px_0_rgba(255,255,255,0.05)]
                     `
                     : `
-                      border-white/6
+                      border-white/5
 
                       bg-[#111813]
 
@@ -247,7 +247,7 @@ function SliderGroup({
             >
               {/* Shine */}
               <span
-                className="
+                className={`
                   pointer-events-none
 
                   absolute
@@ -273,14 +273,14 @@ function SliderGroup({
                   duration-700
 
                   group-hover:left-[130%]
-                "
+                `}
               />
 
               {/* Icon */}
               <Icon
                 size={14}
                 strokeWidth={1.7}
-                className="
+                className={`
                   relative
                   z-10
 
@@ -299,17 +299,17 @@ function SliderGroup({
                   group-hover:text-[#00FF66]
 
                   sm:block
-                "
+                `}
               />
 
               {/* Text */}
               <span
-                className="
+                className={`
                   relative
                   z-10
 
                   whitespace-nowrap
-                "
+                `}
               >
                 {item.name}
               </span>
@@ -330,7 +330,7 @@ export default function TechStackSlider() {
 
   return (
     <section
-      className="
+      className={`
         relative
 
         w-full
@@ -338,7 +338,7 @@ export default function TechStackSlider() {
         overflow-hidden
 
         border-y
-        border-white/3.5
+        border-white/5
 
         bg-[#07100b]
 
@@ -347,25 +347,25 @@ export default function TechStackSlider() {
         sm:py-14
 
         lg:py-16
-      "
+      `}
     >
       {/* =====================================================
           BACKGROUND
       ====================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
           inset-0
 
           overflow-hidden
-        "
+        `}
       >
         {/* Main Glow */}
         <div
-          className="
+          className={`
             absolute
 
             left-1/2
@@ -381,15 +381,15 @@ export default function TechStackSlider() {
 
             rounded-full
 
-            bg-[#00FF66]/3.5
+            bg-[#00FF66]/5
 
             blur-[120px]
-          "
+          `}
         />
 
         {/* Grid */}
         <div
-          className="
+          className={`
             absolute
             inset-0
 
@@ -398,12 +398,12 @@ export default function TechStackSlider() {
             [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)]
 
             [background-size:64px_64px]
-          "
+          `}
         />
 
         {/* Top Highlight */}
         <div
-          className="
+          className={`
             absolute
 
             left-1/2
@@ -424,12 +424,12 @@ export default function TechStackSlider() {
             via-[#00FF66]/25
 
             to-transparent
-          "
+          `}
         />
 
         {/* Bottom Highlight */}
         <div
-          className="
+          className={`
             absolute
 
             bottom-0
@@ -447,10 +447,10 @@ export default function TechStackSlider() {
 
             from-transparent
 
-            via-[#00FF66]/12
+            via-[#00FF66]/10
 
             to-transparent
-          "
+          `}
         />
       </div>
 
@@ -460,7 +460,7 @@ export default function TechStackSlider() {
       ====================================================== */}
 
       <div
-        className="
+        className={`
           relative
           z-20
 
@@ -485,7 +485,7 @@ export default function TechStackSlider() {
           xl:px-16
 
           2xl:px-20
-        "
+        `}
       >
         <motion.div
           initial={
@@ -507,7 +507,7 @@ export default function TechStackSlider() {
             duration: 0.65,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="
+          className={`
             inline-flex
 
             items-center
@@ -531,11 +531,11 @@ export default function TechStackSlider() {
             sm:text-[9px]
 
             lg:text-[10px]
-          "
+          `}
         >
           {/* Left Line */}
           <span
-            className="
+            className={`
               h-px
 
               w-6
@@ -547,14 +547,14 @@ export default function TechStackSlider() {
               to-[#00FF66]/60
 
               sm:w-8
-            "
+            `}
           />
 
           PRECISION TECH STACK & CAD SOFTWARE SUITE
 
           {/* Right Line */}
           <span
-            className="
+            className={`
               h-px
 
               w-6
@@ -566,7 +566,7 @@ export default function TechStackSlider() {
               to-[#00FF66]/60
 
               sm:w-8
-            "
+            `}
           />
         </motion.div>
       </div>
@@ -580,7 +580,7 @@ export default function TechStackSlider() {
       ====================================================== */}
 
       <div
-        className="
+        className={`
           relative
           z-10
 
@@ -591,24 +591,24 @@ export default function TechStackSlider() {
           sm:py-7
 
           lg:py-8
-        "
+        `}
       >
         {/* =================================================
             HORIZONTAL CLIPPING LAYER
         ================================================== */}
 
         <div
-          className="
+          className={`
             relative
 
             w-full
 
             overflow-hidden
-          "
+          `}
         >
           {/* Left Fade */}
           <div
-            className="
+            className={`
               pointer-events-none
 
               absolute
@@ -635,12 +635,12 @@ export default function TechStackSlider() {
               lg:w-32
 
               xl:w-40
-            "
+            `}
           />
 
           {/* Right Fade */}
           <div
-            className="
+            className={`
               pointer-events-none
 
               absolute
@@ -667,7 +667,7 @@ export default function TechStackSlider() {
               lg:w-32
 
               xl:w-40
-            "
+            `}
           />
 
           {/* =================================================
@@ -694,7 +694,7 @@ export default function TechStackSlider() {
                     ease: 'linear',
                   }
             }
-            className="
+            className={`
               flex
 
               w-max
@@ -704,7 +704,7 @@ export default function TechStackSlider() {
               py-4
 
               will-change-transform
-            "
+            `}
           >
             {/* First copy */}
             <SliderGroup
@@ -728,7 +728,7 @@ export default function TechStackSlider() {
       ====================================================== */}
 
       <div
-        className="
+        className={`
           relative
           z-20
 
@@ -754,10 +754,10 @@ export default function TechStackSlider() {
           xl:px-16
 
           2xl:px-20
-        "
+        `}
       >
         <div
-          className="
+          className={`
             flex
 
             items-center
@@ -775,10 +775,10 @@ export default function TechStackSlider() {
             text-white/15
 
             sm:text-[8px]
-          "
+          `}
         >
           <span
-            className="
+            className={`
               h-1
               w-1
 
@@ -787,7 +787,7 @@ export default function TechStackSlider() {
               bg-[#00FF66]
 
               shadow-[0_0_8px_rgba(0,255,102,0.6)]
-            "
+            `}
           />
 
           Architecture · Development · Visualization · Engineering

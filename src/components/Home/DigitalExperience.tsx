@@ -235,9 +235,9 @@ function LiveCounter({
 
         ease,
       }}
-      className="
+      className={`
         inline-block
-      "
+      `}
     >
       {count}
     </motion.span>
@@ -283,7 +283,7 @@ export default function DigitalExperience() {
 
   return (
     <section
-      className="
+      className={`
         relative
 
         w-full
@@ -298,26 +298,26 @@ export default function DigitalExperience() {
         sm:py-16
 
         lg:py-20
-      "
+      `}
     >
       {/* =====================================================
           BACKGROUND
       ====================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
           inset-0
 
           overflow-hidden
-        "
+        `}
       >
         {/* TOP GLOW */}
 
         <div
-          className="
+          className={`
             absolute
 
             left-1/2
@@ -332,10 +332,10 @@ export default function DigitalExperience() {
 
             rounded-full
 
-            bg-[#00FF66]/[0.05]
+            bg-[#00FF66]/5
 
             blur-[170px]
-          "
+          `}
         />
 
         {/* LEFT MOVING GLOW */}
@@ -370,7 +370,7 @@ export default function DigitalExperience() {
               ease:
                 "easeInOut",
             }}
-            className="
+            className={`
               absolute
 
               -left-[180px]
@@ -381,10 +381,10 @@ export default function DigitalExperience() {
 
               rounded-full
 
-              bg-[#00FF66]/[0.05]
+              bg-[#00FF66]/5
 
               blur-[150px]
-            "
+            `}
           />
         )}
 
@@ -414,7 +414,7 @@ export default function DigitalExperience() {
               ease:
                 "easeInOut",
             }}
-            className="
+            className={`
               absolute
 
               -right-[200px]
@@ -425,17 +425,17 @@ export default function DigitalExperience() {
 
               rounded-full
 
-              bg-[#00FF66]/[0.05]
+              bg-[#00FF66]/5
 
               blur-[160px]
-            "
+            `}
           />
         )}
 
         {/* GRID */}
 
         <div
-          className="
+          className={`
             absolute
             inset-0
 
@@ -444,13 +444,13 @@ export default function DigitalExperience() {
             [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
 
             [background-size:74px_74px]
-          "
+          `}
         />
 
         {/* TOP SEPARATOR */}
 
         <div
-          className="
+          className={`
             absolute
 
             left-1/2
@@ -470,7 +470,7 @@ export default function DigitalExperience() {
             via-[#00FF66]/20
 
             to-transparent
-          "
+          `}
         />
       </div>
 
@@ -479,7 +479,7 @@ export default function DigitalExperience() {
       ====================================================== */}
 
       <div
-        className="
+        className={`
           relative
           z-10
 
@@ -497,10 +497,10 @@ export default function DigitalExperience() {
           xl:px-10
 
           2xl:px-12
-        "
+        `}
       >
         <div
-          className="
+          className={`
             grid
 
             items-center
@@ -514,7 +514,7 @@ export default function DigitalExperience() {
             xl:grid-cols-[0.72fr_1.28fr]
 
             xl:gap-16
-          "
+          `}
         >
           {/* =================================================
               LEFT CONTENT
@@ -545,7 +545,7 @@ export default function DigitalExperience() {
             {/* LABEL */}
 
             <div
-              className="
+              className={`
                 mb-4
 
                 flex
@@ -569,7 +569,7 @@ export default function DigitalExperience() {
                 sm:text-[11px]
 
                 lg:text-[12px]
-              "
+              `}
             >
               <motion.span
                 animate={
@@ -598,7 +598,7 @@ export default function DigitalExperience() {
                   ease:
                     "easeInOut",
                 }}
-                className="
+                className={`
                   h-2
                   w-2
 
@@ -607,7 +607,7 @@ export default function DigitalExperience() {
                   bg-[#00FF66]
 
                   shadow-[0_0_14px_rgba(0,255,102,0.9)]
-                "
+                `}
               />
 
               02 // DIGITAL INFRASTRUCTURE
@@ -616,7 +616,7 @@ export default function DigitalExperience() {
             {/* HEADING */}
 
             <h2
-              className="
+              className={`
                 max-w-[650px]
 
                 text-[42px]
@@ -638,7 +638,7 @@ export default function DigitalExperience() {
                 xl:text-[66px]
 
                 2xl:text-[72px]
-              "
+              `}
             >
               Digital
               <br />
@@ -652,7 +652,7 @@ export default function DigitalExperience() {
             {/* DESCRIPTION */}
 
             <p
-              className="
+              className={`
                 mt-5
 
                 max-w-[570px]
@@ -668,7 +668,7 @@ export default function DigitalExperience() {
                 lg:text-[16.5px]
 
                 xl:text-[17px]
-              "
+              `}
             >
               We engineer websites that act
               like precision machinery. Zero
@@ -695,7 +695,7 @@ export default function DigitalExperience() {
                 duration: 0.4,
                 ease,
               }}
-              className="
+              className={`
                 group
 
                 relative
@@ -707,7 +707,7 @@ export default function DigitalExperience() {
                 rounded-[20px]
 
                 border
-                border-white/[0.075]
+                border-white/10
 
                 bg-[linear-gradient(145deg,#0d1711_0%,#09110d_100%)]
 
@@ -724,12 +724,12 @@ export default function DigitalExperience() {
                 hover:shadow-[0_32px_85px_rgba(0,0,0,0.62),0_0_42px_rgba(0,255,102,0.10)]
 
                 sm:p-5
-              "
+              `}
             >
               {/* GLOW */}
 
               <div
-                className="
+                className={`
                   pointer-events-none
 
                   absolute
@@ -742,7 +742,7 @@ export default function DigitalExperience() {
 
                   rounded-full
 
-                  bg-[#00FF66]/[0.05]
+                  bg-[#00FF66]/5
 
                   blur-[85px]
 
@@ -753,13 +753,13 @@ export default function DigitalExperience() {
                   duration-500
 
                   group-hover:opacity-100
-                "
+                `}
               />
 
               {/* TOP LIGHT */}
 
               <div
-                className="
+                className={`
                   absolute
 
                   left-1/2
@@ -783,13 +783,13 @@ export default function DigitalExperience() {
                   duration-700
 
                   group-hover:w-[70%]
-                "
+                `}
               />
 
               {/* LABEL */}
 
               <div
-                className="
+                className={`
                   relative
                   z-10
 
@@ -810,7 +810,7 @@ export default function DigitalExperience() {
                   sm:text-[10px]
 
                   lg:text-[10.5px]
-                "
+                `}
               >
                 GOOGLE LIGHTHOUSE AUDIT AVERAGE
               </div>
@@ -818,7 +818,7 @@ export default function DigitalExperience() {
               {/* SCORE CARDS */}
 
               <div
-                className="
+                className={`
                   relative
                   z-10
 
@@ -829,7 +829,7 @@ export default function DigitalExperience() {
                   gap-2.5
 
                   sm:grid-cols-4
-                "
+                `}
               >
                 {scores.map(
                   (
@@ -869,8 +869,8 @@ export default function DigitalExperience() {
 
                         ease,
                       }}
-                      className="
-                        group/score
+                      className={`
+                        group
 
                         relative
 
@@ -879,9 +879,9 @@ export default function DigitalExperience() {
                         rounded-[14px]
 
                         border
-                        border-white/[0.06]
+                        border-white/5
 
-                        bg-white/[0.025]
+                        bg-white/5
 
                         px-3
                         py-4
@@ -898,15 +898,15 @@ export default function DigitalExperience() {
 
                         hover:border-[#00FF66]/25
 
-                        hover:bg-[#00FF66]/[0.045]
+                        hover:bg-[#00FF66]/5
 
                         hover:shadow-[0_14px_35px_rgba(0,0,0,0.34),0_0_28px_rgba(0,255,102,0.10)]
-                      "
+                      `}
                     >
                       {/* COUNTER */}
 
                       <div
-                        className="
+                        className={`
                           relative
                           z-10
 
@@ -923,7 +923,7 @@ export default function DigitalExperience() {
                           sm:text-[28px]
 
                           xl:text-[30px]
-                        "
+                        `}
                       >
                         <LiveCounter
                           value={
@@ -947,7 +947,7 @@ export default function DigitalExperience() {
                       {/* SCORE LABEL */}
 
                       <div
-                        className="
+                        className={`
                           relative
                           z-10
 
@@ -968,7 +968,7 @@ export default function DigitalExperience() {
                           sm:text-[8.5px]
 
                           xl:text-[9px]
-                        "
+                        `}
                       >
                         {
                           score.label
@@ -985,14 +985,14 @@ export default function DigitalExperience() {
             ================================================== */}
 
             <div
-              className="
+              className={`
                 relative
 
                 mt-5
-              "
+              `}
             >
               <div
-                className="
+                className={`
                   pointer-events-none
 
                   absolute
@@ -1007,14 +1007,14 @@ export default function DigitalExperience() {
 
                   rounded-full
 
-                  bg-[#00FF66]/[0.035]
+                  bg-[#00FF66]/5
 
                   blur-[45px]
-                "
+                `}
               />
 
               <div
-                className="
+                className={`
                   relative
 
                   flex
@@ -1022,7 +1022,7 @@ export default function DigitalExperience() {
                   flex-wrap
 
                   gap-2.5
-                "
+                `}
               >
                 {tags.map(
                   (tag) => (
@@ -1042,8 +1042,8 @@ export default function DigitalExperience() {
 
                         ease,
                       }}
-                      className="
-                        group/tag
+                      className={`
+                        group
 
                         relative
 
@@ -1060,7 +1060,7 @@ export default function DigitalExperience() {
                         rounded-full
 
                         border
-                        border-white/[0.11]
+                        border-white/10
 
                         bg-[linear-gradient(180deg,rgba(255,255,255,0.065),rgba(255,255,255,0.025))]
 
@@ -1087,7 +1087,7 @@ export default function DigitalExperience() {
 
                         hover:border-[#00FF66]/45
 
-                        hover:bg-[#00FF66]/[0.075]
+                        hover:bg-[#00FF66]/10
 
                         hover:text-white
 
@@ -1100,10 +1100,10 @@ export default function DigitalExperience() {
                         lg:text-[10.5px]
 
                         xl:text-[11px]
-                      "
+                      `}
                     >
                       <span
-                        className="
+                        className={`
                           relative
 
                           h-1.5
@@ -1116,14 +1116,14 @@ export default function DigitalExperience() {
                           bg-[#00FF66]/80
 
                           shadow-[0_0_7px_rgba(0,255,102,0.55)]
-                        "
+                        `}
                       />
 
                       <span
-                        className="
+                        className={`
                           relative
                           z-10
-                        "
+                        `}
                       >
                         {tag}
                       </span>
@@ -1151,8 +1151,8 @@ export default function DigitalExperience() {
               whileTap={{
                 scale: 0.97,
               }}
-              className="
-                group/button
+              className={`
+                group
 
                 relative
 
@@ -1196,10 +1196,10 @@ export default function DigitalExperience() {
                 sm:text-[12.5px]
 
                 lg:text-[13px]
-              "
+              `}
             >
               <span
-                className="
+                className={`
                   absolute
 
                   inset-y-0
@@ -1222,22 +1222,22 @@ export default function DigitalExperience() {
 
                   duration-700
 
-                  group-hover/button:left-[130%]
-                "
+                  group-hover:left-[130%]
+                `}
               />
 
               <span
-                className="
+                className={`
                   relative
                   z-10
-                "
+                `}
               >
                 VIEW WEB PROJECTS
               </span>
 
               <ArrowRight
                 size={17}
-                className="
+                className={`
                   relative
                   z-10
 
@@ -1245,8 +1245,8 @@ export default function DigitalExperience() {
 
                   duration-500
 
-                  group-hover/button:translate-x-1
-                "
+                  group-hover:translate-x-1
+                `}
               />
             </motion.button>
           </motion.div>
@@ -1280,13 +1280,13 @@ export default function DigitalExperience() {
               delay: 0.12,
               ease,
             }}
-            className="
+            className={`
               relative
 
               min-w-0
 
               lg:pl-3
-            "
+            `}
           >
             {/* =================================================
                 DEVICE SWITCHER
@@ -1294,7 +1294,7 @@ export default function DigitalExperience() {
             ================================================== */}
 
             <div
-              className="
+              className={`
                 relative
 
                 mb-4
@@ -1304,7 +1304,7 @@ export default function DigitalExperience() {
                 rounded-[18px]
 
                 border
-                border-[#00FF66]/[0.13]
+                border-[#00FF66]/15
 
                 bg-[linear-gradient(135deg,rgba(14,25,18,0.96),rgba(7,14,10,0.98))]
 
@@ -1315,12 +1315,12 @@ export default function DigitalExperience() {
                 backdrop-blur-2xl
 
                 sm:p-2
-              "
+              `}
             >
               {/* TOP LIGHT */}
 
               <span
-                className="
+                className={`
                   pointer-events-none
 
                   absolute
@@ -1340,13 +1340,13 @@ export default function DigitalExperience() {
                   to-transparent
 
                   shadow-[0_0_12px_rgba(0,255,102,0.35)]
-                "
+                `}
               />
 
               {/* AMBIENT GLOW */}
 
               <div
-                className="
+                className={`
                   pointer-events-none
 
                   absolute
@@ -1361,14 +1361,14 @@ export default function DigitalExperience() {
 
                   rounded-full
 
-                  bg-[#00FF66]/[0.055]
+                  bg-[#00FF66]/5
 
                   blur-[45px]
-                "
+                `}
               />
 
               <div
-                className="
+                className={`
                   relative
                   z-10
 
@@ -1379,14 +1379,14 @@ export default function DigitalExperience() {
                   justify-between
 
                   gap-3
-                "
+                `}
               >
                 {/* =================================================
                     SCROLL SAFE AREA
                 ================================================== */}
 
                 <div
-                  className="
+                  className={`
                     min-w-0
 
                     flex-1
@@ -1396,10 +1396,10 @@ export default function DigitalExperience() {
                     [scrollbar-width:none]
 
                     [&::-webkit-scrollbar]:hidden
-                  "
+                  `}
                 >
                   <div
-                    className="
+                    className={`
                       -my-2
 
                       flex
@@ -1413,7 +1413,7 @@ export default function DigitalExperience() {
                       py-2
 
                       sm:gap-2
-                    "
+                    `}
                   >
                     {devices.map(
                       (
@@ -1462,7 +1462,7 @@ export default function DigitalExperience() {
                               ease,
                             }}
                             className={`
-                              group/device
+                              group
 
                               relative
 
@@ -1530,9 +1530,9 @@ export default function DigitalExperience() {
                                     shadow-[0_0_28px_rgba(0,255,102,0.34),0_8px_22px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.35)]
                                   `
                                   : `
-                                    border-white/[0.08]
+                                    border-white/10
 
-                                    bg-white/[0.04]
+                                    bg-white/5
 
                                     text-white/65
 
@@ -1540,7 +1540,7 @@ export default function DigitalExperience() {
 
                                     hover:border-[#00FF66]/35
 
-                                    hover:bg-[#00FF66]/[0.07]
+                                    hover:bg-[#00FF66]/5
 
                                     hover:text-white
 
@@ -1573,7 +1573,7 @@ export default function DigitalExperience() {
                                     ease:
                                       "easeInOut",
                                   }}
-                                  className="
+                                  className={`
                                     pointer-events-none
 
                                     absolute
@@ -1592,7 +1592,7 @@ export default function DigitalExperience() {
                                     via-white/45
 
                                     to-transparent
-                                  "
+                                  `}
                                 />
                               )}
 
@@ -1614,7 +1614,7 @@ export default function DigitalExperience() {
                                 ${
                                   active
                                     ? "text-[#031007]"
-                                    : "text-[#00FF66]/80 group-hover/device:text-[#00FF66]"
+                                    : "text-[#00FF66]/80 group-hover:text-[#00FF66]"
                                 }
                               `}
                               strokeWidth={
@@ -1625,10 +1625,10 @@ export default function DigitalExperience() {
                             {/* LABEL */}
 
                             <span
-                              className="
+                              className={`
                                 relative
                                 z-10
-                              "
+                              `}
                             >
                               {
                                 device.label
@@ -1671,7 +1671,7 @@ export default function DigitalExperience() {
                 {/* INSPECTOR */}
 
                 <div
-                  className="
+                  className={`
                     hidden
 
                     shrink-0
@@ -1681,7 +1681,7 @@ export default function DigitalExperience() {
                     gap-2
 
                     border-l
-                    border-white/[0.07]
+                    border-white/5
 
                     px-3
 
@@ -1704,10 +1704,10 @@ export default function DigitalExperience() {
                     xl:flex
 
                     2xl:text-[9px]
-                  "
+                  `}
                 >
                   <span
-                    className="
+                    className={`
                       h-1.5
                       w-1.5
 
@@ -1716,7 +1716,7 @@ export default function DigitalExperience() {
                       bg-[#00FF66]
 
                       shadow-[0_0_8px_rgba(0,255,102,0.85)]
-                    "
+                    `}
                   />
 
                   RESPONSIVE INSPECTOR
@@ -1740,8 +1740,8 @@ export default function DigitalExperience() {
                 duration: 0.5,
                 ease,
               }}
-              className="
-                group/browser
+              className={`
+                group
 
                 relative
 
@@ -1750,7 +1750,7 @@ export default function DigitalExperience() {
                 rounded-[24px]
 
                 border
-                border-white/[0.08]
+                border-white/10
 
                 bg-[#07100b]
 
@@ -1767,12 +1767,12 @@ export default function DigitalExperience() {
                 hover:shadow-[0_45px_125px_rgba(0,0,0,0.72),0_0_55px_rgba(0,255,102,0.11)]
 
                 sm:p-4
-              "
+              `}
             >
               {/* GLOW */}
 
               <div
-                className="
+                className={`
                   pointer-events-none
 
                   absolute
@@ -1785,7 +1785,7 @@ export default function DigitalExperience() {
 
                   rounded-full
 
-                  bg-[#00FF66]/[0.07]
+                  bg-[#00FF66]/5
 
                   blur-[130px]
 
@@ -1795,14 +1795,14 @@ export default function DigitalExperience() {
 
                   duration-700
 
-                  group-hover/browser:opacity-100
-                "
+                  group-hover:opacity-100
+                `}
               />
 
               {/* TOP BORDER */}
 
               <div
-                className="
+                className={`
                   pointer-events-none
 
                   absolute
@@ -1829,16 +1829,16 @@ export default function DigitalExperience() {
 
                   duration-700
 
-                  group-hover/browser:w-[70%]
+                  group-hover:w-[70%]
 
-                  group-hover/browser:opacity-100
-                "
+                  group-hover:opacity-100
+                `}
               />
 
               {/* BROWSER TOP */}
 
               <div
-                className="
+                className={`
                   relative
                   z-10
 
@@ -1851,7 +1851,7 @@ export default function DigitalExperience() {
                   rounded-[12px]
 
                   border
-                  border-white/[0.05]
+                  border-white/5
 
                   bg-[#08100c]
 
@@ -1859,13 +1859,13 @@ export default function DigitalExperience() {
                   py-3
 
                   sm:px-4
-                "
+                `}
               >
                 <div
-                  className="
+                  className={`
                     flex
                     gap-1.5
-                  "
+                  `}
                 >
                   <span className="h-2 w-2 rounded-full bg-[#ff6b6b]" />
 
@@ -1875,7 +1875,7 @@ export default function DigitalExperience() {
                 </div>
 
                 <div
-                  className="
+                  className={`
                     mx-auto
 
                     max-w-[330px]
@@ -1887,9 +1887,9 @@ export default function DigitalExperience() {
                     rounded-full
 
                     border
-                    border-white/[0.06]
+                    border-white/5
 
-                    bg-white/[0.03]
+                    bg-white/5
 
                     px-3
                     py-1.5
@@ -1905,13 +1905,13 @@ export default function DigitalExperience() {
                     sm:text-[8.5px]
 
                     lg:text-[9px]
-                  "
+                  `}
                 >
                   claystone.digital/dashboard
                 </div>
 
                 <span
-                  className="
+                  className={`
                     hidden
 
                     font-mono
@@ -1925,7 +1925,7 @@ export default function DigitalExperience() {
                     sm:block
 
                     lg:text-[8.5px]
-                  "
+                  `}
                 >
                   LIVE
                 </span>
@@ -1936,7 +1936,7 @@ export default function DigitalExperience() {
               ================================================== */}
 
               <div
-                className="
+                className={`
                   relative
 
                   mt-3
@@ -1948,7 +1948,7 @@ export default function DigitalExperience() {
                   rounded-[18px]
 
                   border
-                  border-white/[0.06]
+                  border-white/5
 
                   bg-[#040806]
 
@@ -1957,12 +1957,12 @@ export default function DigitalExperience() {
                   lg:min-h-[500px]
 
                   xl:min-h-[540px]
-                "
+                `}
               >
                 {/* AMBIENT */}
 
                 <div
-                  className="
+                  className={`
                     pointer-events-none
 
                     absolute
@@ -1978,10 +1978,10 @@ export default function DigitalExperience() {
 
                     rounded-full
 
-                    bg-[#00FF66]/[0.05]
+                    bg-[#00FF66]/5
 
                     blur-[110px]
-                  "
+                  `}
                 />
 
                 {/* DEVICE FRAME */}
@@ -1999,7 +1999,7 @@ export default function DigitalExperience() {
                     aspectRatio:
                       currentDevice.aspectRatio,
                   }}
-                  className="
+                  className={`
                     absolute
 
                     left-1/2
@@ -2016,7 +2016,7 @@ export default function DigitalExperience() {
                     rounded-[16px]
 
                     border
-                    border-white/[0.09]
+                    border-white/10
 
                     bg-[#07100b]
 
@@ -2027,7 +2027,7 @@ export default function DigitalExperience() {
                     duration-500
 
                     hover:shadow-[0_30px_85px_rgba(0,0,0,0.75),0_0_50px_rgba(0,255,102,0.13)]
-                  "
+                  `}
                 >
                   <AnimatePresence mode="wait">
                     <motion.div
@@ -2076,12 +2076,12 @@ export default function DigitalExperience() {
                         duration: 0.6,
                         ease,
                       }}
-                      className="
-                        group/image
+                      className={`
+                        group
 
                         absolute
                         inset-0
-                      "
+                      `}
                     >
                       {/* IMAGE */}
 
@@ -2108,7 +2108,7 @@ export default function DigitalExperience() {
                           duration: 0.8,
                           ease,
                         }}
-                        className="
+                        className={`
                           h-full
                           w-full
 
@@ -2116,13 +2116,13 @@ export default function DigitalExperience() {
 
                           object-cover
                           object-center
-                        "
+                        `}
                       />
 
                       {/* DARK */}
 
                       <div
-                        className="
+                        className={`
                           pointer-events-none
 
                           absolute
@@ -2130,25 +2130,25 @@ export default function DigitalExperience() {
 
                           bg-gradient-to-b
 
-                          from-black/[0.02]
+                          from-black/0
 
                           via-transparent
 
                           to-black/25
-                        "
+                        `}
                       />
 
                       {/* VIGNETTE */}
 
                       <div
-                        className="
+                        className={`
                           pointer-events-none
 
                           absolute
                           inset-0
 
                           bg-[radial-gradient(circle_at_center,transparent_58%,rgba(0,0,0,0.40)_100%)]
-                        "
+                        `}
                       />
 
                       {/* SCANNER */}
@@ -2170,7 +2170,7 @@ export default function DigitalExperience() {
                             ease:
                               "linear",
                           }}
-                          className="
+                          className={`
                             pointer-events-none
 
                             absolute
@@ -2185,17 +2185,17 @@ export default function DigitalExperience() {
 
                             from-transparent
 
-                            via-[#00FF66]/[0.06]
+                            via-[#00FF66]/5
 
                             to-transparent
-                          "
+                          `}
                         />
                       )}
 
                       {/* PREVIEW LABEL */}
 
                       <div
-                        className="
+                        className={`
                           absolute
 
                           left-3
@@ -2220,7 +2220,7 @@ export default function DigitalExperience() {
                           backdrop-blur-lg
 
                           shadow-[0_0_20px_rgba(0,255,102,0.08)]
-                        "
+                        `}
                       >
                         <Layers3
                           size={12}
@@ -2228,7 +2228,7 @@ export default function DigitalExperience() {
                         />
 
                         <span
-                          className="
+                          className={`
                             font-mono
 
                             text-[7px]
@@ -2242,7 +2242,7 @@ export default function DigitalExperience() {
                             text-[#8effb8]
 
                             sm:text-[8px]
-                          "
+                          `}
                         >
                           {
                             currentDevice.label
@@ -2254,7 +2254,7 @@ export default function DigitalExperience() {
                       {/* BOTTOM STATUS */}
 
                       <div
-                        className="
+                        className={`
                           absolute
 
                           bottom-3
@@ -2269,7 +2269,7 @@ export default function DigitalExperience() {
                           rounded-[10px]
 
                           border
-                          border-white/[0.07]
+                          border-white/5
 
                           bg-[#050907]/80
 
@@ -2277,10 +2277,10 @@ export default function DigitalExperience() {
                           py-2
 
                           backdrop-blur-lg
-                        "
+                        `}
                       >
                         <span
-                          className="
+                          className={`
                             truncate
 
                             font-mono
@@ -2290,13 +2290,13 @@ export default function DigitalExperience() {
                             text-white/40
 
                             sm:text-[8px]
-                          "
+                          `}
                         >
                           RESPONSIVE DIGITAL EXPERIENCE
                         </span>
 
                         <span
-                          className="
+                          className={`
                             ml-3
 
                             shrink-0
@@ -2310,7 +2310,7 @@ export default function DigitalExperience() {
                             text-[#00FF66]
 
                             sm:text-[8px]
-                          "
+                          `}
                         >
                           {
                             currentDevice.size
@@ -2324,7 +2324,7 @@ export default function DigitalExperience() {
                 {/* REFLECTION */}
 
                 <div
-                  className="
+                  className={`
                     pointer-events-none
 
                     absolute
@@ -2343,12 +2343,12 @@ export default function DigitalExperience() {
 
                     from-transparent
 
-                    via-white/[0.035]
+                    via-white/5
 
                     to-transparent
 
                     blur-xl
-                  "
+                  `}
                 />
               </div>
             </motion.div>

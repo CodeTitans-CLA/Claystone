@@ -236,24 +236,24 @@ function BIMVisual({
   if (failed) {
     return (
       <div
-        className="
+        className={`
           absolute
           inset-0
           overflow-hidden
           bg-[#04100b]
-        "
+        `}
       >
         <div
-          className="
+          className={`
             absolute
             inset-0
 
             bg-[radial-gradient(circle_at_50%_42%,rgba(0,255,102,0.12),transparent_38%)]
-          "
+          `}
         />
 
         <div
-          className="
+          className={`
             absolute
             inset-0
 
@@ -262,21 +262,21 @@ function BIMVisual({
             [background-image:linear-gradient(rgba(0,255,102,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,102,0.18)_1px,transparent_1px)]
 
             [background-size:40px_40px]
-          "
+          `}
         />
 
         <div
-          className="
+          className={`
             absolute
             inset-0
 
             flex
             items-center
             justify-center
-          "
+          `}
         >
           <div
-            className="
+            className={`
               architecture-fallback-core
 
               relative
@@ -294,16 +294,16 @@ function BIMVisual({
               border
               border-[#00ff66]/20
 
-              bg-[#00ff66]/[0.025]
+              bg-[#00ff66]/5
 
               shadow-[0_0_70px_rgba(0,255,102,0.08)]
 
               sm:h-52
               sm:w-52
-            "
+            `}
           >
             <div
-              className="
+              className={`
                 absolute
                 inset-4
 
@@ -311,11 +311,11 @@ function BIMVisual({
 
                 border
                 border-[#00ff66]/10
-              "
+              `}
             />
 
             <Layers3
-              className="
+              className={`
                 h-16
                 w-16
 
@@ -325,13 +325,13 @@ function BIMVisual({
 
                 sm:h-20
                 sm:w-20
-              "
+              `}
             />
           </div>
         </div>
 
         <div
-          className="
+          className={`
             absolute
 
             bottom-[11%]
@@ -342,10 +342,10 @@ function BIMVisual({
             whitespace-nowrap
 
             text-center
-          "
+          `}
         >
           <p
-            className="
+            className={`
               text-[9px]
 
               font-black
@@ -358,7 +358,7 @@ function BIMVisual({
               sm:text-[10px]
 
               lg:text-[11px]
-            "
+            `}
           >
             BIM Visualization System
           </p>
@@ -377,7 +377,7 @@ function BIMVisual({
       onError={() =>
         setFailed(true)
       }
-      className="
+      className={`
         object-cover
         object-center
 
@@ -388,7 +388,7 @@ function BIMVisual({
         ease-[cubic-bezier(0.16,1,0.3,1)]
 
         group-hover:scale-[1.035]
-      "
+      `}
     />
   );
 }
@@ -404,13 +404,13 @@ function DataBadge({
 }) {
   return (
     <div
-      className="
+      className={`
         shrink-0
 
         rounded-lg
 
         border
-        border-white/[0.09]
+        border-white/10
 
         bg-black/55
 
@@ -433,7 +433,7 @@ function DataBadge({
         sm:text-[10px]
 
         lg:text-[11px]
-      "
+      `}
     >
       {children}
     </div>
@@ -467,7 +467,7 @@ export default function ArchitectureHero() {
       ===================================================== */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -476,13 +476,13 @@ export default function ArchitectureHero() {
           -z-50
 
           bg-[#05100b]
-        "
+        `}
       />
 
       {/* LEFT AMBIENT */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -497,16 +497,16 @@ export default function ArchitectureHero() {
 
           rounded-full
 
-          bg-[#00ff66]/[0.075]
+          bg-[#00ff66]/10
 
           blur-[175px]
-        "
+        `}
       />
 
       {/* RIGHT AMBIENT */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -521,16 +521,16 @@ export default function ArchitectureHero() {
 
           rounded-full
 
-          bg-[#00ff66]/[0.06]
+          bg-[#00ff66]/5
 
           blur-[210px]
-        "
+        `}
       />
 
       {/* BOTTOM GLOW */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -545,16 +545,16 @@ export default function ArchitectureHero() {
 
           rounded-full
 
-          bg-emerald-300/[0.035]
+          bg-emerald-300/4
 
           blur-[180px]
-        "
+        `}
       />
 
       {/* DOT GRID */}
 
       <div
-        className="
+        className={`
           architecture-grid
 
           pointer-events-none
@@ -569,13 +569,13 @@ export default function ArchitectureHero() {
           [background-image:radial-gradient(rgba(179,255,206,0.55)_1px,transparent_1px)]
 
           [background-size:26px_26px]
-        "
+        `}
       />
 
       {/* HORIZONTAL LINE */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -592,16 +592,16 @@ export default function ArchitectureHero() {
 
           from-transparent
 
-          via-[#00ff66]/[0.06]
+          via-[#00ff66]/5
 
           to-transparent
-        "
+        `}
       />
 
       {/* BOTTOM FADE */}
 
       <div
-        className="
+        className={`
           pointer-events-none
 
           absolute
@@ -616,7 +616,7 @@ export default function ArchitectureHero() {
           from-black/20
 
           to-transparent
-        "
+        `}
       />
 
       {/* =====================================================
@@ -624,7 +624,7 @@ export default function ArchitectureHero() {
       ===================================================== */}
 
       <div
-        className="
+        className={`
           mx-auto
 
           w-full
@@ -652,14 +652,14 @@ export default function ArchitectureHero() {
           xl:pb-10
 
           2xl:px-14
-        "
+        `}
       >
         {/* ===================================================
             TOP STATUS BAR
         =================================================== */}
 
         <div
-          className="
+          className={`
             hero-reveal
 
             flex
@@ -670,9 +670,9 @@ export default function ArchitectureHero() {
             rounded-[18px]
 
             border
-            border-white/[0.05]
+            border-white/5
 
-            bg-white/[0.016]
+            bg-white/0
 
             px-4
             py-3
@@ -687,12 +687,12 @@ export default function ArchitectureHero() {
             sm:justify-between
 
             md:px-5
-          "
+          `}
         >
           {/* BREADCRUMB */}
 
           <div
-            className="
+            className={`
               flex
               flex-wrap
 
@@ -710,17 +710,17 @@ export default function ArchitectureHero() {
               text-white/40
 
               sm:text-[11px]
-            "
+            `}
           >
             <Link
               href="/"
-              className="
+              className={`
                 transition-colors
 
                 duration-300
 
                 hover:text-[#00ff66]
-              "
+              `}
             >
               Home
             </Link>
@@ -731,13 +731,13 @@ export default function ArchitectureHero() {
 
             <Link
               href="/services"
-              className="
+              className={`
                 transition-colors
 
                 duration-300
 
                 hover:text-[#00ff66]
-              "
+              `}
             >
               Services
             </Link>
@@ -754,7 +754,7 @@ export default function ArchitectureHero() {
           {/* STATUS */}
 
           <div
-            className="
+            className={`
               flex
 
               w-fit
@@ -768,7 +768,7 @@ export default function ArchitectureHero() {
               border
               border-[#00ff66]/15
 
-              bg-[#00ff66]/[0.045]
+              bg-[#00ff66]/5
 
               px-3.5
               py-2
@@ -785,20 +785,20 @@ export default function ArchitectureHero() {
               shadow-[0_0_30px_rgba(0,255,102,0.06)]
 
               sm:text-[10px]
-            "
+            `}
           >
             <span
-              className="
+              className={`
                 relative
 
                 flex
 
                 h-2
                 w-2
-              "
+              `}
             >
               <span
-                className="
+                className={`
                   absolute
 
                   inline-flex
@@ -813,11 +813,11 @@ export default function ArchitectureHero() {
                   bg-[#00ff66]
 
                   opacity-50
-                "
+                `}
               />
 
               <span
-                className="
+                className={`
                   relative
 
                   inline-flex
@@ -830,7 +830,7 @@ export default function ArchitectureHero() {
                   bg-[#00ff66]
 
                   shadow-[0_0_10px_rgba(0,255,102,0.9)]
-                "
+                `}
               />
             </span>
 
@@ -843,7 +843,7 @@ export default function ArchitectureHero() {
         =================================================== */}
 
         <div
-          className="
+          className={`
             grid
 
             items-center
@@ -872,14 +872,14 @@ export default function ArchitectureHero() {
             xl:gap-14
             xl:pt-11
             xl:pb-12
-          "
+          `}
         >
           {/* =================================================
               LEFT CONTENT
           ================================================= */}
 
           <div
-            className="
+            className={`
               relative
               z-10
 
@@ -889,12 +889,12 @@ export default function ArchitectureHero() {
               lg:pr-1
 
               xl:pr-3
-            "
+            `}
           >
             {/* EYEBROW */}
 
             <div
-              className="
+              className={`
                 hero-reveal-delay-1
 
                 group
@@ -914,9 +914,9 @@ export default function ArchitectureHero() {
 
                 bg-gradient-to-r
 
-                from-[#00ff66]/[0.07]
+                from-[#00ff66]/5
 
-                via-[#00ff66]/[0.03]
+                via-[#00ff66]/5
 
                 to-transparent
 
@@ -942,15 +942,15 @@ export default function ArchitectureHero() {
 
                 hover:border-[#00ff66]/35
 
-                hover:bg-[#00ff66]/[0.07]
+                hover:bg-[#00ff66]/5
 
                 hover:shadow-[0_0_38px_rgba(0,255,102,0.11)]
 
                 sm:text-[10px]
-              "
+              `}
             >
               <Network
-                className="
+                className={`
                   h-4
                   w-4
 
@@ -961,7 +961,7 @@ export default function ArchitectureHero() {
                   group-hover:rotate-6
 
                   group-hover:scale-110
-                "
+                `}
               />
 
               Core Discipline // Spatial Architecture &amp; BIM
@@ -972,7 +972,7 @@ export default function ArchitectureHero() {
             ================================================= */}
 
             <div
-              className="
+              className={`
                 hero-title-reveal
 
                 relative
@@ -982,12 +982,12 @@ export default function ArchitectureHero() {
                 overflow-visible
 
                 py-1
-              "
+              `}
             >
               {/* soft green ambient glow */}
 
               <div
-                className="
+                className={`
                   pointer-events-none
 
                   absolute
@@ -1004,16 +1004,16 @@ export default function ArchitectureHero() {
 
                   rounded-full
 
-                  bg-[#00ff66]/[0.05]
+                  bg-[#00ff66]/5
 
                   blur-[100px]
-                "
+                `}
               />
 
               {/* decorative particles */}
 
               <span
-                className="
+                className={`
                   pointer-events-none
 
                   absolute
@@ -1031,11 +1031,11 @@ export default function ArchitectureHero() {
                   opacity-70
 
                   shadow-[0_0_10px_rgba(0,255,102,0.85)]
-                "
+                `}
               />
 
               <span
-                className="
+                className={`
                   pointer-events-none
 
                   absolute
@@ -1053,11 +1053,11 @@ export default function ArchitectureHero() {
                   opacity-70
 
                   shadow-[0_0_8px_rgba(0,255,102,0.8)]
-                "
+                `}
               />
 
               <span
-                className="
+                className={`
                   pointer-events-none
 
                   absolute
@@ -1075,11 +1075,11 @@ export default function ArchitectureHero() {
                   opacity-55
 
                   shadow-[0_0_10px_rgba(0,255,102,0.7)]
-                "
+                `}
               />
 
               <h1
-                className="
+                className={`
                   relative
 
                   font-black
@@ -1103,12 +1103,12 @@ export default function ArchitectureHero() {
                   xl:text-[76px]
 
                   2xl:text-[86px]
-                "
+                `}
               >
                 {/* FIRST LINE */}
 
                 <span
-                  className="
+                  className={`
                     block
 
                     whitespace-normal
@@ -1118,7 +1118,7 @@ export default function ArchitectureHero() {
                     drop-shadow-[0_5px_30px_rgba(255,255,255,0.035)]
 
                     lg:whitespace-nowrap
-                  "
+                  `}
                 >
                   Architecture &amp;
                 </span>
@@ -1126,7 +1126,7 @@ export default function ArchitectureHero() {
                 {/* SECOND LINE */}
 
                 <span
-                  className="
+                  className={`
                     mt-[0.06em]
 
                     block
@@ -1146,7 +1146,7 @@ export default function ArchitectureHero() {
                     text-transparent
 
                     drop-shadow-[0_0_28px_rgba(0,255,102,0.10)]
-                  "
+                  `}
                 >
                   Engineering
                 </span>
@@ -1156,7 +1156,7 @@ export default function ArchitectureHero() {
             {/* DESCRIPTION */}
 
             <p
-              className="
+              className={`
                 hero-reveal-delay-3
 
                 mt-5
@@ -1180,7 +1180,7 @@ export default function ArchitectureHero() {
                 lg:text-[15px]
 
                 xl:text-[16px]
-              "
+              `}
             >
               End-to-end spatial planning, architectural drafting,
               BIM coordination, engineering documentation, and
@@ -1193,7 +1193,7 @@ export default function ArchitectureHero() {
             ================================================= */}
 
             <div
-              className="
+              className={`
                 hero-reveal-delay-4
 
                 mt-6
@@ -1205,7 +1205,7 @@ export default function ArchitectureHero() {
                 flex-wrap
 
                 gap-2.5
-              "
+              `}
             >
               {badges.map(
                 ({
@@ -1214,7 +1214,7 @@ export default function ArchitectureHero() {
                 }) => (
                   <div
                     key={label}
-                    className="
+                    className={`
                       group
 
                       relative
@@ -1230,9 +1230,9 @@ export default function ArchitectureHero() {
                       rounded-full
 
                       border
-                      border-white/[0.075]
+                      border-white/10
 
-                      bg-white/[0.032]
+                      bg-white/5
 
                       px-3.5
                       py-2
@@ -1258,17 +1258,17 @@ export default function ArchitectureHero() {
 
                       hover:border-[#00ff66]/30
 
-                      hover:bg-[#00ff66]/[0.055]
+                      hover:bg-[#00ff66]/5
 
                       hover:text-white
 
                       hover:shadow-[0_12px_35px_rgba(0,0,0,0.20),0_0_28px_rgba(0,255,102,0.09)]
 
                       sm:text-[10px]
-                    "
+                    `}
                   >
                     <span
-                      className="
+                      className={`
                         absolute
                         inset-0
 
@@ -1278,7 +1278,7 @@ export default function ArchitectureHero() {
 
                         from-transparent
 
-                        via-white/[0.07]
+                        via-white/5
 
                         to-transparent
 
@@ -1287,11 +1287,11 @@ export default function ArchitectureHero() {
                         duration-700
 
                         group-hover:translate-x-[125%]
-                      "
+                      `}
                     />
 
                     <Icon
-                      className="
+                      className={`
                         relative
                         z-10
 
@@ -1307,14 +1307,14 @@ export default function ArchitectureHero() {
                         group-hover:rotate-6
 
                         group-hover:scale-110
-                      "
+                      `}
                     />
 
                     <span
-                      className="
+                      className={`
                         relative
                         z-10
-                      "
+                      `}
                     >
                       {label}
                     </span>
@@ -1328,7 +1328,7 @@ export default function ArchitectureHero() {
             ================================================= */}
 
             <div
-              className="
+              className={`
                 hero-reveal-delay-5
 
                 mt-7
@@ -1340,13 +1340,13 @@ export default function ArchitectureHero() {
                 gap-3
 
                 sm:flex-row
-              "
+              `}
             >
               {/* PRIMARY */}
 
               <Link
                 href="/services/architecture"
-                className="
+                className={`
                   group
 
                   relative
@@ -1373,10 +1373,10 @@ export default function ArchitectureHero() {
                   text-[#02140a]
 
                   sm:w-fit
-                "
+                `}
               >
                 <span
-                  className="
+                  className={`
                     absolute
                     inset-0
 
@@ -1393,11 +1393,11 @@ export default function ArchitectureHero() {
                     duration-500
 
                     group-hover:scale-[1.04]
-                  "
+                  `}
                 />
 
                 <span
-                  className="
+                  className={`
                     absolute
 
                     -left-[100%]
@@ -1419,11 +1419,11 @@ export default function ArchitectureHero() {
                     duration-700
 
                     group-hover:left-[135%]
-                  "
+                  `}
                 />
 
                 <span
-                  className="
+                  className={`
                     absolute
                     inset-0
 
@@ -1436,20 +1436,20 @@ export default function ArchitectureHero() {
                     duration-500
 
                     group-hover:shadow-[0_0_42px_rgba(0,255,102,0.68)]
-                  "
+                  `}
                 />
 
                 <span
-                  className="
+                  className={`
                     relative
                     z-10
-                  "
+                  `}
                 >
                   Explore Architecture
                 </span>
 
                 <ArrowRight
-                  className="
+                  className={`
                     relative
                     z-10
 
@@ -1461,7 +1461,7 @@ export default function ArchitectureHero() {
                     duration-300
 
                     group-hover:translate-x-1
-                  "
+                  `}
                 />
               </Link>
 
@@ -1469,7 +1469,7 @@ export default function ArchitectureHero() {
 
               <Link
                 href="/contact"
-                className="
+                className={`
                   group
 
                   relative
@@ -1490,7 +1490,7 @@ export default function ArchitectureHero() {
                   border
                   border-white/10
 
-                  bg-white/[0.032]
+                  bg-white/5
 
                   px-6
 
@@ -1510,17 +1510,17 @@ export default function ArchitectureHero() {
 
                   hover:border-[#00ff66]/25
 
-                  hover:bg-[#00ff66]/[0.035]
+                  hover:bg-[#00ff66]/5
 
                   hover:text-white
 
                   hover:shadow-[0_14px_40px_rgba(0,0,0,0.30),0_0_30px_rgba(0,255,102,0.08)]
 
                   sm:w-fit
-                "
+                `}
               >
                 <span
-                  className="
+                  className={`
                     absolute
                     inset-0
 
@@ -1530,7 +1530,7 @@ export default function ArchitectureHero() {
 
                     from-transparent
 
-                    via-white/[0.04]
+                    via-white/5
 
                     to-transparent
 
@@ -1539,11 +1539,11 @@ export default function ArchitectureHero() {
                     duration-700
 
                     group-hover:translate-x-[120%]
-                  "
+                  `}
                 />
 
                 <CalendarDays
-                  className="
+                  className={`
                     relative
                     z-10
 
@@ -1551,20 +1551,20 @@ export default function ArchitectureHero() {
                     w-4
 
                     text-[#00ff66]
-                  "
+                  `}
                 />
 
                 <span
-                  className="
+                  className={`
                     relative
                     z-10
-                  "
+                  `}
                 >
                   Request BIM Consultation
                 </span>
 
                 <MoveUpRight
-                  className="
+                  className={`
                     relative
                     z-10
 
@@ -1582,7 +1582,7 @@ export default function ArchitectureHero() {
                     group-hover:translate-x-0.5
 
                     group-hover:opacity-100
-                  "
+                  `}
                 />
               </Link>
             </div>
@@ -1591,7 +1591,7 @@ export default function ArchitectureHero() {
 
             <Link
               href="/architecture-spec-sheet.pdf"
-              className="
+              className={`
                 hero-reveal-delay-5
 
                 group
@@ -1618,10 +1618,10 @@ export default function ArchitectureHero() {
                 duration-300
 
                 hover:text-[#92ffba]
-              "
+              `}
             >
               <Download
-                className="
+                className={`
                   h-4
                   w-4
 
@@ -1632,7 +1632,7 @@ export default function ArchitectureHero() {
                   duration-300
 
                   group-hover:translate-y-0.5
-                "
+                `}
               />
 
               Specs Sheet (PDF)
@@ -1644,7 +1644,7 @@ export default function ArchitectureHero() {
           ================================================= */}
 
           <div
-            className="
+            className={`
               architecture-card-float
 
               relative
@@ -1656,12 +1656,12 @@ export default function ArchitectureHero() {
               max-w-[780px]
 
               lg:ml-auto
-            "
+            `}
           >
             {/* GLOW */}
 
             <div
-              className="
+              className={`
                 pointer-events-none
 
                 absolute
@@ -1679,16 +1679,16 @@ export default function ArchitectureHero() {
 
                 rounded-full
 
-                bg-[#00ff66]/[0.09]
+                bg-[#00ff66]/10
 
                 blur-[110px]
-              "
+              `}
             />
 
             {/* CARD */}
 
             <div
-              className="
+              className={`
                 group
 
                 relative
@@ -1698,7 +1698,7 @@ export default function ArchitectureHero() {
                 rounded-[24px]
 
                 border
-                border-[#8fffb5]/[0.10]
+                border-[#8fffb5]/10
 
                 bg-[#07130e]/95
 
@@ -1715,12 +1715,12 @@ export default function ArchitectureHero() {
                 hover:border-[#00ff66]/25
 
                 hover:shadow-[0_45px_110px_rgba(0,0,0,0.54),0_0_80px_rgba(0,255,102,0.1),inset_0_1px_0_rgba(255,255,255,0.055)]
-              "
+              `}
             >
               {/* TOP LIGHT */}
 
               <div
-                className="
+                className={`
                   pointer-events-none
 
                   absolute
@@ -1742,13 +1742,13 @@ export default function ArchitectureHero() {
                   to-transparent
 
                   shadow-[0_0_15px_rgba(0,255,102,0.55)]
-                "
+                `}
               />
 
               {/* PANEL HEADER */}
 
               <div
-                className="
+                className={`
                   relative
                   z-20
 
@@ -1762,19 +1762,19 @@ export default function ArchitectureHero() {
                   gap-3
 
                   border-b
-                  border-white/[0.055]
+                  border-white/5
 
-                  bg-white/[0.018]
+                  bg-white/0
 
                   px-4
 
                   sm:min-h-[58px]
 
                   sm:px-5
-                "
+                `}
               >
                 <div
-                  className="
+                  className={`
                     flex
 
                     min-w-0
@@ -1782,10 +1782,10 @@ export default function ArchitectureHero() {
                     items-center
 
                     gap-3
-                  "
+                  `}
                 >
                   <div
-                    className="
+                    className={`
                       flex
 
                       shrink-0
@@ -1793,7 +1793,7 @@ export default function ArchitectureHero() {
                       items-center
 
                       gap-1.5
-                    "
+                    `}
                   >
                     <span className="h-2.5 w-2.5 rounded-full bg-[#ff8585]" />
                     <span className="h-2.5 w-2.5 rounded-full bg-[#ffd37d]" />
@@ -1801,7 +1801,7 @@ export default function ArchitectureHero() {
                   </div>
 
                   <span
-                    className="
+                    className={`
                       hidden
 
                       truncate
@@ -1819,14 +1819,14 @@ export default function ArchitectureHero() {
                       sm:text-[11px]
 
                       lg:text-[11.5px]
-                    "
+                    `}
                   >
                     HUD_VIEWPORT // SPEC_ID #VRTX-8809
                   </span>
                 </div>
 
                 <span
-                  className="
+                  className={`
                     shrink-0
 
                     rounded-md
@@ -1834,7 +1834,7 @@ export default function ArchitectureHero() {
                     border
                     border-[#00ff66]/15
 
-                    bg-[#00ff66]/[0.07]
+                    bg-[#00ff66]/5
 
                     px-3
                     py-1.5
@@ -1852,7 +1852,7 @@ export default function ArchitectureHero() {
                     sm:text-[11px]
 
                     lg:text-[11.5px]
-                  "
+                  `}
                 >
                   BIM LOD: 400
                 </span>
@@ -1861,24 +1861,24 @@ export default function ArchitectureHero() {
               {/* VISUAL */}
 
               <div
-                className="
+                className={`
                   relative
 
-                  aspect-[1.20/1]
+                  aspect-[1.20/100]
 
                   overflow-hidden
 
-                  sm:aspect-[1.52/1]
+                  sm:aspect-[1.52/100]
 
-                  lg:aspect-[1.48/1]
-                "
+                  lg:aspect-[1.48/100]
+                `}
               >
                 <BIMVisual
                   src="/assets/imagesarchitecture-bim.png"
                 />
 
                 <div
-                  className="
+                  className={`
                     pointer-events-none
 
                     absolute
@@ -1891,11 +1891,11 @@ export default function ArchitectureHero() {
                     via-transparent
 
                     to-black/15
-                  "
+                  `}
                 />
 
                 <div
-                  className="
+                  className={`
                     pointer-events-none
 
                     absolute
@@ -1903,29 +1903,29 @@ export default function ArchitectureHero() {
 
                     bg-gradient-to-r
 
-                    from-[#00ff66]/[0.035]
+                    from-[#00ff66]/5
 
                     via-transparent
 
                     to-transparent
-                  "
+                  `}
                 />
 
                 <div
-                  className="
+                  className={`
                     pointer-events-none
 
                     absolute
                     inset-0
 
                     shadow-[inset_0_0_90px_rgba(0,0,0,0.38)]
-                  "
+                  `}
                 />
 
                 {/* TELEMETRY */}
 
                 <div
-                  className="
+                  className={`
                     absolute
 
                     left-3
@@ -1970,10 +1970,10 @@ export default function ArchitectureHero() {
                     md:text-[11px]
 
                     lg:text-[12px]
-                  "
+                  `}
                 >
                   <Sparkles
-                    className="
+                    className={`
                       h-3.5
                       w-3.5
 
@@ -1983,7 +1983,7 @@ export default function ArchitectureHero() {
 
                       lg:h-4
                       lg:w-4
-                    "
+                    `}
                   />
 
                   Live Revit Spatial Telemetry
@@ -1992,7 +1992,7 @@ export default function ArchitectureHero() {
                 {/* SCAN */}
 
                 <div
-                  className="
+                  className={`
                     architecture-scan
 
                     pointer-events-none
@@ -2018,13 +2018,13 @@ export default function ArchitectureHero() {
                     opacity-50
 
                     shadow-[0_0_18px_rgba(0,255,102,0.85)]
-                  "
+                  `}
                 />
 
                 {/* MEASURE LINE */}
 
                 <div
-                  className="
+                  className={`
                     pointer-events-none
 
                     absolute
@@ -2046,13 +2046,13 @@ export default function ArchitectureHero() {
                     to-transparent
 
                     sm:block
-                  "
+                  `}
                 />
 
                 {/* BOTTOM DATA */}
 
                 <div
-                  className="
+                  className={`
                     absolute
 
                     bottom-3
@@ -2079,11 +2079,11 @@ export default function ArchitectureHero() {
                     lg:bottom-5
                     lg:left-5
                     lg:right-5
-                  "
+                  `}
                 >
                   <div className="min-w-0">
                     <div
-                      className="
+                      className={`
                         flex
 
                         items-center
@@ -2104,10 +2104,10 @@ export default function ArchitectureHero() {
                         md:text-[11px]
 
                         lg:text-[12px]
-                      "
+                      `}
                     >
                       <span
-                        className="
+                        className={`
                           relative
 
                           flex
@@ -2116,10 +2116,10 @@ export default function ArchitectureHero() {
                           w-2
 
                           shrink-0
-                        "
+                        `}
                       >
                         <span
-                          className="
+                          className={`
                             absolute
 
                             h-full
@@ -2130,11 +2130,11 @@ export default function ArchitectureHero() {
                             rounded-full
 
                             bg-[#00ff66]
-                          "
+                          `}
                         />
 
                         <span
-                          className="
+                          className={`
                             relative
 
                             h-2
@@ -2145,7 +2145,7 @@ export default function ArchitectureHero() {
                             bg-[#00ff66]
 
                             shadow-[0_0_8px_rgba(0,255,102,0.9)]
-                          "
+                          `}
                         />
                       </span>
 
@@ -2153,7 +2153,7 @@ export default function ArchitectureHero() {
                     </div>
 
                     <p
-                      className="
+                      className={`
                         mt-2
 
                         text-[8px]
@@ -2170,7 +2170,7 @@ export default function ArchitectureHero() {
                         md:text-[10px]
 
                         lg:text-[11px]
-                      "
+                      `}
                     >
                       Clash Detection: Zero Critical Defects
                     </p>
@@ -2185,7 +2185,7 @@ export default function ArchitectureHero() {
               {/* PANEL FOOTER */}
 
               <div
-                className="
+                className={`
                   relative
                   z-20
 
@@ -2201,7 +2201,7 @@ export default function ArchitectureHero() {
                   gap-3
 
                   border-t
-                  border-white/[0.055]
+                  border-white/5
 
                   bg-[#06120d]
 
@@ -2224,28 +2224,28 @@ export default function ArchitectureHero() {
                   sm:text-[10px]
 
                   lg:text-[11px]
-                "
+                `}
               >
                 <div
-                  className="
+                  className={`
                     flex
                     flex-wrap
 
                     gap-x-6
                     gap-y-2.5
-                  "
+                  `}
                 >
                   <span
-                    className="
+                    className={`
                       flex
 
                       items-center
 
                       gap-2
-                    "
+                    `}
                   >
                     <Layers3
-                      className="
+                      className={`
                         h-3.5
                         w-3.5
 
@@ -2255,23 +2255,23 @@ export default function ArchitectureHero() {
 
                         lg:h-4
                         lg:w-4
-                      "
+                      `}
                     />
 
                     18 BIM Layers Active
                   </span>
 
                   <span
-                    className="
+                    className={`
                       flex
 
                       items-center
 
                       gap-2
-                    "
+                    `}
                   >
                     <Activity
-                      className="
+                      className={`
                         h-3.5
                         w-3.5
 
@@ -2281,7 +2281,7 @@ export default function ArchitectureHero() {
 
                         lg:h-4
                         lg:w-4
-                      "
+                      `}
                     />
 
                     Tolerance: ±1.2mm
@@ -2289,11 +2289,11 @@ export default function ArchitectureHero() {
                 </div>
 
                 <span
-                  className="
+                  className={`
                     font-bold
 
                     text-white/65
-                  "
+                  `}
                 >
                   Realtime Sync
                 </span>
@@ -2307,7 +2307,7 @@ export default function ArchitectureHero() {
         =================================================== */}
 
         <div
-          className="
+          className={`
             stats-reveal
 
             relative
@@ -2319,9 +2319,9 @@ export default function ArchitectureHero() {
             rounded-[18px]
 
             border
-            border-white/[0.065]
+            border-white/5
 
-            bg-white/[0.021]
+            bg-white/0
 
             shadow-[0_25px_70px_rgba(0,0,0,0.24),inset_0_1px_0_rgba(255,255,255,0.035)]
 
@@ -2332,10 +2332,10 @@ export default function ArchitectureHero() {
             lg:max-w-[760px]
 
             lg:grid-cols-4
-          "
+          `}
         >
           <div
-            className="
+            className={`
               pointer-events-none
 
               absolute
@@ -2353,7 +2353,7 @@ export default function ArchitectureHero() {
               via-[#00ff66]/40
 
               to-transparent
-            "
+            `}
           />
 
           {stats.map(
@@ -2379,32 +2379,32 @@ export default function ArchitectureHero() {
 
                   duration-500
 
-                  hover:bg-[#00ff66]/[0.035]
+                  hover:bg-[#00ff66]/5
 
                   hover:shadow-[inset_0_0_35px_rgba(0,255,102,0.025)]
 
                   ${
                     index !==
                     stats.length - 1
-                      ? "lg:border-r lg:border-white/[0.055]"
+                      ? "lg:border-r lg:border-white/5"
                       : ""
                   }
 
                   ${
                     index < 2
-                      ? "sm:border-b sm:border-white/[0.055] lg:border-b-0"
+                      ? "sm:border-b sm:border-white/5 lg:border-b-0"
                       : ""
                   }
 
                   ${
                     index % 2 === 0
-                      ? "sm:border-r sm:border-white/[0.055]"
+                      ? "sm:border-r sm:border-white/5"
                       : ""
                   }
                 `}
               >
                 <span
-                  className="
+                  className={`
                     absolute
 
                     left-0
@@ -2429,11 +2429,11 @@ export default function ArchitectureHero() {
                     duration-500
 
                     group-hover:w-full
-                  "
+                  `}
                 />
 
                 <span
-                  className="
+                  className={`
                     pointer-events-none
 
                     absolute
@@ -2454,8 +2454,8 @@ export default function ArchitectureHero() {
 
                     duration-500
 
-                    group-hover:bg-[#00ff66]/[0.075]
-                  "
+                    group-hover:bg-[#00ff66]/10
+                  `}
                 />
 
                 <p
@@ -2496,7 +2496,7 @@ export default function ArchitectureHero() {
                 </p>
 
                 <p
-                  className="
+                  className={`
                     relative
                     z-10
 
@@ -2520,7 +2520,7 @@ export default function ArchitectureHero() {
                     group-hover:text-[#baf5c8]/80
 
                     sm:text-[10px]
-                  "
+                  `}
                 >
                   {stat.label}
                 </p>

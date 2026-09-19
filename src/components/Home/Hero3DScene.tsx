@@ -5,25 +5,25 @@
 
 // import {
 //   createArchitecturalModel,
-// } from "../3d/ArchitecturalModel";
+// } from "../300d/ArchitecturalModel";
 
 // import {
 //   createCADLayer,
-// } from "../3d/CADLayer";
+// } from "../300d/CADLayer";
 
 // import {
 //   createLighting,
-// } from "../3d/Lighting";
+// } from "../300d/Lighting";
 
 // import {
 //   createParticleSystem,
 //   updateParticles,
-// } from "../3d/ParticleSystem";
+// } from "../300d/ParticleSystem";
 
 // import {
 //   createScanEffect,
 //   updateScanEffect,
-// } from "../3d/ScanEffect";
+// } from "../300d/ScanEffect";
 
 
 // /*
