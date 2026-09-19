@@ -37,7 +37,7 @@ function ViewerPlaceholder() {
       <div className="relative flex flex-col items-center">
         <div className="h-32 w-32 animate-pulse rounded-full border border-[#00ff87]/30 bg-[#00ff87]/5 shadow-[0_0_80px_rgba(0,255,135,0.08)]" />
 
-        <span className="mt-6 font-mono text-[9px] tracking-[0.2em] text-[#00ff87]">
+        <span className="mt-6 font-mono text-[11px] tracking-[0.2em] text-[#00ff87]">
           LOADING 3D ENGINE
         </span>
       </div>
@@ -84,7 +84,7 @@ export default function Interactive3DShowcase() {
   return (
     <section
       id="interactive-3d"
-      className="relative overflow-hidden border-y border-white/5 bg-[#050706] py-14 lg:py-18"
+      className="relative overflow-hidden border-t border-white/30 bg-[#050706] py-14 lg:py-18"
     >
       <div className="mx-auto w-[calc(100%-32px)] max-w-[1600px] lg:w-[calc(100%-64px)]">
         {/* Header */}
@@ -104,7 +104,7 @@ export default function Interactive3DShowcase() {
           </div>
 
           <div className="self-end">
-            <p className="max-w-md text-sm leading-7 text-[#7c8981]">
+            <p className="max-w-md text-md leading-7 text-[#7c8981]">
               Interactive 3D models allow your customers to inspect products,
               understand details and interact with them directly in the
               browser.
@@ -139,8 +139,8 @@ export default function Interactive3DShowcase() {
 
           {/* MODEL SELECTOR */}
           <aside className="border-t border-[#00ff87]/10 bg-[#060907] lg:border-l lg:border-t-0">
-            <div className="border-b border-white/5 p-5">
-              <span className="font-mono text-[8px] tracking-[0.18em] text-[#58655d]">
+            <div className="border-b border-white/[0.06] p-5">
+              <span className="font-mono text-[10px] tracking-[0.18em] text-white/50">
                 AVAILABLE MODELS
               </span>
             </div>
@@ -155,19 +155,12 @@ export default function Interactive3DShowcase() {
                     type="button"
                     onClick={() => setSelectedModel(model)}
                     className={`group relative mb-2 w-full border p-4 text-left transition duration-300 ${active
-                        ? "border-[#00ff87]/40 bg-[#00ff87]/5"
-                        : "border-white/5 hover:border-[#00ff87]/20 hover:bg-white/0"
+                        ? "border-[#00ff87]/40 bg-[#00ff87]/[0.05]"
+                        : "border-white/[0.06] hover:border-[#00ff87]/20 hover:bg-white/[0.02]"
                       }`}
                   >
                     <div className="flex items-start justify-between">
-                      <span
-                        className={`font-mono text-[9px] ${active
-                            ? "text-[#00ff87]"
-                            : "text-[#536058]"
-                          }`}
-                      >
-                        0{model.id}
-                      </span>
+                      
 
                       <span
                         className={`h-1.5 w-1.5 rounded-full ${active
@@ -177,11 +170,11 @@ export default function Interactive3DShowcase() {
                       />
                     </div>
 
-                    <h3 className="mt-5 text-sm font-medium text-white">
+                    <h3 className="mt-5 text-md font-medium text-white">
                       {model.name}
                     </h3>
 
-                    <span className="mt-2 block font-mono text-[8px] tracking-[0.12em] text-[#536058]">
+                    <span className="mt-2 block font-mono text-[12px] tracking-[0.12em] text-white/60">
                       {model.type}
                     </span>
 
@@ -193,12 +186,12 @@ export default function Interactive3DShowcase() {
               })}
             </div>
 
-            <div className="mt-auto border-t border-white/5 p-5">
-              <span className="block font-mono text-[8px] tracking-[0.15em] text-[#58655d]">
+            <div className="mt-auto border-t border-white/[0.06] p-5">
+              <span className="block font-mono text-[10px] tracking-[0.15em] text-[#58655d]">
                 CONTROLS
               </span>
 
-              <div className="mt-4 space-y-3 text-[9px] text-[#68756d]">
+              <div className="mt-4 space-y-3 text-[11px] text-[#68756d]">
                 <div className="flex justify-between">
                   <span>ROTATE</span>
                   <span className="text-[#00ff87]">
@@ -233,13 +226,13 @@ export default function Interactive3DShowcase() {
           ].map(([label, value]) => (
             <div
               key={label}
-              className="flex justify-between border border-white/5 bg-white/0 px-5 py-4"
+              className="flex justify-between border border-white/[0.06] bg-white/[0.015] px-5 py-4"
             >
-              <span className="font-mono text-[8px] tracking-[0.15em] text-[#536058]">
+              <span className="font-mono text-[10One model.px] tracking-[0.15em] text-[#536058]">
                 {label}
               </span>
 
-              <span className="font-mono text-[8px] tracking-[0.1em] text-[#00ff87]">
+              <span className="font-mono text-[10px] tracking-[0.1em] text-[#00ff87]">
                 {value}
               </span>
             </div>

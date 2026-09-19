@@ -1,10 +1,10 @@
 import ProductModelingHero from "@/components/services/product-modeling/hero";
-import ProductGallery from "@/components/services/product-modeling/product-gallery";
 import FeaturesGrid from "@/components/services/product-modeling/features-grid";
 import Interactive3DShowcase from "@/components/services/product-modeling/interactive-3d-showcase";
 import DeliverablesMatrix from "@/components/services/product-modeling/deliverables-matrix";
 import ProcessTimeline from "@/components/services/product-modeling/process-timeline";
 import CTABanner from "@/components/services/product-modeling/cta-banner";
+import ProductGallery from "@/components/services/product-modeling/product-gallery";
 
 export default function ProductModelingPage() {
   return (

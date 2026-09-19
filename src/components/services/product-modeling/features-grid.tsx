@@ -46,46 +46,44 @@ export default function FeaturesGrid() {
             </h2>
           </div>
 
-          <p className="self-end text-sm leading-7 text-[#7c8981]">
+          <p className="self-end text-md leading-7 text-white/70">
             We combine technical precision with visual craftsmanship to create
             product models that work across visualization, commerce and
             interactive digital experiences.
           </p>
         </div>
 
-        <div className="grid border-l border-t border-white/10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid   sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {features.map((feature) => (
             <article
               key={feature.number}
-              className="group relative min-h-[390px] border-b border-r border-white/10 p-6 transition duration-500 hover:bg-[#00ff87]/5 lg:min-h-[430px]"
+              className="group relative border border-white/40 p-6 transition duration-500 hover:bg-[#00ff87]/[0.025] rounded-md"
             >
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-[9px] text-[#00ff87]">
-                  {feature.number}
-                </span>
+              <div className="flex items-center justify-center">
+                
 
-                <span className="text-[8px] tracking-[0.15em] text-[#536058]">
+                <span className="text-[10px] tracking-[0.15em] text-white/60">
                   {feature.tag}
                 </span>
               </div>
 
               {/* Icon */}
-              <div className="relative mt-16 h-16 w-16 rotate-45 border border-[#00ff87]/30 transition duration-500 group-hover:rotate-[135deg] group-hover:border-[#00ff87]/70">
+              <div className="relative mt-10 h-16 w-16 rotate-45 border border-[#00ff87]/30 transition duration-500 group-hover:rotate-[135deg] group-hover:border-[#00ff87]/70 mx-auto">
                 <span className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-[#00ff87]/30" />
                 <span className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-[#00ff87]/30" />
               </div>
 
-              <h3 className="mt-10 text-xl font-medium">
+              <h3 className="mt-10 text-xl font-medium text-center">
                 {feature.title}
               </h3>
 
-              <p className="mt-4 text-[13px] leading-6 text-[#718078]">
+              <p className="mt-4 text-[16px] leading-6 text-white/60 text-center">
                 {feature.description}
               </p>
 
-              <span className="absolute bottom-6 right-6 text-lg text-[#00ff87] transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">
+              {/* <span className="absolute bottom-6 right-6 text-lg text-[#00ff87] transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">
                 ↗
-              </span>
+              </span> */}
             </article>
           ))}
         </div>
