@@ -1,83 +1,145 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
-interface Position {
-  x: number;
-  y: number;
-}
+import { useEffect, useRef } from 'react';
 
 export default function CustomCursor() {
-  const [mousePosition, setMousePosition] = useState<Position>({ x: -100, y: -100 });
-  
-  // 3-ti circle er alada position
-  const [circle1, setCircle1] = useState<Position>({ x: -100, y: -100 });
-  const [circle2, setCircle2] = useState<Position>({ x: -100, y: -100 });
-  const [circle3, setCircle3] = useState<Position>({ x: -100, y: -100 });
+    const canvasRef = useRef<HTMLCanvasElement>(null);
+    const mouse = useRef({ x: -100, y: -100 });
+    const trail = useRef({ x: -100, y: -100 });
+    const rotation = useRef(0);
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+        let animationFrameId: number;
 
-  useEffect(() => {
-    let animationFrameId: number;
+        const handleResize = () => {
+            // High-DPI Display (Retina) support
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = window.innerWidth * dpr;
+            canvas.height = window.innerHeight * dpr;
+            ctx.scale(dpr, dpr);
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
 
-    const animate = () => {
-      setCircle1((prev) => ({
-        x: prev.x + (mousePosition.x - prev.x) * 0.2,
-        y: prev.y + (mousePosition.y - prev.y) * 0.2,
-      }));
+        const handleMouseMove = (e: MouseEvent) => {
+            mouse.current.x = e.clientX;
+            mouse.current.y = e.clientY;
+        };
+        window.addEventListener('mousemove', handleMouseMove);
 
-      setCircle2((prev) => ({
-        x: prev.x + (mousePosition.x - prev.x) * 0.1,
-        y: prev.y + (mousePosition.y - prev.y) * 0.1,
-      }));
+        const render = () => {
+            ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
-      setCircle3((prev) => ({
-        x: prev.x + (mousePosition.x - prev.x) * 0.05,
-        y: prev.y + (mousePosition.y - prev.y) * 0.05,
-      }));
+            // --- ULTRA SMOOTH ELASTIC LERP (No Stutter/Lag) ---
+            // 0.12 ভ্যালুটি মাউসের পেছনে নিখুঁত ফ্লুইড ও স্মুথ মোশন দেয়
+            trail.current.x += (mouse.current.x - trail.current.x) * 0.12;
+            trail.current.y += (mouse.current.y - trail.current.y) * 0.12;
 
-      animationFrameId = requestAnimationFrame(animate);
-    };
+            const mx = mouse.current.x;
+            const my = mouse.current.y;
+            const tx = trail.current.x;
+            const ty = trail.current.y;
 
-    animationFrameId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [mousePosition]);
+            rotation.current += 0.02;
 
-  return (
-    <div className="pointer-events-none fixed inset-0 z-50 overflow-hidden">
-      {/* 1st Circle - Main Pointer */}
-      <div
-        className="fixed h-4 w-4 rounded-full bg-[#00FF66] shadow-[0_0_15px_#00FF66] transition-transform duration-75 ease-out -translate-x-1/2 -translate-y-1/2"
-        style={{
-          left: `${circle1.x}px`,
-          top: `${circle1.y}px`,
-        }}
-      />
+            // --- 1. Connecting Vector Dotted Line ---
+            ctx.strokeStyle = 'rgba(0, 255, 102, 0.4)';
+            ctx.lineWidth = 1.5;
+            ctx.setLineDash([4, 4]);
+            ctx.beginPath();
+            ctx.moveTo(mx, my);
+            ctx.lineTo(tx, ty);
+            ctx.stroke();
+            ctx.setLineDash([]); // Reset line dash
 
-      {/* 2nd Circle - Medium Ring */}
-      <div
-        className="fixed h-8 w-8 rounded-full border border-[#2BFF88]/60 bg-[#00FF66]/10 backdrop-blur-[1px] transition-transform duration-100 ease-out -translate-x-1/2 -translate-y-1/2"
-        style={{
-          left: `${circle2.x}px`,
-          top: `${circle2.y}px`,
-        }}
-      />
+            // --- 2. Main Pointer: Glowing Architectural Crosshair ---
+            ctx.shadowColor = '#00FF66';
+            ctx.shadowBlur = 18; // High Brightness Glow
 
-      {/* 3rd Circle - Outer Glow */}
-      <div
-        className="fixed h-14 w-14 rounded-full border border-[#00CC52]/30 bg-[#00FF66]/5 blur-[2px] transition-transform duration-150 ease-out -translate-x-1/2 -translate-y-1/2"
-        style={{
-          left: `${circle3.x}px`,
-          top: `${circle3.y}px`,
-        }}
-      />
-    </div>
-  );
+            // Bright Core Center Dot
+            ctx.fillStyle = '#00FF66';
+            ctx.beginPath();
+            ctx.arc(mx, my, 5, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Outer Target Circle
+            ctx.strokeStyle = '#00FF66';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.arc(mx, my, 16, 0, Math.PI * 2);
+            ctx.stroke();
+
+            // Crosshair Measurement Lines
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(mx - 24, my); ctx.lineTo(mx - 10, my);
+            ctx.moveTo(mx + 10, my); ctx.lineTo(mx + 24, my);
+            ctx.moveTo(mx, my - 24); ctx.lineTo(mx, my - 10);
+            ctx.moveTo(mx, my + 10); ctx.lineTo(mx, my + 24);
+            ctx.stroke();
+
+            // Reset Shadow
+            ctx.shadowBlur = 0;
+
+            // --- 3. Trailing 3D Wireframe Node (Smooth Follower) ---
+            ctx.save();
+            ctx.translate(tx, ty);
+            ctx.shadowColor = '#00FF66';
+            ctx.shadowBlur = 12;
+
+            const size = 24;
+            const rot = rotation.current;
+
+            for (let i = 0; i < 3; i++) {
+                const angle = rot + (i * Math.PI * 2) / 3;
+                const px = Math.cos(angle) * size;
+                const py = Math.sin(angle) * size;
+
+                // Spoke Vector Line
+                ctx.strokeStyle = 'rgba(0, 255, 102, 0.8)';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                ctx.lineTo(px, py);
+                ctx.stroke();
+
+                // Structural Joint Dots
+                ctx.fillStyle = '#00FF66';
+                ctx.beginPath();
+                ctx.arc(px, py, 3.5, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            // Outer Structural Blueprint Ring
+            ctx.strokeStyle = 'rgba(0, 255, 102, 0.4)';
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.arc(0, 0, size * 1.25, 0, Math.PI * 2);
+            ctx.stroke();
+
+            ctx.restore();
+
+            animationFrameId = requestAnimationFrame(render);
+        };
+
+        render();
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('mousemove', handleMouseMove);
+            cancelAnimationFrame(animationFrameId);
+        };
+    }, []);
+
+    return (
+        <canvas
+            ref={canvasRef}
+            className="pointer-events-none fixed inset-0 z-50 overflow-hidden"
+        />
+    );
 }
