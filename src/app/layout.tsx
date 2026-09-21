@@ -5,6 +5,7 @@ import Header from '@/components/HeaderFooter/Header';
 import Footer from '@/components/HeaderFooter/Footer';
 import { Poppins, Montserrat, Roboto } from "next/font/google";
 import SiteLoader from '@/components/ui/site-loader';
+import CustomCursor from '@/components/Home/CustomCursor';
 
 
 // const geistSans = Geist({
@@ -21,7 +22,7 @@ const headingFont = Roboto({
   subsets: ["latin"],
   variable: "--font-heading",
   weight: "800"
-  
+
 });
 
 const subheadingFont = Montserrat({
@@ -47,6 +48,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       <SiteLoader>
       <Header />
       <body className="min-h-full flex flex-col">{children}</body>
+      <CustomCursor/>
       <Footer />
       </SiteLoader>
     </html>
