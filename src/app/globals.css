@@ -44,3 +44,22 @@ h6 {
 .subheading {
   font-family: var(--font-subheading), sans-serif;
 }
+
+
+@keyframes preloader-exit {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+.animate-preloader-exit {
+  animation: preloader-exit 700ms
+    cubic-bezier(0.76, 0, 0.24, 1)
+    forwards;
+}

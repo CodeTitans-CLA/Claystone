@@ -43,7 +43,7 @@ export default function Header(): React.ReactElement {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Solutions', href: '/solutions' },
+    // { name: 'Solutions', href: '/solutions'
     { name: 'Company', href: '/company' },
     { name: 'Career', href: '/career' },
     { name: 'Contact', href: '/contact' },
