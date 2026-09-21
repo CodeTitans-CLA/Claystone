@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/HeaderFooter/Header';
 import Footer from '@/components/HeaderFooter/Footer';
 import { Poppins, Montserrat, Roboto } from "next/font/google";
+import SiteLoader from '@/components/ui/site-loader';
 import CustomCursor from '@/components/Home/CustomCursor';
 
 
@@ -43,11 +44,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="en" className={`${headingFont.variable} ${subheadingFont.variable} ${bodyFont.variable} h-full antialiased`}>
+    <html lang="en" className={`{${headingFont.variable} ${subheadingFont.variable} ${bodyFont.variable} h-full antialiased}`}>
+      <SiteLoader>
       <Header />
       <body className="min-h-full flex flex-col">{children}</body>
       <CustomCursor/>
       <Footer />
+      </SiteLoader>
     </html>
   );
 }
